@@ -6,12 +6,12 @@ import * as ui from './ui.js';
 export async function maybePublish({ root, upload, message }) {
   if (upload === false) {
     ui.info('Skipping commit/push — images were not uploaded (--no-upload).');
-    ui.info('Re-run without --no-upload to upload, then commit & push to publish.');
+    ui.info('Re-run without --no-upload to upload, then `photosite push` to publish.');
     return;
   }
 
   if (!(await ui.confirm('Commit & push now? (triggers the Cloudflare Pages deploy)', false))) {
-    ui.info('Done. Commit & push when you are ready to publish.');
+    ui.info('Done. Run `photosite push` when you are ready to publish.');
     return;
   }
 

@@ -8,6 +8,7 @@ import { updateTrip } from '../src/commands/update-trip.js';
 import { annotate } from '../src/commands/annotate.js';
 import { cover } from '../src/commands/cover.js';
 import { preview } from '../src/commands/preview.js';
+import { push } from '../src/commands/push.js';
 import { list } from '../src/commands/list.js';
 
 // Wrap an action so thrown errors print a friendly line and exit non-zero.
@@ -61,6 +62,12 @@ program
   .action(run(cover));
 
 program.command('preview').description('Run the local preview server').action(run(preview));
+
+program
+  .command('push')
+  .description('Commit pending changes and push (triggers the deploy)')
+  .argument('[message]', 'commit message (prompts if omitted)')
+  .action(run(push));
 
 program.command('list').description('List trips').action(run(list));
 

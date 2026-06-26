@@ -58,6 +58,7 @@ deps.
 - `photosite annotate [slug]` — guided species/caption/title editor with preview
 - `photosite cover [slug]` — pick the trip cover photo
 - `photosite preview` — Astro dev server with local-image middleware
+- `photosite push [message]` — commit pending changes and push (triggers deploy)
 - `photosite list`
 
 Build the site: `cd site && npm run build`. Convenience wrappers in `justfile`.

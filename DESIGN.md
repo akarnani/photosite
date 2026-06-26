@@ -206,6 +206,12 @@ Convenience wrapper that runs the Astro dev server from `site/` with the
 local-image middleware active (§6), so you can review trips — including ones not
 yet uploaded — before publishing. Prints the local URL.
 
+### `photosite push [message]`
+Commit any pending changes and push, triggering the Cloudflare Pages deploy —
+for when a trip operation was run without publishing (e.g. you previewed first).
+Prompts for a commit message if omitted; reports a clean tree and still pushes
+any unpushed commits.
+
 ### `photosite list`
 List trips with title, photo count, location, dates, and slug.
 
