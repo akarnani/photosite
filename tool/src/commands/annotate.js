@@ -1,6 +1,7 @@
-// Guided per-photo annotation: opens each image, prompts for title/species/
-// caption with species autocomplete, and lets you set the cover. Saves after
-// every photo so quitting (Ctrl-C) preserves progress.
+// Guided per-photo annotation. For each photo: opens it in the OS viewer, then
+// a species hub (autocomplete + actions), then caption and title. Defaults show
+// the *effective* current value (annotation, else EXIF). Saves after every photo
+// so finishing early or Ctrl-C never loses prior work.
 import fs from 'node:fs';
 import path from 'node:path';
 import prompts from 'prompts';
@@ -16,10 +17,7 @@ import { maybePublish } from '../publish.js';
 // Best-effort: open the cached fallback JPEG in the OS default viewer.
 async function openInViewer(P, slug, file) {
   const img = path.join(P.cacheTripDir(slug), `${fileStem(file)}.jpg`);
-  if (!fs.existsSync(img)) {
-    ui.info('(no local preview cached for this photo — run add/update-trip to cache it)');
-    return;
-  }
+  if (!fs.existsSync(img)) return;
   const cmd = process.platform === 'darwin' ? 'open' : process.platform === 'win32' ? 'start' : 'xdg-open';
   try {
     await execa(cmd, [img], { stdio: 'ignore', detached: true, windowsHide: true });
@@ -27,6 +25,10 @@ async function openInViewer(P, slug, file) {
     /* viewer is a convenience, never fatal */
   }
 }
+
+const arraysEqual = (a, b) => a.length === b.length && a.every((x, i) => x === b[i]);
+const dim = (s) => pc.dim(s);
+const hint = (val) => (val ? dim(`(current: ${val})`) : dim('(blank — Enter to skip)'));
 
 export async function annotate(slugArg, opts = {}) {
   const offerPublish = opts.offerPublish !== false;
@@ -42,11 +44,13 @@ export async function annotate(slugArg, opts = {}) {
   let cover = trip.cover;
 
   let aborted = false;
-  const onCancel = () => {
-    aborted = true;
-    return false;
-  };
-  const askLocal = (q) => prompts(q, { onCancel });
+  const askLocal = (q) =>
+    prompts(q, {
+      onCancel: () => {
+        aborted = true;
+        return false;
+      },
+    });
 
   const save = () => {
     const merged = {};
@@ -54,44 +58,59 @@ export async function annotate(slugArg, opts = {}) {
     writeTrip(P, slug, { trip: { ...trip, cover }, annotations: merged });
   };
 
-  ui.heading(`Annotate: ${trip.title || slug} — ${photos.length} photos`);
-  ui.info('Enter keeps the current value. Ctrl-C / Esc saves progress and exits.');
+  // Store an annotation, keeping it empty where it just matches EXIF (so the
+  // site's EXIF fallback still applies and annotations.yaml stays lean).
+  const apply = (p, { species, caption, title }) => {
+    const cap = (caption || '').trim();
+    ann[p.file] = {
+      title: (title || '').trim() || null,
+      species: arraysEqual(species, p.species || []) ? [] : species,
+      caption: cap && cap !== (p.caption || '') ? cap : null,
+    };
+  };
 
+  ui.heading(`Annotate: ${trip.title || slug} — ${photos.length} photos`);
+  ui.info('Type a species then Enter to add it. Use the menu actions to set cover, skip, or finish early.');
+  ui.info('Ctrl-C / Esc saves progress and exits.');
+
+  let finished = false;
   for (let i = 0; i < photos.length; i++) {
     const p = photos[i];
-    const cur = ann[p.file] ?? { title: null, species: [], caption: null };
+    const a0 = ann[p.file] ?? {};
+    const curSpecies = a0.species && a0.species.length ? a0.species : p.species || [];
+    const curCaption = a0.caption ?? p.caption ?? '';
+    const curTitle = a0.title ?? '';
 
-    ui.heading(`[${i + 1}/${photos.length}] ${p.file}${cover === p.file ? pc.cyan(' (cover)') : ''}`);
+    ui.heading(`[${i + 1}/${photos.length}] ${p.file}${cover === p.file ? pc.cyan(' ★ cover') : ''}`);
+    ui.info(
+      `current → species: ${curSpecies.join(', ') || '—'} | caption: ${curCaption || '—'} | title: ${curTitle || '—'}`,
+    );
     await openInViewer(P, slug, p.file);
-    if (cur.title || cur.caption || (cur.species || []).length) {
-      ui.info(
-        `current → title: ${cur.title || '—'} | species: ${(cur.species || []).join(', ') || '—'} | caption: ${
-          cur.caption || '—'
-        }`,
-      );
+
+    const hub = await speciesHub({
+      askLocal,
+      pool,
+      current: curSpecies,
+      isCover: () => cover === p.file,
+      markCover: () => {
+        cover = p.file;
+        ui.ok(`cover → ${p.file}`);
+      },
+    });
+    if (aborted) break;
+    if (hub.action === 'skip') continue;
+    if (hub.action === 'finish') {
+      apply(p, { species: hub.species, caption: curCaption, title: curTitle });
+      finished = true;
+      break;
     }
 
-    const t = await askLocal({ type: 'text', name: 'v', message: 'Title', initial: cur.title || '' });
+    const c = await askLocal({ type: 'text', name: 'v', message: `Caption ${hint(curCaption)}`, initial: curCaption });
+    if (aborted) break;
+    const t = await askLocal({ type: 'text', name: 'v', message: `Title ${hint(curTitle)}`, initial: curTitle });
     if (aborted) break;
 
-    const species = await promptSpecies(askLocal, pool, cur.species || [], () => aborted);
-    if (aborted) break;
-
-    const c = await askLocal({ type: 'text', name: 'v', message: 'Caption', initial: cur.caption || '' });
-    if (aborted) break;
-
-    ann[p.file] = {
-      title: (t.v || '').trim() || null,
-      species,
-      caption: (c.v || '').trim() || null,
-    };
-
-    if (cover !== p.file) {
-      const mk = await askLocal({ type: 'confirm', name: 'v', message: 'Make this the cover photo?', initial: false });
-      if (aborted) break;
-      if (mk.v) cover = p.file;
-    }
-
+    apply(p, { species: hub.species, caption: c.v, title: t.v });
     save();
     ui.ok(`saved ${p.file}`);
   }
@@ -101,38 +120,65 @@ export async function annotate(slugArg, opts = {}) {
     ui.info('\nStopped — progress saved.');
     return;
   }
-
-  ui.ok('\nAll photos annotated.');
-  ui.info('Tip: run `photosite preview` to review before publishing.');
+  ui.ok(finished ? '\nFinished early — progress saved.' : '\nAll photos annotated.');
+  ui.info('Tip: `photosite preview` to review, then `photosite push` to publish.');
   if (offerPublish) await maybePublish({ root, upload: true, message: `Annotate trip: ${trip.title || slug}` });
 }
 
-// Repeatedly autocomplete species from the global pool; allow adding new names;
-// a "✓ done" sentinel ends the list. Mutates `pool` so new names autocomplete next.
-async function promptSpecies(askLocal, pool, current, isAborted) {
+// Species picker + per-photo action menu. Returns { species, action } where
+// action is 'next' (go to caption/title), 'skip' (leave photo unchanged), or
+// 'finish' (stop after this photo). Mutates `pool` so new names autocomplete.
+async function speciesHub({ askLocal, pool, current, isCover, markCover }) {
   const chosen = [...current];
   for (;;) {
+    const menu = [
+      { title: chosen.length ? `✓ done (species: ${chosen.join(', ')})` : '✓ done — next field', value: '__done__' },
+      ...(isCover() ? [] : [{ title: '★ set as cover photo', value: '__cover__' }]),
+      ...(chosen.length ? [{ title: '✗ clear species', value: '__clear__' }] : []),
+      { title: '⊘ skip this photo (no change)', value: '__skip__' },
+      { title: '■ finish & save (skip remaining photos)', value: '__finish__' },
+    ];
+    const speciesChoices = pool.map((s) => ({ title: s, value: s }));
+
     const res = await askLocal({
       type: 'autocomplete',
       name: 'sp',
-      message: chosen.length ? `Species [${chosen.join(', ')}] — add more or ✓ done` : 'Species — type to search/add, or ✓ done',
-      limit: 8,
-      choices: [{ title: '✓ done', value: '__done__' }, ...pool.map((s) => ({ title: s, value: s }))],
-      suggest: async (input, choices) => {
+      message: 'Species — type to add/search, or pick an action',
+      limit: 10,
+      choices: [...menu, ...speciesChoices],
+      // When typing, surface the typed value (or matches) FIRST so Enter adds it
+      // rather than landing on a menu item. Empty input shows the action menu.
+      suggest: async (input) => {
         const v = input.trim();
+        if (!v) return [...menu, ...speciesChoices];
         const lower = v.toLowerCase();
-        const filtered = choices.filter((c) => c.value === '__done__' || c.title.toLowerCase().includes(lower));
-        if (v && !pool.some((s) => s.toLowerCase() === lower)) {
-          filtered.push({ title: `＋ add "${v}"`, value: v });
-        }
-        return filtered;
+        const exact = pool.some((s) => s.toLowerCase() === lower);
+        const matches = pool
+          .filter((s) => s.toLowerCase().includes(lower))
+          .sort((a, b) => Number(b.toLowerCase() === lower) - Number(a.toLowerCase() === lower))
+          .map((s) => ({ title: s, value: s }));
+        const addOpt = { title: `＋ add "${v}"`, value: v };
+        // Existing matches first (Enter picks the closest), add-new at the end.
+        // No match (e.g. a fully-typed new name) → add-new is the only/first option.
+        if (exact) return matches;
+        return matches.length ? [...matches, addOpt] : [addOpt];
       },
     });
-    if (isAborted()) return chosen;
-    const sp = res.sp;
-    if (sp === undefined || sp === '__done__' || sp === '') break;
-    if (!chosen.includes(sp)) chosen.push(sp);
-    if (!pool.includes(sp)) pool.push(sp);
+
+    const v = res.sp;
+    if (v === undefined) return { species: chosen, action: 'next' }; // cancelled (aborted flag set by caller)
+    if (v === '__done__') return { species: chosen, action: 'next' };
+    if (v === '__skip__') return { species: current, action: 'skip' };
+    if (v === '__finish__') return { species: chosen, action: 'finish' };
+    if (v === '__clear__') {
+      chosen.length = 0;
+      continue;
+    }
+    if (v === '__cover__') {
+      markCover();
+      continue;
+    }
+    if (v && !chosen.includes(v)) chosen.push(v);
+    if (v && !pool.includes(v)) pool.push(v);
   }
-  return chosen;
 }
