@@ -1,0 +1,16 @@
+#!/bin/sh
+# Opt-in secret scan. Enable once per clone with:
+#   git config core.hooksPath .githooks
+#
+# Runs gitleaks against staged changes if it is installed; otherwise it is a
+# friendly no-op so contributors without gitleaks aren't blocked.
+
+if command -v gitleaks >/dev/null 2>&1; then
+  if ! gitleaks protect --staged --redact --no-banner; then
+    echo "✗ gitleaks found potential secrets in staged changes. Commit aborted." >&2
+    echo "  Review the findings above, or run 'git commit --no-verify' to override." >&2
+    exit 1
+  fi
+else
+  echo "! gitleaks not installed; skipping secret scan (brew install gitleaks)." >&2
+fi

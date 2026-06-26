@@ -1,0 +1,19 @@
+# dependencies
+node_modules/
+
+# secrets — R2 credentials live only in rclone's own config, never here
+.env
+.env.local
+secrets*
+*.local.*
+
+# site build output and Astro cache
+site/dist/
+site/.astro/
+
+# local derivative cache used for offline preview (see DESIGN.md §6)
+site/.image-cache/
+
+# misc
+.DS_Store
+*.log

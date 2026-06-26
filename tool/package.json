@@ -1,0 +1,22 @@
+{
+  "name": "photosite-tool",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local CLI that manages the photosite portfolio (LOCAL ONLY, never deployed).",
+  "type": "module",
+  "bin": {
+    "photosite": "./bin/photosite.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "commander": "^12.1.0",
+    "execa": "^9.5.2",
+    "js-yaml": "^4.1.0",
+    "picocolors": "^1.1.1",
+    "prompts": "^2.4.2",
+    "sharp": "^0.33.5",
+    "smol-toml": "^1.3.1"
+  }
+}
