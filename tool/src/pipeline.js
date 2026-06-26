@@ -22,6 +22,13 @@ export function fileStem(filename) {
   return base.toLowerCase().replace(/[^a-z0-9._-]+/g, '-').replace(/^-+|-+$/g, '');
 }
 
+// Map an R2 object key back to its source stem: strip a "-<width>.webp" variant
+// suffix or a ".jpg"/".webp" extension. Used for orphan detection.
+export function keyToStem(key) {
+  const base = key.replace(/^.*\//, '');
+  return base.replace(/-\d+\.webp$/i, '').replace(/\.(jpe?g|webp)$/i, '');
+}
+
 const round = (n, p = 4) => Number(n.toFixed(p));
 
 // Process one source image into `outDir`. Returns image-derived fields (keys,
