@@ -5,6 +5,7 @@
 
 [site]
 title = "Below the Surface"
+author = "Andrew Karnani"                    # used for the footer copyright / byline
 publicBaseUrl = "https://img.example.com"   # R2 custom domain (no trailing slash)
 
 [r2]

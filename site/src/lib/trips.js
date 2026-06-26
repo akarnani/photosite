@@ -108,11 +108,14 @@ export function coverPhoto(trip) {
 // Site-wide config (title) read from the repo's photosite.config.toml. Falls
 // back gracefully so the site still builds without it.
 export function siteConfig() {
+  const fallback = { title: 'Below the Surface', author: '' };
   try {
     const toml = fs.readFileSync(path.join(process.cwd(), '..', 'photosite.config.toml'), 'utf8');
-    const title = (toml.match(/title\s*=\s*["']([^"']+)["']/) || [])[1] || 'Below the Surface';
-    return { title };
+    return {
+      title: (toml.match(/title\s*=\s*["']([^"']+)["']/) || [])[1] || fallback.title,
+      author: (toml.match(/author\s*=\s*["']([^"']+)["']/) || [])[1] || fallback.author,
+    };
   } catch {
-    return { title: 'Below the Surface' };
+    return fallback;
   }
 }

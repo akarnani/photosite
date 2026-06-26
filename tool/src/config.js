@@ -5,7 +5,7 @@ import { CONFIG_FILENAME } from './paths.js';
 import path from 'node:path';
 
 export const DEFAULT_CONFIG = {
-  site: { title: 'Below the Surface', publicBaseUrl: 'https://img.example.com' },
+  site: { title: 'Below the Surface', author: '', publicBaseUrl: 'https://img.example.com' },
   r2: { remote: 'r2', bucket: 'dive-photos' },
   images: { widths: [480, 960, 1600, 2400], quality: 80, fallbackWidth: 1600 },
   keywords: { speciesFromKeywords: false, speciesRoot: 'Species' },

@@ -303,6 +303,7 @@ arrays.
 ```toml
 [site]
 title = "Below the Surface"
+author = "Andrew Karnani"                    # footer copyright / byline
 publicBaseUrl = "https://img.example.com"   # R2 custom domain
 
 [r2]

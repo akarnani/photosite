@@ -9,6 +9,7 @@ const { title, description } = Astro.props;
 const site = siteConfig();
 const fullTitle = title ? `${title} · ${site.title}` : site.title;
 const desc = description || 'An underwater photography portfolio — trips, a map, and the species along the way.';
+const year = new Date().getFullYear();
 ---
 
 <!doctype html>
@@ -47,7 +48,7 @@ const desc = description || 'An underwater photography portfolio — trips, a ma
       <slot />
     </main>
     <footer class="site-footer">
-      <p>{site.title} — built with Astro, mapped with Leaflet &amp; CARTO. Images on Cloudflare R2.</p>
+      <p>Photographs ©&nbsp;{year}{site.author ? ` ${site.author}` : ''}. All rights reserved.</p>
     </footer>
   </body>
 </html>

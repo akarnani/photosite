@@ -32,6 +32,7 @@ export async function setup() {
   // 3. Core prompts.
   const a = await ui.ask([
     { type: 'text', name: 'title', message: 'Site title', initial: cur.site.title },
+    { type: 'text', name: 'author', message: 'Photographer name (footer copyright)', initial: cur.site.author },
     {
       type: 'text',
       name: 'publicBaseUrl',
@@ -93,7 +94,7 @@ export async function setup() {
 
   // 7. Save non-secret config.
   saveConfig(root, {
-    site: { title: a.title, publicBaseUrl: stripTrailingSlash(a.publicBaseUrl) },
+    site: { title: a.title, author: a.author || '', publicBaseUrl: stripTrailingSlash(a.publicBaseUrl) },
     r2: { remote: a.remote, bucket: a.bucket },
     images,
     keywords: { speciesFromKeywords, speciesRoot },
