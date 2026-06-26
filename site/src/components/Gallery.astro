@@ -66,6 +66,7 @@ const lbData = photos.map((p) => ({
       <figure>
         <img alt="" />
         <figcaption>
+          <span class="lb-title"></span>
           <span class="lb-species"></span>
           <p class="lb-note"></p>
           <span class="lb-exif"></span>
@@ -74,10 +75,16 @@ const lbData = photos.map((p) => ({
     document.body.appendChild(overlay);
 
     const img = overlay.querySelector('img');
+    const elTitle = overlay.querySelector('.lb-title');
     const elSpecies = overlay.querySelector('.lb-species');
     const elNote = overlay.querySelector('.lb-note');
     const elExif = overlay.querySelector('.lb-exif');
     let current = 0;
+
+    const setLine = (el, text) => {
+      el.textContent = text || '';
+      el.style.display = text ? '' : 'none';
+    };
 
     const fmtShutter = (t) => (t >= 1 ? `${t}s` : `1/${Math.round(1 / t)}s`);
     function fmtExif(p) {
@@ -97,9 +104,10 @@ const lbData = photos.map((p) => ({
       img.src = p.fallback;
       img.srcset = p.srcset;
       img.sizes = '90vw';
-      elSpecies.textContent = (p.species || []).join(' · ');
-      elNote.textContent = p.caption || p.title || '';
-      elExif.textContent = fmtExif(p);
+      setLine(elTitle, p.title);
+      setLine(elSpecies, (p.species || []).join(' · '));
+      setLine(elNote, p.caption);
+      setLine(elExif, fmtExif(p));
     }
     function open(i) {
       show(i);

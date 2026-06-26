@@ -363,11 +363,16 @@ section {
   color: var(--mist-dim);
   text-align: center;
 }
+.lightbox .lb-title {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  color: var(--mist);
+}
 .lightbox .lb-species {
   font-family: var(--serif);
   font-style: italic;
   font-size: 1.1rem;
-  color: var(--mist);
+  color: var(--aqua);
 }
 .lightbox .lb-note {
   color: var(--mist);
