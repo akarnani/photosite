@@ -167,6 +167,7 @@ section {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
   gap: clamp(1rem, 0.5rem + 2vw, 2rem);
+  align-items: start; /* cards keep their natural height, tops aligned */
 }
 .trip-card {
   display: block;
@@ -183,9 +184,8 @@ section {
   border-color: var(--aqua-deep);
 }
 .trip-card .cover {
-  aspect-ratio: 3 / 2;
   width: 100%;
-  object-fit: cover;
+  height: auto; /* show the whole cover at its natural ratio — no crop */
   background: var(--depth-700);
 }
 .trip-card .body {
