@@ -45,7 +45,7 @@ photosite setup
 # 3. add a trip from a folder of exported JPEGs
 photosite add-trip --from ~/Exports/raja-ampat
 
-# 4. annotate species & captions (opens each photo, autocompletes species)
+# 4. annotate species & captions (full-screen browser with inline thumbnails)
 photosite annotate
 
 # 5. preview locally — works even before anything is uploaded to R2
@@ -53,6 +53,25 @@ photosite preview
 
 # 6. publish (the CLI offers to commit & push, which triggers the deploy)
 ```
+
+### Annotating & covers (terminal UI)
+
+`photosite annotate` and `photosite cover` open a full-screen browser: a photo
+list on the left and a live **inline thumbnail** on the right (truecolor
+half-blocks — works great in iTerm2 and Ghostty). You don't have to open every
+photo in Preview just to find the one you want.
+
+```
+↑/↓      move through photos          e / Enter   edit the selected photo
+o        open full-size + edit        c           set as cover
+q / Esc  save & quit
+```
+
+In edit mode you set **species** (autocompletes from species you've used
+before), **caption**, and **title**. Changes save as you go. `cover` is the same
+browser in pick mode — Enter sets the cover. Thumbnails come from the local image
+cache (populated by `add-trip`/`update-trip`); both commands need an interactive
+terminal.
 
 ## Cloudflare setup (one time, in the dashboard)
 

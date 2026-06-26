@@ -19,6 +19,8 @@ photosite.config.toml   committed, NON-SECRET project config (TOML)
 tool/                   the CLI — LOCAL ONLY, never deployed. Own package.json.
   bin/photosite.js      commander entry point
   src/                  modules + commands
+  src/tui/              Ink TUI for annotate/cover (App, EditPanel, PhotoList,
+                        Thumbnail, half-block thumb.js renderer)
 site/                   the Astro site — Cloudflare Pages builds this. Own package.json.
   src/content/trips/<slug>/{trip.yaml, photos.json, annotations.yaml}
   .image-cache/         gitignored local derivative cache for offline preview
@@ -49,14 +51,21 @@ deps.
 - rclone: check `listremotes` before create-vs-update; never pass empty creds.
 - Leaflet is loaded once from CDN in `<head>`; component map scripts are `is:inline`.
 - Strip trailing slash from `publicBaseUrl` before joining URLs.
+- TUI (`annotate`/`cover`): **Ink + React via `htm`** (tagged templates — NO JSX
+  build step; keep it that way). Runs on the alternate screen (`runTui`).
+  Thumbnails are truecolor half-blocks (`thumb.js`) rendered from the local
+  `.image-cache/<slug>/<stem>.jpg`; missing cache → "no local preview". Both
+  commands require a TTY (`cover` has a `prompts` fallback; `annotate` errors).
+  `ink`/`react`/`htm`/`ink-text-input` are tool-only deps — never in `site/`.
 
 ## Commands (once `npm link`ed in tool/)
 
 - `photosite setup` — re-runnable config wizard (writes rclone remote + config TOML)
 - `photosite add-trip [--from <folder>] [--no-upload]` — ingest a folder
 - `photosite update-trip [slug] --from <folder> [--prune] [--no-upload]`
-- `photosite annotate [slug]` — guided species/caption/title editor with preview
-- `photosite cover [slug]` — pick the trip cover photo
+- `photosite annotate [slug]` — full-screen TUI: photo list + live thumbnail,
+  edit species/caption/title (see `tool/src/tui/`)
+- `photosite cover [slug]` — same TUI in "cover" mode (Enter sets cover)
 - `photosite preview` — Astro dev server with local-image middleware
 - `photosite push [message]` — commit pending changes and push (triggers deploy)
 - `photosite list`
