@@ -1,0 +1,29 @@
+---
+import Base from '../../layouts/Base.astro';
+import PhotoMap from '../../components/PhotoMap.astro';
+import Gallery from '../../components/Gallery.astro';
+import { getTrips, getTrip, pointsForTrip } from '../../lib/trips.js';
+
+export function getStaticPaths() {
+  return getTrips().map((t) => ({ params: { slug: t.slug } }));
+}
+
+const { slug } = Astro.params;
+const trip = getTrip(slug);
+const points = pointsForTrip(trip);
+const eyebrow = [trip.location?.name, trip.dates].filter(Boolean).join(' · ');
+---
+
+<Base title={trip.title} description={trip.summary}>
+  <section class="stack">
+    <header class="trip-header">
+      {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+      <h1>{trip.title}</h1>
+      {trip.summary && <p>{trip.summary}</p>}
+    </header>
+
+    <PhotoMap points={points} id={`map-${trip.slug}`} cluster={false} height="360px" caption="Where these were taken" />
+
+    <Gallery photos={trip.photos} />
+  </section>
+</Base>

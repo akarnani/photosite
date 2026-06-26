@@ -1,0 +1,52 @@
+---
+// A Leaflet map of GPS points. Renders nothing when there are no points.
+// Props: points [{lat,lon,title,thumb,href}], id, cluster, height, caption.
+const { points = [], id, cluster = false, height = '380px', caption } = Astro.props;
+const hasPoints = points.length > 0;
+---
+
+{
+  hasPoints && (
+    <Fragment>
+      <figure class="map-frame">
+        <div id={id} class="map" style={`height:${height}`} />
+        {caption && <figcaption>{caption}</figcaption>}
+      </figure>
+
+      <script is:inline define:vars={{ points, id, cluster }}>
+        (function () {
+          if (typeof L === 'undefined') return;
+          const map = L.map(id, { scrollWheelZoom: false }).setView([0, 0], 2);
+          L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; OpenStreetMap, &copy; CARTO',
+            subdomains: 'abcd',
+            maxZoom: 19,
+          }).addTo(map);
+
+          const useCluster = cluster && typeof L.markerClusterGroup === 'function';
+          const layer = useCluster ? L.markerClusterGroup() : L.layerGroup();
+          const latlngs = [];
+
+          for (const p of points) {
+            const marker = L.circleMarker([p.lat, p.lon], {
+              radius: 6,
+              color: '#58d2c6',
+              weight: 2,
+              fillColor: '#58d2c6',
+              fillOpacity: 0.5,
+            });
+            const thumb = p.thumb ? `<img src="${p.thumb}" alt="" />` : '';
+            const title = (p.title || '').replace(/</g, '&lt;');
+            marker.bindPopup(`<a class="map-pop" href="${p.href}">${thumb}<span>${title}</span></a>`);
+            layer.addLayer(marker);
+            latlngs.push([p.lat, p.lon]);
+          }
+          map.addLayer(layer);
+
+          if (latlngs.length === 1) map.setView(latlngs[0], 9);
+          else map.fitBounds(latlngs, { padding: [30, 30] });
+        })();
+      </script>
+    </Fragment>
+  )
+}

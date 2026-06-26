@@ -1,0 +1,132 @@
+---
+// Masonry gallery of <picture> elements + a click-to-open lightbox.
+// Props: photos (already merged: file, width, height, ratio, lqip, fallback,
+// srcset, species, caption, title, exposure, camera, lens).
+const { photos = [] } = Astro.props;
+
+const SIZES = '(min-width:1300px) 25vw, (min-width:900px) 33vw, (min-width:540px) 50vw, 100vw';
+const srcsetStr = (p) => p.srcset.map((s) => `${s.url} ${s.w}w`).join(', ');
+
+// Minimal per-photo data the lightbox needs, embedded as JSON.
+const lbData = photos.map((p) => ({
+  fallback: p.fallback,
+  srcset: srcsetStr(p),
+  species: p.species || [],
+  caption: p.caption || null,
+  title: p.title || null,
+  exposure: p.exposure || null,
+  camera: p.camera || null,
+  lens: p.lens || null,
+}));
+---
+
+<div class="gallery" data-gallery>
+  {
+    photos.map((p, i) => (
+      <button class="shot" id={p.id} data-index={i} style={`aspect-ratio:${p.ratio}`} aria-label={p.title || p.species?.[0] || p.file}>
+        <picture>
+          <source type="image/webp" srcset={srcsetStr(p)} sizes={SIZES} />
+          <img
+            src={p.fallback}
+            width={p.width}
+            height={p.height}
+            alt={p.title || p.species?.[0] || ''}
+            loading="lazy"
+            decoding="async"
+            style={`background-image:url(${p.lqip})`}
+          />
+        </picture>
+        {(p.species?.length || p.caption) && (
+          <span class="shot-meta">
+            {p.species?.length ? <em class="species">{p.species.join(' · ')}</em> : null}
+            {p.caption ? <span class="note">{p.caption}</span> : null}
+          </span>
+        )}
+      </button>
+    ))
+  }
+</div>
+
+<script type="application/json" data-lightbox-data set:html={JSON.stringify(lbData)} />
+
+<script>
+  // One lightbox per page, shared across galleries. Vanilla, no dependency.
+  function initLightbox() {
+    const dataEl = document.querySelector('[data-lightbox-data]');
+    const gallery = document.querySelector('[data-gallery]');
+    if (!dataEl || !gallery) return;
+    const photos = JSON.parse(dataEl.textContent || '[]');
+
+    const overlay = document.createElement('div');
+    overlay.className = 'lightbox';
+    overlay.innerHTML = `
+      <button class="lb-close" aria-label="Close">×</button>
+      <button class="lb-prev" aria-label="Previous">‹</button>
+      <button class="lb-next" aria-label="Next">›</button>
+      <figure>
+        <img alt="" />
+        <figcaption>
+          <span class="lb-species"></span>
+          <p class="lb-note"></p>
+          <span class="lb-exif"></span>
+        </figcaption>
+      </figure>`;
+    document.body.appendChild(overlay);
+
+    const img = overlay.querySelector('img');
+    const elSpecies = overlay.querySelector('.lb-species');
+    const elNote = overlay.querySelector('.lb-note');
+    const elExif = overlay.querySelector('.lb-exif');
+    let current = 0;
+
+    const fmtShutter = (t) => (t >= 1 ? `${t}s` : `1/${Math.round(1 / t)}s`);
+    function fmtExif(p) {
+      const e = p.exposure || {};
+      const parts = [];
+      if (e.fNumber != null) parts.push(`f/${e.fNumber}`);
+      if (e.exposureTime != null) parts.push(fmtShutter(e.exposureTime));
+      if (e.iso != null) parts.push(`ISO ${e.iso}`);
+      if (e.focalLength != null) parts.push(`${e.focalLength}mm`);
+      const gear = [p.camera, p.lens].filter(Boolean).join(' · ');
+      return [parts.join(' · '), gear].filter(Boolean).join('  —  ');
+    }
+
+    function show(i) {
+      current = (i + photos.length) % photos.length;
+      const p = photos[current];
+      img.src = p.fallback;
+      img.srcset = p.srcset;
+      img.sizes = '90vw';
+      elSpecies.textContent = (p.species || []).join(' · ');
+      elNote.textContent = p.caption || p.title || '';
+      elExif.textContent = fmtExif(p);
+    }
+    function open(i) {
+      show(i);
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function close() {
+      overlay.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    gallery.querySelectorAll('.shot').forEach((btn) => {
+      btn.addEventListener('click', () => open(Number(btn.dataset.index)));
+    });
+    overlay.querySelector('.lb-close').addEventListener('click', close);
+    overlay.querySelector('.lb-prev').addEventListener('click', () => show(current - 1));
+    overlay.querySelector('.lb-next').addEventListener('click', () => show(current + 1));
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) close();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (!overlay.classList.contains('open')) return;
+      if (e.key === 'Escape') close();
+      else if (e.key === 'ArrowLeft') show(current - 1);
+      else if (e.key === 'ArrowRight') show(current + 1);
+    });
+  }
+
+  initLightbox();
+</script>

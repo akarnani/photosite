@@ -1,0 +1,49 @@
+---
+// HTML shell. Loads Leaflet + MarkerCluster from CDN ONCE in <head>,
+// synchronously, so the global `L` is available to component is:inline scripts
+// (DESIGN.md §13.7).
+import '../styles/global.css';
+import { siteConfig } from '../lib/trips.js';
+
+const { title, description } = Astro.props;
+const site = siteConfig();
+const fullTitle = title ? `${title} · ${site.title}` : site.title;
+const desc = description || 'An underwater photography portfolio — trips, a map, and the species along the way.';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={desc} />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJ7sCK7AfLM9q6q+9q0a/i+8R3WIY="
+      crossorigin=""
+      is:inline></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js" is:inline></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/">{site.title}</a>
+      <nav><a href="/">Trips</a></nav>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <p>{site.title} — built with Astro, mapped with Leaflet &amp; CARTO. Images on Cloudflare R2.</p>
+    </footer>
+  </body>
+</html>
