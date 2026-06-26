@@ -1,24 +1,22 @@
 # photosite project config — committed, NON-SECRET.
-# Identical for anyone who clones. Bucket names and public URLs are not secrets;
-# they appear in shipped HTML. R2 credentials live only in your rclone remote.
-# Edit by hand or re-run `photosite setup`.
+# Bucket names and public URLs are not secrets; they ship in HTML. R2
+# credentials live only in your rclone remote. Re-run `photosite setup` to edit.
 
 [site]
 title = "Below the Surface"
-author = "Andrew Karnani"                    # used for the footer copyright / byline
-publicBaseUrl = "https://img.example.com"   # R2 custom domain (no trailing slash)
+author = "Andrew Karnani"
+publicBaseUrl = "https://img.karnani.io"
 
 [r2]
-remote = "r2"                                # rclone remote name
-bucket = "dive-photos"
+remote = "img-akarnani-r2"
+bucket = "img-akarnani"
 
 [images]
-widths = [480, 960, 1600, 2400]
+widths = [ 480, 960, 1600, 2400 ]
 quality = 80
 fallbackWidth = 1600
 
 [keywords]
-# Set true only once you've verified Capture One exports preserve the keyword
-# hierarchy (see DESIGN.md §11). Otherwise species come from annotations.yaml.
 speciesFromKeywords = false
 speciesRoot = "Species"
+
