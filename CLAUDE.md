@@ -69,10 +69,23 @@ Build the site: `cd site && npm run build`. Convenience wrappers in `justfile`.
 - Cancelling a prompt exits cleanly with no partial writes.
 - `<slug>` args are optional; omitting one shows a select list of trips.
 
+## Example trip
+
+`site/src/content/trips/example-raja-ampat/` is a committed placeholder trip
+(R2 URLs point at the non-existent `img.example.com`). Its derivatives under
+`site/.image-cache/example-raja-ampat/` are the ONE cache subtree that is
+committed (a `.gitignore` exception) so `photosite preview` renders it on a
+fresh clone. Delete the trip folder and that cache subtree once real trips exist.
+
 ## Build status
 
-- [x] Phase 1 — scaffold (configs, gitignore, license, hooks, package.json files)
-- [ ] Phase 2 — tool core modules
-- [ ] Phase 3 — tool commands + CLI
-- [ ] Phase 4 — Astro site
-- [ ] Phase 5 — seed example trip + verify build
+All phases complete. `npm run build` (in `site/`) and `photosite preview` both
+render. Verified: GPS signing, no-upscale widths, annotation-over-EXIF merge,
+prod output references R2 only (no `/local-images` leakage), dev middleware
+serves the cache and 302s to R2 on a miss.
+
+- [x] Phase 1 — scaffold
+- [x] Phase 2 — tool core modules
+- [x] Phase 3 — tool commands + CLI
+- [x] Phase 4 — Astro site
+- [x] Phase 5 — seed example trip + verify build

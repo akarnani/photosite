@@ -11,8 +11,11 @@ secrets*
 site/dist/
 site/.astro/
 
-# local derivative cache used for offline preview (see DESIGN.md §6)
-site/.image-cache/
+# local derivative cache used for offline preview (see DESIGN.md §6).
+# Ignore everything except the committed example trip, whose tiny placeholder
+# derivatives are bundled so the site renders on a fresh clone before any upload.
+site/.image-cache/*
+!site/.image-cache/example-raja-ampat/
 
 # misc
 .DS_Store

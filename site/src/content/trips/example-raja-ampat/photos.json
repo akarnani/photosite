@@ -1,0 +1,204 @@
+[
+  {
+    "file": "reef-pano.jpg",
+    "width": 1600,
+    "height": 667,
+    "ratio": 2.4,
+    "lqip": "data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAADQAgCdASoYAAoAPtFUo0uoJKMhsAgBABoJQBadBaSAAP7o1xBltsVH6Fd2edttLiAAAA==",
+    "fallback": "https://img.example.com/example-raja-ampat/reef-pano.jpg",
+    "srcset": [
+      {
+        "url": "https://img.example.com/example-raja-ampat/reef-pano-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.example.com/example-raja-ampat/reef-pano-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.example.com/example-raja-ampat/reef-pano-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.example.com/example-raja-ampat/reef-pano-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-03-08T07:50:00",
+    "gps": {
+      "lat": -0.52,
+      "lon": 130.66
+    },
+    "camera": "Sony ILCE-7M4",
+    "lens": "FE 16-35mm F2.8 GM",
+    "exposure": {
+      "fNumber": 9,
+      "exposureTime": 0.005,
+      "iso": 500,
+      "focalLength": 16
+    },
+    "caption": "Dawn over the reef flat, whole team in the water.",
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "nudibranch.jpg",
+    "width": 1600,
+    "height": 1600,
+    "ratio": 1,
+    "lqip": "data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAAAQAwCdASoYABgAPtFiqk+oJaOiKAgBABoJZQDKABapagAA/uUKzse/B/qVv10UVOki/gAA",
+    "fallback": "https://img.example.com/example-raja-ampat/nudibranch.jpg",
+    "srcset": [
+      {
+        "url": "https://img.example.com/example-raja-ampat/nudibranch-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.example.com/example-raja-ampat/nudibranch-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.example.com/example-raja-ampat/nudibranch-1600.webp",
+        "w": 1600
+      }
+    ],
+    "date": "2025-03-07T15:20:00",
+    "gps": {
+      "lat": -0.59,
+      "lon": 130.69
+    },
+    "camera": "Sony ILCE-7M4",
+    "lens": "FE 90mm F2.8 Macro",
+    "exposure": {
+      "fNumber": 13,
+      "exposureTime": 0.006,
+      "iso": 320,
+      "focalLength": 90
+    },
+    "caption": "Chromodoris on the wall at Cape Kri.",
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "glassfish-cave.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAACwAgCdASoYABAAPtFUo0uoJKMhsAgBABoJYwAAeyAA/u7/n+DLbaH3970tcFoAAAA=",
+    "fallback": "https://img.example.com/example-raja-ampat/glassfish-cave.jpg",
+    "srcset": [
+      {
+        "url": "https://img.example.com/example-raja-ampat/glassfish-cave-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.example.com/example-raja-ampat/glassfish-cave-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.example.com/example-raja-ampat/glassfish-cave-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.example.com/example-raja-ampat/glassfish-cave-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-03-07T08:15:00",
+    "gps": {
+      "lat": -0.48,
+      "lon": 130.64
+    },
+    "camera": "Sony ILCE-7M4",
+    "lens": "FE 16-35mm F2.8 GM",
+    "exposure": {
+      "fNumber": 8,
+      "exposureTime": 0.004,
+      "iso": 640,
+      "focalLength": 20
+    },
+    "caption": "A river of glassfish through a swim-through.",
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "wobbegong.jpg",
+    "width": 1600,
+    "height": 2200,
+    "ratio": 0.7273,
+    "lqip": "data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAADwAgCdASoYACEAPtFmrFCoJaQipWgBABoJZwAAKUNt8AD+4Ll/pOIKQJ9sneLKNwgAAA==",
+    "fallback": "https://img.example.com/example-raja-ampat/wobbegong.jpg",
+    "srcset": [
+      {
+        "url": "https://img.example.com/example-raja-ampat/wobbegong-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.example.com/example-raja-ampat/wobbegong-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.example.com/example-raja-ampat/wobbegong-1600.webp",
+        "w": 1600
+      }
+    ],
+    "date": "2025-03-06T14:40:00",
+    "gps": {
+      "lat": -0.56,
+      "lon": 130.71
+    },
+    "camera": "Sony ILCE-7M4",
+    "lens": "FE 90mm F2.8 Macro",
+    "exposure": {
+      "fNumber": 11,
+      "exposureTime": 0.005,
+      "iso": 400,
+      "focalLength": 90
+    },
+    "caption": "Tasselled wobbegong tucked under a ledge.",
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "manta-cleaning.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAACwAgCdASoYABAAPtFUo0uoJKMhsAgBABoJQAAPZAAA/uveL9Wk0i8/+vWlubc5wAA=",
+    "fallback": "https://img.example.com/example-raja-ampat/manta-cleaning.jpg",
+    "srcset": [
+      {
+        "url": "https://img.example.com/example-raja-ampat/manta-cleaning-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.example.com/example-raja-ampat/manta-cleaning-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.example.com/example-raja-ampat/manta-cleaning-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.example.com/example-raja-ampat/manta-cleaning-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-03-06T09:05:00",
+    "gps": {
+      "lat": -0.502,
+      "lon": 130.672
+    },
+    "camera": "Sony ILCE-7M4",
+    "lens": "FE 16-35mm F2.8 GM",
+    "exposure": {
+      "fNumber": 6.3,
+      "exposureTime": 0.008,
+      "iso": 500,
+      "focalLength": 16
+    },
+    "caption": "Cleaning station at Manta Sandy — three passes overhead.",
+    "species": [],
+    "keywords": []
+  }
+]

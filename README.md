@@ -76,6 +76,18 @@ it. Species can come from `annotations.yaml` (default, via `photosite annotate`)
 or from embedded hierarchical keywords — see [`DESIGN.md`](DESIGN.md) §11 to
 decide which.
 
+## Try it before configuring anything
+
+The repo ships with an example trip (`example-raja-ampat`) using placeholder
+images, so you can see the site immediately:
+
+```sh
+cd site && npm install && npm run dev      # or: photosite preview
+```
+
+Delete `site/src/content/trips/example-raja-ampat/` and
+`site/.image-cache/example-raja-ampat/` once you've added a real trip.
+
 ## Repo layout
 
 | Path | What |
