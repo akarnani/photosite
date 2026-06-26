@@ -34,7 +34,7 @@ program
   .description('Ingest a folder of photos as a new trip')
   .option('--name <name>', 'trip name')
   .option('--location <location>', 'location, e.g. "Raja Ampat, Indonesia"')
-  .option('--dates <dates>', 'dates, e.g. "2025-03-05 to 2025-03-07"')
+  .option('--dates <dates>', 'trip dates label, e.g. "March 2025" (default: derived from photo EXIF)')
   .option('--from <folder>', 'source photo folder')
   .option('--no-upload', 'process & cache locally without uploading to R2')
   .action(run(addTrip));

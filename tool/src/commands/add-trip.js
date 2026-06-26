@@ -7,7 +7,7 @@ import { loadConfig } from '../config.js';
 import * as rclone from '../rclone.js';
 import * as exif from '../exif.js';
 import { slugify, tripExists, writeTrip, stubAnnotations } from '../trips.js';
-import { ingestFolder, validateFolder, centroid } from '../ingest.js';
+import { ingestFolder, validateFolder, centroid, listImages, tripDateLabel } from '../ingest.js';
 import { maybePublish } from '../publish.js';
 import { annotate } from './annotate.js';
 
@@ -28,27 +28,38 @@ export async function addTrip(opts = {}) {
 
   const folderValidate = (v) => (v && isDir(v) ? true : 'Folder not found');
 
+  // Resolve the source folder first, then read EXIF so we can pre-fill the
+  // trip dates from the photos themselves.
+  let from = opts.from;
+  if (!from) {
+    from = (await ui.ask({ type: 'text', name: 'from', message: 'Source photo folder', validate: folderValidate })).from;
+  }
+  validateFolder(from);
+
+  const files = listImages(from);
+  if (!files.length) ui.fail(`No images found in ${from}`);
+  ui.step(`reading metadata for ${files.length} image(s)`);
+  const meta = await exif.readMetadata(files);
+  const dateGuess = tripDateLabel(meta);
+
   const q = [];
   if (!opts.name) q.push({ type: 'text', name: 'name', message: 'Trip name', validate: (v) => (v.trim() ? true : 'Required') });
   if (!opts.location) q.push({ type: 'text', name: 'location', message: 'Location (e.g. "Raja Ampat, Indonesia")' });
-  if (!opts.dates) q.push({ type: 'text', name: 'dates', message: 'Dates (e.g. "2025-03-05 to 2025-03-07")' });
+  if (!opts.dates) q.push({ type: 'text', name: 'dates', message: 'Dates', initial: dateGuess });
   q.push({ type: 'text', name: 'summary', message: 'Short intro paragraph' });
-  if (!opts.from) q.push({ type: 'text', name: 'from', message: 'Source photo folder', validate: folderValidate });
   const ans = await ui.ask(q);
 
   const name = (opts.name || ans.name || '').trim();
   const location = opts.location || ans.location || '';
-  const dates = opts.dates || ans.dates || '';
+  const dates = opts.dates || ans.dates || dateGuess;
   const summary = ans.summary || '';
-  const from = opts.from || ans.from;
-  validateFolder(from);
 
   const slug = slugify(name);
   if (!slug) ui.fail('Could not derive a slug from the trip name.');
   if (tripExists(P, slug)) ui.fail(`Trip "${slug}" already exists. Use \`photosite update-trip ${slug}\`.`);
 
   ui.heading(`Adding trip "${name}" (${slug})`);
-  const records = await ingestFolder({ folder: from, cfg, slug, paths: P, upload });
+  const records = await ingestFolder({ folder: from, cfg, slug, paths: P, upload, meta });
 
   const center = centroid(records);
   const trip = {
