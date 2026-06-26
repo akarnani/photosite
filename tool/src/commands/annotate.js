@@ -1,7 +1,7 @@
-// Guided per-photo annotation. For each photo: opens it in the OS viewer, then
-// a species hub (autocomplete + actions), then caption and title. Defaults show
-// the *effective* current value (annotation, else EXIF). Saves after every photo
-// so finishing early or Ctrl-C never loses prior work.
+// Guided per-photo annotation. Each photo opens in the OS viewer and shows an
+// action menu defaulting to Skip — so you can hammer Enter to move through
+// photos — with Edit to set species/caption/title, plus set-cover and
+// finish-early. Saves after every edited photo so nothing is lost.
 import fs from 'node:fs';
 import path from 'node:path';
 import prompts from 'prompts';
@@ -27,8 +27,7 @@ async function openInViewer(P, slug, file) {
 }
 
 const arraysEqual = (a, b) => a.length === b.length && a.every((x, i) => x === b[i]);
-const dim = (s) => pc.dim(s);
-const hint = (val) => (val ? dim(`(current: ${val})`) : dim('(blank — Enter to skip)'));
+const hint = (val) => (val ? pc.dim(`(current: ${val})`) : pc.dim('(blank — Enter to skip)'));
 
 export async function annotate(slugArg, opts = {}) {
   const offerPublish = opts.offerPublish !== false;
@@ -70,7 +69,7 @@ export async function annotate(slugArg, opts = {}) {
   };
 
   ui.heading(`Annotate: ${trip.title || slug} — ${photos.length} photos`);
-  ui.info('Type a species then Enter to add it. Use the menu actions to set cover, skip, or finish early.');
+  ui.info('Enter skips a photo (default). Choose Edit to set species/caption/title.');
   ui.info('Ctrl-C / Esc saves progress and exits.');
 
   let finished = false;
@@ -87,32 +86,42 @@ export async function annotate(slugArg, opts = {}) {
     );
     await openInViewer(P, slug, p.file);
 
-    const hub = await speciesHub({
-      askLocal,
-      pool,
-      current: curSpecies,
-      isCover: () => cover === p.file,
-      markCover: () => {
+    // Per-photo menu, Skip first (Enter). Loops so "set cover" returns here.
+    let advance = false;
+    while (!advance) {
+      const choices = [
+        { title: 'Skip — leave unchanged', value: 'skip' },
+        { title: 'Edit species / caption / title', value: 'edit' },
+        ...(cover === p.file ? [] : [{ title: 'Set as cover photo', value: 'cover' }]),
+        { title: 'Finish & save (skip remaining photos)', value: 'finish' },
+      ];
+      const { action } = await askLocal({ type: 'select', name: 'action', message: 'Action', choices, initial: 0 });
+      if (aborted) break;
+
+      if (action === 'cover') {
         cover = p.file;
         ui.ok(`cover → ${p.file}`);
-      },
-    });
-    if (aborted) break;
-    if (hub.action === 'skip') continue;
-    if (hub.action === 'finish') {
-      apply(p, { species: hub.species, caption: curCaption, title: curTitle });
-      finished = true;
-      break;
+        continue;
+      }
+      if (action === 'skip') {
+        advance = true;
+      } else if (action === 'finish') {
+        finished = true;
+        advance = true;
+      } else if (action === 'edit') {
+        const species = await editSpecies(askLocal, pool, curSpecies);
+        if (aborted) break;
+        const c = await askLocal({ type: 'text', name: 'v', message: `Caption ${hint(curCaption)}`, initial: curCaption });
+        if (aborted) break;
+        const t = await askLocal({ type: 'text', name: 'v', message: `Title ${hint(curTitle)}`, initial: curTitle });
+        if (aborted) break;
+        apply(p, { species, caption: c.v, title: t.v });
+        save();
+        ui.ok(`saved ${p.file}`);
+        advance = true;
+      }
     }
-
-    const c = await askLocal({ type: 'text', name: 'v', message: `Caption ${hint(curCaption)}`, initial: curCaption });
-    if (aborted) break;
-    const t = await askLocal({ type: 'text', name: 'v', message: `Title ${hint(curTitle)}`, initial: curTitle });
-    if (aborted) break;
-
-    apply(p, { species: hub.species, caption: c.v, title: t.v });
-    save();
-    ui.ok(`saved ${p.file}`);
+    if (aborted || finished) break;
   }
 
   save();
@@ -120,34 +129,29 @@ export async function annotate(slugArg, opts = {}) {
     ui.info('\nStopped — progress saved.');
     return;
   }
-  ui.ok(finished ? '\nFinished early — progress saved.' : '\nAll photos annotated.');
+  ui.ok(finished ? '\nFinished early — progress saved.' : '\nReached the end.');
   ui.info('Tip: `photosite preview` to review, then `photosite push` to publish.');
   if (offerPublish) await maybePublish({ root, upload: true, message: `Annotate trip: ${trip.title || slug}` });
 }
 
-// Species picker + per-photo action menu. Returns { species, action } where
-// action is 'next' (go to caption/title), 'skip' (leave photo unchanged), or
-// 'finish' (stop after this photo). Mutates `pool` so new names autocomplete.
-async function speciesHub({ askLocal, pool, current, isCover, markCover }) {
+// Species picker: type to add/search, pick "done" to finish. Typed values and
+// matches surface first so Enter captures them; "done" is reachable on empty
+// input. Mutates `pool` so newly-added names autocomplete on later photos.
+async function editSpecies(askLocal, pool, current) {
   const chosen = [...current];
   for (;;) {
     const menu = [
-      { title: chosen.length ? `✓ done (species: ${chosen.join(', ')})` : '✓ done — next field', value: '__done__' },
-      ...(isCover() ? [] : [{ title: '★ set as cover photo', value: '__cover__' }]),
+      { title: chosen.length ? `✓ done (species: ${chosen.join(', ')})` : '✓ done — no species', value: '__done__' },
       ...(chosen.length ? [{ title: '✗ clear species', value: '__clear__' }] : []),
-      { title: '⊘ skip this photo (no change)', value: '__skip__' },
-      { title: '■ finish & save (skip remaining photos)', value: '__finish__' },
     ];
     const speciesChoices = pool.map((s) => ({ title: s, value: s }));
 
     const res = await askLocal({
       type: 'autocomplete',
       name: 'sp',
-      message: 'Species — type to add/search, or pick an action',
+      message: 'Species — type to add/search, or ✓ done',
       limit: 10,
       choices: [...menu, ...speciesChoices],
-      // When typing, surface the typed value (or matches) FIRST so Enter adds it
-      // rather than landing on a menu item. Empty input shows the action menu.
       suggest: async (input) => {
         const v = input.trim();
         if (!v) return [...menu, ...speciesChoices];
@@ -158,27 +162,19 @@ async function speciesHub({ askLocal, pool, current, isCover, markCover }) {
           .sort((a, b) => Number(b.toLowerCase() === lower) - Number(a.toLowerCase() === lower))
           .map((s) => ({ title: s, value: s }));
         const addOpt = { title: `＋ add "${v}"`, value: v };
-        // Existing matches first (Enter picks the closest), add-new at the end.
-        // No match (e.g. a fully-typed new name) → add-new is the only/first option.
         if (exact) return matches;
         return matches.length ? [...matches, addOpt] : [addOpt];
       },
     });
 
     const v = res.sp;
-    if (v === undefined) return { species: chosen, action: 'next' }; // cancelled (aborted flag set by caller)
-    if (v === '__done__') return { species: chosen, action: 'next' };
-    if (v === '__skip__') return { species: current, action: 'skip' };
-    if (v === '__finish__') return { species: chosen, action: 'finish' };
+    if (v === undefined || v === '__done__') break;
     if (v === '__clear__') {
       chosen.length = 0;
-      continue;
-    }
-    if (v === '__cover__') {
-      markCover();
       continue;
     }
     if (v && !chosen.includes(v)) chosen.push(v);
     if (v && !pool.includes(v)) pool.push(v);
   }
+  return chosen;
 }
