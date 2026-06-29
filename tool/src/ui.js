@@ -21,7 +21,8 @@ export function fail(msg, code = 1) {
 function showDefault(q) {
   if (!q || typeof q !== 'object') return q;
   if ((q.type === 'text' || q.type === 'number') && q.initial !== undefined && q.initial !== '' && q.initial !== null) {
-    return { ...q, message: `${q.message} ${pc.dim(`[${q.initial}]`)}` };
+    // Use the accent color, not dim — dim is too low-contrast on many themes.
+    return { ...q, message: `${q.message} ${pc.cyan(`[${q.initial}]`)}` };
   }
   return q;
 }
