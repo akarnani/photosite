@@ -16,11 +16,22 @@ export function fail(msg, code = 1) {
   process.exit(code);
 }
 
+// prompts hides `initial` for text/number prompts, so surface it in the message
+// — the user should always see the default they'll accept by pressing Enter.
+function showDefault(q) {
+  if (!q || typeof q !== 'object') return q;
+  if ((q.type === 'text' || q.type === 'number') && q.initial !== undefined && q.initial !== '' && q.initial !== null) {
+    return { ...q, message: `${q.message} ${pc.dim(`[${q.initial}]`)}` };
+  }
+  return q;
+}
+
 // Wrap prompts() so that cancelling (Ctrl-C / Esc) exits cleanly with no
 // partial writes, instead of returning a half-filled answers object.
 export async function ask(questions) {
+  const list = (Array.isArray(questions) ? questions : [questions]).map(showDefault);
   let cancelled = false;
-  const answers = await prompts(questions, {
+  const answers = await prompts(list, {
     onCancel: () => {
       cancelled = true;
       return false; // stop asking remaining questions
