@@ -6,7 +6,7 @@ import { requireRepoRoot, paths } from '../paths.js';
 import { readTrip, writeTrip, collectSpecies } from '../trips.js';
 import { fileStem } from '../pipeline.js';
 import { resolveSlug } from '../select.js';
-import { maybePublish } from '../publish.js';
+import { commitAndPush } from '../publish.js';
 import { runTui } from '../tui/render.js';
 import { openImage } from '../viewer.js';
 
@@ -29,6 +29,7 @@ export async function annotate(slugArg, opts = {}) {
     writeTrip(P, slug, { trip: { ...trip, cover }, annotations: merged });
   };
 
+  const result = { publish: false };
   await runTui({
     mode: 'annotate',
     title: trip.title || slug,
@@ -40,9 +41,14 @@ export async function annotate(slugArg, opts = {}) {
     stemOf: fileStem,
     persist,
     openViewer: (f) => openImage(path.join(cacheDir, `${fileStem(f)}.jpg`)),
+    offerPublish,
+    result,
   });
 
   ui.ok('Annotations saved.');
-  ui.info('Tip: `photosite preview` to review, then `photosite push` to publish.');
-  if (offerPublish) await maybePublish({ root, upload: true, message: `Annotate trip: ${trip.title || slug}` });
+  if (result.publish) {
+    await commitAndPush({ root, message: opts.publishMessage || `Annotate trip: ${trip.title || slug}` });
+  } else if (offerPublish) {
+    ui.info('Run `photosite preview` to review, then `photosite push` to publish.');
+  }
 }

@@ -75,11 +75,14 @@ export async function addTrip(opts = {}) {
   ui.ok(`wrote ${path.relative(root, P.tripDir(slug))}/ (${records.length} photos)`);
   ui.info(`annotations: ${path.relative(root, path.join(P.tripDir(slug), 'annotations.yaml'))}`);
 
+  // Ask BEFORE launching the TUI (a readline prompt can't run after it). If we
+  // annotate, the TUI itself offers to publish; otherwise prompt here.
   if (await ui.confirm('Annotate species & captions now?', true)) {
-    await annotate(slug, { offerPublish: false });
+    await annotate(slug, { offerPublish: upload, publishMessage: `Add trip: ${name}` });
+    if (!upload) ui.info('Images not uploaded (--no-upload); upload then `photosite push`.');
+  } else {
+    await maybePublish({ root, upload, message: `Add trip: ${name}` });
   }
-
-  await maybePublish({ root, upload, message: `Add trip: ${name}` });
 }
 
 function isDir(p) {

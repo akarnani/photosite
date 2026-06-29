@@ -23,13 +23,29 @@ function StatusBar({ eff, mode }) {
   </${Box}>`;
 }
 
-export default function App({ mode, title, photos, initialAnn, initialCover, pool, cacheDir, stemOf, persist, openViewer }) {
+export default function App({ mode, title, photos, initialAnn, initialCover, pool, cacheDir, stemOf, persist, openViewer, offerPublish, result }) {
   const { exit } = useApp();
   const size = useTerminalSize();
   const [ann, setAnn] = useState(initialAnn);
   const [cover, setCover] = useState(initialCover);
   const [index, setIndex] = useState(0);
   const [editing, setEditing] = useState(false);
+  const [quitting, setQuitting] = useState(false);
+
+  // Quitting: if we can offer to publish, ask inside the TUI (a readline prompt
+  // after Ink exits can't read stdin); otherwise just leave.
+  const requestQuit = () => (offerPublish ? setQuitting(true) : exit());
+  const finishQuit = (publish) => {
+    if (result) result.publish = publish;
+    exit();
+  };
+  useInput(
+    (input, key) => {
+      if (input === 'y' || input === 'Y') return finishQuit(true);
+      if (input === 'n' || input === 'N' || key.escape || key.return) return finishQuit(false);
+    },
+    { isActive: quitting },
+  );
 
   const p = photos[index];
   const eff = effective(p, ann[p.file]);
@@ -55,8 +71,7 @@ export default function App({ mode, title, photos, initialAnn, initialCover, poo
 
   useInput(
     (input, key) => {
-      if (editing) return;
-      if (input === 'q' || key.escape) return exit();
+      if (input === 'q' || key.escape) return requestQuit();
       if (key.upArrow || input === 'k') return setIndex((i) => Math.max(0, i - 1));
       if (key.downArrow || input === 'j') return setIndex((i) => Math.min(photos.length - 1, i + 1));
       if (input === 'o') {
@@ -73,7 +88,7 @@ export default function App({ mode, title, photos, initialAnn, initialCover, poo
         setEditing(true);
       }
     },
-    { isActive: !editing },
+    { isActive: !editing && !quitting },
   );
 
   return html`<${Box} flexDirection="column" width=${size.columns} height=${size.rows}>
@@ -90,16 +105,20 @@ export default function App({ mode, title, photos, initialAnn, initialCover, poo
       </${Box}>`}
     </${Box}>
 
-    ${editing
-      ? html`<${EditPanel}
-          initial=${eff}
-          pool=${pool}
-          onCommit=${(vals) => {
-            saveAnn(p.file, toAnnotation(p, vals));
-            setEditing(false);
-          }}
-          onCancel=${() => setEditing(false)}
-        />`
-      : html`<${StatusBar} eff=${eff} mode=${mode} />`}
+    ${quitting
+      ? html`<${Box} marginTop=${1}>
+          <${Text} color="cyan">Commit &amp; push now? </${Text}><${Text} dimColor>(y / N) — triggers the deploy</${Text}>
+        </${Box}>`
+      : editing
+        ? html`<${EditPanel}
+            initial=${eff}
+            pool=${pool}
+            onCommit=${(vals) => {
+              saveAnn(p.file, toAnnotation(p, vals));
+              setEditing(false);
+            }}
+            onCancel=${() => setEditing(false)}
+          />`
+        : html`<${StatusBar} eff=${eff} mode=${mode} />`}
   </${Box}>`;
 }

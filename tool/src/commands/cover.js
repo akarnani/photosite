@@ -46,6 +46,7 @@ export async function cover(slugArg) {
       writeTrip(P, slug, { trip: { ...trip, cover } });
     },
     openViewer: (f) => openImage(path.join(cacheDir, `${fileStem(f)}.jpg`)),
+    offerPublish: false,
   });
   ui.ok(`cover set to ${chosen}`);
 }
