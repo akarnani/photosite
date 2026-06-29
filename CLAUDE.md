@@ -69,8 +69,10 @@ deps.
   edit species/caption/title (see `tool/src/tui/`)
 - `photosite cover [slug]` — same TUI in "cover" mode (Enter sets cover)
 - `photosite preview` — Astro dev server with local-image middleware
-- `photosite upload [slug] [--all]` — push a trip's cached derivatives to R2
-  without reprocessing (for the `--no-upload`-then-upload-later flow)
+- `photosite upload [slug] [--all]` — push cached derivatives to R2 without
+  reprocessing; no slug → uploads the **pending** set (trips processed with
+  `--no-upload`), tracked in gitignored `.image-cache/.upload-state.json`
+  (`state.js`); `list` flags pending trips
 - `photosite push [message]` — commit pending changes and push (triggers deploy)
 - `photosite list`
 

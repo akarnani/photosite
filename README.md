@@ -93,9 +93,15 @@ with fewer than _n_ photos. Annotate any of them afterward with
 ### Process now, upload later
 
 `add-trip`/`add-trips` with `--no-upload` process and cache images locally but
-skip R2 — handy for previewing first or working offline. When you're ready to
-publish them, `photosite upload <slug>` (or `--all`) pushes the already-cached
-derivatives to R2 with no reprocessing, then `photosite push` deploys. (If the
+skip R2 — handy for previewing first or working offline. The tool remembers which trips you haven't uploaded yet, so just:
+
+```sh
+photosite upload          # uploads everything still pending (no slug needed)
+photosite push            # deploy
+```
+
+`photosite list` flags pending trips with `⬆ pending upload`. You can still
+target one with `photosite upload <slug>` or force all with `--all`. (If the
 local cache is gone — e.g. a fresh clone — re-run `update-trip --from <folder>`
 instead.)
 

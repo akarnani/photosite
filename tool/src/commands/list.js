@@ -3,6 +3,7 @@ import pc from 'picocolors';
 import * as ui from '../ui.js';
 import { requireRepoRoot, paths } from '../paths.js';
 import { listTripSlugs, readTrip } from '../trips.js';
+import { pendingSlugs } from '../state.js';
 
 export async function list() {
   const root = requireRepoRoot();
@@ -14,9 +15,11 @@ export async function list() {
     return;
   }
 
+  const pending = new Set(pendingSlugs(P));
   for (const slug of slugs) {
     const { trip, photos } = readTrip(P, slug);
-    console.log(`${pc.bold(trip.title || slug)}  ${pc.dim(`· ${photos.length} photos`)}`);
+    const flag = pending.has(slug) ? `  ${pc.yellow('⬆ pending upload')}` : '';
+    console.log(`${pc.bold(trip.title || slug)}  ${pc.dim(`· ${photos.length} photos`)}${flag}`);
     console.log(`  ${trip.location?.name || '—'} · ${trip.dates || '—'} · ${pc.cyan(slug)}`);
   }
 }

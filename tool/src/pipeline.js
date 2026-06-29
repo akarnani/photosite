@@ -8,6 +8,7 @@ import path from 'node:path';
 import sharp from 'sharp';
 import { stripTrailingSlash } from './config.js';
 import * as rclone from './rclone.js';
+import * as state from './state.js';
 import * as ui from './ui.js';
 
 const IMAGE_EXT = new Set(['.jpg', '.jpeg', '.png', '.tif', '.tiff', '.webp', '.heic', '.heif']);
@@ -128,8 +129,10 @@ export async function run({ files, cfg, slug, paths, upload }) {
         localDir: tmp,
       });
       ui.ok('upload complete');
+      state.markUploaded(paths, slug);
     } else {
       ui.warn('skipped R2 upload (--no-upload); preview uses the local cache');
+      state.markPending(paths, slug);
     }
 
     return images;
