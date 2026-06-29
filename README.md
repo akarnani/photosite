@@ -73,6 +73,23 @@ browser in pick mode — Enter sets the cover. Thumbnails come from the local im
 cache (populated by `add-trip`/`update-trip`); both commands need an interactive
 terminal.
 
+### Adding many trips at once
+
+If you have a parent folder with one subfolder per trip (Capture One nests
+exports a few levels deep — that's fine), `add-trips` scans the whole tree:
+
+```sh
+photosite add-trips ~/Exports        # or: photosite add-trips --from ~/Exports
+```
+
+It finds image folders at any depth (skipping Capture One's `Cache`, `Proxies`,
+etc.), lets you **multiselect** which become trips, then asks title / location /
+dates / summary for each up front (title defaults from the folder name, dates
+from EXIF). Once you've described them all, it processes and uploads everything
+unattended and offers a single commit & push. Use `--min <n>` to hide folders
+with fewer than _n_ photos. Annotate any of them afterward with
+`photosite annotate <slug>`.
+
 ## Cloudflare setup (one time, in the dashboard)
 
 The CLI records values but does **not** create cloud resources. Do these by hand:
