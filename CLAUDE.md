@@ -69,6 +69,8 @@ deps.
   edit species/caption/title (see `tool/src/tui/`)
 - `photosite cover [slug]` — same TUI in "cover" mode (Enter sets cover)
 - `photosite preview` — Astro dev server with local-image middleware
+- `photosite upload [slug] [--all]` — push a trip's cached derivatives to R2
+  without reprocessing (for the `--no-upload`-then-upload-later flow)
 - `photosite push [message]` — commit pending changes and push (triggers deploy)
 - `photosite list`
 

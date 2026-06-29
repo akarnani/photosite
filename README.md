@@ -90,6 +90,15 @@ unattended and offers a single commit & push. Use `--min <n>` to hide folders
 with fewer than _n_ photos. Annotate any of them afterward with
 `photosite annotate <slug>`.
 
+### Process now, upload later
+
+`add-trip`/`add-trips` with `--no-upload` process and cache images locally but
+skip R2 — handy for previewing first or working offline. When you're ready to
+publish them, `photosite upload <slug>` (or `--all`) pushes the already-cached
+derivatives to R2 with no reprocessing, then `photosite push` deploys. (If the
+local cache is gone — e.g. a fresh clone — re-run `update-trip --from <folder>`
+instead.)
+
 ## Cloudflare setup (one time, in the dashboard)
 
 The CLI records values but does **not** create cloud resources. Do these by hand:

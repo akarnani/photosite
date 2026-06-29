@@ -9,6 +9,7 @@ import { updateTrip } from '../src/commands/update-trip.js';
 import { annotate } from '../src/commands/annotate.js';
 import { cover } from '../src/commands/cover.js';
 import { preview } from '../src/commands/preview.js';
+import { upload } from '../src/commands/upload.js';
 import { push } from '../src/commands/push.js';
 import { list } from '../src/commands/list.js';
 
@@ -72,6 +73,13 @@ program
   .action(run(cover));
 
 program.command('preview').description('Run the local preview server').action(run(preview));
+
+program
+  .command('upload')
+  .description("Upload a trip's processed images from the local cache to R2")
+  .argument('[slug]', 'trip slug (prompts if omitted)')
+  .option('--all', 'upload every trip that has a local cache')
+  .action(run(upload));
 
 program
   .command('push')

@@ -79,7 +79,7 @@ export async function addTrip(opts = {}) {
   // annotate, the TUI itself offers to publish; otherwise prompt here.
   if (await ui.confirm('Annotate species & captions now?', true)) {
     await annotate(slug, { offerPublish: upload, publishMessage: `Add trip: ${name}` });
-    if (!upload) ui.info('Images not uploaded (--no-upload); upload then `photosite push`.');
+    if (!upload) ui.info('Images not uploaded (--no-upload); run `photosite upload` then `photosite push`.');
   } else {
     await maybePublish({ root, upload, message: `Add trip: ${name}` });
   }

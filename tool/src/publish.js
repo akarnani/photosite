@@ -20,7 +20,7 @@ export async function commitAndPush({ root, message }) {
 export async function maybePublish({ root, upload, message }) {
   if (upload === false) {
     ui.info('Skipping commit/push — images were not uploaded (--no-upload).');
-    ui.info('Re-run without --no-upload to upload, then `photosite push` to publish.');
+    ui.info('Run `photosite upload` to push the images to R2, then `photosite push` to publish.');
     return;
   }
 
