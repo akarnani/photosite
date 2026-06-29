@@ -4,6 +4,7 @@ import { Command } from 'commander';
 import * as ui from '../src/ui.js';
 import { setup } from '../src/commands/setup.js';
 import { addTrip } from '../src/commands/add-trip.js';
+import { addTrips } from '../src/commands/add-trips.js';
 import { updateTrip } from '../src/commands/update-trip.js';
 import { annotate } from '../src/commands/annotate.js';
 import { cover } from '../src/commands/cover.js';
@@ -39,6 +40,15 @@ program
   .option('--from <folder>', 'source photo folder')
   .option('--no-upload', 'process & cache locally without uploading to R2')
   .action(run(addTrip));
+
+program
+  .command('add-trips')
+  .description('Bulk-ingest trips by scanning a parent folder')
+  .argument('[parent]', 'parent folder to scan (prompts if omitted)')
+  .option('--from <parent>', 'parent folder to scan')
+  .option('--min <n>', 'only list folders with at least n images', '1')
+  .option('--no-upload', 'process & cache locally without uploading to R2')
+  .action(run(addTrips));
 
 program
   .command('update-trip')
