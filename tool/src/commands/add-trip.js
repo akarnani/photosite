@@ -6,8 +6,9 @@ import { requireRepoRoot, paths } from '../paths.js';
 import { loadConfig } from '../config.js';
 import * as rclone from '../rclone.js';
 import * as exif from '../exif.js';
-import { slugify, tripExists, writeTrip, stubAnnotations } from '../trips.js';
-import { ingestFolder, validateFolder, centroid, listImages, tripDateLabel } from '../ingest.js';
+import { slugify, tripExists } from '../trips.js';
+import { validateFolder, listImages, tripDateLabel } from '../ingest.js';
+import { createTrip } from '../create-trip.js';
 import { maybePublish } from '../publish.js';
 import { annotate } from './annotate.js';
 
@@ -59,20 +60,19 @@ export async function addTrip(opts = {}) {
   if (tripExists(P, slug)) ui.fail(`Trip "${slug}" already exists. Use \`photosite update-trip ${slug}\`.`);
 
   ui.heading(`Adding trip "${name}" (${slug})`);
-  const records = await ingestFolder({ folder: from, cfg, slug, paths: P, upload, meta });
-
-  const center = centroid(records);
-  const trip = {
-    title: name,
+  const { count } = await createTrip({
+    cfg,
+    paths: P,
     slug,
-    location: center ? { name: location, lat: center.lat, lon: center.lon } : { name: location },
+    title: name,
+    folder: from,
+    locationName: location,
     dates,
     summary,
-    cover: records[0]?.file ?? null,
-  };
-
-  writeTrip(P, slug, { trip, photos: records, annotations: stubAnnotations(records) });
-  ui.ok(`wrote ${path.relative(root, P.tripDir(slug))}/ (${records.length} photos)`);
+    upload,
+    meta,
+  });
+  ui.ok(`wrote ${path.relative(root, P.tripDir(slug))}/ (${count} photos)`);
   ui.info(`annotations: ${path.relative(root, path.join(P.tripDir(slug), 'annotations.yaml'))}`);
 
   // Ask BEFORE launching the TUI (a readline prompt can't run after it). If we
