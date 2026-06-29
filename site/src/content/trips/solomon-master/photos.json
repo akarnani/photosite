@@ -1,0 +1,842 @@
+[
+  {
+    "file": "IMG_0204.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRrIAAABXRUJQVlA4IKYAAAAQBACdASoYABAAPtFUo0uoJKMhsAgBABoJQBOmUAS34qv6d0Qe0spegAD+7AYFc9v8znUhXS5Ugz9YYF+GVW8VF/wPohO3dFtHhCyiY28Lg4fzW2dBl9+AQCcVxNCWDa2eOBb+oz7BMQzclheaXT750SUPfAFwwfbE5hRRtIq2L3f9f8C2VWQwQUCXtKAdgDDb0Vkxp5tq5tyk0VVTr6S53AyEeAAA",
+    "fallback": "https://img.karnani.io/solomon-master/img_0204.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0204-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0204-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0204-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0204-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-08-23T11:57:56",
+    "gps": {
+      "lat": -8.972,
+      "lon": 160.054
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 18,
+      "exposureTime": 0.004,
+      "iso": 100,
+      "focalLength": 45
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_0203.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRqwAAABXRUJQVlA4IKAAAABwBACdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoR3ABjds1mh7ryUlHF/nAD+uyWZCZ8RotZEFTRjSuwz1qXY9MCBpO0ThFq79KePIU9SNU/iQMsTumE6noCsqBJXqtoqalx5aNEGRi/DdeI89+81g3g6Daguh6VnM2uc0LxQK0uIddd7bXrKUNiGqxU94BBwUEoF/g+T3s0NOtFpeGAA",
+    "fallback": "https://img.karnani.io/solomon-master/img_0203.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0203-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0203-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0203-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0203-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-08-23T11:56:37",
+    "gps": {
+      "lat": -8.972,
+      "lon": 160.054
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 18,
+      "exposureTime": 0.004,
+      "iso": 100,
+      "focalLength": 45
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_0199.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.4998,
+    "lqip": "data:image/webp;base64,UklGRsIAAABXRUJQVlA4ILYAAACQBACdASoYABAAPtFUo0uoJKMhsAgBABoJagCdMoR4GdA0gqyOHJ5+aol4s+AA/SrZRDDZA9CDEeXz5fXd8abtlzeRxQkkQ34ODMuy0WprTbMOBddeXLZl/m4sjBMU6tzN3/8vZ+fQ7MP90P2jcnWmPrnmnZwvn4abzPLjZ4jTnoyG+gjPKFk6hdLCLH41l4TUF5v3+9FtxD0qP26VFxUnXGsWzlUkoK1tPnl9drlEk28JotAAAA==",
+    "fallback": "https://img.karnani.io/solomon-master/img_0199.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0199-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0199-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0199-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0199-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-08-23T11:50:11",
+    "gps": {
+      "lat": -8.972,
+      "lon": 160.054
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 18,
+      "exposureTime": 0.004,
+      "iso": 100,
+      "focalLength": 45
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_0196.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRsgAAABXRUJQVlA4ILwAAACwBACdASoYABAAPtFUo0uoJKMhsAgBABoJbACsB2pTZVoEo/UmCo8tNZs8nC/AAP73gGWHUnGNLjIJS/5zWW881s2jJfTRmc4lPOj3P1jFPs4Nr4Ytb0Wu6GHgw7kLxjnbvVnZjfZhNMAn/F6KRX2hrDN7LDNvwNk59PipOQwdIzLZbaTGoj0C5rKw5M7LxQB8H4A278AQIbMa2i8nVH6ChmMO58QsXKv7t7rCFH4DmFJ35vfh4OeWuAAAAA==",
+    "fallback": "https://img.karnani.io/solomon-master/img_0196.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0196-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0196-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0196-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0196-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-08-23T11:43:43",
+    "gps": {
+      "lat": -8.972,
+      "lon": 160.054
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 18,
+      "exposureTime": 0.004,
+      "iso": 100,
+      "focalLength": 45
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_0195.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRrwAAABXRUJQVlA4ILAAAACQBACdASoYABAAPtFUo0uoJKMhsAgBABoJaACdMoAlqRB8WtnvvGv2V9pp5iAA/qul+BTIlSak7hoAkyf8YOfCPJKvz5AslKz0ssSfyKRW0n6Bqc9UcUxgCqzAIfDpOH4pf7cGshXJE5fl4LHRNNMiUsejHI1l59sWY1sJ0pZGtAacQk/IwApCU1ddtEofd8PZ6QCHUOzhKtQMVSgwKs7uw774IFSo+b2Nq2FH5mwAAA==",
+    "fallback": "https://img.karnani.io/solomon-master/img_0195.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0195-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0195-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0195-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0195-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-08-23T11:40:39",
+    "gps": {
+      "lat": -8.972,
+      "lon": 160.054
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 18,
+      "exposureTime": 0.004,
+      "iso": 100,
+      "focalLength": 45
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_0190.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRrQAAABXRUJQVlA4IKgAAACwBACdASoYABAAPtFUo0uoJKMhsAgBABoJZgCdMoAlwBl0aonGvM0v58bFX0FAAP7u7+Rr1G23Y0vjLtqqeRYJMHj9QULlZzO8RtlPSAtYFHBwGQw1uF7wYm7gyJiZRU7pfdE3XDTKDpG9gr+su0DViwaQ6dEBcNK3qkJUDuZMt7GoLcoubWTPsNUtmFlm1Xh4LTFsPYA5a1hWINM7lyrdFZ5SYKIAAAA=",
+    "fallback": "https://img.karnani.io/solomon-master/img_0190.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0190-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0190-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0190-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0190-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-08-23T11:35:01",
+    "gps": {
+      "lat": -8.972,
+      "lon": 160.054
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 14,
+      "exposureTime": 0.004,
+      "iso": 100,
+      "focalLength": 45
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_0189.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAADQAwCdASoYABAAPtFUo0uoJKMhsAgBABoJYwCw7CIjCsTJEIYOA0AA/vELPRnWPX8rNDvo4UaMOfluwbV0N6b6MI6sR11MMsbO6/UkRGHwGklwP8342vxUauE+o+GlOjmV2gwnnppAGBoS+WHiyxYRdocxz5a6Yq7FtG5pHDIgtLgIEAAAAA==",
+    "fallback": "https://img.karnani.io/solomon-master/img_0189.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0189-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0189-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0189-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0189-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-08-23T11:34:21",
+    "gps": {
+      "lat": -8.972,
+      "lon": 160.054
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 14,
+      "exposureTime": 0.004,
+      "iso": 100,
+      "focalLength": 45
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_0181.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAABwAwCdASoYABAAPtFUo0uoJKMhsAgBABoJQBYdhaFvqquJUSAA/vDvHSTWyWv5/QK8HYhUxxOIJvaq13bimwcRVIAAAA==",
+    "fallback": "https://img.karnani.io/solomon-master/img_0181.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0181-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0181-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0181-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0181-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-08-22T14:41:39",
+    "gps": {
+      "lat": -9.10866666666667,
+      "lon": 160.186333333333
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 4.5,
+      "exposureTime": 0.025,
+      "iso": 100,
+      "focalLength": 21
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_0177.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRqYAAABXRUJQVlA4IJoAAACQBACdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoADT570YssCdGflbc1jlAAA/r933U3Z0DmCckwyUcf26y2LPbf21RSXTy2RsE3kpP9ln8OP4AZhPibrRHPp22ftQ18jF32JiAYFWr6mnPjW3uiuRLMNNNnHeiY1FK7zFiJghDNoRIOyOiGtmRcbhPpguPe9C7z0wR5wDIAA",
+    "fallback": "https://img.karnani.io/solomon-master/img_0177.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0177-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0177-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0177-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0177-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-08-22T14:39:52",
+    "gps": {
+      "lat": -9.10866666666667,
+      "lon": 160.186333333333
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 4.5,
+      "exposureTime": 0.025,
+      "iso": 100,
+      "focalLength": 18
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_0170.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAABQBACdASoYABAAPtFUo0uoJKMhsAgBABoJYgC7ACHgV7zfNH0JfmbaP70AAP7u7mIKjAUdoe+HK6YQpqjurnAZxmQna86RtKwImQtdMi18chYdmcM0evCReS/+nWboQqIced/8AAA=",
+    "fallback": "https://img.karnani.io/solomon-master/img_0170.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0170-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0170-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0170-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0170-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-08-22T14:29:59",
+    "gps": {
+      "lat": -9.10866666666667,
+      "lon": 160.186333333333
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 16,
+      "exposureTime": 0.005,
+      "iso": 100,
+      "focalLength": 18
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_0142.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRpwAAABXRUJQVlA4IJAAAADQBACdASoYABAAPtFUo0uoJKMhsAgBABoJZgCdMoAlnhf7MFCrYytHnID5Ja2mgAD+9CScJiVACzgqzqo7E7FfaxMSZO10WoRC1HJ95jylNHd+RZz1XqC9/JRrD3qzH7ia4540AknSFmphuHlcePj3KQrkG+ujrSSpzkR1SLbfJ81CY4q4Me8pxDb/FJDAAAA=",
+    "fallback": "https://img.karnani.io/solomon-master/img_0142.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0142-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0142-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0142-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0142-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-08-17T15:18:10",
+    "gps": {
+      "lat": -9.01,
+      "lon": 159.058
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 16,
+      "exposureTime": 0.00625,
+      "iso": 100,
+      "focalLength": 45
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_0136.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAABQBACdASoYABAAPtFUo0uoJKMhsAgBABoJagCdAYxsyTzqgd9S7U85b1LAAP71e6/1/zqzfFXuV4bhnceBFQpAKLnS/hos9/oyZLjwL8MJwytCB1P3KaaZRqEERokiqXwY1ONa6/E75/3WX2vYhMls0PUE5eAvwGsPGLyH1IjvF7/qBf2rftPSA6yAS4XoLAAAAA==",
+    "fallback": "https://img.karnani.io/solomon-master/img_0136.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0136-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0136-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0136-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0136-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-08-17T12:12:45",
+    "gps": {
+      "lat": -8.988,
+      "lon": 159.058666666667
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 10,
+      "exposureTime": 0.00625,
+      "iso": 100,
+      "focalLength": 45
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_0120.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRtYAAABXRUJQVlA4IMoAAAAQBQCdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoRwDhKawAbJBAp716ko0RTV5YAAAP7w1K0MnyGY5mCs3dR75UuZCAUvvxz0BoXc9m53hi0f7KTPKH90x4LeT/bIBh7H17d7+Y/8qr9DubCiEbXwO2hHKSaHR39HcY7RszoEHHfvOx+ZkeWqBbdr7jhVnYisf3QF8MxTj3kpsnioYmnpalS5cGutXmN3P3/aRBypNmy1KyLm5rMvRjJdDgKHiaZbY8lHqRLaTAAA",
+    "fallback": "https://img.karnani.io/solomon-master/img_0120.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0120-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0120-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0120-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0120-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-08-17T11:42:37",
+    "gps": {
+      "lat": -8.988,
+      "lon": 159.058666666667
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 10,
+      "exposureTime": 0.02,
+      "iso": 100,
+      "focalLength": 45
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_0109.jpg",
+    "width": 1600,
+    "height": 2523,
+    "ratio": 0.6341,
+    "lqip": "data:image/webp;base64,UklGRoYAAABXRUJQVlA4IHoAAADwBACdASoYACYAPtFYqE0oJSQiKqoBABoJYgDOWEFBcOEfG91dAjxjMm2wrJwb44AA/veCaNJdWXlePEO0E34gGUyh67W20kDdPAGgm/jhVWZvZXmYtYLzWvxzgy1tKIBfMcnagdDVX1GqjFNoDc2rEKK7lDNMbkAAAA==",
+    "fallback": "https://img.karnani.io/solomon-master/img_0109.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0109-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0109-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0109-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0109-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-08-17T11:26:00",
+    "gps": {
+      "lat": -8.988,
+      "lon": 159.058666666667
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 4.5,
+      "exposureTime": 0.025,
+      "iso": 2000,
+      "focalLength": 18
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_0091.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRrYAAABXRUJQVlA4IKoAAADQBACdASoYABAAPtFUo0uoJKMhsAgBABoJQBOmUAnANoIi5r3p9vsuwNV/0JCiAAD+6SkwFE2+dmNM7GSHM7XuO9Vvzc2+Na4lfDIXvZw8PC9jS4Zmf7Zjjv3oCMVN+OQXkciEnmU/8JLA3+srO3ui7ioU9rvqgE+VpjYxoD88N68dkqNNEwIeIHyqedZNGbMBUIHypNLIAVNFQmiSgzlBQSNBBoAyDMeAAA==",
+    "fallback": "https://img.karnani.io/solomon-master/img_0091.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0091-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0091-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0091-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0091-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-08-17T07:48:41",
+    "gps": {
+      "lat": -9.00733333333333,
+      "lon": 159.237666666667
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 14,
+      "exposureTime": 0.004,
+      "iso": 100,
+      "focalLength": 45
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_0088.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAABQBACdASoYABAAPtFUo0uoJKMhsAgBABoJYwCdBagBt/+iPycC9Qm5jJYAAP7p3YxZGVyRLCRWoSAEO5VhoUqE0v1RG0KbBZ2CDbsSdE/ef8k5D3+CIvwA+2xV/BBltsU2JA6jsnw/3/4MroCOrJ7Xnwk0dl/fw+3/7f0nrkMkY/iRS6NXwBN4a9QAAA==",
+    "fallback": "https://img.karnani.io/solomon-master/img_0088.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0088-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0088-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0088-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0088-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-08-17T07:47:50",
+    "gps": {
+      "lat": -9.00733333333333,
+      "lon": 159.237666666667
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 14,
+      "exposureTime": 0.004,
+      "iso": 100,
+      "focalLength": 45
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_0064.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRtIAAABXRUJQVlA4IMYAAADwBACdASoYABAAPtFUo0uoJKMhsAgBABoJbACsLwAaj5n8Xo/kWpsDLEKtw5yNefgA/tDRTvbHgCD/l0JPGmJbL6OcRqglchkN61lHJEB3LTpkPVdzij3nR+BWI/sFfZjAJ+50HP6mLKjkFzIGuUM2LvgY0t+GdTyHBiCQe0PhWtxgb5mVrMo+Pq7YEYC0D6xxPRVzlcZee4Wxvh+2NRLtnkr9ol+8ggZHJvXierYOi1pt6Un+ahSRUDQ/t2dEPktKYsEIAAA=",
+    "fallback": "https://img.karnani.io/solomon-master/img_0064.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0064-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0064-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0064-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0064-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-08-16T11:58:28",
+    "gps": {
+      "lat": -9.04333333333333,
+      "lon": 159.060333333333
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 10,
+      "exposureTime": 0.004,
+      "iso": 100,
+      "focalLength": 45
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_0057.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRqQAAABXRUJQVlA4IJgAAAAwBACdASoYABAAPtFUo0uoJKMhsAgBABoJZgCdMoACheqajujt/1FOpQAA/p/d08gNBDHREPXva1/cs71YsLCkKZ/X6TIKucNsuo/QpaOqLgwn9FQnuVU1oL2s6b6+vV14RRtWSOgrJCVndBxQnNNQZaYpf3CFeT9bM0qbJYFOxWOVR2CluvSMkxPWoKq4878JCwOkJcJgAA==",
+    "fallback": "https://img.karnani.io/solomon-master/img_0057.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0057-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0057-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0057-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0057-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-08-16T11:46:42",
+    "gps": {
+      "lat": -9.04333333333333,
+      "lon": 159.060333333333
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 10,
+      "exposureTime": 0.00625,
+      "iso": 100,
+      "focalLength": 45
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_0041.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAADQAwCdASoYABAAPtFUo0uoJKMhsAgBABoJQBOmUABRk/CLjSHpVYAA/vSYMc5FBC7Qay4Y3FzFq0w1UyjwFlTcMpm5hOCcyW/BoBtjPMZYGF6If7vo2Sz4j13wrH7jB07mSQ24Cp2Fu5y+aFe8Tf9co8fwks7g4+vA4Z5/ZCU6lnDLvWugAA==",
+    "fallback": "https://img.karnani.io/solomon-master/img_0041.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0041-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0041-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0041-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0041-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-08-16T08:53:52",
+    "gps": {
+      "lat": -9.00883333333333,
+      "lon": 159.031833333333
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 8,
+      "exposureTime": 0.004,
+      "iso": 100,
+      "focalLength": 37
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_0034.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAABQBACdASoYABAAPtFapkuoJaOhsAgBABoJbACzgYv0321cOA1qSo12JbyAAP73d8FY6/UfgqBeKy5L1NsUEwby3ePiT321lgU7YDj6HUpKaw8ZY1KfjWHlrMxLpbDzXfcaLkX8C8oMwZbPHYTpImXi9gOtmNXA/ZaUcV/CVf3Z85H+f7/9yqIMMzALnCPyfwAAAA==",
+    "fallback": "https://img.karnani.io/solomon-master/img_0034.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0034-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0034-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0034-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/solomon-master/img_0034-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-08-16T08:34:18",
+    "gps": {
+      "lat": -9.00883333333333,
+      "lon": 159.031833333333
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 8,
+      "exposureTime": 0.004,
+      "iso": 100,
+      "focalLength": 23
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  }
+]

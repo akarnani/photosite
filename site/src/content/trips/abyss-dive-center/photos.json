@@ -1,0 +1,509 @@
+[
+  {
+    "file": "IMG_8765.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRsQAAABXRUJQVlA4ILgAAACwBACdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoR3AdDE+1uGfTjcetoDVpSAAP6i7LkT2pXW7uHJKQDKwE6FeUeQ3CLXazEoGDZjWXnPuvunUx32VYw98epDowSTNTYvOixFgl73kbb6wl+UYBAIWd9jufrnCfAIHXX3FekPP5aefpiP2er4GSDTRLi2i5h3iB8dktlHlVA4H3o9gKXXFejbzwj8Vn51iO5B3fD/khJnQF24sAAA",
+    "fallback": "https://img.karnani.io/abyss-dive-center/img_8765.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/abyss-dive-center/img_8765-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/abyss-dive-center/img_8765-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/abyss-dive-center/img_8765-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/abyss-dive-center/img_8765-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-12-23T11:41:50",
+    "gps": null,
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 14,
+      "exposureTime": 0.005,
+      "iso": 400,
+      "focalLength": 24
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_8748.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRtgAAABXRUJQVlA4IMwAAADwBACdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoRwH0zDybnTvSMOySvXjGnCLIAA/u+PDY+Mc9xwokWYwqGDrTknAppSNhKZYu6PqqO6LXrjFEOJsKyP9Vh6z4pYgjsVw+NNJgY/bpt3PGpE6yfqus5R5wzKlIvape4j4qakX/WKLc8+GVMq2EDq7VjlQ4UXQhUgN/AvCKmza3LVXk9mJ7qmbzw46pI0D+LWlVeXOzBUzyGfHpqSrjeHFfiSgdkD8+Ai2OnQi9I9YAA=",
+    "fallback": "https://img.karnani.io/abyss-dive-center/img_8748.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/abyss-dive-center/img_8748-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/abyss-dive-center/img_8748-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/abyss-dive-center/img_8748-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/abyss-dive-center/img_8748-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-12-23T11:34:33",
+    "gps": null,
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 11,
+      "exposureTime": 0.005,
+      "iso": 400,
+      "focalLength": 24
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_8737.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.4996,
+    "lqip": "data:image/webp;base64,UklGRqYAAABXRUJQVlA4IJoAAACQBACdASoYABAAPtFUo0uoJKMhsAgBABoJQBOmUAS3orfkfAl/Dr6Spdmcr9gA/u9R8869PSWxjAx5q0F63iKC+P0nsJa3J5QnW5ppf0jRdosqNuwpNIQ9qk7tgUINVVnNifMZg/mP95rj4S9bFMH3zhWCXiIOvhUBbuynpRYuK/GVwu7GYQFNrh8u7vjphmsHJuEW2PZY1AAA",
+    "fallback": "https://img.karnani.io/abyss-dive-center/img_8737.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/abyss-dive-center/img_8737-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/abyss-dive-center/img_8737-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/abyss-dive-center/img_8737-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/abyss-dive-center/img_8737-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-12-23T11:24:04",
+    "gps": null,
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 20,
+      "exposureTime": 0.005,
+      "iso": 400,
+      "focalLength": 45
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_8728.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRuoAAABXRUJQVlA4IN4AAABQBQCdASoYABAAPtFUo0uoJKMhsAgBABoJaACdMoR3JoA1gTOYsYPUr1y8o2Z0Kn1zJ9AA9qh12uA5wq9m7Tx2SuaQxeBwar7/g32MpsRW1WRIW5hoy1j+K1ohWqdsoinUZyWDPgkj35d+a95ASKna0aRX7GgnLMBiz5XnMPOX0l/X01qUIED5d1vxPdmIfCOQizUb2nMtztcW6rnZtDGjEAdvDjuK8tg/yg3j1zD5ij0YIiGDPsujLBuy4H22DEW0bhjNqaeZ4ER4ezVeVsb3SPJQeXXUOWsXV/CYAAA=",
+    "fallback": "https://img.karnani.io/abyss-dive-center/img_8728.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/abyss-dive-center/img_8728-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/abyss-dive-center/img_8728-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/abyss-dive-center/img_8728-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/abyss-dive-center/img_8728-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-12-23T11:21:36",
+    "gps": null,
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 16,
+      "exposureTime": 0.005,
+      "iso": 400,
+      "focalLength": 45
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_8720.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRsoAAABXRUJQVlA4IL4AAACQBACdASoYABAAPtFUo0uoJKMhsAgBABoJagCdAywTpAfGj2cqgPUlkObT42gA/u7v61MBtRGfkprj+aE2QLdBOPkZ6EezzuFuAzBPWsI5WLyPqEc5iiS5S0Xd+rk2e/7F5ziXyyak/s9t9nEvlu8ql+iLLfU8WIM6q3e++o/tnxRnXaX4DxSGzcI6B+zHDUI1Hnb8b8Ra7iLJ6Cb66F5wEKhMPfrDJAQoRTuCG48G4iejAKQjlFzhRk40IIAA",
+    "fallback": "https://img.karnani.io/abyss-dive-center/img_8720.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/abyss-dive-center/img_8720-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/abyss-dive-center/img_8720-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/abyss-dive-center/img_8720-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/abyss-dive-center/img_8720-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-12-23T11:14:56",
+    "gps": null,
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 16,
+      "exposureTime": 0.005,
+      "iso": 400,
+      "focalLength": 26
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_8715.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRr4AAABXRUJQVlA4ILIAAABwBACdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoADK9stLlkUzIbLokHtAAD+NGmRmyIaMYOpwbtgcSJBXwQ8gNNYKfVQfpLRavrRFQqDz5f7fmAObr512wkAFF/lEFsFDU0nbwU76xDtj/Griuo67V9fo6XvsjZmXWLJ2qQ5yIMwW0Ui0vVz1dwB46BnTm41n0IREQfB+7AaXpfvs2k3F0l8lBOC63j7YDlQKC8A1AAA",
+    "fallback": "https://img.karnani.io/abyss-dive-center/img_8715.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/abyss-dive-center/img_8715-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/abyss-dive-center/img_8715-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/abyss-dive-center/img_8715-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/abyss-dive-center/img_8715-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-12-23T11:14:13",
+    "gps": null,
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 16,
+      "exposureTime": 0.005,
+      "iso": 400,
+      "focalLength": 31
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_8711.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.4997,
+    "lqip": "data:image/webp;base64,UklGRq4AAABXRUJQVlA4IKIAAABQBACdASoYABAAPtFUo0uoJKMhsAgBABoJZgCdMoADTOFoZ940SIcB5+SgAP7pod2Q/oXxugim2GMNixdRjEphDg3lzO/t0+OQzUKKolt9QCtpDjk7JraRQcdywqjmh1rhZIMFvO/szmEQBbZl//yl9C8fa/6gfSfX7en0OV2oU2m3QaG9v0y5q92d0pkhN3fULKUBh+cAPwNuooB1qUImgAA=",
+    "fallback": "https://img.karnani.io/abyss-dive-center/img_8711.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/abyss-dive-center/img_8711-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/abyss-dive-center/img_8711-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/abyss-dive-center/img_8711-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/abyss-dive-center/img_8711-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-12-23T11:12:07",
+    "gps": null,
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 16,
+      "exposureTime": 0.005,
+      "iso": 400,
+      "focalLength": 18
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_8692.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.4997,
+    "lqip": "data:image/webp;base64,UklGRqwAAABXRUJQVlA4IKAAAACwBACdASoYABAAPtFWpEuoJKOhsAgBABoJbACdMoR3ACmc9vycRzH4PDQqzNzAAP7w4QONE9HcTybQpH1SCyxAbgJQOWyU65XumTC6upHjLLTAzcnCNoH56p1t2nDIWqQg8Sk153hYIVxYMiZVuCJxGWY+ELteVA8g8XQPLzbblmZxdqpaX3nAxUxXeDVbpq5Z5ZizbnR8qFSzR5RwtAAA",
+    "fallback": "https://img.karnani.io/abyss-dive-center/img_8692.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/abyss-dive-center/img_8692-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/abyss-dive-center/img_8692-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/abyss-dive-center/img_8692-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/abyss-dive-center/img_8692-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-12-23T09:41:11",
+    "gps": null,
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 13,
+      "exposureTime": 0.00625,
+      "iso": 400,
+      "focalLength": 45
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_8684.jpg",
+    "width": 1600,
+    "height": 1066,
+    "ratio": 1.5003,
+    "lqip": "data:image/webp;base64,UklGRu4AAABXRUJQVlA4IOIAAAAQBQCdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoRwAkgPcyWQmBFvQsCq9i5N/JzAAPZyCX9WAHQJ7zfiW0tlmnrc0oSfSGByp1q3WjsgC6CnHXRnZbXK57vrGCTH2M2Vope8SjKwd5VpeFqRnCZ2UuP/f47liG/pSDo/UqEprN1ktscdO9seUCy9aMec5e/RIKQxTENNp/D4DEiwL+tTnmhEbMYpwoUYiR5yIqDUnrsLMXmTYq8btFNAzhglfruMly2TIgDmPdVHcc/UIo0w4oHujR/pKAxTqdhbsErZOCAA",
+    "fallback": "https://img.karnani.io/abyss-dive-center/img_8684.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/abyss-dive-center/img_8684-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/abyss-dive-center/img_8684-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/abyss-dive-center/img_8684-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/abyss-dive-center/img_8684-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-12-23T09:35:15",
+    "gps": null,
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 11,
+      "exposureTime": 0.00625,
+      "iso": 400,
+      "focalLength": 45
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_8679.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRsAAAABXRUJQVlA4ILQAAACQBACdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoR3AdB9B33Dn0K3mNOWe8AA/uOfPodWuBklGjfNhXdhiZRgbHCErfcRMRIrJbq543btPxnOtb6nZUZKO6y5AiTChphP8jn7Gd/horibs9jcBxbqlO2pJmrNczvxE9OQT7fDIyMbnccGZ/BuYHv2NeiAd0D3MG7UA4cyNmwZWYNIC6dyHPUKAMZCzt/HO0MF1WDrxjkgAAA=",
+    "fallback": "https://img.karnani.io/abyss-dive-center/img_8679.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/abyss-dive-center/img_8679-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/abyss-dive-center/img_8679-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/abyss-dive-center/img_8679-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/abyss-dive-center/img_8679-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-12-23T09:33:18",
+    "gps": null,
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 11,
+      "exposureTime": 0.00625,
+      "iso": 400,
+      "focalLength": 45
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_8675.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRrgAAABXRUJQVlA4IKwAAACwBACdASoYABAAPtFUo0uoJKMhsAgBABoJQBUeu4FwTtsL0LCl+1rFR3aVnCfQAP7vQ/JPSXaUQn52JVtYQs7nh7YSNBCfGRLHB0GKAmoK8xUn9kKiXova0nYB1FWBQ2cmQguAFHqD42+Zj2JIhZzvYij7CXy8lCfIec5MI3cO81p76+tXuYwe2+CxdXRktlpTInM2WIR0v7MjXfY1Zu7jHlDjB3m8U6Pk0IAA",
+    "fallback": "https://img.karnani.io/abyss-dive-center/img_8675.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/abyss-dive-center/img_8675-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/abyss-dive-center/img_8675-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/abyss-dive-center/img_8675-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/abyss-dive-center/img_8675-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-12-23T09:27:52",
+    "gps": null,
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 11,
+      "exposureTime": 0.00625,
+      "iso": 400,
+      "focalLength": 45
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_8670.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRrQAAABXRUJQVlA4IKgAAACwBACdASoYABAAPtFUo0uoJKMhsAgBABoJagCsOUAKj1bcEsP51ZKuVGNnBXYAAP7ypCh4ZuFZul7OyOll9k+tjyknoJWAOIjZzM4PESVWaAE9HP5htUkykKKiRMr4WjpkRt19TD8dxgPiwLlbYMr1A18nIXCDVtn03V9ZCyxCdFgafmapJ+DGuv4FOS+gFa9P0BWiUBScsVBhqg3/FOi26u+YZo5rkAA=",
+    "fallback": "https://img.karnani.io/abyss-dive-center/img_8670.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/abyss-dive-center/img_8670-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/abyss-dive-center/img_8670-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/abyss-dive-center/img_8670-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/abyss-dive-center/img_8670-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-12-23T09:22:25",
+    "gps": null,
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 14,
+      "exposureTime": 0.00625,
+      "iso": 400,
+      "focalLength": 28
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_8665.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAAAwBACdASoYABAAPtFUo0uoJKMhsAgBABoJYwCdAB9IPm0pzJLxklrxUOAA/gehtLIgUz8kMKnye035S8q7Y9410569dZpJMJ2XmH/5NouI/sDub9WCOtEAcfse0gTkg4o5KIEbC22IcI+EEgHup5DkEUak6aXUuyKpD+rWeojjKv//xIxNJbQ9uyxomjUwfIMlu57QAAA=",
+    "fallback": "https://img.karnani.io/abyss-dive-center/img_8665.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/abyss-dive-center/img_8665-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/abyss-dive-center/img_8665-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/abyss-dive-center/img_8665-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/abyss-dive-center/img_8665-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-12-23T09:18:59",
+    "gps": null,
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 14,
+      "exposureTime": 0.00625,
+      "iso": 400,
+      "focalLength": 45
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  }
+]

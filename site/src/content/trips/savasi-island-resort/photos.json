@@ -1,0 +1,628 @@
+[
+  {
+    "file": "IMG_1096.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAABwBACdASoYABAAPtFUo0uoJKMhsAgBABoJZgCdACPtx3ZC2os1XIyh1s+agAD+7r1Sgp9GkTSgk8C8N0B1AJjtkXkd34Z96mNhkITfCJs330mxhyW10yVj5mbOrn/Tsss20csYBjiSaCZoxM5IX7eYAAA=",
+    "fallback": "https://img.karnani.io/savasi-island-resort/img_1096.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/savasi-island-resort/img_1096-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/savasi-island-resort/img_1096-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/savasi-island-resort/img_1096-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/savasi-island-resort/img_1096-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-09-12T11:06:15",
+    "gps": {
+      "lat": -17.1135,
+      "lon": 179.0635
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 16,
+      "exposureTime": 0.01,
+      "iso": 100,
+      "focalLength": 45
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_1090.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5002,
+    "lqip": "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAABQBACdASoYABAAPtFUo0uoJKMhsAgBABoJYgCdMoACs2h7nGImxogTcurgAP7xinO5PFro4ciLlrT4Lqg4298rZZ+l+cSbpbeI9GFnaG4O7ylm2H5z7ny7UaNUzOe8z882ttaRYJk30Sf9wd7x7k+lxfMx68GzwfV04LpP49Dy6yXeFbGA3YaEFk6/mb5FMIVS/4+DiAA=",
+    "fallback": "https://img.karnani.io/savasi-island-resort/img_1090.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/savasi-island-resort/img_1090-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/savasi-island-resort/img_1090-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/savasi-island-resort/img_1090-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/savasi-island-resort/img_1090-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-09-12T11:03:41",
+    "gps": {
+      "lat": -17.1135,
+      "lon": 179.0635
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 8,
+      "exposureTime": 0.01,
+      "iso": 100,
+      "focalLength": 18
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_1077.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRpYAAABXRUJQVlA4IIoAAABQBACdASoYABAAPtFWpEuoJKOhsAgBABoJZgCdMoMjbEmiVDERfUk2EclgAP70Izb4FrZ4wGtbzIh1NR/Ih9L8MEcG+qQnkrOvk+EaNzYDiCrzsK+/eUlGU4JnIzUufDJ5rNlaeE6X3pPKssfnID62IzosuAkcsQnxkXRg7nOcxHQd/crJh78/gAA=",
+    "fallback": "https://img.karnani.io/savasi-island-resort/img_1077.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/savasi-island-resort/img_1077-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/savasi-island-resort/img_1077-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/savasi-island-resort/img_1077-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/savasi-island-resort/img_1077-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-09-12T10:57:33",
+    "gps": {
+      "lat": -17.1135,
+      "lon": 179.0635
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 10,
+      "exposureTime": 0.01,
+      "iso": 100,
+      "focalLength": 28
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_1076.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5001,
+    "lqip": "data:image/webp;base64,UklGRpwAAABXRUJQVlA4IJAAAABwBACdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoAlrBf6gvxrqvhTGToQAAD+8MjX67RSCJyXw6512mJTZVJXpc6GMKUmxUnHj1eEN4+avgsqfcyozjy3iokKqfgcOV5FhNUH1n15s/8QnBwgM5qRCZHafnmWEoLuMUIMaFZH8JrznaH0j58kJNYFkl0kTAA=",
+    "fallback": "https://img.karnani.io/savasi-island-resort/img_1076.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/savasi-island-resort/img_1076-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/savasi-island-resort/img_1076-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/savasi-island-resort/img_1076-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/savasi-island-resort/img_1076-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-09-12T10:57:16",
+    "gps": {
+      "lat": -17.1135,
+      "lon": 179.0635
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 10,
+      "exposureTime": 0.01,
+      "iso": 100,
+      "focalLength": 20
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_1063.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.4992,
+    "lqip": "data:image/webp;base64,UklGRsAAAABXRUJQVlA4ILQAAAAwBQCdASoYABAAPtFUo0uoJKMhsAgBABoJZgCdMoR4NuAt9UWyotjybLjsDPB0oDr2kAD+oNcuzRP9Ro6LwnC9u552wTRenAN8T4BXd8QoGTpLygJ+OC7Gdx5o7HIKy9doRnygahrwA71v3qYx9/67I/WJwUoVHMO5oD+UJ13mU7TCKjvjJU3mBzh+dFgT9vTu8slYC21TUWbRHUDJIVkRpznVjxAQhRfwg9j0rh+P504AAAA=",
+    "fallback": "https://img.karnani.io/savasi-island-resort/img_1063.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/savasi-island-resort/img_1063-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/savasi-island-resort/img_1063-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/savasi-island-resort/img_1063-1600.webp",
+        "w": 1600
+      }
+    ],
+    "date": "2025-09-12T10:45:48",
+    "gps": {
+      "lat": -17.1135,
+      "lon": 179.0635
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 18,
+      "exposureTime": 0.005,
+      "iso": 100,
+      "focalLength": 18
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_1059.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRqYAAABXRUJQVlA4IJoAAAAQBACdASoYABAAPtFUo0uoJKMhsAgBABoJQBYdhEOqqGVXv3InrWssiAD+8yaURUug7NiDHPi5I0jqWsS8jCUmG2zjCm20OYxKE/gZ4e0mBXh8wInLthUHQvgwtv6SDIGlQdKMWQ7t+AYZXk8E9z3bsGnVlQjriqOKqMBbvRsd9VoR1IihsFYaRO4fhoK2ZYgoT+cBW1ZMIIAA",
+    "fallback": "https://img.karnani.io/savasi-island-resort/img_1059.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/savasi-island-resort/img_1059-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/savasi-island-resort/img_1059-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/savasi-island-resort/img_1059-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/savasi-island-resort/img_1059-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-09-12T10:42:13",
+    "gps": {
+      "lat": -17.1135,
+      "lon": 179.0635
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 16,
+      "exposureTime": 0.00625,
+      "iso": 100,
+      "focalLength": 18
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_1052.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.4997,
+    "lqip": "data:image/webp;base64,UklGRqoAAABXRUJQVlA4IJ4AAABwBACdASoYABAAPtFUo0uoJKMhsAgBABoJQBYdsYTcnNuIKwNOcJ/y1DnnIAD+75Aq+WZ6hNEZIzlr28LTyz4ZwaopOZ3pNFiGVlsFQJ2OT1tDxm/E0FJN/0RBdqcdlTxsamIytD4t6oFzjudk//3Inddpj/Buln1QuC0VDbXU3mu6Tk+7xi06ljBtbHyJx+/ePrckeLSamdNqvUAAAA==",
+    "fallback": "https://img.karnani.io/savasi-island-resort/img_1052.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/savasi-island-resort/img_1052-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/savasi-island-resort/img_1052-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/savasi-island-resort/img_1052-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/savasi-island-resort/img_1052-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-09-12T10:35:09",
+    "gps": {
+      "lat": -17.1135,
+      "lon": 179.0635
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 22,
+      "exposureTime": 0.004,
+      "iso": 100,
+      "focalLength": 45
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_1026.jpg",
+    "width": 1600,
+    "height": 1066,
+    "ratio": 1.5005,
+    "lqip": "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAABwBACdASoYABAAPtFWpEuoJKOhsAgBABoJYwALAEcAIC4W1jRHy07RBb/08AD9XM9hfdMlmAGk6glcQMsGLXoQkbEYfF3jsd1D8fHr6n/Kh56bsNpIE+PKGMcFVVvXQoT+Vw8XQlSUcHar1FMvVsTe93Ww1X3IGgA=",
+    "fallback": "https://img.karnani.io/savasi-island-resort/img_1026.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/savasi-island-resort/img_1026-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/savasi-island-resort/img_1026-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/savasi-island-resort/img_1026-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/savasi-island-resort/img_1026-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-09-11T11:53:17",
+    "gps": {
+      "lat": -16.8248333333333,
+      "lon": 179.2705
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 10,
+      "exposureTime": 0.0125,
+      "iso": 100,
+      "focalLength": 45
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_1008.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAAAQBACdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoMljEmhOpTxchEVIAD+Dm91JjJlNIWz6z/xvzE3fcN+9WH+PtkFIN8aidVA4iQNaiZYD8SJcdItx5c/ZIO1G2FeloalGL8BAAA=",
+    "fallback": "https://img.karnani.io/savasi-island-resort/img_1008.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/savasi-island-resort/img_1008-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/savasi-island-resort/img_1008-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/savasi-island-resort/img_1008-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/savasi-island-resort/img_1008-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-09-11T11:35:25",
+    "gps": {
+      "lat": -16.8248333333333,
+      "lon": 179.2705
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 9,
+      "exposureTime": 0.0125,
+      "iso": 100,
+      "focalLength": 27
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_1007.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRqwAAABXRUJQVlA4IKAAAADwAwCdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoAA+kpfx/5IkE4gAP4Yv8lswQ26durl0lsSzts+UMAjFBAwYYYJupaxe/cbz6ssseyx6b0XEiUcVbzWZAgfgXOsRz9IEdtLTsfPJM/viror08fJgH1N9hHkEnClFE9OIdUI/4jQyM2aZAfH9gEHsEvyUhtC7kaN2vr7iYPkPCl4QAAA",
+    "fallback": "https://img.karnani.io/savasi-island-resort/img_1007.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/savasi-island-resort/img_1007-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/savasi-island-resort/img_1007-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/savasi-island-resort/img_1007-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/savasi-island-resort/img_1007-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-09-11T11:33:45",
+    "gps": {
+      "lat": -16.8248333333333,
+      "lon": 179.2705
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 20,
+      "exposureTime": 0.005,
+      "iso": 100,
+      "focalLength": 45
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_0999.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAACQBACdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoR3ACnJr0+L9hGRCCGy8YAA/uLS/9rlf/aBXSiSwWMjxhpl30wKOOxyCyJLe2FANWNjO2Yg8LaFNWVOf6DAXNvuFC/MDIlvECoAI9eS9l6BlUZqFJywSAoQ1OfH+0AA",
+    "fallback": "https://img.karnani.io/savasi-island-resort/img_0999.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/savasi-island-resort/img_0999-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/savasi-island-resort/img_0999-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/savasi-island-resort/img_0999-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/savasi-island-resort/img_0999-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-09-11T11:22:39",
+    "gps": {
+      "lat": -16.8248333333333,
+      "lon": 179.2705
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 9,
+      "exposureTime": 0.01,
+      "iso": 100,
+      "focalLength": 18
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_0998.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAADQBACdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoRwN5AAV1wvez1j6ZYuKD4JgAD+udyHTQdNDriTG00Z9CeXsnLSlsTAu8P2769UpfqvD7xd+i+voUlHGe9/tS+uH15duv9bJH07LsXp6fE3IxprfFZGbFS5FNQ8GE6fRE3uECRIpNiMk80yb8lEAKon84AAAA==",
+    "fallback": "https://img.karnani.io/savasi-island-resort/img_0998.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/savasi-island-resort/img_0998-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/savasi-island-resort/img_0998-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/savasi-island-resort/img_0998-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/savasi-island-resort/img_0998-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-09-11T11:22:34",
+    "gps": {
+      "lat": -16.8248333333333,
+      "lon": 179.2705
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 9,
+      "exposureTime": 0.01,
+      "iso": 100,
+      "focalLength": 18
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_0996.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.4999,
+    "lqip": "data:image/webp;base64,UklGRrgAAABXRUJQVlA4IKwAAABQBACdASoYABAAPtFUo0uoJKMhsAgBABoJbACdL1ABvRCBCT6dqsogeFUQAP7ytHryJ6PRgwQWch+4ZI/6JeR6tipPh7KOl20pdGJP4YWmSb0I3m5DYrzYTkkaYnneuVg8JhXEXoJY0Ihra0GZZAqyuQupJZrKGs2K0n3/lGfJ+qNyR9K1HMQgKQa6N2GL/Unsulkd5nDdOJMZ2mmfnTxdsJl+g30RRJJgGAAA",
+    "fallback": "https://img.karnani.io/savasi-island-resort/img_0996.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/savasi-island-resort/img_0996-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/savasi-island-resort/img_0996-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/savasi-island-resort/img_0996-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/savasi-island-resort/img_0996-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-09-11T09:24:57",
+    "gps": {
+      "lat": -16.8356666666667,
+      "lon": 179.272
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 9,
+      "exposureTime": 0.01,
+      "iso": 100,
+      "focalLength": 18
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_0981.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRtwAAABXRUJQVlA4INAAAABwBACdASoYABAAPtFUo0uoJKMhsAgBABoJQBOgMXSbiX5ab4qJs/8h/O5rMAD+7ygy+mQNTZRS29hOKFTlWHwemhUZHuQBd7slscDqfUo+FFWeBnOHsMTL/W4T7bCYsaKwLNklj6vRWepy4nvsA63RW6bJ+UMYuJFPgBn5KFzhueUt+f+A+fkTuj35Q8RfqEQcat9Q9KJ/NquCYmZq+6s21uXQC5xdtoUm9Tn7qhQOjXcXlzHKCwoMwixCJpxv/v0puP0TDFlvbh/xTR6AAAAA",
+    "fallback": "https://img.karnani.io/savasi-island-resort/img_0981.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/savasi-island-resort/img_0981-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/savasi-island-resort/img_0981-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/savasi-island-resort/img_0981-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/savasi-island-resort/img_0981-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-09-11T08:59:24",
+    "gps": {
+      "lat": -16.8356666666667,
+      "lon": 179.272
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 20,
+      "exposureTime": 0.00625,
+      "iso": 100,
+      "focalLength": 42
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_0976.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRqwAAABXRUJQVlA4IKAAAADwBACdASoYABAAPtFUo0uoJKMhsAgBABoJYgC7BagR/QrnsyJc6+7fTQp8hDskJgAA/sBBHk6gq6mJPIYx2JZ3ViLo+VbICMYclqoe8OrkCUnQwTYws2uCQfQWhWhwJWiwd279/3ecWSRXwE2CRaXMn/Wip5Nbg4hN8Xj0Mbu2lubzvN2P9/R2uIBtRmV2La7LZDU8btL/uPd7oNcogAAA",
+    "fallback": "https://img.karnani.io/savasi-island-resort/img_0976.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/savasi-island-resort/img_0976-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/savasi-island-resort/img_0976-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/savasi-island-resort/img_0976-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/savasi-island-resort/img_0976-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-09-11T08:52:12",
+    "gps": {
+      "lat": -16.8356666666667,
+      "lon": 179.272
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 20,
+      "exposureTime": 0.00625,
+      "iso": 100,
+      "focalLength": 23
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  }
+]

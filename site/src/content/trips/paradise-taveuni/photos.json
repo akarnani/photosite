@@ -1,0 +1,2018 @@
+[
+  {
+    "file": "IMG_1417.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRr4AAABXRUJQVlA4ILIAAADQBACdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoR4GCINo/2EyxdHtfvw4Fra8AD+qIWZFWXyNzY7Iy+ulxtz/eakiIa2/VMXodRfmM2nNrWbPDxe0aUMGN3Wovn+P/D/XwMmksSwmcqdB8L0QdnJlZJGRTBwuldTegk05xw5RXD0RoFP5M43R9ev2N8Pl7E3LTDv9Kp+dGqvzJuG6CVpghcMtNyAYbmiLI1OMZwTN5AA",
+    "fallback": "https://img.karnani.io/paradise-taveuni/img_1417.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1417-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1417-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1417-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1417-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-09-20T09:10:02",
+    "gps": {
+      "lat": -16.765,
+      "lon": 179.949166666667
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 11,
+      "exposureTime": 0.01,
+      "iso": 100,
+      "focalLength": 45
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_1412.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAACQBACdASoYABAAPtFUo0uoJKMhsAgBABoJagCdMoLT9A42wfaeuFboUiKERAAA/ujZdKIWad9vFVb0kM92D+SXDs3JpOYjUf6+51ci0R1cGF4MiWWt7gxcf1P+tAodi0VCKqkT4v3K5bdevzoEl2JKyzUttGcAAAA=",
+    "fallback": "https://img.karnani.io/paradise-taveuni/img_1412.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1412-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1412-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1412-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1412-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-09-20T09:08:37",
+    "gps": {
+      "lat": -16.765,
+      "lon": 179.949166666667
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 11,
+      "exposureTime": 0.01666666667,
+      "iso": 100,
+      "focalLength": 18
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_1407.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRoAAAABXRUJQVlA4IHQAAACwBACdASoYABAAPtFWo0uoJKMhsAgBABoJbACdMoMYAEnx12XimANFrZCetSFAAP6dF189Ys2Ja8LQZKmjrJQsMmA27P1Mpb8cD7vyN/aJGWs1H75qJQ7qfm+pBcxKwF9irIDlFwBH5B1V7UUXF0SD8CIuAA==",
+    "fallback": "https://img.karnani.io/paradise-taveuni/img_1407.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1407-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1407-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1407-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1407-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-09-20T09:04:46",
+    "gps": {
+      "lat": -16.765,
+      "lon": 179.949166666667
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 13,
+      "exposureTime": 0.01,
+      "iso": 100,
+      "focalLength": 18
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_1398.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.4997,
+    "lqip": "data:image/webp;base64,UklGRrwAAABXRUJQVlA4ILAAAACwBACdASoYABAAPtFUo0uoJKMhsAgBABoJYwC7AywTm4sc5+Ep/rOXEFfark2YAM4ydPSB0VP96+tUnam1FPbhvieCpuM48rVTF5U1Wlq+bUN0Ib+D8jOR00b30JfBrLpEUsdo1jWLefXGNPDGmkOJizkW/iZvhygAjHPN7hMM0IOBGKfcLWv/qz5191gNThy6mEEGMJl/Iib6id/XDfJYBP2ilSB+JAdX28KCtYAAAA==",
+    "fallback": "https://img.karnani.io/paradise-taveuni/img_1398.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1398-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1398-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1398-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1398-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-09-20T08:53:15",
+    "gps": {
+      "lat": -16.765,
+      "lon": 179.949166666667
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 18,
+      "exposureTime": 0.00625,
+      "iso": 100,
+      "focalLength": 37
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_1393.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRrQAAABXRUJQVlA4IKgAAABwBACdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoADK/zkbvESG458OriTKAD+8bTZbF5O+2Yu4ndCh9jkhRi6biR2ROl1bormWcfeAAXXtUzHbxT7qrYQ5Q8EGSaDUYZGz9VU4qfC1C9PvT2GQnaIoLajH215cm8uAz0RCQiHPn+7wok8+BuaQHWHxO2unbRrA2xRTDG+vfrkDgVOnaZs669KfV3gAAA=",
+    "fallback": "https://img.karnani.io/paradise-taveuni/img_1393.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1393-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1393-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1393-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1393-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-09-20T08:47:05",
+    "gps": {
+      "lat": -16.765,
+      "lon": 179.949166666667
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 18,
+      "exposureTime": 0.00625,
+      "iso": 100,
+      "focalLength": 28
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_1390.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRqwAAABXRUJQVlA4IKAAAACwBACdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoMYADuSH1VUFPM4pWJMiwqcAPj6tm0w60S4GDd9c3f0zNZ9C/8BjHYAyW/ZKGUF79NLjg2dcYP7FNNfG+6wlxgRNbsHZJtBFWqzCOt47Ir9G9pP4tHHZviroCQrB4wsoHqNZY0bWQkL7LhXWLyDX+dF7pPhWNh7DkrjNMJNk2du3AAA",
+    "fallback": "https://img.karnani.io/paradise-taveuni/img_1390.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1390-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1390-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1390-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1390-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-09-20T08:42:37",
+    "gps": {
+      "lat": -16.765,
+      "lon": 179.949166666667
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 18,
+      "exposureTime": 0.00625,
+      "iso": 100,
+      "focalLength": 45
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_1383.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRpYAAABXRUJQVlA4IIoAAACwBACdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoR3ACrdXW12zXo2zUPI0qkkAMs+ov8rMsHUO0zuiPnBTTbVdhL9pvhWoXybnNlejNx06fNWAJitBuDwDawmtA1CF6kw6kRetUaH1CKz8o6CXgJYyhzJgHjg1NYTBsaQAvkk4IGZNWsL2xQ4AAA=",
+    "fallback": "https://img.karnani.io/paradise-taveuni/img_1383.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1383-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1383-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1383-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1383-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-09-20T08:41:37",
+    "gps": {
+      "lat": -16.765,
+      "lon": 179.949166666667
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 18,
+      "exposureTime": 0.00625,
+      "iso": 100,
+      "focalLength": 45
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_1382.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAADwAwCdASoYABAALplotFoiqCgoCACYS1AE6ZQjuAKkfwuQdpbOUlawAP76W32Q9iKuLdXVMzEsGVMYEdY6eVf/P+Pad3Zki70BnX8tPoQtRjNZ4hzlhSWmblKvJ2v0FQAAAA==",
+    "fallback": "https://img.karnani.io/paradise-taveuni/img_1382.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1382-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1382-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1382-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1382-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-09-20T08:41:16",
+    "gps": {
+      "lat": -16.765,
+      "lon": 179.949166666667
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 18,
+      "exposureTime": 0.00625,
+      "iso": 100,
+      "focalLength": 45
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_1381.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5002,
+    "lqip": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAAAQBACdASoYABAAPtFWo0uoJKMhsAgBABoJYwCw7CG8IUm2DNSK/WXCAAD+8Ml0+BVfyfKZlDwrivpobeaRome3g9sShHFjmqp3C2xhdGUHhi8GSPwWkVDmD4xDbTTkdVHnb6sBoDQsXnT8f0g8Z5sbV0RX7E5UCF4cAAAA",
+    "fallback": "https://img.karnani.io/paradise-taveuni/img_1381.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1381-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1381-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1381-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1381-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-09-20T08:39:53",
+    "gps": {
+      "lat": -16.765,
+      "lon": 179.949166666667
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 18,
+      "exposureTime": 0.00625,
+      "iso": 100,
+      "focalLength": 40
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_1380.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAACwAwCdASoYABAAPtFYpkwoJSOiMAgBABoJZwAAW+s7rqNuQBklAAD+93ID1IL/cOzqCmHI7GALY2pvGSABoWCaZcHxW63AAAA=",
+    "fallback": "https://img.karnani.io/paradise-taveuni/img_1380.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1380-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1380-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1380-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1380-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-09-20T08:38:21",
+    "gps": {
+      "lat": -16.765,
+      "lon": 179.949166666667
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 18,
+      "exposureTime": 0.00625,
+      "iso": 100,
+      "focalLength": 40
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_1376.jpg",
+    "width": 1600,
+    "height": 2400,
+    "ratio": 0.6667,
+    "lqip": "data:image/webp;base64,UklGRqQAAABXRUJQVlA4IJgAAADQBQCdASoYACQAPr1On0unJKKhtVv8AOAXiWQAgxhNQGjQZdkEAOZpkP4EOZbBTUBKG4DlQzKAAPzF5wJTwy3Jd0Df/4cyd1dUz/8RCgAcnsDJlHY4+bBVL3f4/c2lexnCNJrWrefodqwrnJfLq3ADKnc8bVb0cWymLEhN7woCfVaMyFRs/pKTy9i12fFHE2wIPOzexIXgAA==",
+    "fallback": "https://img.karnani.io/paradise-taveuni/img_1376.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1376-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1376-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1376-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1376-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-09-20T08:36:21",
+    "gps": {
+      "lat": -16.765,
+      "lon": 179.949166666667
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 9,
+      "exposureTime": 0.02,
+      "iso": 100,
+      "focalLength": 18
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_1370.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRswAAABXRUJQVlA4IMAAAABQBACdASoYABAAPtFUo0uoJKMhsAgBABoJbACsAYxYm82kfx2+yeZAaIQAAP5yC/lqcpRKYh0vsx19j6bFSlEKRh0bfmuN9v+sqdFHa7EjyH/FJO7s6sV/BLqRhsB3XENC2SrcQsWjRd/mrs2GaCk2BlkinoHf0f/hO59/abzMBaT8HMANqvbVwKyET36nZBWkPxK7l7CWikmoj+pSrOSZu11Cvnnpe2Dz3pOQWjFdFbJGyI4xFx5ATB0bxOIAAAA=",
+    "fallback": "https://img.karnani.io/paradise-taveuni/img_1370.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1370-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1370-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1370-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1370-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-09-20T08:33:01",
+    "gps": {
+      "lat": -16.765,
+      "lon": 179.949166666667
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 9,
+      "exposureTime": 0.02,
+      "iso": 100,
+      "focalLength": 18
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_1358.jpg",
+    "width": 1600,
+    "height": 2400,
+    "ratio": 0.6667,
+    "lqip": "data:image/webp;base64,UklGRsYAAABXRUJQVlA4ILoAAABwBQCdASoYACQAPtFcp04oJSOiJWzJABoJQBdmcBAi16RerO+hYZEJUa8jpu9UWzH8plSIAP7pBsfzKjfQdKJe2ei5sE2Dz/ad2y6z3ofSVPIKVdEa5S6h+diaKlzQ1X4/X57g78BZlhu6Tis7aEGFDpP7BrLoPwYXqEvchzrUv95qHIXZKSIq02E2K4fK4G9ar0FuY+VjQqoTRo/0YD9BWseWipE9Qip8M0KwqkC73T+7JXULNTI2AAA=",
+    "fallback": "https://img.karnani.io/paradise-taveuni/img_1358.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1358-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1358-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1358-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1358-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-09-18T08:51:50",
+    "gps": {
+      "lat": -16.7943333333333,
+      "lon": 179.8805
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 18,
+      "exposureTime": 0.00625,
+      "iso": 100,
+      "focalLength": 27
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_1357.jpg",
+    "width": 1600,
+    "height": 2400,
+    "ratio": 0.6667,
+    "lqip": "data:image/webp;base64,UklGRrwAAABXRUJQVlA4ILAAAAAQBgCdASoYACQAPtFepk6oJSOiJWzJABoJQBbdJsAfE/cytZX0/f78whek5+pK0xK3xgRmvMvx84AA/rlyFrykfjUFKsHXCzTlyLJH5Z533JlAib4u9hHfd1kYYIIq7AV/2dHu7GoUAcCAGAorWSmWpKvyQq9mFiunXwxcqPHIMKaPqT5eQXXr+PjT4qhctfvn0h4NCpbSvqVb3lsoDzA26WY7liTtKM9p9hMvS6QAAA==",
+    "fallback": "https://img.karnani.io/paradise-taveuni/img_1357.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1357-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1357-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1357-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1357-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-09-18T08:44:59",
+    "gps": {
+      "lat": -16.7943333333333,
+      "lon": 179.8805
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 18,
+      "exposureTime": 0.00625,
+      "iso": 100,
+      "focalLength": 45
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_1356.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAABQBACdASoYABAAPtFUo0uoJKMhsAgBABoJZgCdMoADTtVAYuF+jAo21PAAAP7uiZlKP9Yc/arNJ0PcgNGtSmxpk8f6F4ckg/6u8Eu2Md8dSH+SOpW6yRTyBu2E10Eq2jQr3ipAQAA=",
+    "fallback": "https://img.karnani.io/paradise-taveuni/img_1356.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1356-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1356-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1356-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1356-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-09-18T08:43:12",
+    "gps": {
+      "lat": -16.7943333333333,
+      "lon": 179.8805
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 18,
+      "exposureTime": 0.00625,
+      "iso": 100,
+      "focalLength": 45
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_1355.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRpwAAABXRUJQVlA4IJAAAAAQBACdASoYABAAPtFUo0uoJKMhsAgBABoJaAC7AB9OmksAcAxy5XmcIADyDtuZVZSN10f+CljnuwTMYY69FceDfUKDWsypOT/cH2ap6n1LKd7qv3aXqgU/51cOJm0KvDb0TcBzM681d4CEKUn3mcNFtBfYUMui+O4zaT8e9KqsBiicmYmxvUw0MpQDJQcAAAA=",
+    "fallback": "https://img.karnani.io/paradise-taveuni/img_1355.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1355-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1355-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1355-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1355-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-09-18T08:42:50",
+    "gps": {
+      "lat": -16.7943333333333,
+      "lon": 179.8805
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 18,
+      "exposureTime": 0.00625,
+      "iso": 100,
+      "focalLength": 45
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_1335.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.4998,
+    "lqip": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAADQAwCdASoYABAAPtFUo0uoJKMhsAgBABoJYwCsAB87fCU87+hqxgAAvvoGU17biMFnWwDx39gu0e9xZkrvKpzpDZxrfZeYScseQQIUDGmHh1NNGjWcL76ym2DmwTpChSbLCAAA",
+    "fallback": "https://img.karnani.io/paradise-taveuni/img_1335.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1335-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1335-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1335-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1335-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-09-17T15:38:21",
+    "gps": {
+      "lat": -16.9341666666667,
+      "lon": 179.900666666667
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 20,
+      "exposureTime": 0.005,
+      "iso": 100,
+      "focalLength": 45
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_1329.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRqwAAABXRUJQVlA4IKAAAABwBACdASoYABAAPtFUo0uoJKMhsAgBABoJZACdMoAlwRgo8Fp+zZ/uGw7sgAD+vFH4+Bb0Ou3s69o7tZoT+qRr/tdimVIQ8tAcJbr1FaopcF9WUKP3YB/BVZPO01+xHAdWyt8LKaDqeUKmDSogJ+EYvXIXRH8RmSRlNAhCyTtih8Zyu6oWFIwRuikrgH1yTmvH3VkVdAEO2SIqoMosAAAA",
+    "fallback": "https://img.karnani.io/paradise-taveuni/img_1329.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1329-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1329-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1329-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1329-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-09-17T15:32:57",
+    "gps": {
+      "lat": -16.9341666666667,
+      "lon": 179.900666666667
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 11,
+      "exposureTime": 0.005,
+      "iso": 100,
+      "focalLength": 45
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_1303.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRs4AAABXRUJQVlA4IMIAAADwBACdASoYABAAPtFUo0uoJKMhsAgBABoJZACdMoRwAkgPcCd1reJMFAohRmhma3gA/u9n9Mf230oa5oJios9tMZtdHePfXYW9F7KDFpUVk4A0muDoEixahqi6mKfkS4EudqeBGiQLbmKTWJ6RLNwLW2MLFpoaOQaKCFuTz1TYNz4OxV3Yh9sLjcaUIQZjKP/Gk9dWNZp4HRUzm6GE2IRHg39Ll8F7rH33p58pxoZtNeo+H3zR1dIxhL4YauGWYB7AAA==",
+    "fallback": "https://img.karnani.io/paradise-taveuni/img_1303.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1303-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1303-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1303-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1303-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-09-17T10:33:48",
+    "gps": {
+      "lat": -16.7771666666667,
+      "lon": 179.946666666667
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 20,
+      "exposureTime": 0.005,
+      "iso": 100,
+      "focalLength": 22
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_1301.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRrYAAABXRUJQVlA4IKoAAADQBACdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoAluxWpdua3pu0FYeOam3CHYAD+9dmmWZxOVZIeYB0XJFY5zOrh1DmyM8s4vbPZcqszS0m9xLHCgECnOSBO5qYjTKQFOoufHhAFhO+NUARCPNY2f8e9GeZ6757Ez9D1NbYhkwGwbctFgBRbhz13Ohvzeyv91tUUOsTTezoSnWOUV7/vqOWKcDoCYngAAA==",
+    "fallback": "https://img.karnani.io/paradise-taveuni/img_1301.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1301-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1301-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1301-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1301-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-09-17T10:28:01",
+    "gps": {
+      "lat": -16.7771666666667,
+      "lon": 179.946666666667
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 20,
+      "exposureTime": 0.005,
+      "iso": 100,
+      "focalLength": 25
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_1289.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.4998,
+    "lqip": "data:image/webp;base64,UklGRu4AAABXRUJQVlA4IOIAAADQBACdASoYABAAPtFUo0uoJKMhsAgBABoJYgCdMoR3AkgPauR+KEP640UNV+qw2AD+iUo3m0barXJ757tOVCMYF1hbbzvWeRZrHcj6Sbp22Ro40uw6j7OwT14xbImcyU7Dd4ocMxjnSTWhbSEOyMq39lfOb0GrN6Sm3YauA3s+w3AjmX3ceg4KqMvpQIz/Kokvn0P+qiH9qmgY/xlHPZv339N7PE+ItAP41HxE7cgQCta54J/zn8p0dfvprE5Qln4C+k9iNFz9jeoV3Pef9Hh4XKBIGxE6MjAuyHyO/1YsgAAA",
+    "fallback": "https://img.karnani.io/paradise-taveuni/img_1289.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1289-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1289-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1289-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1289-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-09-17T10:10:57",
+    "gps": {
+      "lat": -16.7771666666667,
+      "lon": 179.946666666667
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 20,
+      "exposureTime": 0.00625,
+      "iso": 100,
+      "focalLength": 45
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_1249.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRvwAAABXRUJQVlA4IPAAAADwBACdASoYABAAPtFUo0uoJKMhsAgBABoJaACdOUDZAOTkcQup++6OALbLQHQgkmgA/iZcpBF/JEjEvV/bfI9ZNge03EgGhb3EebPjHOACpN/jje8wLrLnGM7YJnrK080OsmVg3l/AreLza3j47hMDrfJ3VHREHXOJJy31BVYHUtx/vIh7qoj6SeIVknIQAPRZsV8wRPQtpwv5/dm32BSHQIQuJrDNOrj3o8Nv88lg002lRG1X6XYjh4b+IxUjFJr2oE+HiL8nfHDWen0//36rMuZHYv+c3oZGCFPnrXUitGRPixEgDDli4FEOPM7RIAA=",
+    "fallback": "https://img.karnani.io/paradise-taveuni/img_1249.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1249-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1249-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1249-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1249-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-09-16T15:06:51",
+    "gps": {
+      "lat": -16.9341666666667,
+      "lon": 179.900666666667
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 14,
+      "exposureTime": 0.008,
+      "iso": 100,
+      "focalLength": 45
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_1245.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRuoAAABXRUJQVlA4IN4AAACwBACdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoR4Gc/UlP2kkE6NRWiJxTSEAP70RLh1CE8X9La9u+saF2kfS3GTg5fGWSAFWqhyt23qzR4c4CLqgZIaBl0OAIQxl6cIkjpjDUAdYrP+yYViTR50G8nbmf4VbYeeCl0drxrJiw6ZnaXTDnMO4hs1Xl03lfXPz8fze6jjFQI2I7J8aEwLadfqUL+o5XX50XUtpwr/slffHjgzoyIQc0SHOqj04d3C5a2EmfhjR8LQdN57GsEllP3F63AKiynAuTigAAA=",
+    "fallback": "https://img.karnani.io/paradise-taveuni/img_1245.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1245-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1245-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1245-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1245-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-09-16T15:01:08",
+    "gps": {
+      "lat": -16.9341666666667,
+      "lon": 179.900666666667
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 18,
+      "exposureTime": 0.005,
+      "iso": 100,
+      "focalLength": 45
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_1239.jpg",
+    "width": 1600,
+    "height": 2400,
+    "ratio": 0.6667,
+    "lqip": "data:image/webp;base64,UklGRpwBAABXRUJQVlA4IJABAAAQCQCdASoYACQAPtFYpE2oJSMiKqoBABoJaACdMvaFMQ56eBHmH9myZGrW7oi6ExU3JI276rwjrfHWsojSoISemNY8KliCLCyXBaXdyW+3HgAA/r72fCgTPQsZ6OluAvELca3XVdFFgi6DTJmoCbCECkHwpeGB9ACRJlZtsoeVPdKa5HJAzBpl5NF7DA+3gnwgYgX+1fh8H48JeM6VVdJq1gllcZ5iExiVZTgrkKEjifjpwUHt47X8jCJggxbNgsxyCPrTe2DCmYdQ3t9IDNJqbBWu3LvyComSkIbpppEeIIN/Y7dcJtSIfNob+JWRkolpycTaM7r42cZTCOPwGjMdH8yJetyH9JHF8glapTLJODRywjeCKrdld1gBctlj6N4JdKhOAFbG3ywBC2bA8Jy9Tef3VrrVzHptZrKvoOofAxOQptXiNFqxELYASO0lFQGb+tTdoBNX+mIKeiY8pC0H6ktxSs8OcL4J+duySdy4CtHmaTr37eg2wWxHVfbpmnig4gsvoUzU+8nJwuIrIAAA",
+    "fallback": "https://img.karnani.io/paradise-taveuni/img_1239.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1239-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1239-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1239-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1239-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-09-16T14:51:13",
+    "gps": {
+      "lat": -16.9341666666667,
+      "lon": 179.900666666667
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 13,
+      "exposureTime": 0.005,
+      "iso": 100,
+      "focalLength": 45
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_1238.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRsoAAABXRUJQVlA4IL4AAADQBACdASoYABAAPtFUo0uoJKMhsAgBABoJZACdEf/i2J043RoP1n90Uz+aLUxiAAD+zRkkAC9dlskRBbWdsqNRen8JwVygS/ElxC2pQUcQ9nqjok5k/cnlUKaL6Gz39LzXMnqMKhEBWdAy1xAg3PPPwpnnRXmXLpoFn3l5+nLq46dnGQGXfvDCM/2moHuaHRJRwOSmbtfG/096rSd2154C0ns2jVJfzdQblrE3tG0CLpTPF7S8pIqpkydB+AAA",
+    "fallback": "https://img.karnani.io/paradise-taveuni/img_1238.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1238-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1238-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1238-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1238-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-09-16T14:50:08",
+    "gps": {
+      "lat": -16.9341666666667,
+      "lon": 179.900666666667
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 13,
+      "exposureTime": 0.005,
+      "iso": 100,
+      "focalLength": 45
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_1237.jpg",
+    "width": 1600,
+    "height": 2400,
+    "ratio": 0.6667,
+    "lqip": "data:image/webp;base64,UklGRmgBAABXRUJQVlA4IFwBAABwBwCdASoYACQAPtFWpEwoJKOiKqwBABoJQBihblHQ9wEsN7zBtK1loFYR9U3si+SKmz5h3l402KFubFzpCRbByaESNAD49jfVBXZgZ0oxq+3yBHXyJGsF1oui22/sPe4seHp1TnlGgaSoK15qGZ9Zt02O8ASX9AgMvQxfliiWlLJp6w9d0UjTAiXqMafLuTmIczWmuSnaDbKNOmXY9tutsT0z306uVXf6VW6xn/Od2Fwn0XizmwTWCZ+NEsV7OVapQxG7+QMTdemVRo37jHagmiOIexv3QYDa4Fm2vnIcS61GyziBDkhXYK6pB6nkzBZ3N913E7kxjJKLPS2JUDxVHFZLn1cUVgUssimWOIhjoTLyzFt08cMrFJVL4napJOR6eECEhsidGs4S9MhNDuf1Z04VHTZt2u8E4jfm8WAZGMBJ5ytkoXTYVPyw51TJzVhoZlzUksJ00AqQAAA=",
+    "fallback": "https://img.karnani.io/paradise-taveuni/img_1237.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1237-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1237-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1237-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1237-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-09-16T14:49:34",
+    "gps": {
+      "lat": -16.9341666666667,
+      "lon": 179.900666666667
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 13,
+      "exposureTime": 0.005,
+      "iso": 100,
+      "focalLength": 37
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_1236.jpg",
+    "width": 1600,
+    "height": 2400,
+    "ratio": 0.6667,
+    "lqip": "data:image/webp;base64,UklGRnIBAABXRUJQVlA4IGYBAADwBwCdASoYACQAPtFWpEwoJKOiKqwBABoJQBOmVzUguS+y2WtDms9CCgKljReHiYL0KdG7yOaiqqp2KOuGHCkPJhEqZfY7iAAA/k85PLWvwzcznPw1LNtkJBLhqvWjtR0QYeCkHSu0kWekVr32xETwxV1OgvwByPI6UiF3RHtbsTnCBqEZxCWDt2bEjgwvP5bIcCtErtYbVH6mvMb4Ihy23waeJznGz2I9YZXbkSfBQ2hlz9bShFy47YYOc9oJPS5yk9LSwyNCcNSX89mpWrq/cycDQS3q/S4eef0fvyYH5zO18Gy2bi+n1pPew8sDwn0QkQMEwJ/2Yia081iuMmcNGpUG0dURRw71W/2wyTw500m2sraFgIUr33ALAYoTGAVqefmAgn2l6jmgUgeo8m/ZN54TRoa4ql/S4rHq5B+UQJRz5w/MQ0PsQrm/coiRhFn+XifYq/0XB4oqJSwDIJWlexezQRYA",
+    "fallback": "https://img.karnani.io/paradise-taveuni/img_1236.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1236-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1236-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1236-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1236-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-09-16T14:49:25",
+    "gps": {
+      "lat": -16.9341666666667,
+      "lon": 179.900666666667
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 13,
+      "exposureTime": 0.005,
+      "iso": 100,
+      "focalLength": 37
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_1235.jpg",
+    "width": 1600,
+    "height": 2400,
+    "ratio": 0.6667,
+    "lqip": "data:image/webp;base64,UklGRlgBAABXRUJQVlA4IEwBAAAwBwCdASoYACQAPtFap02oJSOiJWzJABoJYgC+e7BnLACZYR3aB7g7++R5/m15YwAfPi0NYmJb3t0tMOxFdPUg+IAA/B1Qq+LxtCFqnTU6+O3K+wFBcEdjkR5lbb81EoaeJNIhdfk4565jBrV8EFsXUcnunaNHhGP2xlFvcFmjUqNxhbBcSl5RwuMD8Dqcc+1EaBsJ/KMBj8bxDUAYXMPL2gTKLRBVUIfo6kcupSI2snZNqF3u2SVUjMXB5+/q4aPcO3F4sXoO3/JK8CqPbX49ZD2r3hgDZ/D5LtMkJTLrMAckhtcf+V8hqrNRZyVUvNcpcHnLMWlQhoD3S16YqYdOeLjqRz/3tul0GAin3Y1zI1VFMbA+tIHSt0Jyu/y57TH9GsF05sRSYuiSiBOIX6Xr8jBGxQgw7Km6AylARjf4uRK9M5aQYfdsRg+QAA==",
+    "fallback": "https://img.karnani.io/paradise-taveuni/img_1235.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1235-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1235-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1235-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1235-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-09-16T14:49:15",
+    "gps": {
+      "lat": -16.9341666666667,
+      "lon": 179.900666666667
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 13,
+      "exposureTime": 0.005,
+      "iso": 100,
+      "focalLength": 37
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_1229.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRqoAAABXRUJQVlA4IJ4AAABQBACdASoYABAAPtFUo0uoJKMhsAgBABoJQBfJMZKdln5gELsu9o2zEL2AAP7yu2zCxHcy+bjJQC+ONuSQ5P9meWNtT1dptMEZ43n1nldvf3vZEUaKhUJdfRoctmRZV+TbuBKOGjoJqwryNZGL50qJyrS9BRas4F4uUHc/doZKlgIi3xdzJ6QcMSwHJLgIRpLJ2vNQntfdX4XkxAAAAA==",
+    "fallback": "https://img.karnani.io/paradise-taveuni/img_1229.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1229-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1229-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1229-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1229-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-09-16T14:40:10",
+    "gps": {
+      "lat": -16.9341666666667,
+      "lon": 179.900666666667
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 18,
+      "exposureTime": 0.005,
+      "iso": 100,
+      "focalLength": 45
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_1222.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.4998,
+    "lqip": "data:image/webp;base64,UklGRpwAAABXRUJQVlA4IJAAAAAwBACdASoYABAAPtFUo0uoJKMhsAgBABoJZwAFEAHEllgn+RHyHiqhkQAA/c0xxq/aNOQszQDcbipaQ9MVufuz6xIj7yJ4iMFADDRAUeHdZ65UoAugGDcTaG3vE1Z+1Va+UxHMEWgvZTv/NbwVRzM3+A4d2UK2TwBOnqPlFqiCgOYxgw5d+uoKoj5FL3PeAAA=",
+    "fallback": "https://img.karnani.io/paradise-taveuni/img_1222.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1222-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1222-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1222-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1222-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-09-16T14:34:52",
+    "gps": {
+      "lat": -16.9341666666667,
+      "lon": 179.900666666667
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 18,
+      "exposureTime": 0.01,
+      "iso": 100,
+      "focalLength": 45
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_1219.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAAAQBACdASoYABAAPtFUo0uoJKMhsAgBABoJYgCdABsvF7wCsJQjW9FOUAD+ozRnt/AAA8SJqKOy6gbIci0UQQkLxG2JYnWcYHSJBvDPgKYVqqIIJmmWSN5fo236ifbVvbf0K9xEe15W4ScnzGb+Ium77MzFNNlpBNp0/wihAy/uod6DtRW+d+JfSwbcOKn+UtBr6wRwAAA=",
+    "fallback": "https://img.karnani.io/paradise-taveuni/img_1219.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1219-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1219-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1219-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1219-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-09-16T14:26:55",
+    "gps": {
+      "lat": -16.9341666666667,
+      "lon": 179.900666666667
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 11,
+      "exposureTime": 0.01,
+      "iso": 100,
+      "focalLength": 18
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_1216.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRrwAAABXRUJQVlA4ILAAAABQBACdASoYABAAPtFUo0uoJKMhsAgBABoJZgCdMoAC2YhsVa94/mj46hgsAM43wbPoFpxAFafe4WHE0A2Up4kYoV4GrfA5h1WLD6X9LEXJNRGHzT/HXbh698HjuB1tUVn2g+y2Bu9W60FG8uSNPcr3Af2496XmvWdZjZR/x6fdwoQxMYKZme+teN21PoW6DyZIAkfkxZlDm8l8N6ib7gHb8OCrKjorqlsBP6fVowAAAA==",
+    "fallback": "https://img.karnani.io/paradise-taveuni/img_1216.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1216-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1216-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1216-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1216-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-09-16T14:23:47",
+    "gps": {
+      "lat": -16.9341666666667,
+      "lon": 179.900666666667
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 11,
+      "exposureTime": 0.01,
+      "iso": 100,
+      "focalLength": 45
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_1215.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRqwAAABXRUJQVlA4IKAAAABwBACdASoYABAAPtFUo0uoJKMhsAgBABoJaACdH8ACuZBTfvcEU4pe4LLaaADMoxvWamaDNoHS7Uv1LWK6ifulHcf/juxacpjLGPstA71Z74mTRpZ5SUJ8AX+t2NRRfu1LyTLrfgPWiPo0H3zdHUU1W4IUF7phdG+31WjQaK3YQ30MTl+RxRqvAVNfKMIK3KSib/ixBjjB1YyjwJJKUwAA",
+    "fallback": "https://img.karnani.io/paradise-taveuni/img_1215.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1215-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1215-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1215-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1215-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-09-16T14:23:31",
+    "gps": {
+      "lat": -16.9341666666667,
+      "lon": 179.900666666667
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 11,
+      "exposureTime": 0.01,
+      "iso": 100,
+      "focalLength": 45
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_1212.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAACQBACdASoYABAAPtFUo0uoJKMhsAgBABoJaACsIFzgvxWuhbmo09K0Qq2SugAA+Faqiqoi8M3jleRxjCjyfUaHSsT2UreNQa+RCPlHSF97lmmtmUpyfuCUB6VuqB2oWyFxvTGukVjkkf2akjP2fFVqKvm/GP3v8vSiHb0RWnJ2SUX3Ddgj3ppvA6/ohi2dEAAAAA==",
+    "fallback": "https://img.karnani.io/paradise-taveuni/img_1212.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1212-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1212-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1212-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1212-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-09-16T14:22:49",
+    "gps": {
+      "lat": -16.9341666666667,
+      "lon": 179.900666666667
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 11,
+      "exposureTime": 0.01,
+      "iso": 100,
+      "focalLength": 45
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_1203.jpg",
+    "width": 1600,
+    "height": 2400,
+    "ratio": 0.6667,
+    "lqip": "data:image/webp;base64,UklGRlYBAABXRUJQVlA4IEoBAADQBwCdASoYACQAPtFgpE0oJiMiKrgMAQAaCWQAwQ+BBntZo6cKTfBizmLV1vRzYPJ5tAv3PhF/73YXkouNdapMqndtSX9Y0AD8pU44YIGKXimZXFt3mA+jBPzQFLhxBwQeAQyZIlFK+isCMwLVmwpNMY8bVRmFf9epGr4TEHeG1SohVrgv3EO3bPU9i+B+JavHiy3e5Ss2r2wlot1XVeoZQmuhlmhyGWywnz0AzR3wHmVTxmRVuD/lVU7AQB5Z07y+4TNxb50G7iqq5TorlNYTdH5Gc0P4wTMx3/nOAIseP5K4ZdaK5nrsu2Ga9l7ffJZvUnnHITS8kazH1BcomA7zBMdOyyjd0SwE4QySe/TPB4sDCKCSiL7+Ju+cFb5HNygkoKWQHgZo3+DchTo0+Bv0t3RAKd0wnEEOWBq8bBWwnghNDCDH8a0YAAA=",
+    "fallback": "https://img.karnani.io/paradise-taveuni/img_1203.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1203-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1203-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1203-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1203-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-09-15T10:39:40",
+    "gps": {
+      "lat": -16.774,
+      "lon": 179.948166666667
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 16,
+      "exposureTime": 0.00625,
+      "iso": 100,
+      "focalLength": 45
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_1195.jpg",
+    "width": 1600,
+    "height": 1066,
+    "ratio": 1.5004,
+    "lqip": "data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAAAwBACdASoYABAAPtFUo0uoJKMhsAgBABoJYgCdMoACsZUVhfiyhCA8YgAA/vFtxZCVw2pj49TuDB716vYXfvm/GDahZqjrGQFsVGzXjGqPUpjWc9M3B/ZXZ+Of2w3WFcvjtVNfpW1Se5b0Ub0N252WQysLkLGOfGsRFXxjg1MqwpR1GTMw5dN+iAAAAA==",
+    "fallback": "https://img.karnani.io/paradise-taveuni/img_1195.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1195-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1195-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1195-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1195-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-09-15T10:21:24",
+    "gps": {
+      "lat": -16.774,
+      "lon": 179.948166666667
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 20,
+      "exposureTime": 0.00625,
+      "iso": 100,
+      "focalLength": 45
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_1194.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRq4AAABXRUJQVlA4IKIAAABQBACdASoYABAAPtFUo0uoJKMhsAgBABoJQBOgBA1YPqhnT2ZbrBFEoLsAAP7vLHLhZDNYzptP9hpquaCqqv/talmN3nVYrQZTQ9XF+MMnsS4hIqD+rhNEkwzTR70vayTk1vh0+d6rE+WdEFST6jzgPuePmaVcwU2xpJhzwcAMP0NYQgUaN1n9sKyQEPSzdE4vT1/VKMXChO4M0xXgH4CEoAA=",
+    "fallback": "https://img.karnani.io/paradise-taveuni/img_1194.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1194-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1194-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1194-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1194-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-09-15T10:18:12",
+    "gps": {
+      "lat": -16.774,
+      "lon": 179.948166666667
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 20,
+      "exposureTime": 0.00625,
+      "iso": 100,
+      "focalLength": 45
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_1190.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.4997,
+    "lqip": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAADQAwCdASoYABAAPtFUo0uoJKMhsAgBABoJQBadAbSnNuVHMpfkIVAA8NcLTR1Mbcki0f3d0LbFcGCDZf6ND+Ql3HHfzbyNvluq0mkWBdlJ+bwondZQFTkwYMF/y0VUxpFEyQMoAAA=",
+    "fallback": "https://img.karnani.io/paradise-taveuni/img_1190.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1190-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1190-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1190-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1190-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-09-15T10:14:41",
+    "gps": {
+      "lat": -16.774,
+      "lon": 179.948166666667
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 20,
+      "exposureTime": 0.00625,
+      "iso": 100,
+      "focalLength": 45
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_1179.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAACwAwCdASoYABAAPtFapEwoJSOiMAgBABoJaQAAW9DVGkWRBbkJ4AD+ZRUj/6lzi9KhVHuKnxc8Xq04I4KbRUv61hN3V2Fsct8yIYSBAAA=",
+    "fallback": "https://img.karnani.io/paradise-taveuni/img_1179.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1179-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1179-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1179-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1179-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-09-15T09:07:58",
+    "gps": {
+      "lat": -16.7981666666667,
+      "lon": 179.901666666667
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 11,
+      "exposureTime": 0.01,
+      "iso": 100,
+      "focalLength": 18
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_1171.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAABwBACdASoYABAAPtFipk0oJiOiMAgBABoJaACdMoAJ9Ard1H4WV9wUcxNsAAD++258ENhuySNVGSJOEKKYMK12KXEfOcV+USFzk1m7wH/wR2fcBPawt/r/+hH5n104ivU+X+ISeuz7nGOGH4Bn6QhizqS1NmooEgLdl5y0sw+4RfQAAAA=",
+    "fallback": "https://img.karnani.io/paradise-taveuni/img_1171.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1171-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1171-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1171-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1171-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-09-15T09:01:45",
+    "gps": {
+      "lat": -16.7981666666667,
+      "lon": 179.901666666667
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 10,
+      "exposureTime": 0.01,
+      "iso": 100,
+      "focalLength": 18
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_1160.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRoAAAABXRUJQVlA4IHQAAADQAwCdASoYABAAPtFUo0uoJKMhsAgBABoJQBdgAZN8yEHg8AC5aaAA85On+aqAyD4EKzKw1bOtgp4FJwYXn4J2SWJYQ7j1wtlmTwZbbE3GU9xKfrK/D+gmdxt6g9z2vcJvWHEi4gtfujp1CBfE3vrfSEwAAA==",
+    "fallback": "https://img.karnani.io/paradise-taveuni/img_1160.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1160-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1160-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1160-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1160-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-09-15T08:33:28",
+    "gps": {
+      "lat": -16.7981666666667,
+      "lon": 179.901666666667
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 16,
+      "exposureTime": 0.01,
+      "iso": 100,
+      "focalLength": 45
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_1155.jpg",
+    "width": 1600,
+    "height": 2400,
+    "ratio": 0.6667,
+    "lqip": "data:image/webp;base64,UklGRvAAAABXRUJQVlA4IOQAAAAwBgCdASoYACQAPs1QokunpKMhtVgIAPAZiWYAtRschngBAjRNnFwi1eUvQVjyWB0FIWO8+qK3W8UAAP7anjei3N8oBYS0Yi5vKTgP/qvCVHb0ma9Fr7RUt5ZWVhN6Oh1bIThw4eyftnMuXsxZ98uPVYIQp79jsDmSM+JAKp+/3MI6W0SWfyi94KS7Bl1Gtz0pAek9w311JNjwzkeIC8e7J/8ZM+TlM/kA5XKP6HY+AC54/nVJHaiEwfplTnxY67YC+JIOlKIfg01yS7C0kkpQv8IfTOtOMLmnHDGiOomAgRklwAA=",
+    "fallback": "https://img.karnani.io/paradise-taveuni/img_1155.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1155-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1155-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1155-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1155-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-09-15T08:29:29",
+    "gps": {
+      "lat": -16.7981666666667,
+      "lon": 179.901666666667
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 5,
+      "exposureTime": 0.06666666667,
+      "iso": 100,
+      "focalLength": 18
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_1152.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRtIAAABXRUJQVlA4IMYAAADQBACdASoYABAAPtFUo0uoJKMhsAgBABoJQBOgngFSHM8Im8bgi3y5KogeMSKOIAD+72ALjDeG1N+TsGnO4xJQfVmJziIuoYyyuAq9v2Sl3B1EoDSFjEgnjF1tIFzXZyxkoSySgBE1hHMgIvAsF264LiMrNiZtzFR9V4z+fTB5fvRbV9a1ffudqNkE9rJwl4yjVXXBoc1wdJqyUfJzngl6PMrAdf5jc3STw+u4L8xSHwYRchF1dT1wtElEi6EMaGYp4V2MAAA=",
+    "fallback": "https://img.karnani.io/paradise-taveuni/img_1152.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1152-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1152-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1152-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1152-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-09-15T08:27:24",
+    "gps": {
+      "lat": -16.7981666666667,
+      "lon": 179.901666666667
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 16,
+      "exposureTime": 0.008,
+      "iso": 100,
+      "focalLength": 18
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_1142.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAADQAwCdASoYABAAPtFUo0uoJKMhsAgBABoJZQCw7B06eI4QJgHpVvgA/tzd7ZbBLHXVEnZ0WWeA3hVfjewxLZa1jsmR1zPqVVjrVzuyeJmTOvZ6gWu5JwM+f0uqg7UjgZQD64hdtorEyg2nz5f8l21cleFYdOODtUbJ+zklc4gAAA==",
+    "fallback": "https://img.karnani.io/paradise-taveuni/img_1142.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1142-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1142-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1142-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1142-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-09-14T12:05:21",
+    "gps": {
+      "lat": -16.9083333333333,
+      "lon": 179.922833333333
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 10,
+      "exposureTime": 0.01,
+      "iso": 100,
+      "focalLength": 45
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_1136.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRrgAAABXRUJQVlA4IKwAAAAQBACdASoYABAAPtFUo0uoJKMhsAgBABoJQBbZMX6b7vCOjh70I2DHAAD+9XcZZS5J0Zmov9noM8A6Rl1HTpQNCaA8sSlJWXQ4cpmlEHawGgzp/aYWF2a5lD9IYAe8Hcanydii3+G0qYJe+aObcB0hynY5XTe1bwTt8vKaL8M3lQS1nbhtDK0yr47j/hM9ZuDj8wTE8iVHrjCBHBQ3K8eI9u2SI18h+A14o4AA",
+    "fallback": "https://img.karnani.io/paradise-taveuni/img_1136.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1136-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1136-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1136-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1136-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-09-14T11:53:28",
+    "gps": {
+      "lat": -16.9083333333333,
+      "lon": 179.922833333333
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 22,
+      "exposureTime": 0.005,
+      "iso": 100,
+      "focalLength": 45
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_1135.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRrIAAABXRUJQVlA4IKYAAABQBACdASoYABAAPtFUo0uoJKMhsAgBABoJQBYeNQI/QTmqjrnS83KnPMWgAP7xp1S6Z+02u16nqRlzw2Pl3z7EXFBrXzJSxGG4WrTyQmQeJ/sRx+KsoobIOPpjamvl1vnuPccPSz2R0dRqyAsV4/ZPDdAFDuj2R5jTvHuZ6i4iUX0tuJSOpGfv0WQNyjJc1Dlhue1jNaIFIhehk7BrkNVSuu7OAAAA",
+    "fallback": "https://img.karnani.io/paradise-taveuni/img_1135.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1135-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1135-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1135-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1135-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-09-14T11:50:30",
+    "gps": {
+      "lat": -16.9083333333333,
+      "lon": 179.922833333333
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 22,
+      "exposureTime": 0.005,
+      "iso": 100,
+      "focalLength": 45
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_1122.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5001,
+    "lqip": "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAABQBACdASoYABAAPtFUo0uoJKMhsAgBABoJYwCdAYvW4SrBwAg8Ur6z4v0AAP7ppMGcVoauIqlgH42jOGlm2B2y1pvnzslfv7nx4DuUyvJPIim/wl812nklkLMgNQbOeAkeJu9Mfw2CMUKniZj1TCv/OxhtwViOtU1UAqjT+o88Hq+l6YyGZ6JGMkP2LwvwmUPAAA==",
+    "fallback": "https://img.karnani.io/paradise-taveuni/img_1122.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1122-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1122-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1122-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1122-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-09-14T11:32:52",
+    "gps": {
+      "lat": -16.9083333333333,
+      "lon": 179.922833333333
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 25,
+      "exposureTime": 0.005,
+      "iso": 100,
+      "focalLength": 45
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_1121.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRqAAAABXRUJQVlA4IJQAAADwAwCdASoYABAAPtFUo0uoJKMhsAgBABoJQBadBD4QtgAn44wAnhSQAP7y8oZDHoCEYarFHKkCKGWVxktg/IocDWxmRZwJpbh1wXKpMvyPlL0ShHh9W5ThjWzfS4xX7eoKaBN0LK3Lld5N5F7QGLkCtmzUUiEmEZI39IaxhOkB7JA9HHvLKsuD/XoVQFBJQixdqAAA",
+    "fallback": "https://img.karnani.io/paradise-taveuni/img_1121.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1121-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1121-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1121-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/paradise-taveuni/img_1121-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-09-14T11:32:21",
+    "gps": {
+      "lat": -16.9083333333333,
+      "lon": 179.922833333333
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 20,
+      "exposureTime": 0.005,
+      "iso": 100,
+      "focalLength": 45
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  }
+]

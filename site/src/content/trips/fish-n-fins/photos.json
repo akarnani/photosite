@@ -1,0 +1,494 @@
+[
+  {
+    "file": "IMG_8626.jpg",
+    "width": 1600,
+    "height": 1066,
+    "ratio": 1.5005,
+    "lqip": "data:image/webp;base64,UklGRrgAAABXRUJQVlA4IKwAAABwBACdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoMYADF9N0nag9uiejrroAD68+qD3i99+9to1DWNtuJmh/qczCmx4s2F7UOuWoInd1WNnu591wtq26sgBHVPks9ZMXx5U3HN058ZDxY0MV6DBxBQkXdS7gN4J/rxnHphfu6Irf01Nvrd+097dhf4erumfTcxMQjWot6ighr0+WnvTOcha+/0PURs0/syJJgA",
+    "fallback": "https://img.karnani.io/fish-n-fins/img_8626.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/fish-n-fins/img_8626-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/fish-n-fins/img_8626-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/fish-n-fins/img_8626-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/fish-n-fins/img_8626-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-12-18T13:36:58",
+    "gps": null,
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 16,
+      "exposureTime": 0.005,
+      "iso": 400,
+      "focalLength": 45
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_8608.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5001,
+    "lqip": "data:image/webp;base64,UklGRrwAAABXRUJQVlA4ILAAAACwBACdASoYABAAPtFUo0uoJKMhsAgBABoJZgCdMoAlsxiiyZbWE9HmKXNsrWMAAP7M0x5dLKMnvcmK4ONJn2/n5mnzQR6RxFWvVjrCc3vu6/fTqK6976yEf6m7SaWntVxfJpcAgyAHUOrIV2fGv3SjOiLh/vt4xLM439H06LtGVwH1roPpSw5ueNptAJk/TOjOvIsAqogEmN7FV6MwZnF8Q2lo8mkjuMVNMvrGaQgAAA==",
+    "fallback": "https://img.karnani.io/fish-n-fins/img_8608.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/fish-n-fins/img_8608-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/fish-n-fins/img_8608-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/fish-n-fins/img_8608-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/fish-n-fins/img_8608-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-12-18T11:01:56",
+    "gps": null,
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 16,
+      "exposureTime": 0.00625,
+      "iso": 400,
+      "focalLength": 45
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_8601.jpg",
+    "width": 1600,
+    "height": 1066,
+    "ratio": 1.5003,
+    "lqip": "data:image/webp;base64,UklGRvAAAABXRUJQVlA4IOQAAAAwBQCdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoRwGQgmkwiPBB48ZsApy3esYTw48AD+qbiB0TblpuBmWNXLUc0GVGFlOp1zdaZrN4TsIHMLkbKnHZdu2m2ytWBsCcy1AtlwzoQhN/+099M4Vi1M15pz/FFj/jzBKN0eI/GvVLEhBs+Z8135+0ozpKcOHzMSM+ELyxPzf6GxJBU9zRb3RDXxLEfjNEJJMQJNTVPENhXTYY8byQWPzu7csZ1ni7ElgFdhyAPzWR6phzNHMXemHsT2ckrS7oVHgAD8aO5RR0EAAAA=",
+    "fallback": "https://img.karnani.io/fish-n-fins/img_8601.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/fish-n-fins/img_8601-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/fish-n-fins/img_8601-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/fish-n-fins/img_8601-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/fish-n-fins/img_8601-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-12-18T11:01:13",
+    "gps": null,
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 16,
+      "exposureTime": 0.00625,
+      "iso": 400,
+      "focalLength": 18
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_8560.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.4999,
+    "lqip": "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAADwBACdASoYABAAPtFUo0uoJKMhsAgBABoJagCdMoR3AdA06e72uYhdIMPHSHEZhAAA/vRvIeu61w2ZkqxWzta7LkqdHvN26acw6Oypu8UgEO9ai13dM+YRDdZTdI7g7tMOGkvmuMJaToZT5/iU9BQHqQ66eWsof5moF0HjCZ89ZIiu4yINPYZNK4UhMTMH0EeXvWVQAAA=",
+    "fallback": "https://img.karnani.io/fish-n-fins/img_8560.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/fish-n-fins/img_8560-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/fish-n-fins/img_8560-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/fish-n-fins/img_8560-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/fish-n-fins/img_8560-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-12-18T10:38:55",
+    "gps": null,
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 14,
+      "exposureTime": 0.00625,
+      "iso": 400,
+      "focalLength": 28
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_8475.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRqwAAABXRUJQVlA4IKAAAACwBACdASoYABAAPtFUo0uoJKMhsAgBABoJYwCdAYwI3K+lnF6O862cIvrVSjgcAP7y9+GtN1HJqg039c7fVJ2q4KF2Ann9h/9eNjZ5nQFDHMYHNYYGS7Me3puICfMVV05x/cQCmTarCYJhUuKFxqLWoMunqWR4FeLEr6MsnfxQE/3TqqXErxCJzkT3ebXoQaCz5ZlR32wr04zC8ZMqkAAA",
+    "fallback": "https://img.karnani.io/fish-n-fins/img_8475.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/fish-n-fins/img_8475-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/fish-n-fins/img_8475-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/fish-n-fins/img_8475-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/fish-n-fins/img_8475-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-12-17T15:56:43",
+    "gps": {
+      "lat": 7.33916666666667,
+      "lon": 134.459166666667
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 14,
+      "exposureTime": 0.004,
+      "iso": 400,
+      "focalLength": 45
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_8460.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.4998,
+    "lqip": "data:image/webp;base64,UklGRqwAAABXRUJQVlA4IKAAAAAwBACdASoYABAAPtFUo0uoJKMhsAgBABoJQBOmUAS3gwNqJ9TyeJQhqVAA9jVxpYYF/JKEqApQqe5mlHRQxdUKt7soruyq2erP4+Bjd93mcFdpdWh7o6AZw4N2+I4EEWGJR7R4LGJmk3qZ5YJRgRq1PolCXWKYL6SGgnRdjL7tM5itKMkD9+CAZi5M+tO+crR5QQyu0s35i3NIEjtfBAAA",
+    "fallback": "https://img.karnani.io/fish-n-fins/img_8460.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/fish-n-fins/img_8460-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/fish-n-fins/img_8460-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/fish-n-fins/img_8460-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/fish-n-fins/img_8460-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-12-17T15:49:36",
+    "gps": {
+      "lat": 7.33916666666667,
+      "lon": 134.459166666667
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 18,
+      "exposureTime": 0.004,
+      "iso": 400,
+      "focalLength": 45
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_8436.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.4997,
+    "lqip": "data:image/webp;base64,UklGRt4AAABXRUJQVlA4INIAAADQBACdASoYABAAPtFUo0uoJKMhsAgBABoJYgC7Ef/i10m/WY0VvKTnY0s4zFsS4AD+7Qz9KvZQLXW2h3wkCPhZ/ubK4BdF36XLDtjmJq2fGxspZbNAZFwQXUHnV35AiS7gxdgAgfaRnMo32mStySuXLtDnpqXNZ7fX1BNH1x9S75psAzPMCy4Z2T6B0HTYFUlraiLxLsP0vg0AU4Gyk/82XDrjOvUo6MtpyqmwG5lcze6ZLZTmKL878NfJhXL0Ah7FpjQ9cY+rV6vxKYWF05BQAAA=",
+    "fallback": "https://img.karnani.io/fish-n-fins/img_8436.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/fish-n-fins/img_8436-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/fish-n-fins/img_8436-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/fish-n-fins/img_8436-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/fish-n-fins/img_8436-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-12-17T15:31:49",
+    "gps": {
+      "lat": 7.33916666666667,
+      "lon": 134.459166666667
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 16,
+      "exposureTime": 0.004,
+      "iso": 400,
+      "focalLength": 45
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_8394.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.4998,
+    "lqip": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAADwAwCdASoYABAAPtFUpEuoJKOhsAgBABoJaQAAWnFpfIJUt8h9WXwAAP7jrvra+JDUtygygsJ2fewG6ptBdg2vPF+1aXRuX7BOfIZ7XqztJdqZY5VEl9rFroADhGEnrAQKfvSQdJER1utu/zdEAAAA",
+    "fallback": "https://img.karnani.io/fish-n-fins/img_8394.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/fish-n-fins/img_8394-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/fish-n-fins/img_8394-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/fish-n-fins/img_8394-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/fish-n-fins/img_8394-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-12-17T13:18:01",
+    "gps": {
+      "lat": 7.285,
+      "lon": 134.243666666667
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 18,
+      "exposureTime": 0.008,
+      "iso": 400,
+      "focalLength": 45
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_8376.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5001,
+    "lqip": "data:image/webp;base64,UklGRrAAAABXRUJQVlA4IKQAAADQBACdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoRwACsSwJLwKbip77a/aHPCAAD9Rmc1wAnw8Qi9haM3rvNVumPNeQVFZloTh8mzsoYsnbuesPQC25S+N+V36G/8na3R9bk1L+ClfU2WBa/fxhgduyQav3Q9TTb/rSrN8RUEhj75Z+c4luqzSGz/+TeMD6hGldpDs7zQWW+d9cOhbOMEiF4AAA==",
+    "fallback": "https://img.karnani.io/fish-n-fins/img_8376.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/fish-n-fins/img_8376-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/fish-n-fins/img_8376-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/fish-n-fins/img_8376-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/fish-n-fins/img_8376-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-12-17T13:08:31",
+    "gps": {
+      "lat": 7.285,
+      "lon": 134.243666666667
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 16,
+      "exposureTime": 0.008,
+      "iso": 400,
+      "focalLength": 45
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_8350.jpg",
+    "width": 1600,
+    "height": 2400,
+    "ratio": 0.6667,
+    "lqip": "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAADwBQCdASoYACQAPsFUnUunpSKhtVgMAPAYCWUAt0AWbcRymGJdS4LqT8UeJts4xk6KmoP3nhiGwAD+4SQAGx6rWcNUPWsknEUkMApXhfolFh8vMeWSRy+cqgKKObFJty95NBYTrd+SJ3U22yeCvdN8CzFgQYLZfLBVYEFRbgTmOwp+l2zTwn6iFsDih+2fpAAAAA==",
+    "fallback": "https://img.karnani.io/fish-n-fins/img_8350.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/fish-n-fins/img_8350-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/fish-n-fins/img_8350-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/fish-n-fins/img_8350-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/fish-n-fins/img_8350-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-12-17T12:39:56",
+    "gps": {
+      "lat": 7.285,
+      "lon": 134.243666666667
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 16,
+      "exposureTime": 0.005,
+      "iso": 400,
+      "focalLength": 18
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_8322.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRuQAAABXRUJQVlA4INgAAABQBQCdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoR3Ff/jeBb7jtcNk+PG+Ddt6aBoNAAA/ubjUqb5sq4PaIvVSYdJsV/bcXsCIl3SysfCa9Q7T7D7ybEtZKMptsOljcwo5kuMPGhnd1nt5sbkCWLDqrOg9wNkKDqZ8PvfV4ZpliLONAMmsAuS3Cepi/pHjyHxoS3MvowCJKq3fnbu+Bxg2EYCQKZ1BKsqGww3HNcP7j0LIyJ6pUhm2gzoPYljhTsb/7E5r1yjG6ACkJczxRz68IuWGIIsBAA=",
+    "fallback": "https://img.karnani.io/fish-n-fins/img_8322.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/fish-n-fins/img_8322-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/fish-n-fins/img_8322-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/fish-n-fins/img_8322-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/fish-n-fins/img_8322-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-12-17T10:24:19",
+    "gps": {
+      "lat": 7.27083333333333,
+      "lon": 134.245666666667
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 14,
+      "exposureTime": 0.00625,
+      "iso": 400,
+      "focalLength": 45
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "IMG_8304.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAABQBACdASoYABAAPtFUo0uoJKMhsAgBABoJbACdL1AByyuNecAZeEFTg89wAP55MiYnSL62ViEjTWghbhUordXMfX3Vz57vIsJ7+OczxNVNqHClXLsaLz1NiE2dJEYM4B9s1w0P2GUuGzOPAZv5P2B+krZLpUFMXz3yg31S4v4EfrgLJR0xZjn9/rWNX829HBk4WFeIMAA=",
+    "fallback": "https://img.karnani.io/fish-n-fins/img_8304.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/fish-n-fins/img_8304-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/fish-n-fins/img_8304-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/fish-n-fins/img_8304-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/fish-n-fins/img_8304-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2025-12-17T10:14:48",
+    "gps": {
+      "lat": 7.27083333333333,
+      "lon": 134.245666666667
+    },
+    "camera": "Canon EOS R50",
+    "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
+    "exposure": {
+      "fNumber": 16,
+      "exposureTime": 0.008,
+      "iso": 400,
+      "focalLength": 45
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  }
+]
