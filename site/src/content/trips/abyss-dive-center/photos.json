@@ -25,7 +25,10 @@
       }
     ],
     "date": "2025-12-23T11:41:50",
-    "gps": null,
+    "gps": {
+      "lat": -34.0025,
+      "lon": 151.225333333333
+    },
     "camera": "Canon EOS R50",
     "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
     "exposure": {
@@ -64,7 +67,10 @@
       }
     ],
     "date": "2025-12-23T11:34:33",
-    "gps": null,
+    "gps": {
+      "lat": -34.0025,
+      "lon": 151.225333333333
+    },
     "camera": "Canon EOS R50",
     "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
     "exposure": {
@@ -82,7 +88,7 @@
     "width": 1600,
     "height": 1067,
     "ratio": 1.4996,
-    "lqip": "data:image/webp;base64,UklGRqYAAABXRUJQVlA4IJoAAACQBACdASoYABAAPtFUo0uoJKMhsAgBABoJQBOmUAS3orfkfAl/Dr6Spdmcr9gA/u9R8869PSWxjAx5q0F63iKC+P0nsJa3J5QnW5ppf0jRdosqNuwpNIQ9qk7tgUINVVnNifMZg/mP95rj4S9bFMH3zhWCXiIOvhUBbuynpRYuK/GVwu7GYQFNrh8u7vjphmsHJuEW2PZY1AAA",
+    "lqip": "data:image/webp;base64,UklGRqQAAABXRUJQVlA4IJgAAACQBACdASoYABAAPtFUo0uoJKMhsAgBABoJQBOl4AKwxZSBz/WV101C+Wc8fQAA/u9R8869PSWxjAx5q0F63iKC+P0nsJa3J5QnW5ppf0jRdoq6DNTKV2lHTCS6MJC1s9ys0Gx1GRazDdRT5Ge1VB9Cz9RzZJ7ATru/eGdVp18O8i7HT93zmmYDGy/TZhUJz9QtQkWuvaVgAA==",
     "fallback": "https://img.karnani.io/abyss-dive-center/img_8737.jpg",
     "srcset": [
       {
@@ -103,7 +109,10 @@
       }
     ],
     "date": "2025-12-23T11:24:04",
-    "gps": null,
+    "gps": {
+      "lat": -34.0025,
+      "lon": 151.225333333333
+    },
     "camera": "Canon EOS R50",
     "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
     "exposure": {
@@ -121,7 +130,7 @@
     "width": 1600,
     "height": 1067,
     "ratio": 1.5,
-    "lqip": "data:image/webp;base64,UklGRuoAAABXRUJQVlA4IN4AAABQBQCdASoYABAAPtFUo0uoJKMhsAgBABoJaACdMoR3JoA1gTOYsYPUr1y8o2Z0Kn1zJ9AA9qh12uA5wq9m7Tx2SuaQxeBwar7/g32MpsRW1WRIW5hoy1j+K1ohWqdsoinUZyWDPgkj35d+a95ASKna0aRX7GgnLMBiz5XnMPOX0l/X01qUIED5d1vxPdmIfCOQizUb2nMtztcW6rnZtDGjEAdvDjuK8tg/yg3j1zD5ij0YIiGDPsujLBuy4H22DEW0bhjNqaeZ4ER4ezVeVsb3SPJQeXXUOWsXV/CYAAA=",
+    "lqip": "data:image/webp;base64,UklGRuoAAABXRUJQVlA4IN4AAABQBQCdASoYABAAPtFUo0uoJKMhsAgBABoJaACdMoR3JoA1gTOQsYPUr1y8o2Z0Kn1zJ9AA9qh12uAZwq9m65yrXx19DeIDg/8pFSi4JlgEIdepiOCZ3Uva79Tsv8JdL2rn6BgEWHU/u5quzeRuWUUQYe+Odl+xdpl1CV9u95l/zt/X01qUIED5d1vxPdmIfCOQizUb2nMtztcW6rnZsDGjEAdriWmCptfBygvNk3D5ijyYIiGDPuZVdqiI7P16DZn+9sSqK9H2fZoECrWnVj1fh10oPLrqHLWLq/hMAAA=",
     "fallback": "https://img.karnani.io/abyss-dive-center/img_8728.jpg",
     "srcset": [
       {
@@ -142,7 +151,10 @@
       }
     ],
     "date": "2025-12-23T11:21:36",
-    "gps": null,
+    "gps": {
+      "lat": -34.0025,
+      "lon": 151.225333333333
+    },
     "camera": "Canon EOS R50",
     "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
     "exposure": {
@@ -160,7 +172,7 @@
     "width": 1600,
     "height": 1067,
     "ratio": 1.5,
-    "lqip": "data:image/webp;base64,UklGRsoAAABXRUJQVlA4IL4AAACQBACdASoYABAAPtFUo0uoJKMhsAgBABoJagCdAywTpAfGj2cqgPUlkObT42gA/u7v61MBtRGfkprj+aE2QLdBOPkZ6EezzuFuAzBPWsI5WLyPqEc5iiS5S0Xd+rk2e/7F5ziXyyak/s9t9nEvlu8ql+iLLfU8WIM6q3e++o/tnxRnXaX4DxSGzcI6B+zHDUI1Hnb8b8Ra7iLJ6Cb66F5wEKhMPfrDJAQoRTuCG48G4iejAKQjlFzhRk40IIAA",
+    "lqip": "data:image/webp;base64,UklGRsoAAABXRUJQVlA4IL4AAACQBACdASoYABAAPtFUo0uoJKMhsAgBABoJagCdAywTo4fGj2cqgPUlkObT42gA/u7v6lOBtHIzPvs1vQxVRbdBHjkZ5/uzzuDuAzBPWsI5WHyPqEcxoccwOJVZxsRhNZ7F5ziSpbc0fs9t9nEvlu8ql+iLLfU8WIM6q3de+o/tnt1nXZ95EWXO932xqxC0jcz372iPDpARRsAlxtYEsaFkL9yW4l3Bw9pWnmK4XQaexWYomj48Vx7ieJ5PDSAA",
     "fallback": "https://img.karnani.io/abyss-dive-center/img_8720.jpg",
     "srcset": [
       {
@@ -181,7 +193,10 @@
       }
     ],
     "date": "2025-12-23T11:14:56",
-    "gps": null,
+    "gps": {
+      "lat": -34.0025,
+      "lon": 151.225333333333
+    },
     "camera": "Canon EOS R50",
     "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
     "exposure": {
@@ -220,7 +235,10 @@
       }
     ],
     "date": "2025-12-23T11:14:13",
-    "gps": null,
+    "gps": {
+      "lat": -34.0025,
+      "lon": 151.225333333333
+    },
     "camera": "Canon EOS R50",
     "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
     "exposure": {
@@ -259,7 +277,10 @@
       }
     ],
     "date": "2025-12-23T11:12:07",
-    "gps": null,
+    "gps": {
+      "lat": -34.0025,
+      "lon": 151.225333333333
+    },
     "camera": "Canon EOS R50",
     "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
     "exposure": {
@@ -298,7 +319,10 @@
       }
     ],
     "date": "2025-12-23T09:41:11",
-    "gps": null,
+    "gps": {
+      "lat": -34.0025,
+      "lon": 151.225333333333
+    },
     "camera": "Canon EOS R50",
     "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
     "exposure": {
@@ -316,7 +340,7 @@
     "width": 1600,
     "height": 1066,
     "ratio": 1.5003,
-    "lqip": "data:image/webp;base64,UklGRu4AAABXRUJQVlA4IOIAAAAQBQCdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoRwAkgPcyWQmBFvQsCq9i5N/JzAAPZyCX9WAHQJ7zfiW0tlmnrc0oSfSGByp1q3WjsgC6CnHXRnZbXK57vrGCTH2M2Vope8SjKwd5VpeFqRnCZ2UuP/f47liG/pSDo/UqEprN1ktscdO9seUCy9aMec5e/RIKQxTENNp/D4DEiwL+tTnmhEbMYpwoUYiR5yIqDUnrsLMXmTYq8btFNAzhglfruMly2TIgDmPdVHcc/UIo0w4oHujR/pKAxTqdhbsErZOCAA",
+    "lqip": "data:image/webp;base64,UklGRu4AAABXRUJQVlA4IOIAAAAQBQCdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoRwAkgPcmWQmBHHr7gTCWQP4n1wAPZyCV7r/dRUEpfiW0blmnrc0jYfSChypWq3WhWgCMxsSwRnZLXKOexh0+zwySqCdRP2zVt0r52kWm2M8ZbDZOPqOKuVI5XziXW1MUY3fqwINdKTWZJS+7/QH+7QNMesws8Fz1l6XhhgV7vFCzoiRLt8xOiELQlzOuw82ggvn0MnN6xNFt14bZrVlVOXMm/3cKFvjuvDFUaetJb9jhjfFauff4lAYp1Owt2CVsnBAAAA",
     "fallback": "https://img.karnani.io/abyss-dive-center/img_8684.jpg",
     "srcset": [
       {
@@ -337,7 +361,10 @@
       }
     ],
     "date": "2025-12-23T09:35:15",
-    "gps": null,
+    "gps": {
+      "lat": -34.0025,
+      "lon": 151.225333333333
+    },
     "camera": "Canon EOS R50",
     "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
     "exposure": {
@@ -376,7 +403,10 @@
       }
     ],
     "date": "2025-12-23T09:33:18",
-    "gps": null,
+    "gps": {
+      "lat": -34.0025,
+      "lon": 151.225333333333
+    },
     "camera": "Canon EOS R50",
     "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
     "exposure": {
@@ -415,7 +445,10 @@
       }
     ],
     "date": "2025-12-23T09:27:52",
-    "gps": null,
+    "gps": {
+      "lat": -34.0025,
+      "lon": 151.225333333333
+    },
     "camera": "Canon EOS R50",
     "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
     "exposure": {
@@ -454,7 +487,10 @@
       }
     ],
     "date": "2025-12-23T09:22:25",
-    "gps": null,
+    "gps": {
+      "lat": -34.0025,
+      "lon": 151.225333333333
+    },
     "camera": "Canon EOS R50",
     "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
     "exposure": {
@@ -493,7 +529,10 @@
       }
     ],
     "date": "2025-12-23T09:18:59",
-    "gps": null,
+    "gps": {
+      "lat": -34.0025,
+      "lon": 151.225333333333
+    },
     "camera": "Canon EOS R50",
     "lens": "Canon RF-S 18-45mm F4.5-6.3 IS STM",
     "exposure": {
