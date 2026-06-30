@@ -1,7 +1,12 @@
 ---
-// A Leaflet map of GPS points. Renders nothing when there are no points.
+// A flat MapLibre GL map of GPS points, themed to the site palette. Renders
+// nothing when there are no points.
 // Props: points [{lat,lon,photos:[{title,thumb,href}]}], id, cluster, height, caption.
+// `cluster` → GeoJSON clustering for the global (home) map; otherwise HTML
+// markers fit to a trip. The MapTiler key is a client-side, domain-restricted
+// value read from PUBLIC_MAPTILER_KEY.
 const { points = [], id, cluster = false, height = '380px', caption } = Astro.props;
+const key = import.meta.env.PUBLIC_MAPTILER_KEY || '';
 const hasPoints = points.length > 0;
 ---
 
@@ -13,54 +18,175 @@ const hasPoints = points.length > 0;
         {caption && <figcaption>{caption}</figcaption>}
       </figure>
 
-      <script is:inline define:vars={{ points, id, cluster }}>
+      <script is:inline define:vars={{ points, id, cluster, key }}>
         (function () {
-          if (typeof L === 'undefined') return;
-          const map = L.map(id, { scrollWheelZoom: false }).setView([0, 0], 2);
-          L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-            attribution: '&copy; OpenStreetMap, &copy; CARTO',
-            subdomains: 'abcd',
-            maxZoom: 19,
-          }).addTo(map);
+          if (typeof maplibregl === 'undefined') return;
+          const el = document.getElementById(id);
+          if (!key) {
+            el.innerHTML = '<div class="map-msg">Set PUBLIC_MAPTILER_KEY to show the map</div>';
+            return;
+          }
 
-          const useCluster = cluster && typeof L.markerClusterGroup === 'function';
-          const layer = useCluster ? L.markerClusterGroup() : L.layerGroup();
-          const latlngs = [];
+          // Custom vector style in the site palette: near-black land, a subtly
+          // lighter teal sea, faint borders, quiet dim labels.
+          const name = ['coalesce', ['get', 'name:en'], ['get', 'name']];
+          const style = {
+            version: 8,
+            glyphs: `https://api.maptiler.com/fonts/{fontstack}/{range}.pbf?key=${key}`,
+            sources: { omt: { type: 'vector', url: `https://api.maptiler.com/tiles/v3/tiles.json?key=${key}` } },
+            layers: [
+              { id: 'land', type: 'background', paint: { 'background-color': '#06121a' } },
+              {
+                id: 'water', type: 'fill', source: 'omt', 'source-layer': 'water',
+                paint: { 'fill-color': '#0e2a37', 'fill-outline-color': '#173d44' },
+              },
+              {
+                id: 'boundary', type: 'line', source: 'omt', 'source-layer': 'boundary',
+                filter: ['<=', ['to-number', ['get', 'admin_level']], 4],
+                paint: { 'line-color': '#1c3a49', 'line-width': 0.6, 'line-dasharray': [2, 2], 'line-opacity': 0.8 },
+              },
+              {
+                id: 'place-country', type: 'symbol', source: 'omt', 'source-layer': 'place',
+                filter: ['==', ['get', 'class'], 'country'],
+                layout: {
+                  'text-field': name, 'text-font': ['Noto Sans Regular'], 'text-size': 11,
+                  'text-transform': 'uppercase', 'text-letter-spacing': 0.18, 'text-max-width': 6,
+                },
+                paint: { 'text-color': '#6f8a96', 'text-halo-color': '#06121a', 'text-halo-width': 1.2 },
+              },
+              {
+                id: 'place-locality', type: 'symbol', source: 'omt', 'source-layer': 'place',
+                minzoom: 4,
+                filter: ['match', ['get', 'class'], ['city', 'town', 'village'], true, false],
+                layout: { 'text-field': name, 'text-font': ['Noto Sans Regular'], 'text-size': 11, 'text-max-width': 7 },
+                paint: { 'text-color': '#93abb6', 'text-halo-color': '#06121a', 'text-halo-width': 1.2 },
+              },
+            ],
+          };
 
+          const map = new maplibregl.Map({
+            container: id,
+            style,
+            center: cluster ? [10, 25] : [points[0].lon, points[0].lat],
+            zoom: cluster ? 1.4 : 4,
+            attributionControl: { compact: true },
+            cooperativeGestures: true,
+            dragRotate: false,
+            pitchWithRotate: false,
+          });
+          map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-right');
+
+          const popup = new maplibregl.Popup({ closeButton: true, maxWidth: '232px' });
           const esc = (s) => String(s || '').replace(/[<>&"]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;', '"': '&quot;' })[c]);
-
-          for (const p of points) {
-            const photos = p.photos || [];
-            const count = photos.length;
-            const size = count > 1 ? Math.min(36, 18 + count) : 13;
-            const marker = L.marker([p.lat, p.lon], {
-              icon: L.divIcon({
-                className: 'map-pin-icon',
-                html: `<span class="map-pin${count > 1 ? ' multi' : ''}">${count > 1 ? count : ''}</span>`,
-                iconSize: [size, size],
-                iconAnchor: [size / 2, size / 2],
-              }),
-            });
-
-            let html;
+          function popupHtml(photos) {
             if (photos.length <= 1) {
               const ph = photos[0] || {};
               const thumb = ph.thumb ? `<img src="${ph.thumb}" alt="" />` : '';
-              html = `<a class="map-pop" href="${ph.href}">${thumb}<span>${esc(ph.title)}</span></a>`;
-            } else {
-              const items = photos
-                .map((ph) => `<a class="map-pop-item" href="${ph.href}" title="${esc(ph.title)}"><img src="${ph.thumb}" alt="" /></a>`)
-                .join('');
-              html = `<div class="map-pop-multi"><div class="map-pop-count">${photos.length} photos here</div><div class="map-pop-grid">${items}</div></div>`;
+              return `<a class="map-pop" href="${ph.href}">${thumb}<span>${esc(ph.title)}</span></a>`;
             }
-            marker.bindPopup(html, { maxWidth: 232, maxHeight: 260 });
-            layer.addLayer(marker);
-            latlngs.push([p.lat, p.lon]);
+            const items = photos
+              .map((ph) => `<a class="map-pop-item" href="${ph.href}" title="${esc(ph.title)}"><img src="${ph.thumb}" alt="" /></a>`)
+              .join('');
+            return `<div class="map-pop-multi"><div class="map-pop-count">${photos.length} photos here</div><div class="map-pop-grid">${items}</div></div>`;
           }
-          map.addLayer(layer);
 
-          if (latlngs.length === 1) map.setView(latlngs[0], 9);
-          else map.fitBounds(latlngs, { padding: [30, 30] });
+          function fit() {
+            if (points.length === 1) {
+              map.setCenter([points[0].lon, points[0].lat]);
+              map.setZoom(9);
+              return;
+            }
+            const b = new maplibregl.LngLatBounds();
+            for (const p of points) b.extend([p.lon, p.lat]);
+            map.fitBounds(b, { padding: 44, maxZoom: cluster ? 6 : 11, duration: 0 });
+          }
+
+          map.on('load', () => {
+            cluster ? buildCluster() : buildMarkers();
+            fit();
+            // compact:true starts EXPANDED; collapse it so only the ⓘ shows.
+            el.querySelector('.maplibregl-ctrl-attrib')?.classList.remove('maplibregl-compact-show');
+          });
+
+          // Trip map: HTML markers reusing the .map-pin count badges.
+          function buildMarkers() {
+            for (const p of points) {
+              const n = p.photos.length;
+              const sz = n > 1 ? Math.min(36, 18 + n) : 13;
+              const pin = document.createElement('div');
+              pin.className = 'map-pin' + (n > 1 ? ' multi' : '');
+              pin.style.width = pin.style.height = sz + 'px';
+              if (n > 1) pin.textContent = String(n);
+              pin.addEventListener('click', (e) => {
+                e.stopPropagation();
+                popup.setLngLat([p.lon, p.lat]).setHTML(popupHtml(p.photos)).addTo(map);
+              });
+              new maplibregl.Marker({ element: pin }).setLngLat([p.lon, p.lat]).addTo(map);
+            }
+          }
+
+          // Global map: native GeoJSON clustering, styled to match the badges.
+          function buildCluster() {
+            map.addSource('photos', {
+              type: 'geojson',
+              cluster: true,
+              clusterRadius: 44,
+              clusterMaxZoom: 8,
+              // Sum the per-spot photo counts so a cluster shows total photos,
+              // not the number of locations.
+              clusterProperties: { total: ['+', ['get', 'count']] },
+              data: {
+                type: 'FeatureCollection',
+                features: points.map((p) => ({
+                  type: 'Feature',
+                  geometry: { type: 'Point', coordinates: [p.lon, p.lat] },
+                  properties: { count: p.photos.length, photos: JSON.stringify(p.photos) },
+                })),
+              },
+            });
+            map.addLayer({
+              id: 'clusters', type: 'circle', source: 'photos', filter: ['has', 'point_count'],
+              paint: {
+                'circle-color': '#58d2c6', 'circle-opacity': 0.9, 'circle-stroke-color': '#06121a', 'circle-stroke-width': 2,
+                'circle-radius': ['step', ['get', 'total'], 15, 20, 20, 75, 26],
+              },
+            });
+            map.addLayer({
+              id: 'cluster-count', type: 'symbol', source: 'photos', filter: ['has', 'point_count'],
+              layout: { 'text-field': ['to-string', ['get', 'total']], 'text-font': ['Noto Sans Bold'], 'text-size': 12 },
+              paint: { 'text-color': '#06121a' },
+            });
+            map.addLayer({
+              id: 'point', type: 'circle', source: 'photos', filter: ['!', ['has', 'point_count']],
+              paint: {
+                'circle-color': '#58d2c6', 'circle-stroke-color': '#06121a', 'circle-stroke-width': 2,
+                'circle-opacity': ['case', ['>', ['get', 'count'], 1], 0.95, 0.6],
+                'circle-radius': ['interpolate', ['linear'], ['get', 'count'], 1, 6, 3, 9, 10, 13],
+              },
+            });
+            map.addLayer({
+              id: 'point-count', type: 'symbol', source: 'photos',
+              filter: ['all', ['!', ['has', 'point_count']], ['>', ['get', 'count'], 1]],
+              layout: { 'text-field': ['to-string', ['get', 'count']], 'text-font': ['Noto Sans Bold'], 'text-size': 11 },
+              paint: { 'text-color': '#06121a' },
+            });
+
+            const pointer = (on) => () => (map.getCanvas().style.cursor = on ? 'pointer' : '');
+            for (const lyr of ['clusters', 'point']) {
+              map.on('mouseenter', lyr, pointer(true));
+              map.on('mouseleave', lyr, pointer(false));
+            }
+            map.on('click', 'clusters', (e) => {
+              const f = map.queryRenderedFeatures(e.point, { layers: ['clusters'] })[0];
+              map.getSource('photos').getClusterExpansionZoom(f.properties.cluster_id).then((zoom) => {
+                map.easeTo({ center: f.geometry.coordinates, zoom });
+              });
+            });
+            map.on('click', 'point', (e) => {
+              const f = e.features[0];
+              popup.setLngLat(f.geometry.coordinates).setHTML(popupHtml(JSON.parse(f.properties.photos))).addTo(map);
+            });
+          }
         })();
       </script>
     </Fragment>

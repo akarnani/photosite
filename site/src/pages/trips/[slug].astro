@@ -22,7 +22,7 @@ const eyebrow = [trip.location?.name, trip.dates].filter(Boolean).join(' · ');
       {trip.summary && <p>{trip.summary}</p>}
     </header>
 
-    <PhotoMap points={points} id={`map-${trip.slug}`} cluster={false} height="360px" caption="Where these were taken" />
+    <PhotoMap points={points} id={`map-${trip.slug}`} height="360px" caption="Where these were taken" />
 
     <Gallery photos={trip.photos} />
   </section>

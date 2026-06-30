@@ -105,6 +105,22 @@ target one with `photosite upload <slug>` or force all with `--all`. (If the
 local cache is gone — e.g. a fresh clone — re-run `update-trip --from <folder>`
 instead.)
 
+### Maps (MapTiler)
+
+The maps use [MapTiler](https://www.maptiler.com) vector tiles with a custom
+style themed to the site (a clustered global map on the home page, per-trip maps
+elsewhere). You need a free MapTiler API key:
+
+1. Get a key, and in the MapTiler dashboard **restrict it to your domain**
+   (`photos.example.com`, plus `localhost` for local dev).
+2. Locally: `cp site/.env.example site/.env` and set `PUBLIC_MAPTILER_KEY`.
+3. For the deploy: add `PUBLIC_MAPTILER_KEY` as a **Cloudflare Pages environment
+   variable**.
+
+The key is a client-side, domain-restricted value (it ships in the page HTML by
+design — not a secret), so it stays out of git. Without it, maps render a small
+"set PUBLIC_MAPTILER_KEY" notice instead of crashing the build.
+
 ## Cloudflare setup (one time, in the dashboard)
 
 The CLI records values but does **not** create cloud resources. Do these by hand:

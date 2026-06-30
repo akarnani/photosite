@@ -49,7 +49,12 @@ deps.
 - exiftool Subject/HierarchicalSubject may be a string or an array — normalize.
 - sharp: `.rotate()` for orientation, `failOn: "none"`, never upscale past source.
 - rclone: check `listremotes` before create-vs-update; never pass empty creds.
-- Leaflet is loaded once from CDN in `<head>`; component map scripts are `is:inline`.
+- Maps: **MapLibre GL** loaded once from CDN in `<head>` (pinned + SRI); the
+  `PhotoMap` script is `is:inline`. Flat **custom vector style** (authored inline
+  in `PhotoMap.astro`, site palette) over MapTiler tiles via `PUBLIC_MAPTILER_KEY`
+  (client-side, domain-restricted, read from `site/.env` — not a repo secret).
+  `cluster` prop → GeoJSON clustering for the home map; default → HTML `.map-pin`
+  markers fit to the trip. No key → the map shows a notice.
 - Strip trailing slash from `publicBaseUrl` before joining URLs.
 - TUI (`annotate`/`cover`): **Ink + React via `htm`** (tagged templates — NO JSX
   build step; keep it that way). Runs on the alternate screen (`runTui`).
