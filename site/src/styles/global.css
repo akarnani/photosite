@@ -246,6 +246,35 @@ section {
   font-family: var(--serif);
   font-style: italic;
 }
+.map-pop-multi {
+  width: 212px;
+}
+.map-pop-count {
+  font-family: var(--mono);
+  font-size: var(--step-eyebrow);
+  letter-spacing: 0.06em;
+  color: var(--mist-dim);
+  margin-bottom: 0.45rem;
+}
+.map-pop-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+}
+.map-pop-item {
+  display: block;
+}
+.map-pop-item img {
+  width: 100%;
+  height: 46px;
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+}
+.map-pop-item:hover img {
+  outline: 2px solid var(--aqua);
+  outline-offset: -2px;
+}
 
 /* ============================================================================
    Gallery (CSS-columns masonry)

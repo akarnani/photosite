@@ -72,31 +72,48 @@ export function getTrip(slug) {
   return loadTrip(slug);
 }
 
-// Per-trip map points link to the specific photo anchor on the trip page.
-export function pointsForTrip(trip) {
-  return trip.photos
-    .filter((p) => p.gps)
-    .map((p) => ({
-      lat: p.gps.lat,
-      lon: p.gps.lon,
-      title: p.title || p.species?.[0] || p.file,
-      thumb: p.fallback,
-      href: `/trips/${trip.slug}/#${p.id}`,
-    }));
+// Group photos that share the exact same coordinates into one map point (GPS is
+// often assigned per dive site, so many photos stack on one spot). Each point
+// carries the list of photos at that location.
+function groupByCoord(items) {
+  const groups = new Map();
+  for (const it of items) {
+    const key = `${it.lat},${it.lon}`;
+    if (!groups.has(key)) groups.set(key, { lat: it.lat, lon: it.lon, photos: [] });
+    groups.get(key).photos.push({ title: it.title, thumb: it.thumb, href: it.href });
+  }
+  return [...groups.values()];
 }
 
-// Global map points link to the trip page.
-export function allPoints() {
-  return getTrips().flatMap((trip) =>
+// Per-trip map points link to the specific photo anchor on the trip page.
+export function pointsForTrip(trip) {
+  return groupByCoord(
     trip.photos
       .filter((p) => p.gps)
       .map((p) => ({
         lat: p.gps.lat,
         lon: p.gps.lon,
-        title: trip.title || trip.slug,
+        title: p.title || p.species?.[0] || p.file,
         thumb: p.fallback,
-        href: `/trips/${trip.slug}/`,
+        href: `/trips/${trip.slug}/#${p.id}`,
       })),
+  );
+}
+
+// Global map points link to the trip page.
+export function allPoints() {
+  return groupByCoord(
+    getTrips().flatMap((trip) =>
+      trip.photos
+        .filter((p) => p.gps)
+        .map((p) => ({
+          lat: p.gps.lat,
+          lon: p.gps.lon,
+          title: trip.title || trip.slug,
+          thumb: p.fallback,
+          href: `/trips/${trip.slug}/`,
+        })),
+    ),
   );
 }
 

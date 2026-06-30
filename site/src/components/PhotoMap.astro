@@ -1,6 +1,6 @@
 ---
 // A Leaflet map of GPS points. Renders nothing when there are no points.
-// Props: points [{lat,lon,title,thumb,href}], id, cluster, height, caption.
+// Props: points [{lat,lon,photos:[{title,thumb,href}]}], id, cluster, height, caption.
 const { points = [], id, cluster = false, height = '380px', caption } = Astro.props;
 const hasPoints = points.length > 0;
 ---
@@ -27,17 +27,30 @@ const hasPoints = points.length > 0;
           const layer = useCluster ? L.markerClusterGroup() : L.layerGroup();
           const latlngs = [];
 
+          const esc = (s) => String(s || '').replace(/[<>&"]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;', '"': '&quot;' })[c]);
+
           for (const p of points) {
+            const photos = p.photos || [];
             const marker = L.circleMarker([p.lat, p.lon], {
-              radius: 6,
+              radius: 5 + Math.min(4, Math.round(Math.sqrt(photos.length))),
               color: '#58d2c6',
               weight: 2,
               fillColor: '#58d2c6',
               fillOpacity: 0.5,
             });
-            const thumb = p.thumb ? `<img src="${p.thumb}" alt="" />` : '';
-            const title = (p.title || '').replace(/</g, '&lt;');
-            marker.bindPopup(`<a class="map-pop" href="${p.href}">${thumb}<span>${title}</span></a>`);
+
+            let html;
+            if (photos.length <= 1) {
+              const ph = photos[0] || {};
+              const thumb = ph.thumb ? `<img src="${ph.thumb}" alt="" />` : '';
+              html = `<a class="map-pop" href="${ph.href}">${thumb}<span>${esc(ph.title)}</span></a>`;
+            } else {
+              const items = photos
+                .map((ph) => `<a class="map-pop-item" href="${ph.href}" title="${esc(ph.title)}"><img src="${ph.thumb}" alt="" /></a>`)
+                .join('');
+              html = `<div class="map-pop-multi"><div class="map-pop-count">${photos.length} photos here</div><div class="map-pop-grid">${items}</div></div>`;
+            }
+            marker.bindPopup(html, { maxWidth: 232, maxHeight: 260 });
             layer.addLayer(marker);
             latlngs.push([p.lat, p.lon]);
           }
