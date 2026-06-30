@@ -31,12 +31,15 @@ const hasPoints = points.length > 0;
 
           for (const p of points) {
             const photos = p.photos || [];
-            const marker = L.circleMarker([p.lat, p.lon], {
-              radius: 5 + Math.min(4, Math.round(Math.sqrt(photos.length))),
-              color: '#58d2c6',
-              weight: 2,
-              fillColor: '#58d2c6',
-              fillOpacity: 0.5,
+            const count = photos.length;
+            const size = count > 1 ? Math.min(36, 18 + count) : 13;
+            const marker = L.marker([p.lat, p.lon], {
+              icon: L.divIcon({
+                className: 'map-pin-icon',
+                html: `<span class="map-pin${count > 1 ? ' multi' : ''}">${count > 1 ? count : ''}</span>`,
+                iconSize: [size, size],
+                iconAnchor: [size / 2, size / 2],
+              }),
             });
 
             let html;

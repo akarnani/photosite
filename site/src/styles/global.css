@@ -225,6 +225,32 @@ section {
 .leaflet-container {
   background: var(--depth-900);
 }
+.leaflet-div-icon {
+  background: transparent;
+  border: 0;
+}
+.map-pin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: 2px solid var(--aqua);
+  background: rgba(88, 210, 198, 0.5);
+  color: var(--depth-900);
+  font-family: var(--mono);
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1;
+}
+.map-pin.multi {
+  background: var(--aqua);
+}
+.map-pin-icon:hover .map-pin {
+  border-color: var(--mist);
+}
 .leaflet-popup-content-wrapper,
 .leaflet-popup-tip {
   background: var(--surface);
