@@ -163,20 +163,32 @@ section {
 /* ============================================================================
    Trip cards
    ============================================================================ */
+/* Masonry collage of trip tiles (varied heights from cover ratios). */
 .trip-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
-  gap: clamp(1rem, 0.5rem + 2vw, 2rem);
-  align-items: start; /* cards keep their natural height, tops aligned */
+  column-count: 1;
+  column-gap: var(--gap);
+}
+@media (min-width: 640px) {
+  .trip-grid {
+    column-count: 2;
+  }
+}
+@media (min-width: 1100px) {
+  .trip-grid {
+    column-count: 3;
+  }
 }
 .trip-card {
+  position: relative;
   display: block;
+  break-inside: avoid;
+  margin: 0 0 var(--gap);
   color: inherit;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   overflow: hidden;
   background: var(--surface);
-  transition: transform 0.25s ease, border-color 0.25s ease;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 .trip-card:hover {
   text-decoration: none;
@@ -184,22 +196,71 @@ section {
   border-color: var(--aqua-deep);
 }
 .trip-card .cover {
+  display: block;
   width: 100%;
-  height: auto; /* show the whole cover at its natural ratio — no crop */
+  height: auto; /* whole cover at natural ratio — drives the collage heights */
   background: var(--depth-700);
 }
 .trip-card .body {
-  padding: 1rem 1.1rem 1.25rem;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 2.4rem 1rem 0.85rem;
+  background: linear-gradient(to top, rgba(6, 18, 26, 0.92) 16%, rgba(6, 18, 26, 0.5) 58%, transparent);
 }
 .trip-card h3 {
   font-size: 1.4rem;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.2rem;
+  color: var(--mist);
 }
 .trip-card .meta {
   font-family: var(--mono);
   font-size: var(--step-eyebrow);
   color: var(--mist-dim);
   letter-spacing: 0.04em;
+}
+.trip-card.is-hidden {
+  display: none;
+}
+.trip-card.pulse {
+  border-color: var(--aqua);
+  box-shadow: 0 0 0 2px var(--aqua);
+}
+
+/* Trip section header + map-driven filter chrome. */
+.section-head.trips-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.trip-filter {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.trip-filter-status {
+  font-family: var(--mono);
+  font-size: var(--step-eyebrow);
+  color: var(--mist-dim);
+}
+.trip-reset {
+  font-family: var(--mono);
+  font-size: var(--step-eyebrow);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--depth-900);
+  background: var(--aqua);
+  border: 0;
+  border-radius: 999px;
+  padding: 0.35rem 0.85rem;
+  cursor: pointer;
+}
+.trip-reset:hover {
+  background: var(--aqua-deep);
+  color: var(--mist);
 }
 
 /* ============================================================================

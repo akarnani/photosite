@@ -79,8 +79,10 @@ function groupByCoord(items) {
   const groups = new Map();
   for (const it of items) {
     const key = `${it.lat},${it.lon}`;
-    if (!groups.has(key)) groups.set(key, { lat: it.lat, lon: it.lon, photos: [] });
-    groups.get(key).photos.push({ title: it.title, thumb: it.thumb, href: it.href });
+    if (!groups.has(key)) groups.set(key, { lat: it.lat, lon: it.lon, photos: [], slugs: [] });
+    const g = groups.get(key);
+    g.photos.push({ title: it.title, thumb: it.thumb, href: it.href });
+    if (it.slug && !g.slugs.includes(it.slug)) g.slugs.push(it.slug);
   }
   return [...groups.values()];
 }
@@ -112,6 +114,7 @@ export function allPoints() {
           title: trip.title || trip.slug,
           thumb: p.fallback,
           href: `/trips/${trip.slug}/`,
+          slug: trip.slug,
         })),
     ),
   );

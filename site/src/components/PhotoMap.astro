@@ -5,7 +5,7 @@
 // `cluster` → GeoJSON clustering for the global (home) map; otherwise HTML
 // markers fit to a trip. The MapTiler key is a client-side, domain-restricted
 // value read from PUBLIC_MAPTILER_KEY.
-const { points = [], id, cluster = false, height = '380px', caption } = Astro.props;
+const { points = [], id, cluster = false, link = false, height = '380px', caption } = Astro.props;
 const key = import.meta.env.PUBLIC_MAPTILER_KEY || '';
 const hasPoints = points.length > 0;
 ---
@@ -18,7 +18,7 @@ const hasPoints = points.length > 0;
         {caption && <figcaption>{caption}</figcaption>}
       </figure>
 
-      <script is:inline define:vars={{ points, id, cluster, key }}>
+      <script is:inline define:vars={{ points, id, cluster, link, key }}>
         (function () {
           if (typeof maplibregl === 'undefined') return;
           const el = document.getElementById(id);
@@ -106,7 +106,26 @@ const hasPoints = points.length > 0;
             fit();
             // compact:true starts EXPANDED; collapse it so only the ⓘ shows.
             el.querySelector('.maplibregl-ctrl-attrib')?.classList.remove('maplibregl-compact-show');
+            if (link) setupLink();
           });
+
+          // Tell the page which trips are in the current viewport (for filtering
+          // the trip grid), and react to a reset request.
+          function setupLink() {
+            const emit = () => {
+              const b = map.getBounds();
+              const slugs = new Set();
+              for (const p of points) if (b.contains([p.lon, p.lat])) for (const s of p.slugs || []) slugs.add(s);
+              document.dispatchEvent(new CustomEvent('photomap:view', { detail: { slugs: [...slugs] } }));
+            };
+            map.on('moveend', emit);
+            emit();
+            document.addEventListener('photomap:reset', () => {
+              const b = new maplibregl.LngLatBounds();
+              for (const p of points) b.extend([p.lon, p.lat]);
+              map.fitBounds(b, { padding: 44, maxZoom: 6 });
+            });
+          }
 
           // Trip map: HTML markers reusing the .map-pin count badges.
           function buildMarkers() {
@@ -140,7 +159,7 @@ const hasPoints = points.length > 0;
                 features: points.map((p) => ({
                   type: 'Feature',
                   geometry: { type: 'Point', coordinates: [p.lon, p.lat] },
-                  properties: { count: p.photos.length, photos: JSON.stringify(p.photos) },
+                  properties: { count: p.photos.length, photos: JSON.stringify(p.photos), slugs: JSON.stringify(p.slugs || []) },
                 })),
               },
             });
@@ -185,6 +204,9 @@ const hasPoints = points.length > 0;
             map.on('click', 'point', (e) => {
               const f = e.features[0];
               popup.setLngLat(f.geometry.coordinates).setHTML(popupHtml(JSON.parse(f.properties.photos))).addTo(map);
+              if (link && f.properties.slugs) {
+                document.dispatchEvent(new CustomEvent('photomap:select', { detail: { slugs: JSON.parse(f.properties.slugs) } }));
+              }
             });
           }
         })();

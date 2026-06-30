@@ -22,27 +22,34 @@ const site = siteConfig();
           <p class="eyebrow">The map</p>
           <h2>Everywhere the camera has been</h2>
         </div>
-        <PhotoMap points={points} id="global-map" cluster={true} height="460px" />
+        <PhotoMap points={points} id="global-map" cluster={true} link={true} height="460px" />
       </section>
     )
   }
 
   <section>
-    <div class="section-head">
-      <p class="eyebrow">Trips</p>
-      <h2>Recent expeditions</h2>
+    <div class="section-head trips-head">
+      <div>
+        <p class="eyebrow">Trips</p>
+        <h2>Recent expeditions</h2>
+      </div>
+      <div class="trip-filter">
+        <span id="trip-filter-status" class="trip-filter-status" aria-live="polite"></span>
+        <button id="trip-reset" class="trip-reset" type="button" hidden>Show all</button>
+      </div>
     </div>
 
     {
       trips.length === 0 ? (
         <p style="color:var(--mist-dim)">No trips yet. Add one with <code>photosite add-trip</code>.</p>
       ) : (
-        <div class="trip-grid">
+        <div class="trip-grid" id="trip-grid">
           {trips.map((trip) => {
             const cover = coverPhoto(trip);
             const meta = [trip.location?.name, trip.dates, `${trip.photos.length} photos`].filter(Boolean).join(' · ');
+            const hasGeo = trip.photos.some((p) => p.gps);
             return (
-              <a class="trip-card" href={`/trips/${trip.slug}/`}>
+              <a class="trip-card" href={`/trips/${trip.slug}/`} data-slug={trip.slug} data-geo={hasGeo ? 'true' : 'false'}>
                 {cover && (
                   <img class="cover" src={cover.fallback} width={cover.width} height={cover.height} alt={trip.title} loading="lazy" />
                 )}
@@ -57,4 +64,50 @@ const site = siteConfig();
       )
     }
   </section>
+
+  <script is:inline>
+    (function () {
+      const grid = document.getElementById('trip-grid');
+      if (!grid) return;
+      const cards = Array.from(grid.querySelectorAll('.trip-card'));
+      const status = document.getElementById('trip-filter-status');
+      const resetBtn = document.getElementById('trip-reset');
+      const total = cards.length;
+
+      function showAll() {
+        cards.forEach((c) => c.classList.remove('is-hidden'));
+        status.textContent = '';
+        resetBtn.hidden = true;
+      }
+      function filter(slugs) {
+        const set = new Set(slugs);
+        let shown = 0;
+        cards.forEach((c) => {
+          const vis = c.dataset.geo === 'false' || set.has(c.dataset.slug);
+          c.classList.toggle('is-hidden', !vis);
+          if (vis) shown += 1;
+        });
+        if (shown >= total) {
+          showAll();
+        } else {
+          status.textContent = `${shown} of ${total} trips in view`;
+          resetBtn.hidden = false;
+        }
+      }
+
+      document.addEventListener('photomap:view', (e) => filter(e.detail.slugs));
+      document.addEventListener('photomap:select', (e) => {
+        const slug = (e.detail.slugs || [])[0];
+        const card = slug && grid.querySelector(`.trip-card[data-slug="${slug}"]`);
+        if (!card) return;
+        card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        card.classList.add('pulse');
+        setTimeout(() => card.classList.remove('pulse'), 1400);
+      });
+      resetBtn.addEventListener('click', () => {
+        showAll();
+        document.dispatchEvent(new CustomEvent('photomap:reset'));
+      });
+    })();
+  </script>
 </Base>
