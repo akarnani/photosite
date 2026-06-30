@@ -4,7 +4,7 @@
     "width": 1600,
     "height": 1067,
     "ratio": 1.4999,
-    "lqip": "data:image/webp;base64,UklGRqwAAABXRUJQVlA4IKAAAACQBQCdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoRwN5BS7Gu0AY0M9RZsg8RfsgmjngM0wAD9MP6O4p5AkhRezyqmKazrJRMAeL2BjKj6GJhW0pVo6pmhrQP7Cassf+MzzQq/NajhmiSp64tfKXO59PUy4/zbcpcQ9qUmFkk57CGmtj5s3g40qIaF3p8hmtuyXM80QJk+zF1btgXtOAAA",
+    "lqip": "data:image/webp;base64,UklGRqwAAABXRUJQVlA4IKAAAABwBQCdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoRwN5BS7Gu2AY0GqkSr3OyBYuMleqoAAP0w/o7hzdEeojFqkBDCGMaf/os9MDyzIZoaM0+gqjCnvhRO9oD/HPkBM9aqpV3fwkjptkVzYYsQl/vnZvqovMmfShmxPcfnKHfOF4mKHzSlhKJuM2gNG7GbaOMYm2Kaq3U12BltGRxdbmAA",
     "fallback": "https://img.karnani.io/race-to-the-bottom-26/a1102095.jpg",
     "srcset": [
       {
@@ -25,7 +25,10 @@
       }
     ],
     "date": "2026-06-19T17:11:54",
-    "gps": null,
+    "gps": {
+      "lat": 20.407489,
+      "lon": -87.022343
+    },
     "camera": "SONY ILCE-1",
     "lens": "FE 28-60mm F4-5.6",
     "exposure": {
@@ -82,7 +85,7 @@
     "width": 1600,
     "height": 1067,
     "ratio": 1.5,
-    "lqip": "data:image/webp;base64,UklGRsIAAABXRUJQVlA4ILYAAABwBACdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoRgCmAANGcf5/KPfkeNUAD+wJ4J9di0RRabS6HLds/nZm/CHei9foDq/TVzlRJyY8uRokY/yWaP2x7oSZA3e9bwAgyw4I/84i4k2BGkm5tM0f2zV0f63lDCWPR93Hjeo7DmdQ/8hULUvut87xcXBus5h4SyD+H+6QB9mD+6sbBu/PeS7NZSpclfs/3dy/vx/4zWeAOFbLAAAA==",
+    "lqip": "data:image/webp;base64,UklGRsQAAABXRUJQVlA4ILgAAACwBACdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoR3N5LTAAGjOP883pjRf7zAAP7Angn12LRFFptLoct2z+dmb8Id6L1+gOr9NXOVEnJjy/OS77LzUpX6J9XXPrCjbC58ZwhHWf5xFxHgJSqcLBdf7Zq6P9appFGd/gX/GO4I+96t9SUXpmwqfa4mU4+Iuv9istp4Mlk5VrGCUVvtryjixq+VCRHR47P93bkv4/8ZrYmYTPBTwAAA",
     "fallback": "https://img.karnani.io/race-to-the-bottom-26/a1102063.jpg",
     "srcset": [
       {
@@ -103,7 +106,10 @@
       }
     ],
     "date": "2026-06-19T16:33:40",
-    "gps": null,
+    "gps": {
+      "lat": 20.407489,
+      "lon": -87.022343
+    },
     "camera": "SONY ILCE-1",
     "lens": "FE 28-60mm F4-5.6",
     "exposure": {
@@ -121,7 +127,7 @@
     "width": 1600,
     "height": 1067,
     "ratio": 1.5,
-    "lqip": "data:image/webp;base64,UklGRqYAAABXRUJQVlA4IJoAAAAQBQCdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoRwN5BbgAiHCNbDxIU4bAPGXzIAAP5z6doSMYUJS+W5Edx/rczwzFxOR0QAs7k/vEdDTQx39jvlZJ5rjv+g3+YUtP7FQM+31QbTTnY35Haog2j5eZ1v7w+4A8Z3BayseXQyq24Yc5J7mcmuNfPVEkeUyfMl5GMkuyksgAAA",
+    "lqip": "data:image/webp;base64,UklGRqYAAABXRUJQVlA4IJoAAAAQBQCdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoRwN5BbgAiHCNbDxIU4bAPGXzIAAP5z6doSMYUJS+W5Edx/rczwzFxOR0QAs7k/vEdDTQx39jvlZJ5rjv+g3+YUtP7FQM+31QbTTnY35Haog2j5eZ1v7w+4A8Z3BayseXQyq24Yc5J7mcmuNfPVEkeUyfMl5GMqf1kQAAAA",
     "fallback": "https://img.karnani.io/race-to-the-bottom-26/a1102061.jpg",
     "srcset": [
       {
@@ -142,7 +148,10 @@
       }
     ],
     "date": "2026-06-19T16:31:50",
-    "gps": null,
+    "gps": {
+      "lat": 20.407489,
+      "lon": -87.022343
+    },
     "camera": "SONY ILCE-1",
     "lens": "FE 28-60mm F4-5.6",
     "exposure": {
@@ -160,7 +169,7 @@
     "width": 1600,
     "height": 1067,
     "ratio": 1.5,
-    "lqip": "data:image/webp;base64,UklGRvwAAABXRUJQVlA4IPAAAADQBQCdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoRwIsB9gLsg3kwiMxJWvcrRCF9UcyqjTMIAAP7l7X8PT9synC7ZtjevPRaTP83i+iP1ynaahXVLzX3DMusgM/MXFoJGLqrqo31OwCD89+XRllrPd7A/J+CN/7MR/xAE6xAX9PJD/VPmtHvi7v+F25xuyUDTF71BLAGJoNvj6DB0Wsz/Nkg3HaG+rYLwRjUcY6kaApgfz07UNOSzGMV4QepBb6n5oEySiuXXO4+9L8B6aj/sbFqmboGDxEwf5A8DpgH/+ngMA65YR9YMeN+lTGAYAAA=",
+    "lqip": "data:image/webp;base64,UklGRvwAAABXRUJQVlA4IPAAAADwBQCdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoRwIsB9gLsg3kwiMhJWvcrRCF9Uc4mpP6hWwAD+5e1/D0/ay3Qu2bJqxRSm0T/N4voj9bn2moV1Q5V9wzJrIDPzB/yCRi6eTKN7kWl4d06wjFZPw+kKHyfgjf+zEf8QBOsQF/TyQ/1T5rR74u7/hducbslA0xe9QSwBiaDb47OyP1nOU3oPpIbZ6CKuv/B3msi0RrWTndhr6t3cNcjL64FvFuPxI8yXihONZ9fv2nyDv/RsWqZugYPETB/kDwOmAf/6eAwDrlhH1gx436VMYBgAAAA=",
     "fallback": "https://img.karnani.io/race-to-the-bottom-26/a1102023.jpg",
     "srcset": [
       {
@@ -181,7 +190,10 @@
       }
     ],
     "date": "2026-06-19T12:34:06",
-    "gps": null,
+    "gps": {
+      "lat": 20.353679,
+      "lon": -87.029444
+    },
     "camera": "SONY ILCE-1",
     "lens": "FE 28-60mm F4-5.6",
     "exposure": {
@@ -199,7 +211,7 @@
     "width": 1600,
     "height": 1067,
     "ratio": 1.5,
-    "lqip": "data:image/webp;base64,UklGRrQAAABXRUJQVlA4IKgAAACwBACdASoYABAAPtFUo0uoJKMhsAgBABoJYgCdMoMh10etQkZd/mkk/X/CWTxAAP70lPUctGAeE7oklMkd8942xHQEBzhVvtMUbbv0DTszMC7KukudTv4DPazNVkcl5lHBHrvLMM4HiEXeaQtyi1TkacLy4FErXhcCTqjrvx1J9Fw3YYBdYRcCRW+S1jSgNCp3ZL8zaTOVzoouGCgK0eDVNjjSOxu4AAA=",
+    "lqip": "data:image/webp;base64,UklGRrIAAABXRUJQVlA4IKYAAACwBACdASoYABAAPtFUo0uoJKMhsAgBABoJYgCdMoMjb0ddQlChIOCF5sl1r04gAP70lPMaH9V8MRokk8437mEI/Z9X+aS9x4mmGeTuu3sIZPFfwzUhdYDBA60HcKBohrKLWnH7rtyIFBvJ2ymaoGH7x84VXdcV2QnKC6StoU3xHUQhznCiowWOcRDO3bvQhudnaltGWb0cSRaHuDcH5z0kGoVFEAAA",
     "fallback": "https://img.karnani.io/race-to-the-bottom-26/a1101966.jpg",
     "srcset": [
       {
@@ -220,7 +232,10 @@
       }
     ],
     "date": "2026-06-18T17:02:54",
-    "gps": null,
+    "gps": {
+      "lat": 20.364147,
+      "lon": -87.029031
+    },
     "camera": "SONY ILCE-1",
     "lens": "FE 28-60mm F4-5.6",
     "exposure": {
@@ -238,7 +253,7 @@
     "width": 1600,
     "height": 1067,
     "ratio": 1.5,
-    "lqip": "data:image/webp;base64,UklGRgYBAABXRUJQVlA4IPoAAAAwBQCdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoC4AMgFMq8hpkU3hFIOIUP7agdcAAD+3YLXjhv8UdDV42tJQJFirZ5LTl2aTIT1vJXd2Z/9nk4YZqysRZQmj+89qeOP1C+mmvOBDgBh96X47p3YQVsC0isIbXxXOnbWRYoEcwSzbwJA8itH1tpUEl1UXIdFpDBHV0mcg4+i2vrtaX77TW6O/w10gSS9SZxsP90kH2YG9Vbi0mNmMRuiBTiSr6mG8CMTxkWL9rP/k49bP2axQifdi/c2VgLNdiUexXv3i7ILSf2DK64kZqhUwNEQ0mda0psqTmkVAAAA",
+    "lqip": "data:image/webp;base64,UklGRgQBAABXRUJQVlA4IPgAAAAQBQCdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoAvQUyfyLG49lLsd+tNHQmUWySAAP7dgteOG+vv8EbNFe10Pca5fqzwur2cnhLJ0/YWb4jV+HOJg80a1ufInLe14BQtidLUK8pBfQwBFDwXrvunJ//yK0IbXxWxkkAS7LI/xNy67PQKbx8O+c2SsR/0eciiwYHlMkve/0uHjuMm/3BBaSb/DXSDV+p8khpD/cSOy5JMG4Y4J+R5+/ZUl419TDd99xov5+4pob5Se9uD/5rpCjT9TM3N1rE0u9MnZUpTtp1flkzPhePEMh/YUPaaYZSGvVSv4oAAAA==",
     "fallback": "https://img.karnani.io/race-to-the-bottom-26/a1101947.jpg",
     "srcset": [
       {
@@ -259,7 +274,10 @@
       }
     ],
     "date": "2026-06-18T16:46:07",
-    "gps": null,
+    "gps": {
+      "lat": 20.364147,
+      "lon": -87.029031
+    },
     "camera": "SONY ILCE-1",
     "lens": "FE 28-60mm F4-5.6",
     "exposure": {
@@ -277,7 +295,7 @@
     "width": 1600,
     "height": 1067,
     "ratio": 1.5001,
-    "lqip": "data:image/webp;base64,UklGRswAAABXRUJQVlA4IMAAAABQBQCdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoRwAkmfd6hCgX8zcQczMl10fX4LQzAA/id5DPTK0ONgZPxKPwxYetbhYEv4hY/sd8fsCVV55NitaU2MOKIDn3TNtLWlAn4JY3GDHRLT1bNSTVWHCB0mhVgVLy5hrbYLKqf2Gtcua1mEqNbn+h2CAH4MPN6oM9dyb4akODeWMB1GGITM0ui2Qz1wQ15hz3m7w1EGyfWSlmn75NAccsoBjLAXgAA=",
+    "lqip": "data:image/webp;base64,UklGRs4AAABXRUJQVlA4IMIAAABQBQCdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoR4Gkmfd6hCgX8zcQczMl10fX4LRcgA/id5DPTK0ONgZPxKPwxYetbhYEv4hY/sd8fsCVV55NitaU2MOKIDn3TNtLWlAn4JY3GDHRLT1bNSTp6J9I3B9bAiluXAxJTmk0PgzFbMrb6ehGWKsUdclgGdN4ygsYAXj42/gHLfypi5vTdMZkeVBUHV74dA92gJOAhGjOTjlwlLNPinDmnI5uBGkANQAA==",
     "fallback": "https://img.karnani.io/race-to-the-bottom-26/a1101943.jpg",
     "srcset": [
       {
@@ -298,7 +316,10 @@
       }
     ],
     "date": "2026-06-18T16:42:31",
-    "gps": null,
+    "gps": {
+      "lat": 20.364147,
+      "lon": -87.029031
+    },
     "camera": "SONY ILCE-1",
     "lens": "FE 28-60mm F4-5.6",
     "exposure": {
@@ -337,7 +358,10 @@
       }
     ],
     "date": "2026-06-18T15:20:05",
-    "gps": null,
+    "gps": {
+      "lat": 20.368671,
+      "lon": -87.02952
+    },
     "camera": "SONY ILCE-1",
     "lens": "FE 28-60mm F4-5.6",
     "exposure": {
@@ -376,7 +400,10 @@
       }
     ],
     "date": "2026-06-18T15:20:03",
-    "gps": null,
+    "gps": {
+      "lat": 20.368671,
+      "lon": -87.02952
+    },
     "camera": "SONY ILCE-1",
     "lens": "FE 28-60mm F4-5.6",
     "exposure": {
@@ -394,7 +421,7 @@
     "width": 1600,
     "height": 1067,
     "ratio": 1.5,
-    "lqip": "data:image/webp;base64,UklGRroAAABXRUJQVlA4IK4AAACwBACdASoYABAAPtFUo0uoJKMhsAgBABoJZgCxDIjgxRb/uuzofVjKKSGKF8zAAP7w3WEwrgZKRQOVi92GGsBrmjjBEoGj2uRtMMMKBDXVoym4pawNoPKtcQRJGZdhYzcIhgdTdFIK0KPzmEUIHotHOincVi375M4Sh4J6ZVSfD9jc66MF3qsJlk0Casmp6MEOp73YKF5x8cGU3gKLW6fA7h072Kk0cgRsiPnaAAA=",
+    "lqip": "data:image/webp;base64,UklGRrgAAABXRUJQVlA4IKwAAACwBACdASoYABAAPtFUo0uoJKMhsAgBABoJZgCxDIjgwhb/uvB7Ueb7gSkvfmJAAP7w3WEwrgZJ1pIg4ZNTplbV4qJNK0PC3Ixm8O9DdcXs3as0lKPJk6CwuJxvjxw8lP28x6Hh9eb1amw1y83dnZ+LKkTILKkKqDMEAeSUHYHyt4I/iIlffWzMiCfsZLLcjOhnDn7i7cyQG/Ekr1cqXrKGTuPmGsv9rWv5+AAA",
     "fallback": "https://img.karnani.io/race-to-the-bottom-26/a1101839.jpg",
     "srcset": [
       {
@@ -415,7 +442,10 @@
       }
     ],
     "date": "2026-06-18T09:48:00",
-    "gps": null,
+    "gps": {
+      "lat": 20.353679,
+      "lon": -87.029444
+    },
     "camera": "SONY ILCE-1",
     "lens": "FE 28-60mm F4-5.6",
     "exposure": {
@@ -433,7 +463,7 @@
     "width": 1600,
     "height": 1067,
     "ratio": 1.5,
-    "lqip": "data:image/webp;base64,UklGRsgAAABXRUJQVlA4ILwAAACQBACdASoYABAAPtFUo0uoJKMhsAgBABoJbACw+BTCIxF+HCuOYqhcCnh8ZcAA/vaqaUcknE4Sg28U2HIDHaSi6MUSkFJSX/1Z0pJlOUKjiA7FOE9yoYVC3SGZGyd2alzirnWtNjdYTzy5ak2c81t8XbryNv85W9JV0Ym3bmMRvJvwDWScjqT7oXCFC9lclj0JsySC6xN6HcixG2L6uj1C17qlxscyRS5n3bHEjo6fkjvfznBP5OfEeSgAAA==",
+    "lqip": "data:image/webp;base64,UklGRsYAAABXRUJQVlA4ILoAAACQBACdASoYABAAPtFUo0uoJKMhsAgBABoJbACw+BRSIxF+HCuOYqhcCnh8ZcAA/vaqaUcknE4Sg28U2HIDHaSi6MUSkFJSX/1Z0pJlOUKjiA7FOE9yoYVC3SGZGyd0DZV+Jk/SXRfmO+sKrHLWXzvHrd5nzlb0lVz++FyD8VSlV5foa0rW0Rgux+Q9o12SnN2y8ai7qVaw79BAvp66vEKn5DxISqIC6PgiSrFvg8zECtt57faXSvyUAAA=",
     "fallback": "https://img.karnani.io/race-to-the-bottom-26/a1101799.jpg",
     "srcset": [
       {
@@ -454,7 +484,10 @@
       }
     ],
     "date": "2026-06-17T20:25:46",
-    "gps": null,
+    "gps": {
+      "lat": 20.355458,
+      "lon": -87.028811
+    },
     "camera": "SONY ILCE-1",
     "lens": "FE 28-60mm F4-5.6",
     "exposure": {
@@ -472,7 +505,7 @@
     "width": 1600,
     "height": 1067,
     "ratio": 1.5,
-    "lqip": "data:image/webp;base64,UklGRqoAAABXRUJQVlA4IJ4AAACwBACdASoYABAAPtFUo0uoJKMhsAgBABoJZADE98AgwheWd6hrmCTMBvgiKIyAAP72qOWyM5fhWwsAGMcTXkl+Z7OdqNtrIIQ4fmlSIlYfBmCpUOqNMGm+401dr6zyj5pb6puVgKTcFbH1/pqioQNYkwhexew/8JIJn9qWN0HzXVwVgaQ/NefpR/7PtytHvO/lNU3Drws8Aa+7bIAAAA==",
+    "lqip": "data:image/webp;base64,UklGRqoAAABXRUJQVlA4IJ4AAACwBACdASoYABAAPtFUo0uoJKMhsAgBABoJYgDE98AgvheWd6h+cmYshXOmHkYAAP72qOWyMaVKbu/TEzPEFiDQ61G6ml/XUrXSHOlRVI5WRJ5fna0JMGmuG1wlCyIAnIObTvgkCkDSS5GPP4hiuRZUmEL2L2H/hJBM/tSxug+W5YClVhfvHTLJYO1WC4Ls/Igf0QN+uvScApoA2oAAAA==",
     "fallback": "https://img.karnani.io/race-to-the-bottom-26/a1101797.jpg",
     "srcset": [
       {
@@ -493,7 +526,10 @@
       }
     ],
     "date": "2026-06-17T20:25:44",
-    "gps": null,
+    "gps": {
+      "lat": 20.355458,
+      "lon": -87.028811
+    },
     "camera": "SONY ILCE-1",
     "lens": "FE 28-60mm F4-5.6",
     "exposure": {
@@ -511,7 +547,7 @@
     "width": 1600,
     "height": 1067,
     "ratio": 1.5,
-    "lqip": "data:image/webp;base64,UklGRoYAAABXRUJQVlA4IHoAAAAQBACdASoYABAAPtFUo0uoJKMhsAgBABoJYwDCgCHgCswAoZhPBlK0AAD+9cyFUwnSqTk5LZFNRFQYATKXaTkKfa/v6AfeODIH8Pi7V//1wZvcsF1L01G3lzD7qZSdA0c7oUISrxoe0ADsL5jCSyU2gfuD7pB5ZnlgAA==",
+    "lqip": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAAAQBACdASoYABAAPtFUo0uoJKMhsAgBABoJYwDCgCHgCsP75YJSg8MAAAD+9cyFUwnSqTk5LZFNRFQYATKXaTkKfeLy/P2y9GGrgde0iDkRi7ms17y++gI2vcuuavHKYsEASjXMq8aHrOWw1xByxDAzYrMvaE5J/dHJaoAA",
     "fallback": "https://img.karnani.io/race-to-the-bottom-26/a1101793.jpg",
     "srcset": [
       {
@@ -532,7 +568,10 @@
       }
     ],
     "date": "2026-06-17T20:25:41",
-    "gps": null,
+    "gps": {
+      "lat": 20.355458,
+      "lon": -87.028811
+    },
     "camera": "SONY ILCE-1",
     "lens": "FE 28-60mm F4-5.6",
     "exposure": {
@@ -550,7 +589,7 @@
     "width": 1600,
     "height": 1067,
     "ratio": 1.5,
-    "lqip": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAABQBACdASoYABAAPtFUpEuoJKOhsAgBABoJbACdMoMljEmBwi84etj8t/gAAP73duyaiVSSio9ztpmK/EvhaJTTJYsCvSQ5ZCqxygtJVOcA0Ui3qLPGG+mlyhR7pfI1xDpGG3SfXcXkhVB+so8NSNKrePRt2RAENnTHA6O+gAA=",
+    "lqip": "data:image/webp;base64,UklGRoYAAABXRUJQVlA4IHoAAABQBACdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoR4GCm1kD2IOdwMlgAAAP73duyaiVSSio9z2EplCdIf1gwZ4plvbGV31yzbZBM/Br3ihEH6vlRhRxf03KCf34Y3sVdhLHe+fzKPDUjMd8lmWekrTTO4iXMYYP0AAA==",
     "fallback": "https://img.karnani.io/race-to-the-bottom-26/a1101766.jpg",
     "srcset": [
       {
@@ -571,7 +610,10 @@
       }
     ],
     "date": "2026-06-17T20:14:27",
-    "gps": null,
+    "gps": {
+      "lat": 20.355458,
+      "lon": -87.028811
+    },
     "camera": "SONY ILCE-1",
     "lens": "FE 28-60mm F4-5.6",
     "exposure": {
@@ -589,7 +631,7 @@
     "width": 1600,
     "height": 1067,
     "ratio": 1.5,
-    "lqip": "data:image/webp;base64,UklGRoYAAABXRUJQVlA4IHoAAAAQBACdASoYABAAPtFUo0uoJKMhsAgBABoJagAAQ/lW/F3PmG78DXUTmAD+8bMT2iEh92hBuaEtJVmFQN0uF81l5QbtwC1ihI/yVO7MhGdjvjRQ93tLIU/+rFqlllJL/zxOk7fpGBiA5J2DQ8xuN2LkF4tBPokaTuoAAA==",
+    "lqip": "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAAAQBACdASoYABAAPtFUo0uoJKMhsAgBABoJbAAAQ/lW/F3PmG5PjeanEAD+8bMT2iEh92hBuaEtJVmFQN0uF81l5QbtwC1ihI/yVO7MhGdjvjRQ93tLIU/+rElMgse/88TpO36RgYgOCz/+1oDMDZdb3VPiRxtfAAA=",
     "fallback": "https://img.karnani.io/race-to-the-bottom-26/a1101760.jpg",
     "srcset": [
       {
@@ -610,7 +652,10 @@
       }
     ],
     "date": "2026-06-17T20:11:01",
-    "gps": null,
+    "gps": {
+      "lat": 20.355458,
+      "lon": -87.028811
+    },
     "camera": "SONY ILCE-1",
     "lens": "FE 28-60mm F4-5.6",
     "exposure": {
@@ -628,7 +673,7 @@
     "width": 1600,
     "height": 1067,
     "ratio": 1.5,
-    "lqip": "data:image/webp;base64,UklGRsoAAABXRUJQVlA4IL4AAADwBACdASoYABAAPtFUo0uoJKMhsAgBABoJZACdMoGv/jeBb8yEvF/Q/8Q32nD7zwAA/vNQraZs+1vKa7zqIQJyUiylO3lMzSNLyxAwVLFMvlES1owNHDpliWGpObZaFiF8TKRtJcE1FA+yEwpBZGfCNIHheUwLsay4zn1rGmv+e9rICHj+/FnQJJPKnl7MgGOAsZNYacUI6MZxEp/e6AfEuClpDGLp75bLcHTGspHq8slPjHfSLwl0lcbE9vAA",
+    "lqip": "data:image/webp;base64,UklGRsoAAABXRUJQVlA4IL4AAABwBACdASoYABAAPtFUo0uoJKMhsAgBABoJZACdMoAvQTOQYHb+0H33qY+Y9AD+81Ctpmz7W8prweFTHdhJpHgJa2MvzEJGv8v3AP5rLrfwK4HCD8a46Jzz2uy0LGUmt3hdY7cMBYa3qWu0Pjym/RahhPERrFhxUsVeawo7hpj6LJGqITz22zPl7U+fLtUHbS+aQHtFn9fHrlpYcDbqoE1MJ8J5Xc41eB8Ip3WjTsxD4PjKFcEGe5MPQjfUAAAA",
     "fallback": "https://img.karnani.io/race-to-the-bottom-26/a1101759.jpg",
     "srcset": [
       {
@@ -649,7 +694,10 @@
       }
     ],
     "date": "2026-06-17T20:10:53",
-    "gps": null,
+    "gps": {
+      "lat": 20.355458,
+      "lon": -87.028811
+    },
     "camera": "SONY ILCE-1",
     "lens": "FE 28-60mm F4-5.6",
     "exposure": {
@@ -667,7 +715,7 @@
     "width": 1600,
     "height": 1067,
     "ratio": 1.5,
-    "lqip": "data:image/webp;base64,UklGRsQAAABXRUJQVlA4ILgAAABwBACdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoAlvRiU0wCunU5QYPKyoAD+6jAss1TAy8j/WGaX6aQEywYkvo+CJ13TubHspb1fgg0fjRrGcYzWPrvUr2CABGORPA+7uM9xTuUFZpoj2LwWwf9tgo1j0r0emESfl48xx2yW7OfYjCh8zShy9adZybR7DSeKpJ2IwPea4GRigAGp9qTOgteCrwk/5Z9jz6Rc8uQDBD4VPLawwAAA",
+    "lqip": "data:image/webp;base64,UklGRsAAAABXRUJQVlA4ILQAAABQBACdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoAluRiU0wCumXO2uu5AAP7qMCyxZ14ZU2qVlfBppATLBiBLGkAQ6eqvBvf0Xl+AYmx/Q1DYiTVqilrilOOx4ld4U//9cYNvrY01SRPhTSVeC5HtbqUz2D+9U1bByVZvX2ePjinIvLDQa8rqq6c6AMH61pRg/bHmX+sPoWzkDtSZ0Fr7b+HLy//j+fSLnlyAYIfCp5bWGAA=",
     "fallback": "https://img.karnani.io/race-to-the-bottom-26/a1101739.jpg",
     "srcset": [
       {
@@ -688,7 +736,10 @@
       }
     ],
     "date": "2026-06-17T16:35:13",
-    "gps": null,
+    "gps": {
+      "lat": 20.407489,
+      "lon": -87.022343
+    },
     "camera": "SONY ILCE-1",
     "lens": "FE 28-60mm F4-5.6",
     "exposure": {
@@ -706,7 +757,7 @@
     "width": 1600,
     "height": 1067,
     "ratio": 1.4998,
-    "lqip": "data:image/webp;base64,UklGRsYAAABXRUJQVlA4ILoAAADwBACdASoYABAAPtFWo0uoJKMhsAgBABoJbACdMoRwDhVQMZE5/j8AkwL1txVupgAA/vDJco5mE9pnUMzPa+/EzvQh3WmtZ6o0n1o8nUELbzMOT9v4PUiHVPgcw7Oe788q9pO8OOLD2J0mQ7+CA6O9gWOHCuExambVF2T6UsuhWqvUWXNsBn7i/P1zvNAQQweA1ALh0aCBZdcD5N8OE2SIfpLfdRzLIVRi94T0cf7xMLDwiBf4idMcAAA=",
+    "lqip": "data:image/webp;base64,UklGRsYAAABXRUJQVlA4ILoAAABwBACdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoRwACnIhH5WhfTlmoqAAAD+8MlyjmYT2mdQzM9r78TO9CHdaa1nqjSfWjydQQveOfr1P2/g9SIdU+BzDs57vzyr2k7w44sPYnSZDv4IFMq5MjC/3+BoyXS01FUFtQxQVqr1Fzz8VB4Mo3vcuXCtImFuw5vofNnkn2FaTCNNkyESzoDV9H/Wo65aiqT7VQVZT/OhVHKQwtBsJHduAAA=",
     "fallback": "https://img.karnani.io/race-to-the-bottom-26/a1101724.jpg",
     "srcset": [
       {
@@ -727,7 +778,10 @@
       }
     ],
     "date": "2026-06-17T15:55:10",
-    "gps": null,
+    "gps": {
+      "lat": 20.407489,
+      "lon": -87.022343
+    },
     "camera": "SONY ILCE-1",
     "lens": "FE 28-60mm F4-5.6",
     "exposure": {
@@ -745,7 +799,7 @@
     "width": 1600,
     "height": 1067,
     "ratio": 1.5002,
-    "lqip": "data:image/webp;base64,UklGRsgAAABXRUJQVlA4ILwAAACQBACdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoAlsBdA0PtLR8wJJuAoa+AA/a3uWoTbMZckccHUtqkrSlpkAsM7aF4uWvXzsgbjZwASImMDNPtdJ4WI8YRbty2j5M93Jvoth+wFzWBXHINMdMy821/6JTr99iNWPRAxje+IbaUlIRmmiNyeYxyjq8VkltIb6ybWLfLX+ZDID/Td2UeEjoi2C2RyjrDd/fyAXqS9nWE3Pp30iHQqBCSsAA==",
+    "lqip": "data:image/webp;base64,UklGRsgAAABXRUJQVlA4ILwAAADQBACdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoBOAbSI/t7mugrG6+xZxvTkIAD9re5akAMZjg1MQ76J2MieMH+g+Lu/utnPY5EENuBD1Kcy16nCK6zv7Ebh04j4M5aAwd4iP0YZvToBDW95Rje1+bTf1uCP32KGkO0xchLAJ3UqXS9s58+4gss045wXR7HUTfNdFXNbluAtMsIoHFxC/5h4bcJmfUqWuE/yMa5iXnVcG9oBYuTTfyAAAA==",
     "fallback": "https://img.karnani.io/race-to-the-bottom-26/a1101700.jpg",
     "srcset": [
       {
@@ -766,7 +820,10 @@
       }
     ],
     "date": "2026-06-17T14:31:02",
-    "gps": null,
+    "gps": {
+      "lat": 20.364147,
+      "lon": -87.029031
+    },
     "camera": "SONY ILCE-1",
     "lens": "FE 28-60mm F4-5.6",
     "exposure": {
@@ -784,7 +841,7 @@
     "width": 1600,
     "height": 1067,
     "ratio": 1.5001,
-    "lqip": "data:image/webp;base64,UklGRsYAAABXRUJQVlA4ILoAAACwBACdASoYABAAPtFUo0uoJKMhsAgBABoJbACdH8IyaAq5UIeTN+Qwdk6UQQcAAP6tvVWQwhAWSPDr40QdeWOU6UQAXWxNQOwVVo1Js1ke13/u70uaakRieClHcTfDTgdcfC6mhHbt8HFfRn2VJ70yGYNfbMG8+Bdnd5lrHymZh2onsdrnL7PyBqHmbGr6CHLZ8ekDMDEaWcNGQzonFxvEopmYh7o6ND12x5CGxC5XEZLuaPNiPwDoAAA=",
+    "lqip": "data:image/webp;base64,UklGRsQAAABXRUJQVlA4ILgAAACQBACdASoYABAAPtFUo0uoJKMhsAgBABoJbACdH8IyaAq5UIPPd6Vfs+ijvxwA/q29VZDCEBZI8OvjRB15Y5TpRABdbE1A7BVWjUmzWR4fkk2hcz92KxDgju9CNsCpO+QXU0I7dvg4r6M+ypPemQzBr7Zg3nwLs7vMtY+UzMO1E9jtc5fZ+QNQ8zY1fQQ5bPj0gZgYjSzhoyGdE4uN4lFMzEPdHRoeu2PIQ2IXK4jJdzR5sR9HEAAA",
     "fallback": "https://img.karnani.io/race-to-the-bottom-26/a1101690.jpg",
     "srcset": [
       {
@@ -805,7 +862,10 @@
       }
     ],
     "date": "2026-06-17T14:15:48",
-    "gps": null,
+    "gps": {
+      "lat": 20.364147,
+      "lon": -87.029031
+    },
     "camera": "SONY ILCE-1",
     "lens": "FE 28-60mm F4-5.6",
     "exposure": {
@@ -823,7 +883,7 @@
     "width": 1600,
     "height": 1067,
     "ratio": 1.5,
-    "lqip": "data:image/webp;base64,UklGRswAAABXRUJQVlA4IMAAAACQBACdASoYABAAPtFUo0uoJKMhsAgBABoJaACdAywTmorlXqXImZJ/YBOWtkAA/mZrnd+ftjG4TWsdbljxqYdwnwUtv8ZQeELY0oyVxSb7htcs1T3f8BxvFBBVXSOY6FWJ4Wc2X+0aGRIMOo+cn2h29cUP7we0zept59jF+RO4GrgOqp3tRxznc+PDxpFMEVA+KBizeTp/ChHa5FYgpYiapsu5ltm7Hy6htQCcaECvKXyOzyqxM5/cVMg0EyH46AA=",
+    "lqip": "data:image/webp;base64,UklGRs4AAABXRUJQVlA4IMIAAABwBACdASoYABAAPtFUo0uoJKMhsAgBABoJaACdAYw6yqz1Xhvhu7/UG8i0AAD+ZmueClS2MkEpItqglzshxEHPZVu8+JEVHI7gmcuw365zRODoy35H5tc7B1zO4uPsdlTg4FbdOM4zE26iWqR3l1Oumwwd5I1QbmSB0dIhfs4EsWScoa4oo3rrHX2cLoaY+0PftZdfmUfxnrOsCTX8q7gXVai4Of+/1CDSEnUk28RIJ39qN7sWqP/5n3FihEW6nAAAAA==",
     "fallback": "https://img.karnani.io/race-to-the-bottom-26/a1101672.jpg",
     "srcset": [
       {
@@ -844,7 +904,10 @@
       }
     ],
     "date": "2026-06-17T12:01:15",
-    "gps": null,
+    "gps": {
+      "lat": 20.379425,
+      "lon": -87.029364
+    },
     "camera": "SONY ILCE-1",
     "lens": "FE 28-60mm F4-5.6",
     "exposure": {
@@ -862,7 +925,7 @@
     "width": 1600,
     "height": 2400,
     "ratio": 0.6667,
-    "lqip": "data:image/webp;base64,UklGRq4BAABXRUJQVlA4IKIBAACQCQCdASoYACQAPtFOokwoI6MiMBqqqQAaCWwAnTKEdzSBKiwq7uBzymmn70G+fTDq1+MmVRN24+ASJIgSAa1kN1wHCginwPDlNmMuTewsDTCvP/TAAM4+b2j0tT+R0KJd21yndSf+SxsMsab9BdKbhbk7tUcrt7wgK4TjQUQmMCgVAz3jRkPVjeK9gsdJ/ZXeLQ0UBRToDvxz8xL79fjywFSL7NPQ2d12GHiOXvZQitkxDbad8kGRJjWYz98s0AEJd4RWT2tfHiv0kBz52bPWP63mUKrv5DaiGT1ag1ZyU+9e9gMtjeE+JSnI9LWrAwMTJ3DPwtHIwY84lT0lnFnH+cFOi+6O73scmMfANogVSKa7XwZLKRI1fm0SkwrmmUPTa+adScDPZxP6YRlU0azvQdmyseGjCE5cVsmqwLuVK/qnLsSC0cUUJhM48FgV2cfhucx7KEwF1daQ3aGBhgsOFX8hSReLQ+EhI8kVRd3oqtuRnGF5jVJIF1vkLblKYNF8GLWDLRnbwuC1S8o5KxSDEwPE43ZNIGdeALTwcopSQAAA",
+    "lqip": "data:image/webp;base64,UklGRq4BAABXRUJQVlA4IKIBAABQCQCdASoYACQAPtFOokwoI6MiMBqqqQAaCWwAnTKEerSBKrwmuBzhN2mibz6vwVoMszSms+BaIiv3NkN4HOpRRRNoileEssi+cdxo+L4LXkMRAADOPm9p1HWWmQfngzXQ9G2wwJTNfnJYRqDz0fBkyAL+BHQ9ujvHlJWHs0v19L0YZsIt/XsRtoYKCGsjBxKUxjG35aoNPhE+fqqpmyr/Izl4JJvd4ieI5nbeCffv/BjN5P4yFU6T4FVKIpcdRBIy71aCAsuU4B9jL3dOJiFEiT80ER8pwQmCMoOQqe+qhczlUXqz2VsVZmVy8w8to9dJ2k01K+qN/PkLjvfbhQTsrAefbEaO71mZ+7VEC0tKxg+UsCRrlVBcreHhEA4uRmNaYqNsfC+k7DLZV8cLlQGMPZh2wLuqwR8PJqxjvZC0iSpXMCSGmYvaKRGZ2UEtjQZkIi9/FREW46GJ497z2jwG+W4Ca/hc45XDSgJomj7wxzdXb2zYtn5Wdg7pzv1CedL1CcL22MgTxF1DQoAcaxW9FSooIyvK/4x1jLEMqWSXyAAA",
     "fallback": "https://img.karnani.io/race-to-the-bottom-26/a1101659.jpg",
     "srcset": [
       {
@@ -883,7 +946,10 @@
       }
     ],
     "date": "2026-06-17T11:28:00",
-    "gps": null,
+    "gps": {
+      "lat": 20.379425,
+      "lon": -87.029364
+    },
     "camera": "SONY ILCE-1",
     "lens": "FE 28-60mm F4-5.6",
     "exposure": {
@@ -901,7 +967,7 @@
     "width": 1600,
     "height": 1067,
     "ratio": 1.5001,
-    "lqip": "data:image/webp;base64,UklGRsAAAABXRUJQVlA4ILQAAACQBACdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoBOACak28goPo3magBVswAA/vLatCngnPVowkdCR9IRefbJwLgH9EMaLO7CoGfAxSqy0LWRsM82DUOPcafsjbtem1ynN9cKb/c5r2II/VxyCIhhMIraklIqu01XYJLKJsq88hj0vSNhDcS/bqFkCyON8ne8Bt+Jfd/xRx7IJn1iZT88e8wBzfibLMVZq4ncFaGri0e38AA=",
+    "lqip": "data:image/webp;base64,UklGRsAAAABXRUJQVlA4ILQAAACQBACdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoBOACak28goPo3magBVswAA/vLatCngnPVowkdCR9IRefbJwLgH9EMaLO7CoGfAxSqy0LWRsM82DT8Q5bZf/Krz0ZXW+Hu9robv5Xe7ieUBYj2FYxXQqv4U9oJuvrFDF5mtyF/fv0e1KL515IJ/uN1dXmTLH9Ei8SWBaUNPmEJ1RvTruwBa/rJZ3QIvbgCEUZlnsY58AAA=",
     "fallback": "https://img.karnani.io/race-to-the-bottom-26/a1101638.jpg",
     "srcset": [
       {
@@ -922,7 +988,10 @@
       }
     ],
     "date": "2026-06-17T09:21:44",
-    "gps": null,
+    "gps": {
+      "lat": 20.40952,
+      "lon": -87.02256
+    },
     "camera": "SONY ILCE-1",
     "lens": "FE 28-60mm F4-5.6",
     "exposure": {
@@ -940,7 +1009,7 @@
     "width": 1600,
     "height": 1067,
     "ratio": 1.4999,
-    "lqip": "data:image/webp;base64,UklGRu4AAABXRUJQVlA4IOIAAACQBACdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoAlmhG1Lanro6HcfDM6aAAA/q0T75dHo9ERYMKvmfi9aiHrHlyZhbQtxbpfvGsS14H9hKgdrSVtRM4Zn7LqcilVuXrkQ3sLdGT50BhQ55bUsgo4c6zPf/YGj6rbf5JRG0EXmz2cvWqPdW1qprjp0/HXuZmyYCvmgCgEwGEkwcPgkJ68sBEzNYNKXNq/xdSI6psBr8E5oRJzXgn8+4rQuJD7QP9DAxMy9PlTU3trHmjlKhD9QQuMZngCR6XkzzsZ51yZAAAA",
+    "lqip": "data:image/webp;base64,UklGRuwAAABXRUJQVlA4IOAAAACQBACdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoAlmRHJ28SQkeajo7m/5YgA/q0T75ThI9EQv4VfM/F61D+WPLkC0KVte9v16NmO5b/GSAmlg47j+e/nRLexAhj6Z2olsvvWafJELnktVTQSNE9FGatxJc2RT65XahYV92KWwd02Pw38v+RI3bHrjF7rs7MPTQKkp3NAE/j7MJJhvCU2jIAWvLaItMiK2R//YrnZEpg+aS7LYWqPz4WaFxIfaB/nLoHU19VoKcEd+N4syXFvI1vG8MLwB4AHf/lhFVAAAA==",
     "fallback": "https://img.karnani.io/race-to-the-bottom-26/a1101629.jpg",
     "srcset": [
       {
@@ -961,7 +1030,10 @@
       }
     ],
     "date": "2026-06-17T09:12:19",
-    "gps": null,
+    "gps": {
+      "lat": 20.40952,
+      "lon": -87.02256
+    },
     "camera": "SONY ILCE-1",
     "lens": "FE 28-60mm F4-5.6",
     "exposure": {
@@ -979,7 +1051,7 @@
     "width": 1600,
     "height": 2400,
     "ratio": 0.6667,
-    "lqip": "data:image/webp;base64,UklGRjgBAABXRUJQVlA4ICwBAABQBwCdASoYACQAPtFWoEwoJKMiKq35ABoJQBdma/TmBuKCU31EjItR6D8NS9FhfTlh4K2mo0Q0HqzYiX2wLcJD7mLgAP7vEG9ny6KHzphQCRAqeImWzlDubWzVyOZRxCfl25KcOpgPpzfvbFkF2VD1JzvqCIywOB6HajSIaq9gLevYcRtFLzpB6aB2mcJRKcwO0A54zBWO6crblOKExCcPA5hWs9IHRuBorShjzcALc59uyaZ1sY4RhhpxRX5YZ/WOdyO82eA8RRf5rWmrfRisBuHI1plLsn23i7bUMU2BzKmUiQL2V5BnxnFbQnRmFiIiOuNaq6t/eRdpZ8DWDRqkeOA7d+/mkydIjSrVMZWa//RJcMuGUITzHqYmq6Cagz8sOwISUcu2vVoQAAA=",
+    "lqip": "data:image/webp;base64,UklGRjgBAABXRUJQVlA4ICwBAACwBwCdASoYACQAPtFWoUwoJKMiKq35ABoJQBZ2cUzslraDG3zkjItSXvLgwSmobzKKXr8pWIBoyED2hlCJtdI6xrZPCDIAAP7vEd9ny6Kzltw1FXjT/KdQLHYP5xYg2B3b2AFPKwB8LXz8rt9akeiGSRA/LY76giML7E2+5qYmofKGBNpc+RsmqHw6t7ywPKgvMIKN0+6+FkaN6P+VmzYfNeI/24/tzu/J761a1vGHcqeWLMg1D+YLxNoKPRwl/cmdhza/wkRDOw8GIN5Ixcc9LY5O+wgyhTsvUzg3R5hxc0wQUq4x2X414rZcSfjonWQOyHJHfknoqxdp6yREo6AnafWVmtwg8Q7XxO+wv8/vaQhmcmbhTNN4p/z0h7S5c3EgiT4HEHoidflmQAA=",
     "fallback": "https://img.karnani.io/race-to-the-bottom-26/a1101624.jpg",
     "srcset": [
       {
@@ -1000,7 +1072,10 @@
       }
     ],
     "date": "2026-06-16T16:55:55",
-    "gps": null,
+    "gps": {
+      "lat": 20.370628,
+      "lon": -87.028865
+    },
     "camera": "SONY ILCE-1",
     "lens": "FE 28-60mm F4-5.6",
     "exposure": {
@@ -1018,7 +1093,7 @@
     "width": 1600,
     "height": 2400,
     "ratio": 0.6667,
-    "lqip": "data:image/webp;base64,UklGRmABAABXRUJQVlA4IFQBAACwCACdASoYACQAPtFepkyoJaOiKrgMAQAaCWwAnTM0Q+e6cc29Ja+JIuMadE3opaKcuBK7+d2oiWOBjMSN2AzKGIhVf4bNrHviqp6LYoAA/vQk8EKsD+9uLS7GAoMPAUCCzAX9aCpgpUy7rqjfwkMoVjiGaeWTxzgq7gQJUqI41zKTDj43L+AiAGuEOS9AAxDl54VbXiaE+l1xccdlNwH2JH8jFZnVo0siFSS5RcrfZycU9WR+zwHFGVH8DSJ4xqD6vyYzLzFGvIgoN2orwQKYTHi1pfasoZ+QR7iM8CAIWNPv1FVHlOdvjJfpHeWvxiypPiQ2zgDkQyvQtxqBAPDFSncAAfB36Xh4p9YMakqzwsl01FqsgfXTtIHfC9OKjC83gi3+LUNBAMg2JPn4Jm457rH037sWUliWYs0Wt4qXDFpOSVCJnH/1vifq6N8LFV4YXwAA",
+    "lqip": "data:image/webp;base64,UklGRlgBAABXRUJQVlA4IEwBAABwCACdASoYACQAPtFepkyoJaOiKrgMAQAaCWwAnTM0Q+e6cc29Ja40XiaTGNOib0TcnnQeAH+A64MNrtgyAp0FWwdVtZh7mFvHCwdAAP70JPA/cyZ2ntCOaQf3FMHofYyRm1AYEtzsZCvAtdcy8BIrQN9xeJYBqMFNFOrPpCkuww4+Ny/gIgBrhDcKXPctwHPo++y9JgLotewm+8DjaWOXD93pGUSthqQy21ejw5rk92eA4oyo/gaRPGNUL03Wzxb28e77sCcjGt4hqGxOWViIUEyxp0XeLOqzPI/ijgfMt0k4w+/elG7INAIFKpIw0VcQXlqO9ggNMPbUYi8+gDb4xulaJmDEzODP0XOAGOiC3S+UpuSULpUhYWCLGF1o0EAyDYk+fgmbjnusc7LIfUrP2r42pDeMKlDlQm7a26K7Wi7RatzlACoEEO34AA==",
     "fallback": "https://img.karnani.io/race-to-the-bottom-26/a1101612.jpg",
     "srcset": [
       {
@@ -1039,7 +1114,10 @@
       }
     ],
     "date": "2026-06-16T15:14:32",
-    "gps": null,
+    "gps": {
+      "lat": 20.39322,
+      "lon": -87.027036
+    },
     "camera": "SONY ILCE-1",
     "lens": "FE 28-60mm F4-5.6",
     "exposure": {
@@ -1057,7 +1135,7 @@
     "width": 1600,
     "height": 1066,
     "ratio": 1.5003,
-    "lqip": "data:image/webp;base64,UklGRvIAAABXRUJQVlA4IOYAAADwBACdASoYABAAPtFUo0uoJKMhsAgBABoJaACdIDf6gFPkJIkIHl4tv5eCPxjy8wAA/n6LhZBbirXJrsSzf7NoMqZwnXgH6s10OAddifCpxmKJ3sEbvzOtnJOFHD0FTLHl2kMJgs4SXbjdedbd+gF8HKXQEROb6q9jiccSBE3P2JbTTRKLadC7C0jir06/Vzzu9mA6HqvuTWBCbzXLtwFkprY0UF9+x6M0i/tt/6GLDrXaN4u8SyWpUwd7+iYa2g3yOZDMy2aFkE3BUIVwmucdU21VIspOLXTsTMw2jHMWsAjgaQAAAA==",
+    "lqip": "data:image/webp;base64,UklGRvIAAABXRUJQVlA4IOYAAADwBACdASoYABAAPtFUo0uoJKMhsAgBABoJaACdIDf6gFPiJIkIHlejT4QClFuHNgAA/n6LhZBapcqVleg+sZWMdKgU39T9WZuwyVsQW7BtwFvOWm7PB47yBq+THijCZ/2VDY5CX9kQsWRX6hdVzMj9me0aHYWZTAMRElqE7fspT8i8lbktg3xYuczPvgusvZlbPbFa7kwXEehgs8OMaX2nrwEb9WHVD4vdTS16Xz/QxYdarw3bLGDeb5F/uR54LIrRAW/N0VGwrSpyTDBhVAcfmuswOmWsga5GCv/I+Wq/MUa6CFEAAA==",
     "fallback": "https://img.karnani.io/race-to-the-bottom-26/a1101559.jpg",
     "srcset": [
       {
@@ -1078,7 +1156,10 @@
       }
     ],
     "date": "2026-06-16T11:55:14",
-    "gps": null,
+    "gps": {
+      "lat": 20.345358,
+      "lon": -87.02794
+    },
     "camera": "SONY ILCE-1",
     "lens": "FE 28-60mm F4-5.6",
     "exposure": {
@@ -1096,7 +1177,7 @@
     "width": 1600,
     "height": 1067,
     "ratio": 1.5,
-    "lqip": "data:image/webp;base64,UklGRtIAAABXRUJQVlA4IMYAAACQBACdASoYABAAPtFUo0uoJKMhsAgBABoJbACdAYwc/9crEHaBYpA8Axdp2mAA/nIEYvYSBYvYpGaBCGLy81b2euWB6F07Dz41nlN3e2Mth6I0WJFZ2NPohwcIaHXDADrsbwNyCxROFXbxSWy+TdlBv/zVQuaoJESpDHXngYXKQrmUOQP8QxkBSGr0K7U8c1iouW80y1D5fPFQp17+TiWxSpNkMMbQqBZY1z4XxshFj5Oi2E734DCkHFfTFDUiUtdPASQAAAA=",
+    "lqip": "data:image/webp;base64,UklGRtIAAABXRUJQVlA4IMYAAABQBACdASoYABAAPtFUo0uoJKMhsAgBABoJbACdAYw6l4YLEszDwUpmPkOkAP5yBN3YvYSBgmIpGaBYO9zUtdkPgaUp789wJ2+tfXabnA1UBekMqr2QGW+gX9v+r5QMAqSU1n2BCyaDnnx5MvTE3rKDf/mqhc1QSIlTLN4gDElob3Mocgf5CYJoyV/s5aLw77ZCUF6PFEsF88VCn/v8XvyxTvKTlo7QqBZY1z4XxtaVj5Oi2E734DCkHFfTFDUiUtdPASQAAAA=",
     "fallback": "https://img.karnani.io/race-to-the-bottom-26/a1101553.jpg",
     "srcset": [
       {
@@ -1117,7 +1198,10 @@
       }
     ],
     "date": "2026-06-16T11:47:08",
-    "gps": null,
+    "gps": {
+      "lat": 20.345358,
+      "lon": -87.02794
+    },
     "camera": "SONY ILCE-1",
     "lens": "FE 28-60mm F4-5.6",
     "exposure": {
@@ -1135,7 +1219,7 @@
     "width": 1600,
     "height": 1067,
     "ratio": 1.5,
-    "lqip": "data:image/webp;base64,UklGRuAAAABXRUJQVlA4INQAAAAwBQCdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoRwJoA1gTNoksNv8GYqb8Wc1YYkgAD80Gm1dWTSTo3fVnrA1y8DQN3OHArPUxN0YyXu4rP+XZdQGsGGbVqX+GtQdB6Gl+ee5EVBa70ipDvrvQrWH3oIahaLydLBTeqJW+TMMsvfeBxwLc0UrYe0SP0+FSfGWautnA1wKLy+orwM820aWfBgbjxC4z7vJy58Dhag1/G2XgK2uX3YPdkzv+u4uC0MAoRu4c2XnU80zH6niOQYLGQAAA==",
+    "lqip": "data:image/webp;base64,UklGRuAAAABXRUJQVlA4INQAAADwBACdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoRwJoAreZVuWO6kD7rEtKdJwgAA/NBqIWpNSiCN34uZ1o64s57t6LbQMMtlo9WFk7C8+4/DAQjjidXMqqwUKVNntW1ZflSWVvEO2NYWgf0dKpunl3EJ+zI+qDLT1AYRBYj2casWKDht791dPHjUog40DQRAaQno+Lfg4w+orwM820aWjplSu+WG8X5Ejw4h3B3Zvj4ThphGiG6AdZyJfkVHLZaGAUI3cObLzqeaZj9TxHIMFjIAAA==",
     "fallback": "https://img.karnani.io/race-to-the-bottom-26/a1101551.jpg",
     "srcset": [
       {
@@ -1156,7 +1240,10 @@
       }
     ],
     "date": "2026-06-16T11:45:37",
-    "gps": null,
+    "gps": {
+      "lat": 20.345358,
+      "lon": -87.02794
+    },
     "camera": "SONY ILCE-1",
     "lens": "FE 28-60mm F4-5.6",
     "exposure": {
@@ -1174,7 +1261,7 @@
     "width": 1600,
     "height": 1067,
     "ratio": 1.5,
-    "lqip": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAADwAgCdASoYABAAPtFWo0uoJKMhsAgBABoJaQAAetCqXAD+8e1Z1buc235Lb2q8pk6r9altHYJzhCugAAA=",
+    "lqip": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAADwAgCdASoYABAAPtFUo0uoJKMhsAgBABoJaQAAetCqXAD+8e1Z1buc235Lb2q8pk6r9altHYJzhCugAAA=",
     "fallback": "https://img.karnani.io/race-to-the-bottom-26/a1101525.jpg",
     "srcset": [
       {
@@ -1195,7 +1282,10 @@
       }
     ],
     "date": "2026-06-16T09:49:25",
-    "gps": null,
+    "gps": {
+      "lat": 20.420498,
+      "lon": -87.017515
+    },
     "camera": "SONY ILCE-1",
     "lens": "FE 28-60mm F4-5.6",
     "exposure": {
@@ -1234,7 +1324,10 @@
       }
     ],
     "date": "2026-06-15T20:37:45",
-    "gps": null,
+    "gps": {
+      "lat": 20.355458,
+      "lon": -87.028811
+    },
     "camera": "SONY ILCE-1",
     "lens": "FE 28-60mm F4-5.6",
     "exposure": {
@@ -1252,7 +1345,7 @@
     "width": 1600,
     "height": 1067,
     "ratio": 1.5,
-    "lqip": "data:image/webp;base64,UklGRsYAAABXRUJQVlA4ILoAAADQBACdASoYABAAPtFWpEuoJKOhsAgBABoJaAC+Z8AqQPdEg39zmSBMWTQ7MIjyAAD+9oL5cDSZz8u3XEVkkz5kx17VGBHGPZo2ekLHYLIf9nSRUHE99KouXuXPvWfsiNh2vPMqy7+G5gWhoa8zhd+EZDfSiGhQJgVjtb5bMQsGtpV6NnoeyUHpkPCLp6MqJadW+onarE8vqhOdLJnTIXB1AqP1ZxDdM1NtyHCh9JpNlDNtHQsbuk+MhgA=",
+    "lqip": "data:image/webp;base64,UklGRsYAAABXRUJQVlA4ILoAAADQBACdASoYABAAPtFUo0uoJKMhsAgBABoJaAC+Z8AqQPdKg39zmSBMWTQ7MIjyAAD+9oL5cDSZz8u3XEVkkz5kx17VGRHGNlcrl0Peu/1pnhlB8MpwNHNPl7lz7EMzylgushdgFPt9xAtDQ15nC78IyG+lENCkTArHa3y2YhYUi8ygoqxT+3AUlUZJl2NU6GHQ81D+GfAbVCng2jmmQuDqBUf6TiG6ZqbbkOFD6TSbKGbaOhY3dJ8ZDAA=",
     "fallback": "https://img.karnani.io/race-to-the-bottom-26/a1101496.jpg",
     "srcset": [
       {
@@ -1273,7 +1366,10 @@
       }
     ],
     "date": "2026-06-15T20:25:24",
-    "gps": null,
+    "gps": {
+      "lat": 20.355458,
+      "lon": -87.028811
+    },
     "camera": "SONY ILCE-1",
     "lens": "FE 28-60mm F4-5.6",
     "exposure": {
@@ -1312,7 +1408,10 @@
       }
     ],
     "date": "2026-06-15T20:11:23",
-    "gps": null,
+    "gps": {
+      "lat": 20.355458,
+      "lon": -87.028811
+    },
     "camera": "SONY ILCE-1",
     "lens": "FE 28-60mm F4-5.6",
     "exposure": {
@@ -1330,7 +1429,7 @@
     "width": 1600,
     "height": 1067,
     "ratio": 1.4998,
-    "lqip": "data:image/webp;base64,UklGRsYAAABXRUJQVlA4ILoAAACwBACdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoMYA+ga1ItoavrvxCQYfRGQAP6ibgeg1RbmO+cd9GBVso/RH2qy+h6eln89tRU3Ra3tUXDEbW1XzlOgtK60wdnmubkunoM8whuHLY2lM8pLM9UU46FOB9TnmmRjbDPk2y1dSTYeRcl5eyv74Am/zqV0ezz2wbMVDX9HMc4feWUitvzwWgYm1f/mkupTZHl/5QOoxov3XQdhddwgAAA=",
+    "lqip": "data:image/webp;base64,UklGRsgAAABXRUJQVlA4ILwAAACQBACdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoMYADkAsKAIT2Kukrd3nIAA/qJ07D/jjOa8mGIteNJ2OAZ543N6taFA3FkrOu7FG5nuF6gEl80yDeFPvFyiLkBB0eLAwGycqwODKUzyksz1RTjpMA+TGFSdf+CzgPXlQw+ucROfjk51/4cDUj3GYWA7henv8Vdkm3flIYvwZFWJnNlOm+iasKznl+zaM4dDq//sYV8jyfdlNHP6bWkAAA==",
     "fallback": "https://img.karnani.io/race-to-the-bottom-26/a1101440.jpg",
     "srcset": [
       {
@@ -1351,7 +1450,10 @@
       }
     ],
     "date": "2026-06-15T16:41:25",
-    "gps": null,
+    "gps": {
+      "lat": 20.364147,
+      "lon": -87.029031
+    },
     "camera": "SONY ILCE-1",
     "lens": "FE 28-60mm F4-5.6",
     "exposure": {
@@ -1369,7 +1471,7 @@
     "width": 1600,
     "height": 1067,
     "ratio": 1.5001,
-    "lqip": "data:image/webp;base64,UklGRuIAAABXRUJQVlA4INYAAACwBACdASoYABAAPtFUo0uoJKMhsAgBABoJbACdH8AqQPdQa0sc+u9L3KNSlEEAAP7dQXMRsM3Mz3VT8LCIW0hjVg4KzzhuPLUEdc/hRJWKKjDwrGwBq1K4IY09Sb5LrnjZVFwhx0oxu5vRdDCP85IxMBy4UM8XwtnLY8mPMSqNKomgnQyMEo0lBTUmWym2MO80OK4AzuE1R24ArDu4p5zHrFlt2+9oyM84aYI0Npe/yv/6g5dz+b/a0MgwhfrVSb4u2QjDlNGVpg0STVeGrHH9hU8TZAAA",
+    "lqip": "data:image/webp;base64,UklGRuQAAABXRUJQVlA4INgAAAAQBQCdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoMlmBBzMEgEW16ChrpeANGNuUQQAP7bwJaJ5NGqiG1q2p/GomdznR9dPuYM/zoRmZkxR45ZN37I6valGVT+wo3pX0/rn7j/w3jBehr/KTpU9vo42LhxGYrs3RC4zeuco7pinfVVEZQwOYJti2D3z5cHsYrABLs3dbbNQx8lN5m/ev4K34z/r19xFYzyULJkTsXn7X9XjuNkvk7PiNbk6llyNLOKGFGZNJmtIb9/QuIc91hpR/YVPE0gAAA=",
     "fallback": "https://img.karnani.io/race-to-the-bottom-26/a1101407.jpg",
     "srcset": [
       {
@@ -1390,7 +1492,10 @@
       }
     ],
     "date": "2026-06-15T14:41:26",
-    "gps": null,
+    "gps": {
+      "lat": 20.328115,
+      "lon": -87.027564
+    },
     "camera": "SONY ILCE-1",
     "lens": "FE 28-60mm F4-5.6",
     "exposure": {
@@ -1408,7 +1513,7 @@
     "width": 1600,
     "height": 1067,
     "ratio": 1.5,
-    "lqip": "data:image/webp;base64,UklGRrIAAABXRUJQVlA4IKYAAABwBQCdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoRwIsCru2/+LXXY08/8gK2LmJgcnNSAAP7p6qS7PCV1h88W3vRQx5owGVcX/Ja3VTkbDXXqJnrehVjPSIEvjI75zdSLW3KEW7++GjhmnYl0i87z78xip3OvcNEIwA0JoXqDcIEv2iAeen9GiWesXzC4z4IFdB0w7jwLUpqYs430d69hRMSwAgAA",
+    "lqip": "data:image/webp;base64,UklGRrIAAABXRUJQVlA4IKYAAABQBQCdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoRwIsCru2/+LXmY08/8gK2LmxfZiegA/unqpLtduZMQzxbe9FDHmodZz6s8l2SaBB4bE5GZNSmCrHK/EQrUqmp4JnsjdfQ+f74aOGadiXSLzvPvzDlqXeOgQF3SkLmH4CQG65Kq79gycZ6tAugbseuYewtikAbfRawHuoYKBaeC38AntPAT0ZwA",
     "fallback": "https://img.karnani.io/race-to-the-bottom-26/a1101404.jpg",
     "srcset": [
       {
@@ -1429,7 +1534,10 @@
       }
     ],
     "date": "2026-06-15T12:39:22",
-    "gps": null,
+    "gps": {
+      "lat": 20.370628,
+      "lon": -87.028865
+    },
     "camera": "SONY ILCE-1",
     "lens": "FE 28-60mm F4-5.6",
     "exposure": {
@@ -1447,7 +1555,7 @@
     "width": 1600,
     "height": 1067,
     "ratio": 1.4999,
-    "lqip": "data:image/webp;base64,UklGRvwAAABXRUJQVlA4IPAAAABwBgCdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoRwNsz/EBRmfPX/pX8GvlAEzUMt/GWrq0ErpllGNhAA/nfFDIBppQfpsEMOmuQxi7e217XoKZmYisUJHjRjuj3LNY+HtDvGmxrslPhAqnFlVi5aGaFeU2pYlPFvWc2r9Z+bEOnoaF0YMl9QsGo+BX9CwryuSfjWQEwn15PLTXU3vrO3Ai0CyPVVml7Tl6A6/pozZqxP+x1SAW21BsL6QVrrPfX/6vsgWv30f9i6rY//9vQEh6M+vRnT/8aT8cKnMo68xN64x4Kz0wf2EHn0cB3AAAA=",
+    "lqip": "data:image/webp;base64,UklGRvoAAABXRUJQVlA4IO4AAACQBgCdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoRwNsz/EBRmfPX/pX8GvlAEzWMuSe+WkgTuBJTMYOQAAP53xQyX5ef7EQepUD0zpw99JRiiHeGSliLWIO77l9f/3W6ZUwyvN91ddP0BIc5rOJjOPZSsE4ZJJ1egCZh31j6lC5mMfEotzdJsWiuv17pysHQcIxYD+LvyGrLFqZhSaJqklDyFXtVDG1MlXKR/r5W36L+PtiF8ojBTLLRodfdOuv/1fZAtfvo/7F1Wx//6UQJD0Z9ejOn/40n44VOZR15ib1xjwVnpg/sIPPo4DuAA",
     "fallback": "https://img.karnani.io/race-to-the-bottom-26/a1101400.jpg",
     "srcset": [
       {
@@ -1468,7 +1576,10 @@
       }
     ],
     "date": "2026-06-15T12:35:56",
-    "gps": null,
+    "gps": {
+      "lat": 20.370628,
+      "lon": -87.028865
+    },
     "camera": "SONY ILCE-1",
     "lens": "FE 28-60mm F4-5.6",
     "exposure": {
@@ -1507,7 +1618,10 @@
       }
     ],
     "date": "2026-06-15T09:59:01",
-    "gps": null,
+    "gps": {
+      "lat": 20.442687,
+      "lon": -87.000579
+    },
     "camera": "SONY ILCE-1",
     "lens": "FE 28-60mm F4-5.6",
     "exposure": {
@@ -1546,7 +1660,10 @@
       }
     ],
     "date": "2026-06-15T09:56:13",
-    "gps": null,
+    "gps": {
+      "lat": 20.442687,
+      "lon": -87.000579
+    },
     "camera": "SONY ILCE-1",
     "lens": "FE 28-60mm F4-5.6",
     "exposure": {
@@ -1564,7 +1681,7 @@
     "width": 1600,
     "height": 1067,
     "ratio": 1.5,
-    "lqip": "data:image/webp;base64,UklGRr4AAABXRUJQVlA4ILIAAAAwBQCdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoR2WkgPcydwJCOr9gBe/A8AndUqAAD+ha7l3aMcXii2y0dXNvZca/HWdki77zqxe1ixTwPggL9HHc+g/xw2xfNuaCGuTkpqDmjuVdJy0ZIJAGAjL/cYGSf5Qq6FHMn3f/wby/jvNMnwiviH5rBAdnJacSXs2OuIj1Gzap9q6PhyenK4drnNd48yPoZhXBffPpl+kAAA",
+    "lqip": "data:image/webp;base64,UklGRrwAAABXRUJQVlA4ILAAAADQBACdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoR2WdCI7gSEdX7AC9+B4BOYcAD+ha7x3amA7+5QMusiQ6SLkX8GAy7dPjYzIHgzQDYbbl0hxOUPX/ZqSN6SvmmTZj3H5GGFjlZwvqabwS5i6vKovnCU3xRwxL30xcKIfzR+O89KfCLIpeo/1AncWQqqJ5FSZW5vpCY6I7puqJduXlqFE0XdG8AYpX6B3fu4DQwAAA==",
     "fallback": "https://img.karnani.io/race-to-the-bottom-26/a1101335.jpg",
     "srcset": [
       {
@@ -1585,7 +1702,10 @@
       }
     ],
     "date": "2026-06-15T09:53:03",
-    "gps": null,
+    "gps": {
+      "lat": 20.442687,
+      "lon": -87.000579
+    },
     "camera": "SONY ILCE-1",
     "lens": "FE 28-60mm F4-5.6",
     "exposure": {
@@ -1603,7 +1723,7 @@
     "width": 1600,
     "height": 1067,
     "ratio": 1.5,
-    "lqip": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAABwBACdASoYABAAPtFWpEuoJKOhsAgBABoJbACdMoADTuDqOr51+gF73hD1AAD+9C/DJQiGoeiEo0rzQBNtkAzTuzvtxK7lM08h5eTZpfGi+x2Kf/es+qQWB99iYDZpyi7alJgRDVICqgAA",
+    "lqip": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAABwBACdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoADTuDqOr51+f21v+jTAAD+9C/DJQiGoeiEo0rzQBNtkAzTuzvtxK7lM08h5eTZpfGi+0tq9akTdwqOd+jToKf9M4b9+Ktuuog7fgAA",
     "fallback": "https://img.karnani.io/race-to-the-bottom-26/a1101333.jpg",
     "srcset": [
       {
@@ -1624,7 +1744,10 @@
       }
     ],
     "date": "2026-06-15T09:50:07",
-    "gps": null,
+    "gps": {
+      "lat": 20.442687,
+      "lon": -87.000579
+    },
     "camera": "SONY ILCE-1",
     "lens": "FE 28-60mm F4-5.6",
     "exposure": {
@@ -1642,7 +1765,7 @@
     "width": 1600,
     "height": 1067,
     "ratio": 1.5,
-    "lqip": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAADwAwCdASoYABAAPtFapkuoJaOhsAgBABoJYgCdAGlfNFO6qrZqtnRAAP7+t54lD9Q24feDJ7u1LUopDchddi9H4JKCwoSveyB+baypa88V21B5OpMiZTa3zkeJtnYRth6O8BO5Uild2CwkpSgK0rQAAe3x5cBX/x0bJl9gXgAAAA==",
+    "lqip": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAABwBACdASoYABAAPtFWpkuoJKOhsAgBABoJZACdMoAKRp8WH0iRoSx4VMHUAAD+/reeJQ/UNuH3gye7tS1KKQ3IXXYvR+CSgsKEr3sgfm2sqWvPFZOaHYy5usEw1sgnarANPuVKn+Do0ruwWElKUBSxhDPEJpizSDCrW64RHIAAAA==",
     "fallback": "https://img.karnani.io/race-to-the-bottom-26/a1101327.jpg",
     "srcset": [
       {
@@ -1663,7 +1786,10 @@
       }
     ],
     "date": "2026-06-15T09:47:53",
-    "gps": null,
+    "gps": {
+      "lat": 20.442687,
+      "lon": -87.000579
+    },
     "camera": "SONY ILCE-1",
     "lens": "FE 28-60mm F4-5.6",
     "exposure": {
@@ -1681,7 +1807,7 @@
     "width": 1600,
     "height": 1067,
     "ratio": 1.5,
-    "lqip": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAACwBACdASoYABAAPtFWo0uoJKMhsAgBABoJZgCdMoR3AIJdxK5nlsdvoM6wXJOAAP7+oAlZjYqyBVl6KyHylbLBZioyj7uynfXb2woC5sXV2OPmMtvdNksWtpD+An1j3U5CnXEQIFjDU/8h2V3J9X6MRW3i++//ux+GVQAA",
+    "lqip": "data:image/webp;base64,UklGRoYAAABXRUJQVlA4IHoAAACQBACdASoYABAAPtFWo0uoJKMhsAgBABoJZgCdMoR3AIJdvn1A1nD1BbIbcRAA/v6gCVmNirlVVmCs6d+jLpjkv0U343FX+182xyW1Mf87Y3hlrPELHdRxcv8p2uHvTIJrRbx7+l+bxcFK7lObFEcKXABBUPwyCmkEAA==",
     "fallback": "https://img.karnani.io/race-to-the-bottom-26/a1101325.jpg",
     "srcset": [
       {
@@ -1702,7 +1828,10 @@
       }
     ],
     "date": "2026-06-15T09:47:30",
-    "gps": null,
+    "gps": {
+      "lat": 20.442687,
+      "lon": -87.000579
+    },
     "camera": "SONY ILCE-1",
     "lens": "FE 28-60mm F4-5.6",
     "exposure": {
@@ -1741,7 +1870,10 @@
       }
     ],
     "date": "2026-06-14T16:33:27",
-    "gps": null,
+    "gps": {
+      "lat": 20.356852,
+      "lon": -87.028772
+    },
     "camera": "SONY ILCE-1",
     "lens": "FE 28-60mm F4-5.6",
     "exposure": {
@@ -1759,7 +1891,7 @@
     "width": 1600,
     "height": 1067,
     "ratio": 1.5,
-    "lqip": "data:image/webp;base64,UklGRq4AAABXRUJQVlA4IKIAAADQBACdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoR3ACWdYSbmNbAIDJXiuxVRIAD+7qE43jAgsbtaceJxZx5Br/u6z6b0jQjrDkyuuyhTdpjxoaK5w1Rz+bjBMTBVHde2kB7IX1zGesfI2D1w9pO6kJOIb5jSukWYdLtYXMsXXz3ohHPppCh4GiIeCSSofuSffg24RJLGMMqmU7+QJiuAAAA=",
+    "lqip": "data:image/webp;base64,UklGRq4AAABXRUJQVlA4IKIAAACQBACdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoR3ACWdYX8sLYAzAfFJW+AA/u6hON4wILG7WnHioNe+6/VDkqctv11COsOiwZcl21ATro6FtZN7xqeCiy1S55pReia9hl+hWE9Xmif/TqtK1xDaN9XyaWddiGO4TsOE+MQiNiSGqqDPhgR/52oRBH//rFC4hAzQHysomWZpaLxO0tYmAAA=",
     "fallback": "https://img.karnani.io/race-to-the-bottom-26/a1101295.jpg",
     "srcset": [
       {
@@ -1780,7 +1912,10 @@
       }
     ],
     "date": "2026-06-14T16:31:30",
-    "gps": null,
+    "gps": {
+      "lat": 20.356852,
+      "lon": -87.028772
+    },
     "camera": "SONY ILCE-1",
     "lens": "FE 28-60mm F4-5.6",
     "exposure": {
@@ -1798,7 +1933,7 @@
     "width": 1600,
     "height": 1067,
     "ratio": 1.5,
-    "lqip": "data:image/webp;base64,UklGRtQAAABXRUJQVlA4IMgAAACwBACdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoGvgC2E29GE0iH1IfWvLYbAAP7p/p81LxMSk5/xKhcDsc2+k/E5O1+wkz77lNVfxOyrrhd6BJwi5Jdi63i1fdTk95gXO8n1zQnwA4SAd4UceJPvex+3St0pOfiFWClrB98MuqiBzLuoyQ9G8E6gLyVts2HmG/L6BzCU6WvVcrrdS9/a/Qx0G12+jDHxawC5ctvmsKEgNNa0373+vejPDd1Ou6CBt5FD4Y4AAA==",
+    "lqip": "data:image/webp;base64,UklGRtQAAABXRUJQVlA4IMgAAACQBACdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoGvgC2GG9GDjMCbY2Bpa+AA/un+n2YSFuKTn/E6FwPfzb6Y8bk7X7DTPvuWGiLVrLvLl3XngZyVSFWuMhsRCwvZ4OfX5xUfecys9hLT9VmMSVInP4wPIPkquOZ7/iVSNG++0Oe9cckJgPyjk+K9ph40BLdIa8KF7FUDD7N+nHzW9PeHLRZscU2KKL7/zeyR1dA/msKEgNNa0373+vMDAElIOeRCBt5FD4Y4AA==",
     "fallback": "https://img.karnani.io/race-to-the-bottom-26/a1101279.jpg",
     "srcset": [
       {
@@ -1819,7 +1954,10 @@
       }
     ],
     "date": "2026-06-14T16:16:17",
-    "gps": null,
+    "gps": {
+      "lat": 20.356852,
+      "lon": -87.028772
+    },
     "camera": "SONY ILCE-1",
     "lens": "FE 28-60mm F4-5.6",
     "exposure": {
@@ -1837,7 +1975,7 @@
     "width": 1600,
     "height": 1067,
     "ratio": 1.5001,
-    "lqip": "data:image/webp;base64,UklGRsQAAABXRUJQVlA4ILgAAACwBACdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoADUF0hnTSMQzqSnYJIWWogAP7wx4xMUPE+PzH61aMzruzDc9/tFOQGuxGzrKT1nU1nXCuMhADT9jWu2v6MKqKfGIZEDz/xty/1nZDBvKLcwgBhrG9rsZZQocJ4bKbiCkb1WsEfLI2ELhUqsAFvtG2xOg9Vrbr+KIYBIruwldTmX/aNzjgj96cq4i3vvhlkTXOrBKHUogDdqAAA",
+    "lqip": "data:image/webp;base64,UklGRsQAAABXRUJQVlA4ILgAAACwBACdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoADUF0hnTSMQzqSnYJIWWogAP7wx4xMUPE+PzH61aMzruzDc9/tFOQGuxGzrKT1nU1nXCuMhADT9jWu2v6MKqKfGIZEDz/xty/1nZDBvKLcwgBhrG9rsZZQocJ4bKbiCkb1WsEfLI2ELhUqsAFvtG2xOg9Vrbr+KIYBIruwldTmX/aNzjgj96cq4i3vvhlkTWtxDvOpTMgbtQAA",
     "fallback": "https://img.karnani.io/race-to-the-bottom-26/a1101262.jpg",
     "srcset": [
       {
@@ -1858,7 +1996,10 @@
       }
     ],
     "date": "2026-06-14T15:49:01",
-    "gps": null,
+    "gps": {
+      "lat": 20.356852,
+      "lon": -87.028772
+    },
     "camera": "SONY ILCE-1",
     "lens": "FE 28-60mm F4-5.6",
     "exposure": {
@@ -1876,7 +2017,7 @@
     "width": 1600,
     "height": 1067,
     "ratio": 1.5002,
-    "lqip": "data:image/webp;base64,UklGRvgAAABXRUJQVlA4IOwAAAAQBQCdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoR2ZhEyIjGMcL2QK+rqvWx8YNlgAP6BrdJiDprF65YHyAYCihwbdrRpOhV7+mm5obvSWCjAOh5UePFg70wzdYPvcbXZisknFReV/vUzPyCl9UU4ijlcIbEHqz91qyCcU6HFLoXSvP56FhdsbNxW+NgUsN8rr65TyRmOpl8DzpSbRbSw31kS2o2CDJd+EbH9oOW86lUSJirKKTqNz8f8f2GrZlBaZ7LRYlTzKWzx27sO0aiFxtTP4NTnE6N0xqde/zk79+nocf6wPnb7f8gAAA==",
+    "lqip": "data:image/webp;base64,UklGRvwAAABXRUJQVlA4IPAAAABQBQCdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoR2ZhE3kAbGZD+gRgv2mdlddoKggoAA/oGt0efemsXpWwfIBgJEviWEtEkPdEQXS7TqDa+0T6PZchjLtVb2iuG4k1rG4w7Fr8+zNdC9vF9iqq+AmI5UXcPpvhButWQTinQ4pdC6Tor8Rt90X2kB/HbG3qbqLsu80vhT612m7Kivv+2A6cRkwA6zdQ2B5te/zqqnwjiKcMTnsnYV0eIcWJ/dEJ/BzMkMaFnV6GNE85n8S89fHT0l4NOX6GpzidAnnZuX+cnfv09Dj/WB87fb/kAAAAA=",
     "fallback": "https://img.karnani.io/race-to-the-bottom-26/a1101237.jpg",
     "srcset": [
       {
@@ -1897,7 +2038,10 @@
       }
     ],
     "date": "2026-06-14T14:10:52",
-    "gps": null,
+    "gps": {
+      "lat": 20.379425,
+      "lon": -87.029364
+    },
     "camera": "SONY ILCE-1",
     "lens": "FE 28-60mm F4-5.6",
     "exposure": {
@@ -1936,7 +2080,52 @@
       }
     ],
     "date": "2026-06-14T11:41:25",
-    "gps": null,
+    "gps": {
+      "lat": 20.364147,
+      "lon": -87.029031
+    },
+    "camera": "SONY ILCE-1",
+    "lens": "FE 28-60mm F4-5.6",
+    "exposure": {
+      "fNumber": 11,
+      "exposureTime": 0.005,
+      "iso": 500,
+      "focalLength": 28
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "A1101196.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRvwAAABXRUJQVlA4IPAAAACwBQCdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoKCBgptQmt8B4At81QIcvT4ivKz9PcfUAAA/tDjCYcRRZvfqKQl61cljtVAiN78smmJvRdsIUiPzt1r7wjn69/zRpj6Ferotig3kJGG1bDVBFhNwiKZVnGzBELXiKGn1/BVCTcbi8167XP9zei/vCIqt/9cQDXuPnbA5Me+9ihZnKgtJSdZ9Zl+l5xOjvHLlQlbJh5tnswKTz4JwmjQRK3QVEp/+YeHmvtbAUPykpJG7+CK2oi6D5QsG/mlGH/fILuhJvOXwVB5eWXcdGWk2NIAAAA=",
+    "fallback": "https://img.karnani.io/race-to-the-bottom-26/a1101196.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/race-to-the-bottom-26/a1101196-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/race-to-the-bottom-26/a1101196-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/race-to-the-bottom-26/a1101196-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/race-to-the-bottom-26/a1101196-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-06-14T11:41:17",
+    "gps": {
+      "lat": 20.364147,
+      "lon": -87.029031
+    },
     "camera": "SONY ILCE-1",
     "lens": "FE 28-60mm F4-5.6",
     "exposure": {
@@ -1954,7 +2143,7 @@
     "width": 1600,
     "height": 1067,
     "ratio": 1.5,
-    "lqip": "data:image/webp;base64,UklGRv4AAABXRUJQVlA4IPIAAACwBQCdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoRwFyk/pn72dkhkRkKXzXgy+HXkPB1ntZgA/sB/DZlU7AriQSzyQhBusHivJwfDvnmk81Gn6kOpdOb/iHekYtLxA8japP/rRKSTD8oFRZuepPw8xgDrqZQ2so+J8F+mFnYuggC93mGzqSoa/7kZG4yzNJledPmTo+Z90GpTT5VMEb6XRhEFl7UtRAH9nU8iB6PS1JhNrpkMLETGwU+EfIUzUa4pRIDbZFlzqqXPOv3OfE3+Xp9BfFeBkfEtaYBL7orrrv0DY0VytFaIGz66tmzZfAAAAA==",
+    "lqip": "data:image/webp;base64,UklGRv4AAABXRUJQVlA4IPIAAADQBQCdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoRwFyk/pn72dkikRmK58mAJRTwwoB1Mu8YAAP7Afw2ZVOwK4kEtKtJWQkIrhMigvzXD/baHXj5sD8dCIbiRTshkw88by8S00MZR0LcJn0UYj+ecFGN8CZROg6jM6e5yYvEyCwF5JmcJ/B+JWEre4n0M1Ooa3uNxgPGFs97XvtW5fnxf/5tkbX8d7dNuHUtXiy4EYySLOfh+fwi/W4cGV8eUws0HKMNb0/54foEsZXogF1R9Y+Xux4HFeBsZEuj6HsqrKFIQ+crZ2rnLSmfVUArU0RwAAA==",
     "fallback": "https://img.karnani.io/race-to-the-bottom-26/a1101195.jpg",
     "srcset": [
       {
@@ -1975,7 +2164,10 @@
       }
     ],
     "date": "2026-06-14T11:41:16",
-    "gps": null,
+    "gps": {
+      "lat": 20.364147,
+      "lon": -87.029031
+    },
     "camera": "SONY ILCE-1",
     "lens": "FE 28-60mm F4-5.6",
     "exposure": {
