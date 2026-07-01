@@ -561,12 +561,10 @@ section {
   transform: translateY(-50%);
 }
 .lightbox .lb-actions {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  z-index: 2;
   display: flex;
   gap: 0.5rem;
+  justify-content: center;
+  margin-top: 0.85rem;
 }
 .lightbox .lb-actions button {
   position: static;

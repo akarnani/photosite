@@ -68,10 +68,6 @@ const lbData = photos.map((p) => ({
     const overlay = document.createElement('div');
     overlay.className = 'lightbox';
     overlay.innerHTML = `
-      <div class="lb-actions">
-        <button class="lb-copy" aria-label="Copy link to this photo">Copy link</button>
-        <button class="lb-map-btn" aria-label="Show location" aria-expanded="false" hidden>Map</button>
-      </div>
       <button class="lb-close" aria-label="Close">×</button>
       <button class="lb-prev" aria-label="Previous">‹</button>
       <button class="lb-next" aria-label="Next">›</button>
@@ -83,6 +79,10 @@ const lbData = photos.map((p) => ({
           <p class="lb-note"></p>
           <span class="lb-date"></span>
           <span class="lb-exif"></span>
+          <div class="lb-actions">
+            <button class="lb-copy" aria-label="Copy link to this photo">Copy link</button>
+            <button class="lb-map-btn" aria-label="Show location" aria-expanded="false" hidden>Map</button>
+          </div>
         </figcaption>
       </figure>
       <div class="lb-map" hidden></div>`;
