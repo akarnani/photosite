@@ -26,12 +26,21 @@ function toLocal(url, slug) {
 // Merge rule: annotations win for caption/species/title; a non-empty annotation
 // species overrides EXIF, empty falls back to EXIF. Everything else from the
 // photo record.
+// Stable, URL-safe id from the filename (for lightbox permalinks + map anchors).
+function photoSlug(file) {
+  return file
+    .replace(/\.[^.]+$/, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
 function mergePhoto(photo, ann, slug, index) {
   const a = ann || {};
   const species = a.species && a.species.length ? a.species : photo.species || [];
   const out = {
     ...photo,
-    id: `p${index}`,
+    id: photoSlug(photo.file),
     title: a.title ?? null,
     caption: a.caption ?? photo.caption ?? null,
     species,

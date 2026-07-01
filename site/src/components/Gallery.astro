@@ -9,6 +9,7 @@ const srcsetStr = (p) => p.srcset.map((s) => `${s.url} ${s.w}w`).join(', ');
 
 // Minimal per-photo data the lightbox needs, embedded as JSON.
 const lbData = photos.map((p) => ({
+  id: p.id,
   fallback: p.fallback,
   srcset: srcsetStr(p),
   species: p.species || [],
@@ -60,6 +61,7 @@ const lbData = photos.map((p) => ({
     const overlay = document.createElement('div');
     overlay.className = 'lightbox';
     overlay.innerHTML = `
+      <button class="lb-copy" aria-label="Copy link to this photo">Copy link</button>
       <button class="lb-close" aria-label="Close">×</button>
       <button class="lb-prev" aria-label="Previous">‹</button>
       <button class="lb-next" aria-label="Next">›</button>
@@ -98,6 +100,10 @@ const lbData = photos.map((p) => ({
       return [parts.join(' · '), gear].filter(Boolean).join('  —  ');
     }
 
+    const isOpen = () => overlay.classList.contains('open');
+    const baseUrl = () => location.pathname + location.search;
+    const idIndex = (id) => photos.findIndex((p) => p.id === id);
+
     function show(i) {
       current = (i + photos.length) % photos.length;
       const p = photos[current];
@@ -108,6 +114,8 @@ const lbData = photos.map((p) => ({
       setLine(elSpecies, (p.species || []).join(' · '));
       setLine(elNote, p.caption);
       setLine(elExif, fmtExif(p));
+      // Reflect the current photo in the URL (no history spam) so it's shareable.
+      history.replaceState(null, '', p.id ? `${baseUrl()}#${p.id}` : baseUrl());
     }
     function open(i) {
       show(i);
@@ -117,6 +125,7 @@ const lbData = photos.map((p) => ({
     function close() {
       overlay.classList.remove('open');
       document.body.style.overflow = '';
+      history.replaceState(null, '', baseUrl());
     }
 
     gallery.querySelectorAll('.shot').forEach((btn) => {
@@ -129,11 +138,34 @@ const lbData = photos.map((p) => ({
       if (e.target === overlay) close();
     });
     document.addEventListener('keydown', (e) => {
-      if (!overlay.classList.contains('open')) return;
+      if (!isOpen()) return;
       if (e.key === 'Escape') close();
       else if (e.key === 'ArrowLeft') show(current - 1);
       else if (e.key === 'ArrowRight') show(current + 1);
     });
+
+    const copyBtn = overlay.querySelector('.lb-copy');
+    copyBtn.addEventListener('click', async () => {
+      const url = location.origin + baseUrl() + '#' + photos[current].id;
+      try {
+        await navigator.clipboard.writeText(url);
+        copyBtn.textContent = 'Copied';
+      } catch {
+        copyBtn.textContent = 'Copy failed';
+      }
+      setTimeout(() => (copyBtn.textContent = 'Copy link'), 1500);
+    });
+
+    // Deep-link: open the matching photo on load, and react to hash changes
+    // (e.g. a map popup link, or back/forward) while on the page.
+    function syncFromHash() {
+      const idx = idIndex(decodeURIComponent(location.hash.slice(1)));
+      if (idx >= 0) (isOpen() ? show : open)(idx);
+      else if (isOpen()) close();
+    }
+    window.addEventListener('hashchange', syncFromHash);
+    const startIdx = idIndex(decodeURIComponent(location.hash.slice(1)));
+    if (startIdx >= 0) open(startIdx);
   }
 
   initLightbox();

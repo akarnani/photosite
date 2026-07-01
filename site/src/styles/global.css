@@ -560,6 +560,18 @@ section {
   top: 50%;
   transform: translateY(-50%);
 }
+.lightbox .lb-copy {
+  top: 1rem;
+  left: 1rem;
+  width: auto;
+  height: 40px;
+  padding: 0 0.95rem;
+  border-radius: 999px;
+  font-family: var(--mono);
+  font-size: var(--step-eyebrow);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
 
 /* ============================================================================
    Trip page header
