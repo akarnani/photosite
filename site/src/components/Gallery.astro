@@ -2,10 +2,14 @@
 // Masonry gallery of <picture> elements + a click-to-open lightbox.
 // Props: photos (already merged: file, width, height, ratio, lqip, fallback,
 // srcset, species, caption, title, exposure, camera, lens).
+import { buildStyle } from '../lib/mapStyle.js';
 const { photos = [] } = Astro.props;
 
 const SIZES = '(min-width:1300px) 25vw, (min-width:900px) 33vw, (min-width:540px) 50vw, 100vw';
 const srcsetStr = (p) => p.srcset.map((s) => `${s.url} ${s.w}w`).join(', ');
+
+// Themed style for the lightbox inset map (null without a key → no map button).
+const mapStyle = buildStyle(import.meta.env.PUBLIC_MAPTILER_KEY || '');
 
 // Minimal per-photo data the lightbox needs, embedded as JSON.
 const lbData = photos.map((p) => ({
@@ -15,6 +19,8 @@ const lbData = photos.map((p) => ({
   species: p.species || [],
   caption: p.caption || null,
   title: p.title || null,
+  date: p.date || null,
+  gps: p.gps || null,
   exposure: p.exposure || null,
   camera: p.camera || null,
   lens: p.lens || null,
@@ -49,6 +55,7 @@ const lbData = photos.map((p) => ({
 </div>
 
 <script type="application/json" data-lightbox-data set:html={JSON.stringify(lbData)} />
+<script type="application/json" data-map-style set:html={JSON.stringify(mapStyle)} />
 
 <script>
   // One lightbox per page, shared across galleries. Vanilla, no dependency.
@@ -61,7 +68,10 @@ const lbData = photos.map((p) => ({
     const overlay = document.createElement('div');
     overlay.className = 'lightbox';
     overlay.innerHTML = `
-      <button class="lb-copy" aria-label="Copy link to this photo">Copy link</button>
+      <div class="lb-actions">
+        <button class="lb-copy" aria-label="Copy link to this photo">Copy link</button>
+        <button class="lb-map-btn" aria-label="Show location" aria-expanded="false" hidden>Map</button>
+      </div>
       <button class="lb-close" aria-label="Close">×</button>
       <button class="lb-prev" aria-label="Previous">‹</button>
       <button class="lb-next" aria-label="Next">›</button>
@@ -71,17 +81,74 @@ const lbData = photos.map((p) => ({
           <span class="lb-title"></span>
           <span class="lb-species"></span>
           <p class="lb-note"></p>
+          <span class="lb-date"></span>
           <span class="lb-exif"></span>
         </figcaption>
-      </figure>`;
+      </figure>
+      <div class="lb-map" hidden></div>`;
     document.body.appendChild(overlay);
+
+    const styleEl = document.querySelector('[data-map-style]');
+    const mapStyle = styleEl ? JSON.parse(styleEl.textContent || 'null') : null;
 
     const img = overlay.querySelector('img');
     const elTitle = overlay.querySelector('.lb-title');
     const elSpecies = overlay.querySelector('.lb-species');
     const elNote = overlay.querySelector('.lb-note');
+    const elDate = overlay.querySelector('.lb-date');
     const elExif = overlay.querySelector('.lb-exif');
+    const mapBtn = overlay.querySelector('.lb-map-btn');
+    const mapBox = overlay.querySelector('.lb-map');
     let current = 0;
+    let insetMap = null;
+    let insetMarker = null;
+
+    function fmtDate(iso) {
+      if (!iso) return '';
+      const d = new Date(iso);
+      if (isNaN(d)) return '';
+      const date = d.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
+      if (!d.getHours() && !d.getMinutes()) return date;
+      return `${date} · ${d.toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit' })}`;
+    }
+
+    function hideInset() {
+      mapBox.hidden = true;
+      mapBtn.setAttribute('aria-expanded', 'false');
+    }
+    function showInset() {
+      const g = photos[current].gps;
+      if (!g || !mapStyle) return;
+      mapBox.hidden = false;
+      mapBtn.setAttribute('aria-expanded', 'true');
+      if (!insetMap) {
+        insetMap = new maplibregl.Map({
+          container: mapBox,
+          style: mapStyle,
+          center: [g.lon, g.lat],
+          zoom: 6,
+          attributionControl: { compact: true },
+          dragRotate: false,
+        });
+        insetMap.on('load', () =>
+          insetMap.getContainer().querySelector('.maplibregl-ctrl-attrib')?.classList.remove('maplibregl-compact-show'),
+        );
+        const pin = document.createElement('div');
+        pin.className = 'map-pin';
+        pin.style.width = pin.style.height = '13px';
+        insetMarker = new maplibregl.Marker({ element: pin }).setLngLat([g.lon, g.lat]).addTo(insetMap);
+      } else {
+        insetMarker.setLngLat([g.lon, g.lat]);
+        insetMap.setCenter([g.lon, g.lat]);
+      }
+      requestAnimationFrame(() => insetMap.resize());
+    }
+    function updateMapBtn() {
+      const has = !!(mapStyle && photos[current].gps && typeof maplibregl !== 'undefined');
+      mapBtn.hidden = !has;
+      if (!has) hideInset();
+      else if (!mapBox.hidden) showInset();
+    }
 
     const setLine = (el, text) => {
       el.textContent = text || '';
@@ -113,7 +180,9 @@ const lbData = photos.map((p) => ({
       setLine(elTitle, p.title);
       setLine(elSpecies, (p.species || []).join(' · '));
       setLine(elNote, p.caption);
+      setLine(elDate, fmtDate(p.date));
       setLine(elExif, fmtExif(p));
+      updateMapBtn();
       // Reflect the current photo in the URL (no history spam) so it's shareable.
       history.replaceState(null, '', p.id ? `${baseUrl()}#${p.id}` : baseUrl());
     }
@@ -125,6 +194,7 @@ const lbData = photos.map((p) => ({
     function close() {
       overlay.classList.remove('open');
       document.body.style.overflow = '';
+      hideInset();
       history.replaceState(null, '', baseUrl());
     }
 
@@ -143,6 +213,8 @@ const lbData = photos.map((p) => ({
       else if (e.key === 'ArrowLeft') show(current - 1);
       else if (e.key === 'ArrowRight') show(current + 1);
     });
+
+    mapBtn.addEventListener('click', () => (mapBox.hidden ? showInset() : hideInset()));
 
     const copyBtn = overlay.querySelector('.lb-copy');
     copyBtn.addEventListener('click', async () => {

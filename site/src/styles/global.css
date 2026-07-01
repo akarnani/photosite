@@ -560,9 +560,16 @@ section {
   top: 50%;
   transform: translateY(-50%);
 }
-.lightbox .lb-copy {
+.lightbox .lb-actions {
+  position: absolute;
   top: 1rem;
   left: 1rem;
+  z-index: 2;
+  display: flex;
+  gap: 0.5rem;
+}
+.lightbox .lb-actions button {
+  position: static;
   width: auto;
   height: 40px;
   padding: 0 0.95rem;
@@ -571,6 +578,22 @@ section {
   font-size: var(--step-eyebrow);
   text-transform: uppercase;
   letter-spacing: 0.1em;
+}
+.lightbox .lb-date {
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  color: var(--mist-dim);
+}
+.lightbox .lb-map {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 2;
+  width: min(300px, 42vw);
+  height: 210px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
 }
 
 /* ============================================================================
