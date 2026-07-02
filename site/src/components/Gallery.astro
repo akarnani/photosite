@@ -181,7 +181,11 @@ const lbData = photos.map((p) => ({
       }
     }
 
-    function show(i) {
+    // True once we've pushed a history entry for the currently open lightbox
+    // (a plain thumbnail click, not a hash already present from a link/reload).
+    let pushedByUs = false;
+
+    function show(i, { updateHistory = true } = {}) {
       current = (i + photos.length) % photos.length;
       const p = photos[current];
       img.src = p.fallback;
@@ -196,22 +200,40 @@ const lbData = photos.map((p) => ({
 
       setLine(elMeta, [fmtDate(p.date), fmtExif(p)].filter(Boolean).join(' · '));
       updateMapBtn();
-      // Reflect the current photo in the URL (no history spam) so it's shareable.
-      history.replaceState(null, '', p.id ? `${baseUrl()}#${p.id}` : baseUrl());
+      // Browsing prev/next reuses the one lightbox history entry — no spam.
+      if (updateHistory) {
+        history.replaceState(history.state, '', p.id ? `${baseUrl()}#${p.id}` : baseUrl());
+      }
     }
-    function open(i) {
+    function open(i, { pushHistory = true } = {}) {
       lastFocused = document.activeElement;
-      show(i);
+      show(i, { updateHistory: false });
       overlay.classList.add('open');
       document.body.style.overflow = 'hidden';
       overlay.querySelector('.lb-close').focus();
+      // Push one entry so the back button closes the lightbox and lands back
+      // on the trip page, instead of skipping past it entirely.
+      if (pushHistory) {
+        const p = photos[current];
+        history.pushState({ lightbox: true }, '', p.id ? `${baseUrl()}#${p.id}` : baseUrl());
+        pushedByUs = true;
+      }
     }
-    function close() {
+    function closeUI() {
       overlay.classList.remove('open');
       document.body.style.overflow = '';
       hideInset();
-      history.replaceState(null, '', baseUrl());
       if (lastFocused instanceof HTMLElement) lastFocused.focus();
+    }
+    function close() {
+      if (pushedByUs) {
+        // Let the resulting hashchange (below) drive closeUI() so state stays in sync.
+        pushedByUs = false;
+        history.back();
+        return;
+      }
+      closeUI();
+      history.replaceState(null, '', baseUrl());
     }
 
     gallery.querySelectorAll('.shot').forEach((btn) => {
@@ -287,12 +309,17 @@ const lbData = photos.map((p) => ({
     // (e.g. a map popup link, or back/forward) while on the page.
     function syncFromHash() {
       const idx = idIndex(decodeURIComponent(location.hash.slice(1)));
-      if (idx >= 0) (isOpen() ? show : open)(idx);
-      else if (isOpen()) close();
+      if (idx >= 0) {
+        if (isOpen()) show(idx, { updateHistory: false });
+        else open(idx, { pushHistory: false });
+      } else if (isOpen()) {
+        pushedByUs = false;
+        closeUI();
+      }
     }
     window.addEventListener('hashchange', syncFromHash);
     const startIdx = idIndex(decodeURIComponent(location.hash.slice(1)));
-    if (startIdx >= 0) open(startIdx);
+    if (startIdx >= 0) open(startIdx, { pushHistory: false });
   }
 
   // No-JS default is CSS-columns (global.css), which fills top-to-bottom per
