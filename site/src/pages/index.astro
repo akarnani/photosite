@@ -6,23 +6,43 @@ import { getTrips, allPoints, coverPhoto, siteConfig } from '../lib/trips.js';
 const trips = getTrips();
 const points = allPoints();
 const site = siteConfig();
+
+const heroTrip = trips[0] || null;
+const heroCover = heroTrip ? coverPhoto(heroTrip) : null;
+const srcsetStr = (p) => p.srcset.map((s) => `${s.url} ${s.w}w`).join(', ');
 ---
 
 <Base>
-  <section class="hero">
-    <p class="eyebrow">Underwater photography</p>
-    <h1>{site.title}</h1>
-    <p>Dives, by trip — where each frame was taken, and what swam past the lens.</p>
-  </section>
-
   {
-    points.length > 0 && (
-      <section>
-        <div class="section-head">
-          <p class="eyebrow">The map</p>
-          <h2>Everywhere the camera has been</h2>
+    heroCover ? (
+      <section class="hero-photo">
+        <picture class="hero-media">
+          <source type="image/webp" srcset={srcsetStr(heroCover)} sizes="100vw" />
+          <img
+            src={heroCover.fallback}
+            alt={heroTrip.title}
+            loading="eager"
+            fetchpriority="high"
+            style={`background-image:url(${heroCover.lqip})`}
+          />
+        </picture>
+        <div class="hero-scrim" />
+        <div class="hero-content">
+          <div class="hero-text">
+            <p class="eyebrow">Underwater photography</p>
+            <h1>{site.title}</h1>
+            <p>Dives, by trip — where each frame was taken, and what swam past the lens.</p>
+          </div>
+          <a class="hero-latest" href={`/trips/${heroTrip.slug}/`}>
+            <span>Latest — {heroTrip.title}{heroTrip.location?.name ? ` · ${heroTrip.location.name}` : ''}</span>
+          </a>
         </div>
-        <PhotoMap points={points} id="global-map" cluster={true} link={true} height="460px" />
+      </section>
+    ) : (
+      <section class="hero">
+        <p class="eyebrow">Underwater photography</p>
+        <h1>{site.title}</h1>
+        <p>Dives, by trip — where each frame was taken, and what swam past the lens.</p>
       </section>
     )
   }
@@ -46,7 +66,7 @@ const site = siteConfig();
         <div class="trip-grid" id="trip-grid">
           {trips.map((trip) => {
             const cover = coverPhoto(trip);
-            const meta = [trip.location?.name, trip.dates, `${trip.photos.length} photos`].filter(Boolean).join(' · ');
+            const metaRest = [trip.location?.name, `${trip.photos.length} photos`].filter(Boolean).join(' · ');
             const hasGeo = trip.photos.some((p) => p.gps);
             return (
               <a class="trip-card" href={`/trips/${trip.slug}/`} data-slug={trip.slug} data-geo={hasGeo ? 'true' : 'false'}>
@@ -55,7 +75,11 @@ const site = siteConfig();
                 )}
                 <div class="body">
                   <h3>{trip.title}</h3>
-                  <p class="meta">{meta}</p>
+                  <p class="meta">
+                    {trip.dates && <span class="meta-date">{trip.dates}</span>}
+                    {trip.dates && metaRest ? ' · ' : ''}
+                    {metaRest}
+                  </p>
                 </div>
               </a>
             );
@@ -65,6 +89,18 @@ const site = siteConfig();
     }
   </section>
 
+  {
+    points.length > 0 && (
+      <section>
+        <div class="section-head">
+          <p class="eyebrow">The map</p>
+          <h2>Everywhere the camera has been</h2>
+        </div>
+        <PhotoMap points={points} id="global-map" cluster={true} link={true} height="460px" />
+      </section>
+    )
+  }
+
   <script is:inline>
     (function () {
       const grid = document.getElementById('trip-grid');
@@ -73,6 +109,10 @@ const site = siteConfig();
       const status = document.getElementById('trip-filter-status');
       const resetBtn = document.getElementById('trip-reset');
       const total = cards.length;
+
+      // No-JS default is CSS-columns (global.css); enhance to the grid-based
+      // masonry once script runs.
+      grid.classList.add('is-grid');
 
       // Masonry: each tile spans grid rows ≈ its pixel height, so tiles flow
       // left-to-right / top-to-bottom while keeping varied heights.

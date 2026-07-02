@@ -42,6 +42,7 @@
 
 html {
   -webkit-text-size-adjust: 100%;
+  scrollbar-gutter: stable;
 }
 
 body {
@@ -54,7 +55,6 @@ body {
     radial-gradient(120% 90% at 50% -10%, var(--depth-700) 0%, transparent 55%),
     radial-gradient(90% 70% at 80% 110%, var(--depth-800) 0%, transparent 50%),
     var(--depth-900);
-  background-attachment: fixed;
   min-height: 100vh;
 }
 
@@ -153,6 +153,84 @@ section {
   max-width: 48ch;
 }
 
+/* Photographic hero: latest trip's cover, full-bleed, gradient scrim. */
+.hero-photo {
+  position: relative;
+  padding: 0;
+  min-height: clamp(340px, 56vw, 620px);
+  overflow: hidden;
+  background: var(--depth-800);
+}
+.hero-media {
+  position: absolute;
+  inset: 0;
+}
+.hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-size: cover;
+  background-position: center;
+}
+.hero-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(6, 18, 26, 0.96) 0%,
+    rgba(6, 18, 26, 0.45) 38%,
+    rgba(6, 18, 26, 0.12) 62%,
+    transparent 100%
+  );
+}
+.hero-content {
+  position: absolute;
+  left: 40px;
+  right: 40px;
+  bottom: 34px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.hero-text {
+  max-width: 60ch;
+}
+.hero-text .eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  color: #58d2c6;
+  margin: 0 0 10px;
+}
+.hero-text h1 {
+  font-size: 58px;
+  font-weight: 600;
+  line-height: 1.05;
+  margin: 0;
+}
+.hero-text p {
+  color: #c6d6dc;
+  font-size: 17px;
+  line-height: 1.6;
+  max-width: 48ch;
+  margin: 10px 0 0;
+}
+.hero-latest {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #93abb6;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+}
+.hero-latest:hover {
+  color: var(--mist);
+  text-decoration: none;
+}
+
 .section-head {
   margin-bottom: clamp(1rem, 0.5rem + 2vw, 2rem);
 }
@@ -164,21 +242,38 @@ section {
    Trip cards
    ============================================================================ */
 /* Masonry collage of trip tiles in row order (left-to-right, top-to-bottom).
-   Varied heights via grid row-spans set by JS (see index.astro). */
+   No-JS default: CSS-columns (order runs top-to-bottom per column, but every
+   tile still renders). Once JS runs it adds .is-grid, switching to a CSS grid
+   with row-spans it computes (see index.astro) — that preserves left-to-right
+   reading order across varied tile heights, which columns can't. */
 .trip-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-auto-rows: 1px;
+  column-count: 1;
   column-gap: var(--gap);
-  row-gap: 0;
 }
 @media (min-width: 640px) {
   .trip-grid {
-    grid-template-columns: repeat(2, 1fr);
+    column-count: 2;
   }
 }
 @media (min-width: 1100px) {
   .trip-grid {
+    column-count: 3;
+  }
+}
+.trip-grid.is-grid {
+  display: grid;
+  column-count: initial;
+  grid-template-columns: 1fr;
+  grid-auto-rows: 1px;
+  row-gap: 0;
+}
+@media (min-width: 640px) {
+  .trip-grid.is-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1100px) {
+  .trip-grid.is-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
@@ -191,7 +286,12 @@ section {
   border-radius: var(--radius);
   overflow: hidden;
   background: var(--surface);
+  margin-bottom: var(--gap);
+  break-inside: avoid;
   transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.trip-grid.is-grid .trip-card {
+  margin-bottom: 0;
 }
 .trip-card:hover {
   text-decoration: none;
@@ -222,6 +322,9 @@ section {
   font-size: var(--step-eyebrow);
   color: var(--mist-dim);
   letter-spacing: 0.04em;
+}
+.trip-card .meta .meta-date {
+  color: var(--sand);
 }
 .trip-card.is-hidden {
   display: none;
@@ -262,8 +365,7 @@ section {
   cursor: pointer;
 }
 .trip-reset:hover {
-  background: var(--aqua-deep);
-  color: var(--mist);
+  background: #7fe0d6;
 }
 
 /* ============================================================================
@@ -278,6 +380,7 @@ section {
 }
 .map {
   width: 100%;
+  background: var(--depth-900);
 }
 .map-frame figcaption {
   font-family: var(--mono);
@@ -285,9 +388,6 @@ section {
   color: var(--mist-dim);
   padding: 0.6rem 0.9rem;
   border-top: 1px solid var(--line);
-}
-.map {
-  background: var(--depth-900);
 }
 .map-msg {
   display: flex;
@@ -404,7 +504,10 @@ section {
 }
 
 /* ============================================================================
-   Gallery (CSS-columns masonry)
+   Gallery — row-order masonry (same JS approach as .trip-grid: shortest-column
+   placement in DOM order, so chronology reads left-to-right/top-to-bottom
+   instead of the column-fill order scrambling it). No-JS default falls back
+   to CSS-columns.
    ============================================================================ */
 .gallery {
   column-count: 1;
@@ -425,10 +528,33 @@ section {
     column-count: 4;
   }
 }
+.gallery.is-grid {
+  display: grid;
+  column-count: initial;
+  grid-template-columns: 1fr;
+  grid-auto-rows: 1px;
+  row-gap: 0;
+}
+@media (min-width: 540px) {
+  .gallery.is-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 900px) {
+  .gallery.is-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 1300px) {
+  .gallery.is-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
 
 .shot {
   display: block;
   width: 100%;
+  align-self: start;
   margin: 0 0 var(--gap);
   padding: 0;
   border: 0;
@@ -439,6 +565,9 @@ section {
   border-radius: 10px;
   overflow: hidden;
   color: inherit;
+}
+.gallery.is-grid .shot {
+  margin-bottom: 0;
 }
 .shot picture,
 .shot img {
@@ -518,21 +647,46 @@ section {
   font-size: 0.85rem;
   color: var(--mist-dim);
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  align-items: center;
+}
+/* Row 1: title/species (whichever is set) + caption, if any. */
+.lightbox .lb-line1 {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
 }
 .lightbox .lb-title {
   font-family: var(--serif);
-  font-size: 1.3rem;
-  color: var(--mist);
-}
-.lightbox .lb-species {
-  font-family: var(--serif);
   font-style: italic;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: var(--aqua);
 }
 .lightbox .lb-note {
-  color: var(--mist);
-  margin: 0.1rem 0;
+  color: var(--mist-dim);
+  font-family: var(--sans);
+  font-size: 0.9rem;
+}
+/* Row 2: date · EXIF — gear, plus the icon actions, inline. */
+.lightbox .lb-line2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+}
+.lightbox .lb-meta {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--mist-dim);
+}
+.lightbox .lb-icon-actions {
+  display: flex;
+  gap: 0.4rem;
 }
 .lightbox button {
   position: absolute;
@@ -560,27 +714,20 @@ section {
   top: 50%;
   transform: translateY(-50%);
 }
-.lightbox .lb-actions {
-  display: flex;
-  gap: 0.5rem;
-  justify-content: center;
-  margin-top: 0.85rem;
-}
-.lightbox .lb-actions button {
+.lightbox .lb-icon-actions button {
   position: static;
-  width: auto;
-  height: 40px;
-  padding: 0 0.95rem;
-  border-radius: 999px;
-  font-family: var(--mono);
-  font-size: var(--step-eyebrow);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-.lightbox .lb-date {
-  font-family: var(--mono);
-  font-size: 0.85rem;
+  width: 32px;
+  height: 32px;
+  background: transparent;
   color: var(--mist-dim);
+  border: 1px solid var(--line);
+  font-size: 0.85rem;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.lightbox .lb-icon-actions button:hover,
+.lightbox .lb-icon-actions button:focus-visible {
+  color: var(--mist);
+  border-color: var(--aqua-deep);
 }
 .lightbox .lb-map {
   position: absolute;
@@ -607,8 +754,30 @@ section {
 .trip-header p {
   color: var(--mist-dim);
 }
+.trip-header .trip-count {
+  font-family: var(--mono);
+  font-size: var(--step-eyebrow);
+  color: var(--mist-dim);
+  margin-top: 0.6rem;
+}
 .stack > * + * {
   margin-top: clamp(1.5rem, 0.8rem + 2.5vw, 3rem);
+}
+
+/* Header + inset map sit side by side; map stacks below on narrow screens. */
+.trip-head-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(1.5rem, 0.8rem + 2.5vw, 3rem);
+  align-items: center;
+}
+@media (min-width: 860px) {
+  .trip-head-row {
+    grid-template-columns: 1fr 360px;
+  }
+}
+.trip-head-row .map-frame {
+  width: 100%;
 }
 
 /* ============================================================================

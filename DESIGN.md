@@ -409,33 +409,47 @@ photo record. A non-empty annotation `species` overrides EXIF species; empty
 falls back to EXIF.
 
 ### Pages
-- `/` (`index.astro`): hero (site title + eyebrow + intro); a global clustered
-  map of all geotagged points; a responsive grid of trip cards linking to
-  `/trips/<slug>/`.
-- `/trips/[slug]` (`[slug].astro`): `getStaticPaths` from `getTrips()`; trip
-  header (location · dates eyebrow, title, summary); a per-trip map (fit to the
-  trip's points, no clustering); the gallery.
+- `/` (`index.astro`): photographic hero — the latest trip's cover fills the
+  banner under a gradient scrim, with title/eyebrow/intro and a "Latest — …"
+  link overlaid; then a responsive grid of trip cards linking to
+  `/trips/<slug>/`; then the global clustered map of all geotagged points
+  (trips lead, the map follows).
+- `/trips/[slug]` (`[slug].astro`): `getStaticPaths` from `getTrips()`; a
+  `.trip-head-row` puts the trip header (location · dates eyebrow, title,
+  summary, photo count) beside a small inset per-trip map (fit to the trip's
+  points, no clustering, no caption) — stacks to header-then-map below ~860px;
+  the gallery follows immediately, above the fold.
 
 ### Components
-- `Base.astro`: HTML head (viewport, title, description), loads Leaflet + Leaflet
-  MarkerCluster CSS/JS **once** from CDN in `<head>` (synchronous, so the global
-  `L` is available to component inline scripts), header nav, footer, `<slot />`.
-- `PhotoMap.astro`: props `points`, `id`, `cluster`, `height`, `caption`. Renders
-  a map div + an `is:inline` script (`define:vars` to pass points). CARTO
-  `dark_all` tiles. Circle markers in the aqua accent; popups show a thumbnail +
-  title linking to the photo (anchor on trip page, trip page on the global map).
-  Cluster when `cluster` and MarkerCluster is present. Fit bounds to points;
-  single point → `setView` at a sensible zoom. Render nothing if no points.
-- `Gallery.astro`: props `photos`. CSS-columns masonry. Each photo is a
-  `<button class="shot">` containing a `<picture>` (`<source type="image/webp"
-  srcset sizes>` + `<img>` fallback with width/height, `loading="lazy"`,
-  `decoding="async"`, `lqip` as background, `aspect-ratio` from `ratio`). Hover/
-  focus reveals a caption overlay (species in italic serif, caption note). Click
-  opens a lightbox.
-- **Lightbox** (vanilla JS, no dependency): one overlay per gallery; opens to the
-  clicked photo; supports prev/next, Escape to close, click-backdrop to close;
-  shows species + caption + formatted EXIF (`f/8 · 1/200s · ISO 400 · 16mm`,
-  converting decimal exposure time to `1/x`). Locks body scroll while open.
+- `Base.astro`: HTML head (viewport, title, description), loads MapLibre GL
+  CSS/JS **once** from CDN in `<head>` (see §13.7), header (brand link only —
+  no nav, since it pointed at the same place), footer, `<slot />`.
+- `PhotoMap.astro`: props `points`, `id`, `cluster`, `link`, `height`,
+  `caption`. Renders a map div + an `is:inline` script (`define:vars` to pass
+  points). MapLibre GL over MapTiler tiles, themed via `mapStyle.js`. Circle
+  markers/pins in the aqua accent; popups show a thumbnail + title linking to
+  the photo (anchor on trip page, trip page on the global map). Cluster when
+  `cluster` (GeoJSON clustering). Fit bounds to points; single point → zoomed
+  center. Render nothing if no points.
+- `Gallery.astro`: props `photos`. Row-order masonry: a CSS grid with per-tile
+  `grid-row-end: span` computed by JS (shortest-column placement, same
+  approach as the homepage `.trip-grid`) so photos read left-to-right in
+  capture order; no-JS default falls back to CSS-columns (which fills a whole
+  column before wrapping, so order isn't preserved — acceptable degradation).
+  Each photo is a `<button class="shot">` containing a `<picture>` (`<source
+  type="image/webp" srcset sizes>` + `<img>` fallback with width/height,
+  `loading="lazy"`, `decoding="async"`, `lqip` as background, `aspect-ratio`
+  from `ratio`). Hover/focus reveals a caption overlay (species in italic
+  serif, caption note). Click opens a lightbox.
+- **Lightbox** (vanilla JS, no dependency): one overlay per gallery; opens to
+  the clicked photo; supports prev/next (preloading both neighbors), swipe on
+  touch, Escape to close, click-backdrop to close, a Tab focus trap, and
+  returns focus to the opened tile on close. Caption is two rows: title/
+  species + caption note (row hidden entirely when both are empty), then a
+  mono meta row combining date, formatted EXIF (`f/8 · 1/200s · ISO 400 ·
+  16mm`, converting decimal exposure time to `1/x`) and gear, plus 32px ghost
+  icon buttons (copy link, toggle the inset location map). Locks body scroll
+  while open; `scrollbar-gutter: stable` on `html` avoids the width jump.
 
 ### Responsive requirements
 - Gallery columns: 1 / 2 / 3 / 4 at ~540 / 900 / 1300px breakpoints.

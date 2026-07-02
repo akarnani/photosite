@@ -74,14 +74,16 @@ const lbData = photos.map((p) => ({
       <figure>
         <img alt="" />
         <figcaption>
-          <span class="lb-title"></span>
-          <span class="lb-species"></span>
-          <p class="lb-note"></p>
-          <span class="lb-date"></span>
-          <span class="lb-exif"></span>
-          <div class="lb-actions">
-            <button class="lb-copy" aria-label="Copy link to this photo">Copy link</button>
-            <button class="lb-map-btn" aria-label="Show location" aria-expanded="false" hidden>Map</button>
+          <div class="lb-line1">
+            <em class="lb-title"></em>
+            <span class="lb-note"></span>
+          </div>
+          <div class="lb-line2">
+            <span class="lb-meta"></span>
+            <span class="lb-icon-actions">
+              <button class="lb-copy" aria-label="Copy link to this photo" title="Copy link">⧉</button>
+              <button class="lb-map-btn" aria-label="Show location" aria-expanded="false" title="Show on map" hidden>◎</button>
+            </span>
           </div>
         </figcaption>
       </figure>
@@ -92,14 +94,14 @@ const lbData = photos.map((p) => ({
     const mapStyle = styleEl ? JSON.parse(styleEl.textContent || 'null') : null;
 
     const img = overlay.querySelector('img');
+    const line1 = overlay.querySelector('.lb-line1');
     const elTitle = overlay.querySelector('.lb-title');
-    const elSpecies = overlay.querySelector('.lb-species');
     const elNote = overlay.querySelector('.lb-note');
-    const elDate = overlay.querySelector('.lb-date');
-    const elExif = overlay.querySelector('.lb-exif');
+    const elMeta = overlay.querySelector('.lb-meta');
     const mapBtn = overlay.querySelector('.lb-map-btn');
     const mapBox = overlay.querySelector('.lb-map');
     let current = 0;
+    let lastFocused = null;
     let insetMap = null;
     let insetMarker = null;
 
@@ -171,31 +173,45 @@ const lbData = photos.map((p) => ({
     const baseUrl = () => location.pathname + location.search;
     const idIndex = (id) => photos.findIndex((p) => p.id === id);
 
+    // Preload the neighbors so prev/next feel instant.
+    function preloadNeighbors(i) {
+      for (const d of [-1, 1]) {
+        const p = photos[(i + d + photos.length) % photos.length];
+        if (p) new Image().src = p.fallback;
+      }
+    }
+
     function show(i) {
       current = (i + photos.length) % photos.length;
       const p = photos[current];
       img.src = p.fallback;
       img.srcset = p.srcset;
       img.sizes = '90vw';
-      setLine(elTitle, p.title);
-      setLine(elSpecies, (p.species || []).join(' · '));
+      preloadNeighbors(current);
+
+      const titleLine = [p.title, (p.species || []).join(' · ')].filter(Boolean).join(' · ');
+      setLine(elTitle, titleLine);
       setLine(elNote, p.caption);
-      setLine(elDate, fmtDate(p.date));
-      setLine(elExif, fmtExif(p));
+      line1.style.display = titleLine || p.caption ? '' : 'none';
+
+      setLine(elMeta, [fmtDate(p.date), fmtExif(p)].filter(Boolean).join(' · '));
       updateMapBtn();
       // Reflect the current photo in the URL (no history spam) so it's shareable.
       history.replaceState(null, '', p.id ? `${baseUrl()}#${p.id}` : baseUrl());
     }
     function open(i) {
+      lastFocused = document.activeElement;
       show(i);
       overlay.classList.add('open');
       document.body.style.overflow = 'hidden';
+      overlay.querySelector('.lb-close').focus();
     }
     function close() {
       overlay.classList.remove('open');
       document.body.style.overflow = '';
       hideInset();
       history.replaceState(null, '', baseUrl());
+      if (lastFocused instanceof HTMLElement) lastFocused.focus();
     }
 
     gallery.querySelectorAll('.shot').forEach((btn) => {
@@ -212,7 +228,41 @@ const lbData = photos.map((p) => ({
       if (e.key === 'Escape') close();
       else if (e.key === 'ArrowLeft') show(current - 1);
       else if (e.key === 'ArrowRight') show(current + 1);
+      else if (e.key === 'Tab') {
+        // Focus trap: keep Tab cycling within the visible controls.
+        const focusable = Array.from(overlay.querySelectorAll('button')).filter((el) => el.offsetParent !== null);
+        if (!focusable.length) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
     });
+
+    // Swipe to navigate on touch.
+    let touchX = null;
+    overlay.addEventListener(
+      'touchstart',
+      (e) => {
+        touchX = e.touches[0].clientX;
+      },
+      { passive: true },
+    );
+    overlay.addEventListener(
+      'touchend',
+      (e) => {
+        if (touchX == null) return;
+        const dx = e.changedTouches[0].clientX - touchX;
+        touchX = null;
+        if (Math.abs(dx) > 40) show(current + (dx < 0 ? 1 : -1));
+      },
+      { passive: true },
+    );
 
     mapBtn.addEventListener('click', () => (mapBox.hidden ? showInset() : hideInset()));
 
@@ -221,11 +271,16 @@ const lbData = photos.map((p) => ({
       const url = location.origin + baseUrl() + '#' + photos[current].id;
       try {
         await navigator.clipboard.writeText(url);
-        copyBtn.textContent = 'Copied';
+        copyBtn.textContent = '✓';
+        copyBtn.title = 'Copied';
       } catch {
-        copyBtn.textContent = 'Copy failed';
+        copyBtn.textContent = '✗';
+        copyBtn.title = 'Copy failed';
       }
-      setTimeout(() => (copyBtn.textContent = 'Copy link'), 1500);
+      setTimeout(() => {
+        copyBtn.textContent = '⧉';
+        copyBtn.title = 'Copy link';
+      }, 1500);
     });
 
     // Deep-link: open the matching photo on load, and react to hash changes
@@ -240,5 +295,36 @@ const lbData = photos.map((p) => ({
     if (startIdx >= 0) open(startIdx);
   }
 
+  // No-JS default is CSS-columns (global.css), which fills top-to-bottom per
+  // column and scrambles chronological order. Once script runs, switch to a
+  // grid with row-spans it computes here — same shortest-column placement as
+  // the homepage trip grid — so photos read left-to-right in capture order.
+  function initMasonry() {
+    const grid = document.querySelector('[data-gallery]');
+    if (!grid) return;
+    const shots = Array.from(grid.querySelectorAll('.shot'));
+    grid.classList.add('is-grid');
+
+    function layout() {
+      const gap = parseFloat(getComputedStyle(grid).columnGap) || 16;
+      for (const s of shots) {
+        s.style.gridRowEnd = 'span ' + Math.max(1, Math.ceil(s.getBoundingClientRect().height + gap));
+      }
+    }
+    let raf;
+    const relayout = () => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(layout);
+    };
+    window.addEventListener('load', relayout);
+    window.addEventListener('resize', relayout);
+    shots.forEach((s) => {
+      const img = s.querySelector('img');
+      if (img && !img.complete) img.addEventListener('load', relayout, { once: true });
+    });
+    layout();
+  }
+
+  initMasonry();
   initLightbox();
 </script>

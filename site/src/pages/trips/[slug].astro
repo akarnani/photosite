@@ -16,13 +16,16 @@ const eyebrow = [trip.location?.name, trip.dates].filter(Boolean).join(' · ');
 
 <Base title={trip.title} description={trip.summary}>
   <section class="stack">
-    <header class="trip-header">
-      {eyebrow && <p class="eyebrow">{eyebrow}</p>}
-      <h1>{trip.title}</h1>
-      {trip.summary && <p>{trip.summary}</p>}
-    </header>
+    <div class="trip-head-row">
+      <header class="trip-header">
+        {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+        <h1>{trip.title}</h1>
+        {trip.summary && <p>{trip.summary}</p>}
+        <p class="trip-count">{trip.photos.length} photographs</p>
+      </header>
 
-    <PhotoMap points={points} id={`map-${trip.slug}`} height="360px" caption="Where these were taken" />
+      <PhotoMap points={points} id={`map-${trip.slug}`} height="230px" />
+    </div>
 
     <Gallery photos={trip.photos} />
   </section>
