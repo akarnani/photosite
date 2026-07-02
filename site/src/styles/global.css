@@ -241,57 +241,35 @@ section {
 /* ============================================================================
    Trip cards
    ============================================================================ */
-/* Masonry collage of trip tiles in row order (left-to-right, top-to-bottom).
-   No-JS default: CSS-columns (order runs top-to-bottom per column, but every
-   tile still renders). Once JS runs it adds .is-grid, switching to a CSS grid
-   with row-spans it computes (see index.astro) — that preserves left-to-right
-   reading order across varied tile heights, which columns can't. */
+/* Plain uniform grid, one row per trip in strict chronological (getTrips())
+   order — a masonry/column layout here previously let varied tile heights
+   scramble the reading order, which matters more for "trips in order" than
+   collage aesthetics. Covers are cropped to a fixed ratio so every row lines
+   up regardless of the source photo's aspect ratio. */
 .trip-grid {
-  column-count: 1;
-  column-gap: var(--gap);
-}
-@media (min-width: 640px) {
-  .trip-grid {
-    column-count: 2;
-  }
-}
-@media (min-width: 1100px) {
-  .trip-grid {
-    column-count: 3;
-  }
-}
-.trip-grid.is-grid {
   display: grid;
-  column-count: initial;
   grid-template-columns: 1fr;
-  grid-auto-rows: 1px;
-  row-gap: 0;
+  gap: var(--gap);
 }
 @media (min-width: 640px) {
-  .trip-grid.is-grid {
+  .trip-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 @media (min-width: 1100px) {
-  .trip-grid.is-grid {
+  .trip-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 .trip-card {
   position: relative;
   display: block;
-  align-self: start;
   color: inherit;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   overflow: hidden;
   background: var(--surface);
-  margin-bottom: var(--gap);
-  break-inside: avoid;
   transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-}
-.trip-grid.is-grid .trip-card {
-  margin-bottom: 0;
 }
 .trip-card:hover {
   text-decoration: none;
@@ -301,7 +279,9 @@ section {
 .trip-card .cover {
   display: block;
   width: 100%;
-  height: auto; /* whole cover at natural ratio — drives the collage heights */
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
   background: var(--depth-700);
 }
 .trip-card .body {

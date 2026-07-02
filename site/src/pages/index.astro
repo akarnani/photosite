@@ -110,37 +110,10 @@ const srcsetStr = (p) => p.srcset.map((s) => `${s.url} ${s.w}w`).join(', ');
       const resetBtn = document.getElementById('trip-reset');
       const total = cards.length;
 
-      // No-JS default is CSS-columns (global.css); enhance to the grid-based
-      // masonry once script runs.
-      grid.classList.add('is-grid');
-
-      // Masonry: each tile spans grid rows ≈ its pixel height, so tiles flow
-      // left-to-right / top-to-bottom while keeping varied heights.
-      function layout() {
-        const gap = parseFloat(getComputedStyle(grid).columnGap) || 16;
-        for (const c of cards) {
-          if (c.classList.contains('is-hidden')) continue;
-          c.style.gridRowEnd = 'span ' + Math.max(1, Math.ceil(c.getBoundingClientRect().height + gap));
-        }
-      }
-      let raf;
-      const relayout = () => {
-        cancelAnimationFrame(raf);
-        raf = requestAnimationFrame(layout);
-      };
-      window.addEventListener('load', relayout);
-      window.addEventListener('resize', relayout);
-      cards.forEach((c) => {
-        const img = c.querySelector('img');
-        if (img && !img.complete) img.addEventListener('load', relayout, { once: true });
-      });
-      layout();
-
       function showAll() {
         cards.forEach((c) => c.classList.remove('is-hidden'));
         status.textContent = '';
         resetBtn.hidden = true;
-        relayout();
       }
       function filter(slugs) {
         const set = new Set(slugs);
@@ -155,7 +128,6 @@ const srcsetStr = (p) => p.srcset.map((s) => `${s.url} ${s.w}w`).join(', ');
         } else {
           status.textContent = `${shown} of ${total} trips in view`;
           resetBtn.hidden = false;
-          relayout();
         }
       }
 
