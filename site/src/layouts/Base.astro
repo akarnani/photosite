@@ -46,6 +46,27 @@ const year = new Date().getFullYear();
     </main>
     <footer class="site-footer">
       <p>Photographs ©&nbsp;{year}{site.author ? ` ${site.author}` : ''}. All rights reserved.</p>
+      <a
+        class="sa-badge"
+        href="https://www.simpleanalytics.com?utm_source=photos.karnani.io&utm_content=badge"
+        referrerpolicy="origin"
+        target="_blank"
+      >
+        <img
+          src="https://simpleanalyticsbadges.com/photos.karnani.io?mode=dark&counter=false"
+          alt="Simple Analytics"
+          loading="lazy"
+          referrerpolicy="no-referrer"
+          crossorigin="anonymous"
+        />
+      </a>
     </footer>
+
+    <!-- Privacy-first analytics (free plan requires the footer badge above). -->
+    <script
+      data-collect-dnt="true"
+      async
+      src="https://scripts.simpleanalyticscdn.com/latest.js"
+      is:inline></script>
   </body>
 </html>
