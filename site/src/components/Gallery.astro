@@ -305,10 +305,22 @@ const lbData = photos.map((p) => ({
     const shots = Array.from(grid.querySelectorAll('.shot'));
     grid.classList.add('is-grid');
 
+    // Explicit placement into the leftmost (nearly) shortest column; the
+    // tolerance keeps sub-pixel height differences from breaking row order.
     function layout() {
-      const gap = parseFloat(getComputedStyle(grid).columnGap) || 16;
+      const cs = getComputedStyle(grid);
+      const gap = parseFloat(cs.columnGap) || 16;
+      const cols = cs.gridTemplateColumns.split(' ').length;
+      const colWidth = (grid.clientWidth - gap * (cols - 1)) / cols;
+      const tol = colWidth * 0.1;
+      const heights = new Array(cols).fill(0);
       for (const s of shots) {
-        s.style.gridRowEnd = 'span ' + Math.max(1, Math.ceil(s.getBoundingClientRect().height + gap));
+        const span = Math.max(1, Math.ceil(s.getBoundingClientRect().height + gap));
+        const min = Math.min(...heights);
+        const col = heights.findIndex((h) => h <= min + tol);
+        s.style.gridColumn = String(col + 1);
+        s.style.gridRow = heights[col] + 1 + ' / span ' + span;
+        heights[col] += span;
       }
     }
     let raf;

@@ -114,13 +114,26 @@ const srcsetStr = (p) => p.srcset.map((s) => `${s.url} ${s.w}w`).join(', ');
       // masonry once script runs.
       grid.classList.add('is-grid');
 
-      // Masonry: each tile spans grid rows ≈ its pixel height, so tiles flow
-      // left-to-right / top-to-bottom while keeping varied heights.
+      // Masonry: each tile spans grid rows ≈ its pixel height and is placed
+      // explicitly into the leftmost column that is (nearly) the shortest.
+      // The tolerance stops sub-pixel height differences between same-ratio
+      // tiles from pulling the next tile into a right-hand column, which
+      // breaks left-to-right reading order.
       function layout() {
-        const gap = parseFloat(getComputedStyle(grid).columnGap) || 16;
+        const cs = getComputedStyle(grid);
+        const gap = parseFloat(cs.columnGap) || 16;
+        const cols = cs.gridTemplateColumns.split(' ').length;
+        const colWidth = (grid.clientWidth - gap * (cols - 1)) / cols;
+        const tol = colWidth * 0.1;
+        const heights = new Array(cols).fill(0);
         for (const c of cards) {
           if (c.classList.contains('is-hidden')) continue;
-          c.style.gridRowEnd = 'span ' + Math.max(1, Math.ceil(c.getBoundingClientRect().height + gap));
+          const span = Math.max(1, Math.ceil(c.getBoundingClientRect().height + gap));
+          const min = Math.min(...heights);
+          const col = heights.findIndex((h) => h <= min + tol);
+          c.style.gridColumn = String(col + 1);
+          c.style.gridRow = heights[col] + 1 + ' / span ' + span;
+          heights[col] += span;
         }
       }
       let raf;
