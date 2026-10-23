@@ -135,6 +135,31 @@ section {
   color: var(--mist-dim);
   font-family: var(--mono);
   font-size: var(--step-eyebrow);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--gap);
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+.sa-badge {
+  line-height: 0;
+  opacity: 0.55;
+  transition: opacity 0.2s ease;
+}
+
+.sa-badge:hover,
+.sa-badge:focus-visible {
+  opacity: 1;
+}
+
+.sa-badge img {
+  height: 22px;
+  width: auto;
 }
 
 /* ============================================================================
