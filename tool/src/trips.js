@@ -11,6 +11,27 @@ export function slugify(name) {
     .replace(/^-+|-+$/g, '');
 }
 
+// Default slug for a new trip: title + year, so repeat visits to the same
+// operator/place don't collide (`blue-o-two-2024`), then -2, -3… if still taken.
+// `year` comes from the dates label; '' if neither yields anything usable.
+export function suggestSlug(title, dates, taken) {
+  let base = slugify(title);
+  if (!base) return '';
+  const year = String(dates || '').match(/\b(?:19|20)\d{2}\b/)?.[0];
+  if (year && !base.endsWith(`-${year}`)) base = `${base}-${year}`;
+  let slug = base;
+  for (let n = 2; taken.has(slug); n++) slug = `${base}-${n}`;
+  return slug;
+}
+
+// Validate a (raw) slug answer against existing slugs → error string or null.
+export function slugError(raw, taken) {
+  const slug = slugify(raw);
+  if (!slug) return 'Slug must contain letters or numbers';
+  if (taken.has(slug)) return `A trip "${slug}" already exists — pick another slug`;
+  return null;
+}
+
 export function listTripSlugs(paths) {
   if (!fs.existsSync(paths.contentDir)) return [];
   return fs
