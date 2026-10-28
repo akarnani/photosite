@@ -36,6 +36,7 @@ program
   .command('add-trip')
   .description('Ingest a folder of photos as a new trip')
   .option('--name <name>', 'trip name')
+  .option('--slug <slug>', 'URL slug (default: name + year, e.g. "blue-o-two-2024")')
   .option('--location <location>', 'location, e.g. "Raja Ampat, Indonesia"')
   .option('--dates <dates>', 'trip dates label, e.g. "March 2025" (default: derived from photo EXIF)')
   .option('--from <folder>', 'source photo folder')

@@ -66,7 +66,8 @@ deps.
 ## Commands (once `npm link`ed in tool/)
 
 - `photosite setup` — re-runnable config wizard (writes rclone remote + config TOML)
-- `photosite add-trip [--from <folder>] [--no-upload]` — ingest a folder
+- `photosite add-trip [--from <folder>] [--slug <slug>] [--no-upload]` — ingest a
+  folder. Slug defaults to title + year (titles may repeat; slugs can't)
 - `photosite add-trips [parent] [--min <n>] [--no-upload]` — bulk: scan a parent
   tree (`discover.js`), multiselect image folders, describe each, process all
 - `photosite update-trip [slug] --from <folder> [--prune] [--no-upload]`

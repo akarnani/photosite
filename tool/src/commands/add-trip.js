@@ -6,7 +6,7 @@ import { requireRepoRoot, paths } from '../paths.js';
 import { loadConfig } from '../config.js';
 import * as rclone from '../rclone.js';
 import * as exif from '../exif.js';
-import { slugify, tripExists } from '../trips.js';
+import { slugify, listTripSlugs, suggestSlug, slugError } from '../trips.js';
 import { validateFolder, listImages, tripDateLabel } from '../ingest.js';
 import { createTrip } from '../create-trip.js';
 import { maybePublish } from '../publish.js';
@@ -55,9 +55,24 @@ export async function addTrip(opts = {}) {
   const dates = opts.dates || ans.dates || dateGuess;
   const summary = ans.summary || '';
 
-  const slug = slugify(name);
-  if (!slug) ui.fail('Could not derive a slug from the trip name.');
-  if (tripExists(P, slug)) ui.fail(`Trip "${slug}" already exists. Use \`photosite update-trip ${slug}\`.`);
+  // The slug is the URL + R2 prefix, independent of the title (titles may repeat
+  // across visits). Default to title + year; let the user edit it.
+  const taken = new Set(listTripSlugs(P));
+  let slug;
+  if (opts.slug) {
+    const err = slugError(opts.slug, taken);
+    if (err) ui.fail(err);
+    slug = slugify(opts.slug);
+  } else {
+    const { s } = await ui.ask({
+      type: 'text',
+      name: 's',
+      message: 'Slug (URL)',
+      initial: suggestSlug(name, dates, taken),
+      validate: (v) => slugError(v, taken) || true,
+    });
+    slug = slugify(s);
+  }
 
   ui.heading(`Adding trip "${name}" (${slug})`);
   const { count } = await createTrip({

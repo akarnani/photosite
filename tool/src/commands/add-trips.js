@@ -7,7 +7,7 @@ import { requireRepoRoot, paths } from '../paths.js';
 import { loadConfig } from '../config.js';
 import * as rclone from '../rclone.js';
 import * as exif from '../exif.js';
-import { slugify, listTripSlugs } from '../trips.js';
+import { slugify, listTripSlugs, suggestSlug, slugError } from '../trips.js';
 import { discoverImageFolders, defaultTitleFromRel } from '../discover.js';
 import { listImages, tripDateLabel, validateFolder } from '../ingest.js';
 import { createTrip } from '../create-trip.js';
@@ -77,39 +77,25 @@ export async function addTrips(parentArg, opts = {}) {
     const dateGuess = tripDateLabel(meta);
     const defTitle = defaultTitleFromRel(folder.relPath);
 
-    let spec = null;
-    for (;;) {
-      const a = await ui.ask([
-        { type: 'text', name: 'title', message: 'Title', initial: defTitle, validate: (v) => (v.trim() ? true : 'Required') },
-        { type: 'text', name: 'location', message: 'Location (e.g. "Komodo, Indonesia")' },
-        { type: 'text', name: 'dates', message: 'Dates', initial: dateGuess },
-        { type: 'text', name: 'summary', message: 'Short intro' },
-      ]);
-      const title = a.title.trim();
-      const slug = slugify(title);
-      if (!slug) {
-        ui.warn('Could not derive a slug from that title — try another.');
-        continue;
-      }
-      if (taken.has(slug)) {
-        const { action } = await ui.ask({
-          type: 'select',
-          name: 'action',
-          message: `A trip "${slug}" already exists`,
-          choices: [
-            { title: 'Rename (pick a different title)', value: 'rename' },
-            { title: 'Skip this folder', value: 'skip' },
-          ],
-        });
-        if (action === 'rename') continue;
-        break; // skip
-      }
-      taken.add(slug);
-      spec = { folder: folder.absPath, relPath: folder.relPath, title, slug, location: a.location || '', dates: a.dates || dateGuess, summary: a.summary || '', meta };
-      break;
-    }
-    if (spec) specs.push(spec);
-    else ui.info(`skipped ${folder.relPath}`);
+    const a = await ui.ask([
+      { type: 'text', name: 'title', message: 'Title', initial: defTitle, validate: (v) => (v.trim() ? true : 'Required') },
+      { type: 'text', name: 'location', message: 'Location (e.g. "Komodo, Indonesia")' },
+      { type: 'text', name: 'dates', message: 'Dates', initial: dateGuess },
+      { type: 'text', name: 'summary', message: 'Short intro' },
+    ]);
+    const title = a.title.trim();
+    const dates = a.dates || dateGuess;
+    // Titles may repeat (same operator, different year); the slug must not.
+    const { s } = await ui.ask({
+      type: 'text',
+      name: 's',
+      message: 'Slug (URL)',
+      initial: suggestSlug(title, dates, taken),
+      validate: (v) => slugError(v, taken) || true,
+    });
+    const slug = slugify(s);
+    taken.add(slug);
+    specs.push({ folder: folder.absPath, relPath: folder.relPath, title, slug, location: a.location || '', dates, summary: a.summary || '', meta });
   }
 
   if (!specs.length) {

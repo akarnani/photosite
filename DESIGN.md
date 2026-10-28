@@ -147,14 +147,17 @@ does **not** create Cloudflare resources (those are manual — see README/§12).
 7. Save `photosite.config.toml`. Never write secrets to it.
 
 ### `photosite add-trip`
-Flags (all optional, fall back to prompts): `--name`, `--location`, `--dates`,
+Flags (all optional, fall back to prompts): `--name`, `--slug`, `--location`, `--dates`,
 `--from`, `--no-upload`. Behavior:
 1. Require rclone + exiftool (hard-fail if missing) — unless `--no-upload`, where
    rclone is not required.
 2. Prompt for trip name, location, dates, short intro, and source photo folder
    (validate folder exists).
-3. Derive `slug` from name. If a trip with that slug already exists, fail and
-   point at `update-trip`.
+3. Prompt for the `slug` (URL + R2 prefix), defaulting to name + year from the
+   dates label (`blue-o-two-2024`), with `-2`, `-3`… appended if still taken.
+   Titles may repeat (trips are named after the operator, so repeat visits share
+   a name); slugs must be unique, so the prompt rejects an existing one. Existing
+   trips keep their slugs — renaming one would move its R2 prefix and break its URL.
 4. List source images in the folder; fail if none.
 5. Run the pipeline (§5) → photo records. This always writes the local derivative
    cache (§6).
