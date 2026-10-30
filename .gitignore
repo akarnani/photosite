@@ -20,3 +20,4 @@ site/.image-cache/*
 # misc
 .DS_Store
 *.log
+.claude/
