@@ -113,7 +113,7 @@ the user's own.
 
 ## 4. CLI tool specification
 
-Binary name: `photosite`. Node ≥18, ESM. Deps: `commander` (commands),
+Binary name: `photosite`. Node ≥20.9, ESM. Deps: `commander` (commands),
 `prompts` (interactive), `execa` (shell out to rclone/exiftool), `sharp`,
 `js-yaml`, `smol-toml`, `picocolors`.
 

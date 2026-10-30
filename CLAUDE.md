@@ -87,7 +87,7 @@ Build the site: `cd site && npm run build`. Convenience wrappers in `justfile`.
 ## Conventions
 
 - CLI status lines: `→` step, `✓` ok, `!` warn, `✗` error (picocolors).
-- ESM everywhere, Node ≥18.
+- ESM everywhere, Node ≥20.9 (sharp 0.35 requirement).
 - Cancelling a prompt exits cleanly with no partial writes.
 - `<slug>` args are optional; omitting one shows a select list of trips.
 
