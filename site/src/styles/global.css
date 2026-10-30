@@ -148,6 +148,7 @@ section {
 
 .sa-footer {
   text-align: right;
+  font-size: 0.625rem;
   transition: color 0.2s ease;
 }
 
