@@ -1,0 +1,926 @@
+[
+  {
+    "file": "A1102506.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRuIAAABXRUJQVlA4INYAAADwBACdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoR3Ac+ZDje8a+reu/hetS4klgAAzjkPeKxSD5RUFe+Ud0xwyh7v/81QVwUxHC5aq84jw9riw0komztX/siWxlv6eBjsRkQ+jX/IQ3o+7V/5RyrqWGIngmAo6hxZrT+FEmyuWuM3iSwB9QOxYYVwDz1nTJi1ozZ7V5UJLAvo9qZZ8ZpPVDxrNKkIB3fcIRbde0a7J848nOfZP1kNMIg/xkqVgxkci3IQc1aAXqk5Esc39bv8snUIAdAA",
+    "fallback": "https://img.karnani.io/cocoview-2026/a1102506.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102506-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102506-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102506-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102506-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-10-16T09:47:59",
+    "gps": {
+      "lat": 16.359237275,
+      "lon": -86.418749225
+    },
+    "camera": "SONY ILCE-1",
+    "lens": "FE 28-60mm F4-5.6",
+    "exposure": {
+      "fNumber": 20,
+      "exposureTime": 0.004,
+      "iso": 500,
+      "focalLength": 45
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "A1102482.jpg",
+    "width": 1600,
+    "height": 2400,
+    "ratio": 0.6667,
+    "lqip": "data:image/webp;base64,UklGRp4BAABXRUJQVlA4IJIBAABwCACdASoYACQAPtFUpEwoJKOiKqwBABoJbACdM0c3DhXka3OAlZ7d0SQ7uK6lRvZxj+mRpHrzuH1HADzZtunTJnsoskKD0tKTkmoAAP7jgB5+BKNzYnEjzijWt3zpEvPM+BRXzoiul61qjwHesPRxtwdjAAiS4yprOm6hZn7NzPsNLPMWFmpglvqnCIVGGMdhfc++3yPkkIa1EXfL+tNQ07EBkJ//aiz1fmimPH1au3wYeXV7+OhD/p485mEHQEcvdD22pWt5fIr0OOjN8EOo4HLPL0YwOjP6NXLIgOsFAqgonYIoY6U9lV/BltWJkceYInExV+dNTBLXg4NRDkn6vXfoOGCiNgfubiu4pS+7qsE8TlH5Kymy8W2grsi3zY/Y3amB7Me4B9C3nqDtJTdamOY2I6EHKLiwPYGQNlrvmIlUbuEexZnEEIDR3XYzA7ycdefe0HI+2P2LxiWcP0qko5zy8RCSRyylVHj0mcCAGMBbYrrZEfeaDDlQVBIUdkwug38kvR8acVmZfHx+10JsAAA=",
+    "fallback": "https://img.karnani.io/cocoview-2026/a1102482.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102482-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102482-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102482-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102482-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-10-16T09:16:41",
+    "gps": {
+      "lat": 16.359237275,
+      "lon": -86.418749225
+    },
+    "camera": "SONY ILCE-1",
+    "lens": "FE 28-60mm F4-5.6",
+    "exposure": {
+      "fNumber": 20,
+      "exposureTime": 0.004,
+      "iso": 500,
+      "focalLength": 38
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "A1102456.jpg",
+    "width": 1600,
+    "height": 2400,
+    "ratio": 0.6667,
+    "lqip": "data:image/webp;base64,UklGRvgAAABXRUJQVlA4IOwAAADwBgCdASoYACQAPslWpEunpSOhqq348BkJbACxHoR0eQU55UBRWQpPRbKQQMWZ1xmlvt34N4cYtSTpY3O8XgQAAP7wyb6PoGjJh11MJfc4VUxH7inCtA0lItw5BeJkqUDRgHO0Pkv8VTByaU/0XtxvOV4zKdDCyRKTvAqFg6ab/2PrsTzwqns2DxA6C+VcFEJUAEXV/lah0ijCH4Ro1DzMbsYolSeNBbzlwb375VOfxpLqW3QyKvHj3BA9/1aEF0S5zxwpVBfUOqwadN3gO3AD4ElzDEugH5hW4fhuUNoSdRIRppkkQob1CbgAAA==",
+    "fallback": "https://img.karnani.io/cocoview-2026/a1102456.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102456-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102456-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102456-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102456-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-10-15T14:26:22",
+    "gps": {
+      "lat": 16.3493581116667,
+      "lon": -86.44438846
+    },
+    "camera": "SONY ILCE-1",
+    "lens": "FE 28-60mm F4-5.6",
+    "exposure": {
+      "fNumber": 20,
+      "exposureTime": 0.004,
+      "iso": 500,
+      "focalLength": 48
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "A1102443.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRuIAAABXRUJQVlA4INYAAAAQBQCdASoYABAAPtFUo0uoJKMhsAgBABoJQBWECbk/xvAt4X8AJzC+HlieM2RNs4aAAMl3uVvvjJGXB7iSB1eJ+oASCvWGdnOSlu8f1QibqMfivmJGaogPKbN3CImcozINdNrVwErJl+VvDT26YbgqZkd2p82Vm0+JI2079KhQ4AkEz02VW6N0dHqnnMghl7fVg65YBM34R6+pPDtdiYsD/ttStjJRfdk0MERa34sIytwIU490kYG3d+JxtwdCZy4qRCbCrC8NL6C/DSMoOjJHgaxlQAAA",
+    "fallback": "https://img.karnani.io/cocoview-2026/a1102443.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102443-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102443-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102443-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102443-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-10-15T09:33:47",
+    "gps": {
+      "lat": 16.348807,
+      "lon": -86.446098
+    },
+    "camera": "SONY ILCE-1",
+    "lens": "FE 28-60mm F4-5.6",
+    "exposure": {
+      "fNumber": 22,
+      "exposureTime": 0.004,
+      "iso": 500,
+      "focalLength": 60
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "A1102440.jpg",
+    "width": 1600,
+    "height": 2400,
+    "ratio": 0.6667,
+    "lqip": "data:image/webp;base64,UklGRnABAABXRUJQVlA4IGQBAADwBwCdASoYACQAPtFap06oJKOiKrgKAQAaCWQAnTNZAKrFMNYz2DXxQh8b4riwO+4BAM7oXpTHyo68KDPxekvahU2VIe59+LgA/umvLqJYylMt4dOlR8B5YeUZlaMxg1oQY4uAlUWNbn/a+hJoDZGF4uy4RoupJdeUsI6AiedlGEQkz1UQ4zkz8O62RwsMNkfk8r8wR/+WfBhXY5fglooLTlRZBqzMudYuspeFgURePj2UA85ZypYssZkk0v1yNuQiRJSwReILaYUnDVkYYrwgpNde+SZgvTUQIWCje4+FqGTwKEj+NCvcxVid74TflU/LpL8qvsaOb+jUCOiGs0GXV4ywWfw7YjD+0vETRqDnUzzr5Um+wVw6H0zdpNVYNFhrATo3qdakzmadJpENHEF4G9AQ9icLcTn4ADdxqwmVlLzy2ggbSNrKFbLw+A0CTq1xeQ8B0ThJFNFeBsozUhbP/8GAAA==",
+    "fallback": "https://img.karnani.io/cocoview-2026/a1102440.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102440-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102440-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102440-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102440-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-10-15T09:32:54",
+    "gps": {
+      "lat": 16.3488066666667,
+      "lon": -86.4460983333333
+    },
+    "camera": "SONY ILCE-1",
+    "lens": "FE 28-60mm F4-5.6",
+    "exposure": {
+      "fNumber": 22,
+      "exposureTime": 0.004,
+      "iso": 500,
+      "focalLength": 60
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "A1102426.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.4998,
+    "lqip": "data:image/webp;base64,UklGRt4AAABXRUJQVlA4INIAAADQBACdASoYABAAPtFUo0uoJKMhsAgBABoJaACdMoR3A8AVto1Q6TTkXVLapE6sQAD+oAhDeqe3USFj9XjsmnmpJitwn8hlo5OHW9bqgFHec98zwk4kbO80dK9unUS77lseO/1wslzYvOSyEIZZ398eNVOyP35ErFUiFf4UvEzeyz6OSxZUix3QJDquyWKezn53dpo71Wz4ydo5CgN9HdCSP73Els5cft7eb4QTL6Ewg+N12E865h4StgBK7jwiBwEZlpKGcT7TZfzQrFcZlIUAAAA=",
+    "fallback": "https://img.karnani.io/cocoview-2026/a1102426.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102426-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102426-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102426-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102426-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-10-15T09:29:41",
+    "gps": {
+      "lat": 16.348807,
+      "lon": -86.446098
+    },
+    "camera": "SONY ILCE-1",
+    "lens": "FE 28-60mm F4-5.6",
+    "exposure": {
+      "fNumber": 22,
+      "exposureTime": 0.004,
+      "iso": 500,
+      "focalLength": 60
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "A1102407.jpg",
+    "width": 1600,
+    "height": 2400,
+    "ratio": 0.6666,
+    "lqip": "data:image/webp;base64,UklGRoIBAABXRUJQVlA4IHYBAABQCACdASoYACQAPtFapk6oJKMiKrgKAQAaCWwAnTK9iqBcYMseBq+nsYyGXp8CZ6Q3qCb6S8Zb09v7JRiQAqw8buCSaNnfR+MSRmAA/iVOZop8ThbNr+gIx9KY6ppncqKWXSMKTm1jQRnWL3EH7nZCZ6abZL79RQ/QXPFmtGQQcAx5g9fi2Vk4vVhIpcO7i00AD3n8B0qhZOzR971Vl1VRqf92ANVWUJWd+7vOL0X+CW03QhbHRKiYVOtB5+SlXXB4LBepJ36CQNuVrcesAcu9NL/7gMb9UeqiYIcMfaGNpUc6RE3MMqYOLEzKD7oIJ0ZYAaADfvfkfadXtqPKZ1Ug9VUMPBJ7IamYGUIehgrRy6llmvmRMF6qZF+deMDNiF689g29+NHiSOkDF34FU19ikPOEinkj6ETMGUED+kQkBxF0VzEAry8OFfP15SqfYipkFIkM17zbCbMzXhHk0hVqjZCukPIfX/TIEOZjxXehF5rrhm6QAA==",
+    "fallback": "https://img.karnani.io/cocoview-2026/a1102407.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102407-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102407-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102407-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102407-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-10-14T14:40:18",
+    "gps": {
+      "lat": 16.35992,
+      "lon": -86.415193
+    },
+    "camera": "SONY ILCE-1",
+    "lens": "FE 28-60mm F4-5.6",
+    "exposure": {
+      "fNumber": 18,
+      "exposureTime": 0.003125,
+      "iso": 500,
+      "focalLength": 35
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "A1102393.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRv4AAABXRUJQVlA4IPIAAACwBACdASoYABAAPtFUo0uoJKMhsAgBABoJaACdMoJYAIGYKljs/ru8TSWQPLgAAP7Bn3vigTcwtwq1FWGHcjlF/pMTYhmi6f021dg2gepv2u1tBclzJ/GIt7J8hMU7oLSMeAMWiFDdwdkxB3XX2bEkWT6WqIXcgqsvXEm3DTmW8lJIShXRpwVdq77C/0bRWjzF1tkGf98VtjXVURcQP1jZ6JBo8Rv0/vNP+ahdRq9k1Qf/weDoR8C3hzt1PD7frbjyWF0zyX8RMDszgMELXg/Vi4DRF+EsQ19DywlwFrm+ImIEbqpoHCfXouf6uEU98gAAAA==",
+    "fallback": "https://img.karnani.io/cocoview-2026/a1102393.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102393-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102393-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102393-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102393-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-10-14T11:33:00",
+    "gps": {
+      "lat": 16.359653855,
+      "lon": -86.4161240966667
+    },
+    "camera": "SONY ILCE-1",
+    "lens": "FE 28-60mm F4-5.6",
+    "exposure": {
+      "fNumber": 18,
+      "exposureTime": 0.003125,
+      "iso": 500,
+      "focalLength": 40
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "A1102382.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.4999,
+    "lqip": "data:image/webp;base64,UklGRsAAAABXRUJQVlA4ILQAAAAwBACdASoYABAAPtFUo0uoJKMhsAgBABoJYgCdMvIlqRl6nbgiVMfem0QA/k9qSJqD4IGzXY9T7/Ltvut4cF3Jc9fpkNNsrUgjhWGyn3PSKI/p7beErRol+gLaMIJI8MfuagPy/pnLwiUshGFfYH8ijv5kJTegBlv4jacm7r1fkb+HygI9FI+aQlDY8HTLj/5QbY8ziGmS/5VVOJA3xLfgqcOv/TyxPwesEkfieAIubeGoAAA=",
+    "fallback": "https://img.karnani.io/cocoview-2026/a1102382.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102382-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102382-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102382-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102382-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-10-14T11:26:19",
+    "gps": {
+      "lat": 16.359653855,
+      "lon": -86.4161240966667
+    },
+    "camera": "SONY ILCE-1",
+    "lens": "FE 28-60mm F4-5.6",
+    "exposure": {
+      "fNumber": 18,
+      "exposureTime": 0.003125,
+      "iso": 500,
+      "focalLength": 60
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "A1102376.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRsoAAABXRUJQVlA4IL4AAADwBACdASoYABAAPtFUo0uoJKMhsAgBABoJYgCdMoAvQTQwwDEFkdHaXJ5l+2J3+wAA/ux/bxMNL79F7yCHxd/0dQQwsTOyGX+mxwo5JSmghNidF/7P2d4T/spClO3XP+Ky4sz+JkjETPTcwFQ7hPTg8F0vvO/OAjVGrjWkKOQ7DjZt1H1Zo2weU0ibrFGP1iT3ZXl1JI//TZdH4MP8esfevTlVjXtlzG9iSlAEQNS2e/eSOLrXk32AVXGhIAAA",
+    "fallback": "https://img.karnani.io/cocoview-2026/a1102376.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102376-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102376-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102376-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102376-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-10-14T11:06:12",
+    "gps": {
+      "lat": 16.359653855,
+      "lon": -86.4161240966667
+    },
+    "camera": "SONY ILCE-1",
+    "lens": "FE 28-60mm F4-5.6",
+    "exposure": {
+      "fNumber": 18,
+      "exposureTime": 0.003125,
+      "iso": 500,
+      "focalLength": 60
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "A1102365.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.4999,
+    "lqip": "data:image/webp;base64,UklGRt4AAABXRUJQVlA4INIAAAAwBQCdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoRwA8MBvqxrM53283qXUSkh1cZoAAD+3Vvdg+v+o/inIe8ciUhFfUA4QDA6xlq0ZW19PrRSofkZONYTGDot6+DqhjI1VIgXTaV9oFlSlYH/l0pFhSnb0uExAqrgAFJpuVGZ5DCN7m/n2IyoXCxg1x0VZkndnave58ePz/0nkNHx+zo6ByIyDAF9cwyMRsjTMh2pJ5Qtmrr7fUwSyw4Q+ictGtJDFVdRQtSzkrNvO0RlS5Y4AAA=",
+    "fallback": "https://img.karnani.io/cocoview-2026/a1102365.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102365-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102365-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102365-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102365-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-10-14T10:40:31",
+    "gps": {
+      "lat": 16.359653855,
+      "lon": -86.4161240966667
+    },
+    "camera": "SONY ILCE-1",
+    "lens": "FE 28-60mm F4-5.6",
+    "exposure": {
+      "fNumber": 18,
+      "exposureTime": 0.003125,
+      "iso": 500,
+      "focalLength": 60
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "A1102357.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5001,
+    "lqip": "data:image/webp;base64,UklGRrAAAABXRUJQVlA4IKQAAAAwBACdASoYABAAPtFUo0uoJKMhsAgBABoJYwCdAYucnEDVTv0X6jebvIAA/vG7o2hHkYvV01SV/JJLJblpT3819DsNL6uq4jZfjtXoPv/DRI8RA2RV2ehKnxNG6TD7nzwmBIxPYJbPcPKFZOX6UvvpwUslIqeg7ek3slxDaNDxB5Q9VAusjUqRJroWOfj+k+YmRQ2/+69jcsYaBsy0aOhu0SAAAA==",
+    "fallback": "https://img.karnani.io/cocoview-2026/a1102357.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102357-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102357-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102357-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102357-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-10-14T09:51:13",
+    "gps": {
+      "lat": 16.355327,
+      "lon": -86.433522
+    },
+    "camera": "SONY ILCE-1",
+    "lens": "FE 28-60mm F4-5.6",
+    "exposure": {
+      "fNumber": 18,
+      "exposureTime": 0.003125,
+      "iso": 500,
+      "focalLength": 60
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "A1102340.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRsoAAABXRUJQVlA4IL4AAACQBACdASoYABAAPtFUo0uoJKMhsAgBABoJbACdL1yVfgyt8t99LbasBY4LIKAA/tuBcvUJry0UJTYwBb4DVbrFHv2hVM1tsKSBAbtI7abVWCHODE1tBCQOXyxllyuY3JXqD4BGrMAfEEb5XOo8lqhVRs7ku8UH2Nu7wK/CJj3dVTJRPeJjnpu0WrLser9R2czEVEjGJ/qCsL101KKP95AUo6ba3KEtzyDRzWVp8I5QMfXj/18bit4/9zkxAAAA",
+    "fallback": "https://img.karnani.io/cocoview-2026/a1102340.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102340-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102340-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102340-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102340-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-10-14T09:35:11",
+    "gps": {
+      "lat": 16.355327,
+      "lon": -86.433522
+    },
+    "camera": "SONY ILCE-1",
+    "lens": "FE 28-60mm F4-5.6",
+    "exposure": {
+      "fNumber": 18,
+      "exposureTime": 0.003125,
+      "iso": 500,
+      "focalLength": 60
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "A1102331.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRrYAAABXRUJQVlA4IKoAAABwBACdASoYABAAPtFUo0uoJKMhsAgBABoJYgCdAdwAxSk/VOQ0Rhdi+qRMAAD+2qCJWw+iaDEq+k5VaqmZmf1+GdMMn8mrVBMa4dFJRVnuKpOoBoLR9n/fON6/imVc7RY8Q5He3qaLiQHZoqg0hW8dX3Xl+1FyHKb12nYIzq3PQSNOkS/tFkoHw0XX2Pr6+/E0Drrdrx1SKLCm5hkuWzbwGMrRwpxAFHAAAA==",
+    "fallback": "https://img.karnani.io/cocoview-2026/a1102331.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102331-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102331-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102331-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102331-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-10-14T09:28:22",
+    "gps": {
+      "lat": 16.355327,
+      "lon": -86.433522
+    },
+    "camera": "SONY ILCE-1",
+    "lens": "FE 28-60mm F4-5.6",
+    "exposure": {
+      "fNumber": 18,
+      "exposureTime": 0.003125,
+      "iso": 500,
+      "focalLength": 55
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "A1102302.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAACQAwCdASoYABAAPtFUo0uoJKMhsAgBABoJbAC7AB4LHKcWNb0AAPV2je4ImRNOVKPT+Zs7fXeRQwXKWQzzlf0DDDisY0osQytUXCviKiKoSVKvxLnMY0lE7H7s8ZiHyzuurxc8i9W7ozp+7XhJ5YhJEg6YHfJsCzVKQvpkjoYAAA==",
+    "fallback": "https://img.karnani.io/cocoview-2026/a1102302.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102302-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102302-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102302-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102302-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-10-13T14:25:07",
+    "gps": {
+      "lat": 16.359194695,
+      "lon": 86.42022687
+    },
+    "camera": "SONY ILCE-1",
+    "lens": "FE 28-60mm F4-5.6",
+    "exposure": {
+      "fNumber": 20,
+      "exposureTime": 0.003125,
+      "iso": 500,
+      "focalLength": 60
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "A1102269.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.4999,
+    "lqip": "data:image/webp;base64,UklGRsgAAABXRUJQVlA4ILwAAACQBACdASoYABAAPtFapkuoJaOhsAgBABoJQBOj+AQX6G4gaL/7QHKeJCGIIwAA/v7Ub2IPjRlyHrgmaaL6P1rfVqZL055wv3Mj/KD9ALzN8xXLgaGchsoPEELuq45rPWKL3cpm8aQgaaIrr2NR5+0NvJBs7I+iyt0UyA5Jeaor3MdB2TRuBnWMKkruZkexvxch0JTLlK26DAyui9PeLRxVAbkt2jwW5qL8+A/Q8O3XjwdbKpcwiyvNsAAAAA==",
+    "fallback": "https://img.karnani.io/cocoview-2026/a1102269.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102269-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102269-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102269-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102269-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-10-13T11:28:06",
+    "gps": {
+      "lat": 16.348647745,
+      "lon": 86.4488504833333
+    },
+    "camera": "SONY ILCE-1",
+    "lens": "FE 28-60mm F4-5.6",
+    "exposure": {
+      "fNumber": 14,
+      "exposureTime": 0.003125,
+      "iso": 500,
+      "focalLength": 41
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "A1102261.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRsQAAABXRUJQVlA4ILgAAAAwBQCdASoYABAAPtFUo0uoJKMhsAgBABoJbACdLwDs/xvAuBNuVn5j7rNbbF4HDod1QAD+9ona+3GR79+MANj5PnCafwe3vLsrDP900XnSVX4saD0tYZTlAdFC6+jjBhGZQoXjkVGfDNxITAv4AcGFUSYy6EuV71K/v9aDnG3nR/0h26OcuVqxie5i1/02360K87lUhp/vf1Gq/x8+lun1swUc50IbnbrKq7G9ORo4RIeAzaduAAAA",
+    "fallback": "https://img.karnani.io/cocoview-2026/a1102261.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102261-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102261-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102261-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102261-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-10-13T11:17:39",
+    "gps": {
+      "lat": 16.348647745,
+      "lon": -86.4488504833333
+    },
+    "camera": "SONY ILCE-1",
+    "lens": "FE 28-60mm F4-5.6",
+    "exposure": {
+      "fNumber": 14,
+      "exposureTime": 0.003125,
+      "iso": 500,
+      "focalLength": 28
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "A1102253.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5001,
+    "lqip": "data:image/webp;base64,UklGRrYAAABXRUJQVlA4IKoAAACwAwCdASoYABAAPtFUo0uoJKMhsAgBABoJbACdACDiajDm9o7mLAD+flyfq1qdDe8dnW2Eh7xiRzSzoSNoK5GzOz/vLKyN6Ma8VvIvsbupa93P5zQvLHrqenqj9AyznVy1pCTrCR4zM9Er/mhUYnC9vTXo3nQNxXU8vSjlAUtoFBTMIbZ8PfMWgNGlvj98yPgFxRA2CCgd/sjiGQZTiPrKGPr8YcGU6c2QAA==",
+    "fallback": "https://img.karnani.io/cocoview-2026/a1102253.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102253-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102253-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102253-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102253-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-10-13T11:14:08",
+    "gps": {
+      "lat": 16.348647745,
+      "lon": -86.4488504833333
+    },
+    "camera": "SONY ILCE-1",
+    "lens": "FE 28-60mm F4-5.6",
+    "exposure": {
+      "fNumber": 18,
+      "exposureTime": 0.003125,
+      "iso": 500,
+      "focalLength": 38
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "A1102180.jpg",
+    "width": 1600,
+    "height": 2400,
+    "ratio": 0.6667,
+    "lqip": "data:image/webp;base64,UklGRsgBAABXRUJQVlA4ILwBAACQCQCdASoYACQAPtFWo0yoJKMiKqwBABoJZgCsMv4OrbarNJ/+VgMsDiP79C9Ab5tkps/FwW6MFjtbnLxbX3c8gFkctXrvLxyGL7ejgxEHiVhmwN4AAM4xzLkrmIQbyV2gbD/tOPAVnPPrVgvclXEZ6QUWU+IwgLHblwOhxhYIKDxzXSWfz7gSu+MptjmQ1LiKPMt60mysCdbDLzcjhnzGq0z9OaP8jamaNcXA6x3Ns+e+NUAIzmpGMxpuGe4r49KuJWlLE0FqY7JhSVBZ9uCUTqwmhG9lgULSwR0im272Hlw+FOS1zAJ2Aj4KfpGFveRSw4rxnjk8GKGNPFHZcmpLAdjlUd75dHUP1CK0O3orzajy0jxuf34/LIACPz/6YHsup3KzW53e/vF0tPqy0NHkG8vTy1xmZ2lCzaPkDKO01VfFoujQMHM/M9edKbLZ/qlxAXIqXen2ysbVHZieLP5K7YJ1ioa6RpfvYlZMf1Dq6Eiy/2mrVdgdj0jYym9vFvatzo/XGP0IDdp+bj2z2mwlqdqkR5QLDgfqBwbf66k2c6E2iWBmFsUrz2jIVTS602BzczAYheBYm2vsAAA=",
+    "fallback": "https://img.karnani.io/cocoview-2026/a1102180.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102180-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102180-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102180-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102180-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-10-13T09:07:54",
+    "gps": {
+      "lat": 16.337544,
+      "lon": -86.469457
+    },
+    "camera": "SONY ILCE-1",
+    "lens": "FE 28-60mm F4-5.6",
+    "exposure": {
+      "fNumber": 16,
+      "exposureTime": 0.003125,
+      "iso": 500,
+      "focalLength": 39
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "A1102169.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAABwBACdASoYABAAPtFUo0uoJKMhsAgBABoJYwCdMoADE5ctIJ2XWvOj7XFfgAD+9pPkKchF/czby5B2VBV8ftc9GfUM54C+RGVTTzeQL8bmezwz3DFGoa/EwH9gP5GKr9wJH6111d4t/zK27meslBmoZtmwuuzL9Y70UYOluymONeoxeX0pEMQPzYqAAA==",
+    "fallback": "https://img.karnani.io/cocoview-2026/a1102169.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102169-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102169-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102169-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102169-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-10-11T15:05:38",
+    "gps": {
+      "lat": 16.3522861616667,
+      "lon": -86.43582115
+    },
+    "camera": "SONY ILCE-1",
+    "lens": "FE 28-60mm F4-5.6",
+    "exposure": {
+      "fNumber": 16,
+      "exposureTime": 0.003125,
+      "iso": 500,
+      "focalLength": 60
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "A1102151.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRqgAAABXRUJQVlA4IJwAAAAwBACdASoYABAAPtFUo0uoJKMhsAgBABoJYgC7ACPv64/n3YhSQaRd5IAA/uo6Doc1zzso5yQkrfbz9m6nDU9ugyuzkIh1Kb77hs4p2L4hG8ze2s6pGAr4CVlhAztcoDqqC2cPafTj4hSxSLA06vipYYLEFVk5d+Kdxjcs6mXXxC58mWfH0ri8Y12HYyL36CKThuw14z1rruHEAAA=",
+    "fallback": "https://img.karnani.io/cocoview-2026/a1102151.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102151-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102151-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102151-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102151-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-10-11T14:37:32",
+    "gps": {
+      "lat": 16.3522861616667,
+      "lon": -86.43582115
+    },
+    "camera": "SONY ILCE-1",
+    "lens": "FE 28-60mm F4-5.6",
+    "exposure": {
+      "fNumber": 16,
+      "exposureTime": 0.003125,
+      "iso": 500,
+      "focalLength": 60
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "A1102120.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAABwAwCdASoYABAAPtFUo0uoJKMhsAgBABoJZwAAUpSWFw+PPQAA/vR9s/Dj/ExLimcpHCVXTI7g+zYeOAA=",
+    "fallback": "https://img.karnani.io/cocoview-2026/a1102120.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102120-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102120-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102120-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/cocoview-2026/a1102120-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-10-11T09:22:11",
+    "gps": {
+      "lat": 16.359904,
+      "lon": -86.414033
+    },
+    "camera": "SONY ILCE-1",
+    "lens": "FE 28-60mm F4-5.6",
+    "exposure": {
+      "fNumber": 13,
+      "exposureTime": 0.003125,
+      "iso": 500,
+      "focalLength": 60
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  }
+]
