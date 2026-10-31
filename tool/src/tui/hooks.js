@@ -31,13 +31,14 @@ export function useThumbnail(file, cols, rows) {
       return;
     }
     setText(null);
-    renderHalfBlocks(file, { cols, maxRows: rows })
+    loadImage(file)
+      .then((src) => renderHalfBlocks(src, { cols, maxRows: rows }))
       .then((r) => {
         cache.set(key, r.text);
         if (alive) setText(r.text);
       })
       .catch(() => {
-        if (alive) setText(null);
+        if (alive) setText(false); // false = failed (vs null = still loading)
       });
     return () => {
       alive = false;
@@ -45,4 +46,20 @@ export function useThumbnail(file, cols, rows) {
   }, [key]);
 
   return text;
+}
+
+// A local path is handed to sharp as-is; an http(s) URL (R2 public bucket) is
+// fetched into memory. Nothing is written to .image-cache/.
+const remote = new Map();
+export function loadImage(file) {
+  if (!/^https?:\/\//.test(file)) return Promise.resolve(file);
+  if (!remote.has(file)) {
+    const p = fetch(file).then(async (res) => {
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      return Buffer.from(await res.arrayBuffer());
+    });
+    p.catch(() => remote.delete(file));
+    remote.set(file, p);
+  }
+  return remote.get(file);
 }

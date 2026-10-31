@@ -8,6 +8,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import yaml from 'js-yaml';
 import { GENRES, genreId, genreOf } from './genres.js';
+import { parseCoverPosition } from './coverPosition.js';
 
 const DEV = import.meta.env.DEV;
 const CONTENT_DIR = path.join(process.cwd(), 'src', 'content', 'trips');
@@ -143,9 +144,14 @@ export function allPoints(trips = getTrips()) {
   );
 }
 
-// Cover photo record for a trip (named cover, else newest).
+// Cover photo record for a trip (named cover, else newest), with `position`:
+// the trip's coverPosition focal point as { x, y } percentages, or null.
 export function coverPhoto(trip) {
-  return trip.photos.find((p) => p.file === trip.cover) || trip.photos[0] || null;
+  const photo = trip.photos.find((p) => p.file === trip.cover) || trip.photos[0] || null;
+  if (!photo) return null;
+  // The focal point belongs to the named cover; don't apply it to a fallback.
+  const position = photo.file === trip.cover ? parseCoverPosition(trip.coverPosition) : null;
+  return { ...photo, position };
 }
 
 // Human description for link previews: the trip summary, else a generated line.

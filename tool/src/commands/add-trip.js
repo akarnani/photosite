@@ -98,7 +98,7 @@ export async function addTrip(opts = {}) {
 
   // Ask BEFORE launching the TUI (a readline prompt can't run after it). If we
   // annotate, the TUI itself offers to publish; otherwise prompt here.
-  if (await ui.confirm('Annotate subjects & captions now?', true)) {
+  if (await ui.confirm('Annotate photos and pick the cover now?', true)) {
     await annotate(slug, { offerPublish: upload, publishMessage: `Add trip: ${name}` });
     if (!upload) ui.info('Images not uploaded (--no-upload); run `photosite upload` then `photosite push`.');
   } else {
