@@ -471,7 +471,9 @@ Node `fs` + `js-yaml` + `JSON.parse`. **Resolve the content dir from
 points into a bundled chunk and breaks the relative path. (Real gotcha; the
 reference implementation hit it.)
 
-Expose: `getTrips()` (sorted newest-first by first photo date), `getTrip(slug)`,
+Expose: `getTrips()` (sorted newest-first by each trip's latest photo date;
+each trip's `photos` are re-sorted **oldest-first** by capture date, undated
+last, so the gallery and lightbox read in the order the photos were taken), `getTrip(slug)`,
 `pointsForTrip(trip)`, `allPoints()`. The loader also applies the **dev URL
 rewrite** of §6 when `import.meta.env.DEV`.
 
