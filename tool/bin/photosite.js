@@ -73,7 +73,8 @@ program
   .command('cover')
   .description('Pick the trip cover photo, or where it is cropped (--position)')
   .argument('[slug]', 'trip slug (prompts if omitted)')
-  .option('--position <pos>', 'focal point for crops, CSS object-position style: "50% 20%" (x y), "top"; "none" clears')
+  .option('--position [pos]', 'where the cover is cropped: bare → drag it in the browser; or "50% 20%" (x y), "top"; "none" clears')
+  .option('--no-open', "with a bare --position: don't open the browser")
   .action(run(cover));
 
 program.command('preview').description('Run the local preview server').action(run(preview));

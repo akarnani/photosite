@@ -32,6 +32,11 @@ export async function renderHalfBlocks(file, { cols = 44, maxRows = 22 } = {}) {
     .raw()
     .toBuffer({ resolveWithObject: true });
 
+  return toHalfBlocks(data, info);
+}
+
+// Raw RGB pixels → { text, cols, rows } of half-block rows.
+function toHalfBlocks(data, info) {
   const { width: w, height: h, channels: ch } = info;
   const at = (x, y) => {
     const i = (y * w + x) * ch;
@@ -47,4 +52,38 @@ export async function renderHalfBlocks(file, { cols = 44, maxRows = 22 } = {}) {
     lines.push(line + RESET);
   }
   return { text: lines.join('\n'), cols: w, rows: lines.length };
+}
+
+// Upright, downsized copy of an image (path or Buffer) to crop repeatedly while
+// the cover position is nudged. Returns { buf, width, height }.
+export async function preparePhoto(src, maxW = 960) {
+  const { data, info } = await sharp(src, { failOn: 'none' })
+    .rotate()
+    .resize({ width: maxW, withoutEnlargement: true })
+    .jpeg({ quality: 85 })
+    .toBuffer({ resolveWithObject: true });
+  return { buf: data, width: info.width, height: info.height };
+}
+
+// Half-block render of `photo` (from preparePhoto) cropped to a cols × rows
+// frame the way CSS object-fit: cover + object-position x% y% would crop it
+// (the same rule the site's hero and OG card use).
+export async function renderCrop(photo, { cols, rows, pos }) {
+  const pxW = Math.max(2, cols);
+  const pxH = Math.max(2, rows * 2);
+  const frame = pxW / pxH;
+  const { width: W, height: H } = photo;
+  let cw = W;
+  let ch = H;
+  if (W / H > frame) cw = Math.max(1, Math.round(H * frame));
+  else ch = Math.max(1, Math.round(W / frame));
+  const left = Math.round(((W - cw) * pos.x) / 100);
+  const top = Math.round(((H - ch) * pos.y) / 100);
+  const { data, info } = await sharp(photo.buf)
+    .extract({ left, top, width: cw, height: ch })
+    .resize(pxW, pxH, { fit: 'fill' })
+    .removeAlpha()
+    .raw()
+    .toBuffer({ resolveWithObject: true });
+  return toHalfBlocks(data, info);
 }

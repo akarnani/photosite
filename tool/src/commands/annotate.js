@@ -3,7 +3,9 @@
 import path from 'node:path';
 import * as ui from '../ui.js';
 import { requireRepoRoot, paths } from '../paths.js';
-import { readTrip, writeTrip, collectSpecies, withCover } from '../trips.js';
+import { readTrip, writeTrip, collectSpecies, withCoverPosition } from '../trips.js';
+import { parseCoverPosition } from '../../../site/src/lib/coverPosition.js';
+import { pickInBrowser } from '../position/pick.js';
 import { fileStem } from '../pipeline.js';
 import { resolveSlug } from '../select.js';
 import { commitAndPush } from '../publish.js';
@@ -23,10 +25,10 @@ export async function annotate(slugArg, opts = {}) {
   }
 
   const cacheDir = P.cacheTripDir(slug);
-  const persist = (ann, cover) => {
+  const persist = (ann, cover, position) => {
     const merged = {};
     for (const p of photos) merged[p.file] = ann[p.file] ?? { title: null, species: [], caption: null };
-    writeTrip(P, slug, { trip: withCover(trip, cover), annotations: merged });
+    writeTrip(P, slug, { trip: withCoverPosition(trip, cover, position), annotations: merged });
   };
 
   const result = { publish: false };
@@ -36,11 +38,14 @@ export async function annotate(slugArg, opts = {}) {
     photos,
     initialAnn: { ...annotations },
     initialCover: trip.cover,
+    initialPosition: parseCoverPosition(trip.coverPosition),
     pool: collectSpecies(P),
     cacheDir,
     stemOf: fileStem,
     persist,
     openViewer: (f) => openImage(path.join(cacheDir, `${fileStem(f)}.jpg`)),
+    openBrowserPicker: (photo, initial, onUrl, onSave) =>
+      pickInBrowser({ photo, cacheDir, title: trip.title || slug, initial, onUrl, onSave }),
     offerPublish,
     result,
   });

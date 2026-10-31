@@ -71,6 +71,13 @@ export function withCover(trip, file) {
   return { ...rest, cover: file };
 }
 
+// Trip with `cover` set and `coverPosition` written from { x, y } (null or
+// undefined removes it → centred).
+export function withCoverPosition(trip, cover, pos) {
+  const { coverPosition, ...rest } = trip;
+  return pos ? { ...rest, cover, coverPosition: `${pos.x}% ${pos.y}%` } : { ...rest, cover };
+}
+
 export function writeTrip(paths, slug, { trip, photos, annotations }) {
   const dir = paths.tripDir(slug);
   fs.mkdirSync(dir, { recursive: true });

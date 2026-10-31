@@ -9,7 +9,12 @@ export default function Thumbnail({ file, cols, rows, missing }) {
   const text = useThumbnail(missing ? null : file, cols, rows);
   if (missing) {
     return html`<${Box} height=${rows} alignItems="center" justifyContent="center">
-      <${Text} dimColor>no local preview cached</${Text}>
+      <${Text} dimColor>no preview available</${Text}>
+    </${Box}>`;
+  }
+  if (text === false) {
+    return html`<${Box} height=${rows} alignItems="center" justifyContent="center">
+      <${Text} dimColor>preview unavailable</${Text}>
     </${Box}>`;
   }
   if (!text) {

@@ -202,10 +202,19 @@ Interactive, guided annotation — the primary way species/captions/titles get s
 4. On finish, offer to preview and/or commit & push.
 
 ### `photosite cover [slug] [--position <pos>]`
+Opens on the current cover. Enter sets the highlighted photo as cover and opens
+the **position view**: the cover cropped to the desktop hero (1920×620), link
+preview (1200×630) and phone hero (390×340) shapes; arrows slide the photo
+(shift ×5), `c` centres, Enter saves `coverPosition`, Esc goes back. `b` hands
+off to a browser page (`tool/src/position/`) to drag it pixel-exactly; its Save
+writes immediately and Done returns to the terminal. `annotate` has the same
+view on `p` for the current cover.
+
 `--position "50% 20%"` (or `top`, `center bottom`, …; `none` clears) skips the
-picker and writes `coverPosition` for the current cover: where the hero banner
-and link-preview cards crop it (`site/src/lib/coverPosition.js`, shared with the
-site). Changing the cover (here, in `annotate`, or via `update-trip`) drops it.
+picker and writes `coverPosition` for the current cover; a bare `--position`
+opens the browser page directly. `coverPosition` is where the hero banner and
+link-preview cards crop the cover (`site/src/lib/coverPosition.js`, shared with
+the site). Changing the cover (here, in `annotate`, or via `update-trip`) drops it.
 
 Standalone cover picker: resolve trip, present a select list of its photos
 (filename + caption hint), write the chosen filename to `trip.yaml`.

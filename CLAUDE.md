@@ -75,7 +75,7 @@ deps.
 - TUI (`annotate`/`cover`): **Ink + React via `htm`** (tagged templates — NO JSX
   build step; keep it that way). Runs on the alternate screen (`runTui`).
   Thumbnails are truecolor half-blocks (`thumb.js`) rendered from the local
-  `.image-cache/<slug>/<stem>.jpg`; missing cache → "no local preview". Both
+  `.image-cache/<slug>/<stem>.jpg`, else fetched (in memory) from R2. Both
   commands require a TTY (`cover` has a `prompts` fallback; `annotate` errors).
   `ink`/`react`/`htm`/`ink-text-input` are tool-only deps — never in `site/`.
 
@@ -89,11 +89,19 @@ deps.
 - `photosite update-trip [slug] --from <folder> [--prune] [--no-upload]`
 - `photosite annotate [slug]` — full-screen TUI: photo list + live thumbnail,
   edit species/caption/title (see `tool/src/tui/`)
-- `photosite cover [slug]` — same TUI in "cover" mode (Enter sets cover).
-  `--position "50% 20%"` sets trip.yaml `coverPosition` (CSS object-position
-  style focal point; `none` clears) used by the hero banner + OG card crops
-  (`site/src/lib/coverPosition.js`, shared, dependency-free). Changing the
-  cover drops it (`withCover` in `tool/src/trips.js`).
+- `photosite cover [slug]` — same TUI in "cover" mode, opening on the current
+  cover. Enter sets the cover and opens the **position view**
+  (`tui/PositionView.js`): the cover cropped to the desktop-hero, link-preview
+  and phone-hero shapes (`renderCrop` in `thumb.js`), arrows slide it, Enter
+  saves trip.yaml `coverPosition` (CSS object-position style `x% y%`; read by
+  `site/src/lib/coverPosition.js`, shared + dependency-free) used by the hero
+  banner + OG card crops. `b` there (or bare `cover --position`) opens a
+  drag-to-position browser page (`src/position/`, plain `node:http` like
+  favorites). `--position "50% 20%"` / `none` sets/clears directly. `annotate`
+  has the same view on `p` (positions the current cover; `c` changes cover).
+  Changing the cover drops the position. The TUI thumbnail falls back to the
+  smallest R2 rendition when `.image-cache/` lacks the photo, and stacks under
+  the list on terminals < 90 cols.
 - `photosite preview` — Astro dev server with local-image middleware
 - `photosite upload [slug] [--all]` — push cached derivatives to R2 without
   reprocessing; no slug → uploads the **pending** set (trips processed with

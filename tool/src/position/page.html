@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cover position</title>
+<style>
+  :root {
+    --bg: #0e0e0d; --panel: #1a1a18; --line: #2c2c29; --text: #ecebe6; --dim: #9b9a93; --accent: #58d2c6;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 15px/1.5 system-ui, -apple-system, sans-serif; }
+  main { max-width: 1200px; margin: 0 auto; padding: 24px 16px 48px; }
+  header { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
+  h1 { font: 600 22px/1.2 Georgia, serif; margin: 0; }
+  .sub { color: var(--dim); margin: 0 0 20px; }
+  .bar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+  .readout { font: 13px ui-monospace, monospace; color: var(--dim); min-width: 9ch; }
+  button { font: inherit; border: 1px solid var(--line); background: var(--panel); color: var(--text); border-radius: 8px; padding: 7px 14px; cursor: pointer; }
+  button:hover { border-color: var(--dim); }
+  button.primary { background: var(--accent); border-color: var(--accent); color: #0e0e0d; font-weight: 600; }
+  .status { color: var(--accent); font-size: 13px; min-height: 1.5em; }
+  .frames { display: grid; gap: 18px; }
+  .row { display: grid; grid-template-columns: 1.6fr 1.6fr 1fr; gap: 18px; align-items: start; }
+  @media (max-width: 760px) { .row { grid-template-columns: 1fr; } }
+  figure { margin: 0; }
+  figcaption { color: var(--dim); font-size: 13px; margin-top: 6px; }
+  .frame { position: relative; overflow: hidden; border-radius: 6px; background: var(--panel); cursor: grab; touch-action: none; user-select: none; outline: 1px solid var(--line); }
+  .frame.dragging { cursor: grabbing; }
+  .frame:focus-visible { outline: 2px solid var(--accent); }
+  .frame img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
+  .scrim { position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(to top, rgba(14,14,13,.96) 0%, rgba(14,14,13,.45) 38%, rgba(14,14,13,.12) 62%, transparent 100%); }
+  .scrim.og { background: linear-gradient(180deg, rgba(14,14,13,0) 25%, rgba(14,14,13,.62) 58%, rgba(14,14,13,.94) 100%); }
+  .hint { position: absolute; left: 4%; bottom: 8%; pointer-events: none; font: 600 clamp(12px, 2.4vw, 28px)/1.1 Georgia, serif; color: rgba(236,235,230,.85); }
+  .axis { position: absolute; top: 8px; right: 10px; pointer-events: none; font: 11px ui-monospace, monospace; color: rgba(236,235,230,.7); background: rgba(14,14,13,.5); padding: 2px 6px; border-radius: 4px; }
+  .help { color: var(--dim); font-size: 13px; margin-top: 22px; }
+  kbd { font: 12px ui-monospace, monospace; border: 1px solid var(--line); border-radius: 4px; padding: 0 4px; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1 id="title">Cover position</h1>
+    <div class="bar">
+      <span class="readout" id="readout">50% 50%</span>
+      <button id="reset" type="button">Centre</button>
+      <button id="save" type="button" class="primary">Save</button>
+      <button id="done" type="button">Done</button>
+    </div>
+  </header>
+  <p class="sub" id="sub">Drag the photo in any frame. Every frame is the same setting, shown at the shapes the site crops to.</p>
+  <div class="status" id="status" aria-live="polite"></div>
+  <div class="frames" id="frames"></div>
+  <p class="help">Drag to move the photo. Arrow keys nudge 1% (<kbd>Shift</kbd> for 5%) in the frame you last touched. A frame only moves along the direction it actually crops. <b>Save</b> writes <code>coverPosition</code> to trip.yaml; <b>Centre</b> then Save removes it.</p>
+</main>
+<script>
+// Frames mirror the site: hero is 100vw wide × clamp(340px, 56vw, 620px) tall;
+// the link-preview card is 1200×630. object-position x% y% = the share of the
+// overflow hidden on the left/top — the same rule the OG card crop uses.
+const FRAMES = [
+  { key: 'wide', label: 'Hero — wide desktop (1920 × 620)', w: 1920, h: 620, scrim: 'hero', full: true },
+  { key: 'laptop', label: 'Hero — laptop (1280 × 620)', w: 1280, h: 620, scrim: 'hero' },
+  { key: 'og', label: 'Link preview card (1200 × 630)', w: 1200, h: 630, scrim: 'og' },
+  { key: 'phone', label: 'Hero — phone (390 × 340)', w: 390, h: 340, scrim: 'hero' },
+];
+
+let info = null;
+let pos = { x: 50, y: 50 };
+let saved = null; // last saved position (null = none)
+let active = null;
+const $ = (id) => document.getElementById(id);
+const clamp = (n) => Math.min(100, Math.max(0, n));
+const fmt = (p) => `${Math.round(p.x)}% ${Math.round(p.y)}%`;
+const same = (a, b) => (!a && !b) || (a && b && Math.round(a.x) === Math.round(b.x) && Math.round(a.y) === Math.round(b.y));
+
+function render() {
+  for (const img of document.querySelectorAll('.frame img')) img.style.objectPosition = `${pos.x}% ${pos.y}%`;
+  $('readout').textContent = fmt(pos);
+  const isCentre = Math.round(pos.x) === 50 && Math.round(pos.y) === 50;
+  const target = isCentre ? null : pos;
+  $('status').textContent = same(target, saved) ? (saved ? `Saved: ${fmt(saved)}` : 'No position set (centred)') : 'Unsaved changes';
+}
+
+// Pixels of photo hidden in each direction for this frame at its rendered size.
+function overflow(el) {
+  const fw = el.clientWidth, fh = el.clientHeight;
+  const s = Math.max(fw / info.ratio, fh) / fh; // cover scale vs. frame height
+  const iw = fh * s * info.ratio, ih = fh * s;
+  return { x: iw - fw, y: ih - fh };
+}
+
+function build() {
+  const root = $('frames');
+  root.innerHTML = '';
+  let row = null;
+  for (const f of FRAMES) {
+    const fig = document.createElement('figure');
+    const el = document.createElement('div');
+    el.className = 'frame';
+    el.tabIndex = 0;
+    el.style.aspectRatio = `${f.w} / ${f.h}`;
+    el.innerHTML = `<img src="/img" alt="" draggable="false"><div class="scrim ${f.scrim === 'og' ? 'og' : ''}"></div>
+      <div class="hint">${f.scrim === 'og' ? info.title : ''}</div><span class="axis"></span>`;
+    const cap = document.createElement('figcaption');
+    cap.textContent = f.label;
+    fig.append(el, cap);
+    if (f.full) root.append(fig);
+    else {
+      if (!row) { row = document.createElement('div'); row.className = 'row'; root.append(row); }
+      row.append(fig);
+    }
+    wire(el);
+  }
+  labelAxes();
+}
+
+function labelAxes() {
+  for (const el of document.querySelectorAll('.frame')) {
+    const o = overflow(el);
+    el.querySelector('.axis').textContent = o.y > 1 && o.x > 1 ? '↕↔' : o.y > 1 ? '↕ moves up/down' : o.x > 1 ? '↔ moves left/right' : '';
+  }
+}
+
+function wire(el) {
+  let start = null;
+  el.addEventListener('pointerdown', (e) => {
+    active = el;
+    el.focus();
+    el.setPointerCapture(e.pointerId);
+    el.classList.add('dragging');
+    start = { px: e.clientX, py: e.clientY, x: pos.x, y: pos.y, o: overflow(el) };
+  });
+  el.addEventListener('pointermove', (e) => {
+    if (!start) return;
+    // Dragging the photo down reveals more of its top → smaller y.
+    if (start.o.x > 1) pos.x = clamp(start.x - ((e.clientX - start.px) / start.o.x) * 100);
+    if (start.o.y > 1) pos.y = clamp(start.y - ((e.clientY - start.py) / start.o.y) * 100);
+    render();
+  });
+  const end = () => { start = null; el.classList.remove('dragging'); };
+  el.addEventListener('pointerup', end);
+  el.addEventListener('pointercancel', end);
+  el.addEventListener('focus', () => (active = el));
+}
+
+document.addEventListener('keydown', (e) => {
+  if ((e.metaKey || e.ctrlKey) && e.key === 's') { e.preventDefault(); return save(); }
+  const d = e.shiftKey ? 5 : 1;
+  const o = active ? overflow(active) : { x: 1e9, y: 1e9 };
+  const moves = { ArrowUp: ['y', d], ArrowDown: ['y', -d], ArrowLeft: ['x', d], ArrowRight: ['x', -d] };
+  const m = moves[e.key];
+  if (!m) return;
+  e.preventDefault();
+  if (o[m[0]] <= 1) return;
+  pos[m[0]] = clamp(Math.round(pos[m[0]]) + m[1]);
+  render();
+});
+
+async function save() {
+  const isCentre = Math.round(pos.x) === 50 && Math.round(pos.y) === 50;
+  const res = await fetch('/api/save', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(isCentre ? { clear: true } : { x: Math.round(pos.x), y: Math.round(pos.y) }),
+  });
+  const s = await res.json();
+  if (!res.ok) { $('status').textContent = s.error || 'Save failed'; return; }
+  saved = s.position;
+  render();
+}
+
+$('save').onclick = save;
+$('reset').onclick = () => { pos = { x: 50, y: 50 }; render(); };
+$('done').onclick = async () => {
+  const isCentre = Math.round(pos.x) === 50 && Math.round(pos.y) === 50;
+  if (!same(isCentre ? null : pos, saved) && confirmUnsaved()) await save();
+  await fetch('/api/done', { method: 'POST' }).catch(() => {});
+  document.body.innerHTML = '<main><h1>Done</h1><p class="sub">You can close this tab.</p></main>';
+};
+// No browser dialogs: unsaved changes on Done are saved (Done = save & close).
+function confirmUnsaved() { return true; }
+window.addEventListener('resize', labelAxes);
+
+(async () => {
+  info = await (await fetch('/api/state')).json();
+  saved = info.position;
+  pos = saved ? { ...saved } : { x: 50, y: 50 };
+  $('title').textContent = `${info.title} — cover position`;
+  $('sub').textContent = `${info.file}. Drag the photo in any frame; they all share one setting, shown at the shapes the site crops to.`;
+  build();
+  render();
+})();
+</script>
+</body>
+</html>
