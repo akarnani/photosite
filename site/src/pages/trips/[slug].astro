@@ -17,13 +17,11 @@ const eyebrow = [trip.location?.name, trip.dates].filter(Boolean).join(' · ');
 const card = tripCard(trip, coverPhoto(trip), siteConfig());
 const genre = genreOf(trip);
 
-// Back link. Statically it points at the trip's genre page when the site has
-// more than one genre (that's where the nav would have taken you), else home.
-// A tiny script then retargets it to wherever the visitor actually came from —
-// home or any genre page — when the referrer is on this site.
+// Back link. Statically it points home; a tiny script retargets it to the
+// genre page the visitor actually came from, when the referrer is one.
 const inUse = genresInUse();
 const backTargets = { '/': 'All trips', ...Object.fromEntries(inUse.map((g) => [`/${g.id}/`, g.label])) };
-const backHref = inUse.length > 1 ? `/${genre.id}/` : '/';
+const backHref = '/';
 ---
 
 <Base title={trip.title} description={tripDescription(trip)} genre={genre.id} image={{ path: card.path, alt: `${trip.title} — ${genre.eyebrow.toLowerCase()}` }}>
