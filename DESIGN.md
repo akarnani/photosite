@@ -422,9 +422,30 @@ falls back to EXIF.
   summary, photo count) beside a small inset per-trip map (fit to the trip's
   points, no clustering, no caption) — stacks to header-then-map below ~860px;
   the gallery follows immediately, above the fold.
+- `/og/trips/[slug].jpg` and `/og/home.jpg`: prerendered **link-preview cards**
+  (1200×630 JPEG) — see "Link previews" below.
+
+### Link previews
+`site` is set in `astro.config.mjs` (`https://photos.karnani.io`) so `Base.astro`
+can emit absolute `og:*` / `twitter:*` tags and a canonical link. Pages pass an
+`image` prop (`{ path, alt }`); trip pages fall back to a generated description
+("N underwater photographs — location, dates") when `summary` is empty.
+
+Cards are rendered at **build time** by `src/lib/ogCard.js`: the cover photo is
+cropped to 1200×630 (sharp, attention crop), and a scrim plus eyebrow / title /
+footer laid out by **satori** (no JSX — plain element objects) is composited on
+top. Fonts come from `@fontsource/source-serif-4` and `@fontsource/jetbrains-mono`
+(`.woff`; satori can't read woff2) so text never depends on system fonts. The
+cover is read from `.image-cache/` if present, else fetched from R2 over public
+HTTPS — still zero credentials. A failed fetch logs `!` and renders on a plain
+gradient instead of failing the build. Card URLs carry `?v=<hash>` of everything
+drawn (plus `DESIGN_VERSION`) because apps cache preview images by URL; bump
+`DESIGN_VERSION` after changing the card design. Every trip gets a card
+automatically on each build — there is nothing to backfill or upload.
 
 ### Components
-- `Base.astro`: HTML head (viewport, title, description), loads MapLibre GL
+- `Base.astro`: HTML head (viewport, title, description, canonical, Open Graph /
+  Twitter card tags), loads MapLibre GL
   CSS/JS **once** from CDN in `<head>` (see §13.7), header (brand link only —
   no nav, since it pointed at the same place), footer, `<slot />`.
 - `PhotoMap.astro`: props `points`, `id`, `cluster`, `link`, `height`,
@@ -551,6 +572,8 @@ photos at 5 files each).
 8. **publicBaseUrl:** strip trailing slash before joining URLs.
 9. **Dev image middleware** is dev-only; the production `dist/` must reference R2
    directly and must not include `.image-cache/`.
+10. **satori** defaults to `box-sizing: content-box` — a padded full-size root
+    overflows the canvas and clips content; set `boxSizing: 'border-box'`.
 
 ---
 

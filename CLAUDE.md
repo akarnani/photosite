@@ -55,6 +55,13 @@ deps.
   (client-side, domain-restricted, read from `site/.env` — not a repo secret).
   `cluster` prop → GeoJSON clustering for the home map; default → HTML `.map-pin`
   markers fit to the trip. No key → the map shows a notice.
+- Link previews: `Base.astro` emits OG/Twitter tags (needs `site` in
+  `astro.config.mjs`). Branded 1200×630 cards are prerendered by
+  `src/lib/ogCard.js` (satori + sharp, fontsource `.woff` fonts) to
+  `/og/trips/<slug>.jpg` and `/og/home.jpg`, from the cover via `.image-cache/`
+  or R2 HTTPS. `?v=` hash busts app caches; bump `DESIGN_VERSION` on redesign.
+  satori needs `boxSizing: 'border-box'` on padded roots. `sharp`/`satori` in
+  `site/` are the site's own deps (Node ≥20.9, `site/.nvmrc`).
 - Strip trailing slash from `publicBaseUrl` before joining URLs.
 - TUI (`annotate`/`cover`): **Ink + React via `htm`** (tagged templates — NO JSX
   build step; keep it that way). Runs on the alternate screen (`runTui`).

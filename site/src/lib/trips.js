@@ -44,6 +44,8 @@ function mergePhoto(photo, ann, slug, index) {
     title: a.title ?? null,
     caption: a.caption ?? photo.caption ?? null,
     species,
+    // Always the absolute R2 URL, even in dev (the og-card renderer needs it).
+    remoteFallback: photo.fallback,
   };
   if (DEV) {
     out.fallback = toLocal(out.fallback, slug);
@@ -132,6 +134,13 @@ export function allPoints() {
 // Cover photo record for a trip (named cover, else newest).
 export function coverPhoto(trip) {
   return trip.photos.find((p) => p.file === trip.cover) || trip.photos[0] || null;
+}
+
+// Human description for link previews: the trip summary, else a generated line.
+export function tripDescription(trip) {
+  if (trip.summary) return trip.summary;
+  const where = [trip.location?.name, trip.dates].filter(Boolean).join(', ');
+  return `${trip.photos.length} underwater photographs${where ? ` — ${where}` : ''}.`;
 }
 
 // Site-wide config (title) read from the repo's photosite.config.toml. Falls

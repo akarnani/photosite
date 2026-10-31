@@ -4,12 +4,16 @@
 // (DESIGN.md §13.7).
 import '../styles/global.css';
 import { siteConfig } from '../lib/trips.js';
+import { OG_WIDTH, OG_HEIGHT } from '../lib/ogCard.js';
 
-const { title, description } = Astro.props;
+// `image` is the link-preview card: { path, alt } from lib/ogCard.js.
+const { title, description, image } = Astro.props;
 const site = siteConfig();
 const fullTitle = title ? `${title} · ${site.title}` : site.title;
 const desc = description || 'An underwater photography portfolio — trips, a map, and the species along the way.';
 const year = new Date().getFullYear();
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const ogImage = image && new URL(image.path, Astro.site).href;
 ---
 
 <!doctype html>
@@ -19,6 +23,28 @@ const year = new Date().getFullYear();
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{fullTitle}</title>
     <meta name="description" content={desc} />
+    <link rel="canonical" href={canonical} />
+
+    <!-- Link previews (Slack, Messages, WhatsApp, …): Open Graph + Twitter card. -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={site.title} />
+    <meta property="og:title" content={title || site.title} />
+    <meta property="og:description" content={desc} />
+    <meta property="og:url" content={canonical} />
+    {ogImage && (
+      <>
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:width" content={String(OG_WIDTH)} />
+        <meta property="og:image:height" content={String(OG_HEIGHT)} />
+        <meta property="og:image:alt" content={image.alt} />
+      </>
+    )}
+    <meta name="twitter:card" content={ogImage ? 'summary_large_image' : 'summary'} />
+    <meta name="twitter:title" content={title || site.title} />
+    <meta name="twitter:description" content={desc} />
+    {ogImage && <meta name="twitter:image" content={ogImage} />}
+    {ogImage && <meta name="twitter:image:alt" content={image.alt} />}
 
     <link rel="icon" href="/favicon.ico" sizes="32x32" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />

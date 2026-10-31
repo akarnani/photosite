@@ -2,7 +2,8 @@
 import Base from '../../layouts/Base.astro';
 import PhotoMap from '../../components/PhotoMap.astro';
 import Gallery from '../../components/Gallery.astro';
-import { getTrips, getTrip, pointsForTrip } from '../../lib/trips.js';
+import { getTrips, getTrip, pointsForTrip, coverPhoto, tripDescription, siteConfig } from '../../lib/trips.js';
+import { tripCard } from '../../lib/ogCard.js';
 
 export function getStaticPaths() {
   return getTrips().map((t) => ({ params: { slug: t.slug } }));
@@ -12,9 +13,10 @@ const { slug } = Astro.params;
 const trip = getTrip(slug);
 const points = pointsForTrip(trip);
 const eyebrow = [trip.location?.name, trip.dates].filter(Boolean).join(' · ');
+const card = tripCard(trip, coverPhoto(trip), siteConfig());
 ---
 
-<Base title={trip.title} description={trip.summary}>
+<Base title={trip.title} description={tripDescription(trip)} image={{ path: card.path, alt: `${trip.title} — underwater photography` }}>
   <section class="stack">
     <div class="trip-head-row">
       <header class="trip-header">
