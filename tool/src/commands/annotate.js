@@ -3,7 +3,7 @@
 import path from 'node:path';
 import * as ui from '../ui.js';
 import { requireRepoRoot, paths } from '../paths.js';
-import { readTrip, writeTrip, collectSpecies } from '../trips.js';
+import { readTrip, writeTrip, collectSpecies, withCover } from '../trips.js';
 import { fileStem } from '../pipeline.js';
 import { resolveSlug } from '../select.js';
 import { commitAndPush } from '../publish.js';
@@ -26,7 +26,7 @@ export async function annotate(slugArg, opts = {}) {
   const persist = (ann, cover) => {
     const merged = {};
     for (const p of photos) merged[p.file] = ann[p.file] ?? { title: null, species: [], caption: null };
-    writeTrip(P, slug, { trip: { ...trip, cover }, annotations: merged });
+    writeTrip(P, slug, { trip: withCover(trip, cover), annotations: merged });
   };
 
   const result = { publish: false };

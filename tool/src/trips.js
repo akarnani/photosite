@@ -63,6 +63,14 @@ export function readTrip(paths, slug) {
 }
 
 // Write whichever of { trip, photos, annotations } are provided.
+// Set a trip's cover. coverPosition is a focal point for one particular photo,
+// so it is dropped when the cover changes to a different file.
+export function withCover(trip, file) {
+  if (file === trip.cover) return { ...trip };
+  const { coverPosition, ...rest } = trip;
+  return { ...rest, cover: file };
+}
+
 export function writeTrip(paths, slug, { trip, photos, annotations }) {
   const dir = paths.tripDir(slug);
   fs.mkdirSync(dir, { recursive: true });

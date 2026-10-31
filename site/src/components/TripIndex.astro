@@ -5,6 +5,7 @@
 import PhotoMap from './PhotoMap.astro';
 import { allPoints, coverPhoto } from '../lib/trips.js';
 import { GENRES } from '../lib/genres.js';
+import { objectPosition } from '../lib/coverPosition.js';
 
 // trips: the trips to show (newest first). eyebrow/heading/tagline: hero copy.
 // genreTags: label each card with its genre (on mixed pages).
@@ -13,6 +14,8 @@ const points = allPoints(trips);
 
 const heroTrip = trips[0] || null;
 const heroCover = heroTrip ? coverPhoto(heroTrip) : null;
+// trip.yaml coverPosition → where the banner crop sits (also the LQIP backdrop).
+const heroPos = objectPosition(heroCover?.position);
 const srcsetStr = (p) => p.srcset.map((s) => `${s.url} ${s.w}w`).join(', ');
 ---
 
@@ -26,7 +29,7 @@ const srcsetStr = (p) => p.srcset.map((s) => `${s.url} ${s.w}w`).join(', ');
             alt={heroTrip.title}
             loading="eager"
             fetchpriority="high"
-            style={`background-image:url(${heroCover.lqip})`}
+            style={`background-image:url(${heroCover.lqip})${heroPos ? `;object-position:${heroPos};background-position:${heroPos}` : ''}`}
           />
         </picture>
         <div class="hero-scrim" />

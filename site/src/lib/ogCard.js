@@ -121,9 +121,29 @@ function overlay({ eyebrow, title, footerLeft, footerRight, accent = C.accent })
   );
 }
 
-async function background(photo) {
+// Fill OG_WIDTH×OG_HEIGHT, keeping the focal point `pos` ({ x, y } in %, like
+// CSS object-position) in frame.
+async function focalCrop(photo, pos) {
+  const { data, info } = await sharp(photo, { failOn: 'none' }).rotate().toBuffer({ resolveWithObject: true });
+  const scale = Math.max(OG_WIDTH / info.width, OG_HEIGHT / info.height);
+  const w = Math.max(OG_WIDTH, Math.round(info.width * scale));
+  const hgt = Math.max(OG_HEIGHT, Math.round(info.height * scale));
+  return sharp(data)
+    .resize(w, hgt)
+    .extract({
+      left: Math.round(((w - OG_WIDTH) * pos.x) / 100),
+      top: Math.round(((hgt - OG_HEIGHT) * pos.y) / 100),
+      width: OG_WIDTH,
+      height: OG_HEIGHT,
+    })
+    .toBuffer();
+}
+
+async function background(photo, position) {
   if (photo) {
     try {
+      // A trip-set coverPosition wins; otherwise let sharp find the subject.
+      if (position) return await focalCrop(photo, position);
       return await sharp(photo, { failOn: 'none' })
         .rotate()
         .resize(OG_WIDTH, OG_HEIGHT, { fit: 'cover', position: sharp.strategy.attention })
@@ -145,18 +165,19 @@ async function background(photo) {
  * @param {object} o
  * @param {string} o.slug       trip slug (for the local-cache lookup)
  * @param {string} [o.photoUrl] absolute R2 URL of the cover's JPEG fallback
+ * @param {{x:number,y:number}} [o.position] focal point (trip.yaml coverPosition)
  * @param {string} [o.eyebrow]  small uppercase line above the title
  * @param {string} o.title
  * @param {string} o.footerLeft
  * @param {string} o.footerRight
  * @param {string} [o.accent]   '#rrggbb' for the eyebrow + rule (genre accent)
  */
-export async function renderCard({ slug, photoUrl, ...text }) {
+export async function renderCard({ slug, photoUrl, position, ...text }) {
   const [photo, svg] = await Promise.all([
     loadPhoto(slug, photoUrl),
     satori(overlay(text), { width: OG_WIDTH, height: OG_HEIGHT, fonts: loadFonts() }),
   ]);
-  return sharp(await background(photo))
+  return sharp(await background(photo, position))
     .composite([{ input: Buffer.from(svg) }])
     .jpeg({ quality: 82, mozjpeg: true })
     .toBuffer();
@@ -180,6 +201,7 @@ export function tripCard(trip, cover, site) {
   const card = {
     slug: trip.slug,
     photoUrl: cover?.remoteFallback,
+    ...(cover?.position && { position: cover.position }),
     eyebrow: [trip.location?.name, trip.dates].filter(Boolean).join(' · '),
     title: trip.title || trip.slug,
     footerLeft: site.title,
@@ -198,6 +220,7 @@ export function homeCard(trips, cover, site) {
   const card = {
     slug: trips[0]?.slug,
     photoUrl: cover?.remoteFallback,
+    ...(cover?.position && { position: cover.position }),
     eyebrow: only ? only.eyebrow : 'Photography',
     title: site.title,
     footerLeft: site.author && site.author !== site.title ? site.author : '',
@@ -213,6 +236,7 @@ export function genreCard(g, cover, site) {
   const card = {
     slug: g.trips[0]?.slug,
     photoUrl: cover?.remoteFallback,
+    ...(cover?.position && { position: cover.position }),
     eyebrow: g.eyebrow,
     title: g.label,
     footerLeft: site.title,

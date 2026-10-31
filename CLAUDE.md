@@ -89,7 +89,11 @@ deps.
 - `photosite update-trip [slug] --from <folder> [--prune] [--no-upload]`
 - `photosite annotate [slug]` — full-screen TUI: photo list + live thumbnail,
   edit species/caption/title (see `tool/src/tui/`)
-- `photosite cover [slug]` — same TUI in "cover" mode (Enter sets cover)
+- `photosite cover [slug]` — same TUI in "cover" mode (Enter sets cover).
+  `--position "50% 20%"` sets trip.yaml `coverPosition` (CSS object-position
+  style focal point; `none` clears) used by the hero banner + OG card crops
+  (`site/src/lib/coverPosition.js`, shared, dependency-free). Changing the
+  cover drops it (`withCover` in `tool/src/trips.js`).
 - `photosite preview` — Astro dev server with local-image middleware
 - `photosite upload [slug] [--all]` — push cached derivatives to R2 without
   reprocessing; no slug → uploads the **pending** set (trips processed with

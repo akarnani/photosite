@@ -6,7 +6,7 @@ import { loadConfig } from '../config.js';
 import * as rclone from '../rclone.js';
 import * as exif from '../exif.js';
 import { keyToStem, fileStem } from '../pipeline.js';
-import { readTrip, writeTrip, stubAnnotations } from '../trips.js';
+import { readTrip, writeTrip, stubAnnotations, withCover } from '../trips.js';
 import { resolveSlug } from '../select.js';
 import { ingestFolder, validateFolder } from '../ingest.js';
 import { maybePublish } from '../publish.js';
@@ -68,8 +68,8 @@ export async function updateTrip(slugArg, opts = {}) {
   }
 
   // Rewrite content; refresh cover if it vanished; re-stub annotations.
-  const { trip, annotations } = readTrip(P, slug);
-  if (!records.some((r) => r.file === trip.cover)) trip.cover = records[0]?.file ?? null;
+  let { trip, annotations } = readTrip(P, slug);
+  if (!records.some((r) => r.file === trip.cover)) trip = withCover(trip, records[0]?.file ?? null);
   writeTrip(P, slug, { trip, photos: records, annotations: stubAnnotations(records, annotations) });
   ui.ok(`updated ${slug} (${records.length} photos)`);
 

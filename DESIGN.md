@@ -201,7 +201,12 @@ Interactive, guided annotation — the primary way species/captions/titles get s
 3. Write `annotations.yaml`, preserving untouched entries.
 4. On finish, offer to preview and/or commit & push.
 
-### `photosite cover [slug]`
+### `photosite cover [slug] [--position <pos>]`
+`--position "50% 20%"` (or `top`, `center bottom`, …; `none` clears) skips the
+picker and writes `coverPosition` for the current cover: where the hero banner
+and link-preview cards crop it (`site/src/lib/coverPosition.js`, shared with the
+site). Changing the cover (here, in `annotate`, or via `update-trip`) drops it.
+
 Standalone cover picker: resolve trip, present a select list of its photos
 (filename + caption hint), write the chosen filename to `trip.yaml`.
 
@@ -389,6 +394,9 @@ location: { name: "Raja Ampat, Indonesia", lat: -0.234, lon: 130.519 }
 dates: "2025-03-05 to 2025-03-07"
 summary: "Short intro paragraph."
 cover: manta-cleaning.jpg          # filename of the cover photo (defaults to newest)
+coverPosition: 50% 20%             # optional crop focal point, CSS object-position style
+                                   # (x y; lower y = show more of the top). Absent → centred
+                                   # hero, attention-cropped OG card. Dropped when cover changes.
 ```
 
 ### `photos.json` (tool-generated; do not hand-edit)
@@ -488,7 +496,8 @@ can emit absolute `og:*` / `twitter:*` tags and a canonical link. Pages pass an
 ("N underwater photographs — location, dates") when `summary` is empty.
 
 Cards are rendered at **build time** by `src/lib/ogCard.js`: the cover photo is
-cropped to 1200×630 (sharp, attention crop), and a scrim plus eyebrow / title /
+cropped to 1200×630 (sharp, attention crop — or the trip's `coverPosition`
+focal point when set), and a scrim plus eyebrow / title /
 footer laid out by **satori** (no JSX — plain element objects) is composited on
 top. Fonts come from `@fontsource/source-serif-4` and `@fontsource/jetbrains-mono`
 (`.woff`; satori can't read woff2) so text never depends on system fonts. The
