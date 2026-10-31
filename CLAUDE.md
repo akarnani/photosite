@@ -108,7 +108,11 @@ deps.
   on trip pages): client-side, localStorage progress, `?seed&n&lives&trip` URL
   is shareable, `&picks=` (5-char `photoCode`s) shows a friend's results and
   marks overlap with yours. Ids are `<slug>/<file>` in both, so a seed pairs
-  identically in the CLI and on the site.
+  identically in the CLI and on the site. The URL also carries the whole game
+  (`&h=<count>.<base64url>`, 2 bits per pick via `encodeHistory`/
+  `decodeHistory`, `&v=` photo-set fingerprint), kept current with
+  `replaceState`: it's a cross-device resume link, and `&ask=1` shares one
+  exact matchup ("which would you pick?").
 
 Build the site: `cd site && npm run build`. Convenience wrappers in `justfile`.
 

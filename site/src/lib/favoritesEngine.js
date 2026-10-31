@@ -98,8 +98,8 @@ export function derive(session) {
   const stats = new Map(session.ids.map((id) => [id, { wins: 0, losses: 0, matches: 0, opp: new Set() }]));
   const F = finalistTarget(session);
   const isAlive = (id) => stats.get(id).losses < session.lives;
-  let alive = session.ids.filter(isAlive);
-  let finalists = alive.length <= F ? alive : null;
+  let aliveCount = session.ids.length; // everyone starts with ≥1 life
+  let finalists = aliveCount <= F ? [...session.ids] : null;
 
   for (const { a, b, result } of session.history) {
     const sa = stats.get(a);
@@ -110,12 +110,14 @@ export function derive(session) {
     sa.opp.add(b);
     sb.opp.add(a);
     if (finalists) continue; // final-phase matchup: scored below, no lives lost
+    const before = isAlive(a) + isAlive(b);
     if (result === 'a') (sa.wins++, sb.losses++);
     else if (result === 'b') (sb.wins++, sa.losses++);
     else if (result === 'neither') (sa.losses++, sb.losses++);
-    alive = session.ids.filter(isAlive);
-    if (alive.length <= F) finalists = alive;
+    aliveCount -= before - isAlive(a) - isAlive(b);
+    if (aliveCount <= F) finalists = session.ids.filter(isAlive);
   }
+  const alive = finalists || session.ids.filter(isAlive);
   const d = { stats, alive, finalists };
   if (!finalists) return d;
 
@@ -244,6 +246,48 @@ export function progress(session, d = derive(session)) {
     remaining,
   };
 }
+
+// ---- Compact history for URLs ---------------------------------------------
+// The pairs are a pure function of (seed, history), so a game is fully
+// described by its sequence of results: 2 bits each, three per base64url
+// character, as "<count>.<chars>". Anyone opening the link replays to exactly
+// the same position — same next matchup, same standings.
+const B64 = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_';
+const RESULT_LIST = ['a', 'b', 'both', 'neither'];
+
+export function encodeHistory(history) {
+  let chars = '';
+  for (let i = 0; i < history.length; i += 3) {
+    let v = 0;
+    for (let j = 0; j < 3; j++) v = v * 4 + Math.max(0, RESULT_LIST.indexOf(history[i + j]?.result));
+    chars += B64[v];
+  }
+  return `${history.length}.${chars}`;
+}
+
+// Replay encoded results against `session`'s own pairing → a history. Stops
+// early at a result that no longer applies (e.g. the photo set has changed).
+export function decodeHistory(session, code) {
+  const m = /^(\d+)\.([A-Za-z0-9_-]*)$/.exec(code || '');
+  if (!m) return [];
+  const n = Math.min(Number(m[1]), m[2].length * 3);
+  let s = { ...session, history: [] };
+  for (let i = 0; i < n; i++) {
+    const v = B64.indexOf(m[2][Math.floor(i / 3)]);
+    const result = RESULT_LIST[(v >> (2 * (2 - (i % 3)))) & 3];
+    const d = derive(s);
+    const pair = nextPair(s, d);
+    if (!pair) break;
+    const decision = { a: pair[0], b: pair[1], result };
+    if (checkDecision(s, decision, d)) break;
+    s = decide(s, decision);
+  }
+  return s.history;
+}
+
+// Short fingerprint of a photo set, so a link can tell when the photos (and
+// therefore the matchups) have changed since it was made.
+export const scopeCode = (ids) => photoCode([...ids].sort().join('|'));
 
 // Rough total picks for a fresh session (for "how long will this take?").
 export function estimatePicks(total, count, lives) {
