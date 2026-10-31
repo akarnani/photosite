@@ -1,0 +1,512 @@
+---
+// Pick-your-favorites game: two photos at a time, you choose the one you like
+// more, and it narrows down to your top N (the same engine as the CLI's
+// `photosite favorites`, src/lib/favoritesEngine.js). Runs entirely in the
+// browser; progress lives in localStorage. A seed fixes the pairings, so two
+// people with the same link see the same first round and can compare picks.
+import Base from '../../layouts/Base.astro';
+import { getTrips, coverPhoto, siteConfig } from '../../lib/trips.js';
+import { homeCard } from '../../lib/ogCard.js';
+
+const trips = getTrips();
+const site = siteConfig();
+const card = homeCard(trips, trips[0] ? coverPhoto(trips[0]) : null, site);
+const total = trips.reduce((n, t) => n + t.photos.length, 0);
+---
+
+<Base
+  title="Pick your favorites"
+  description="Two photos at a time — pick the one you like more, and see which photographs end up as your favorites."
+  image={{ path: card.path, alt: `${site.title} — underwater photography` }}
+>
+  <div class="fav" id="fav">
+    <!-- Setup -->
+    <section class="fav-setup" data-view="setup">
+      <p class="eyebrow">A little game</p>
+      <h1>Pick your favorites</h1>
+      <p class="fav-lede">
+        Two photos at a time — pick the one you like more. A photo is only out once it has lost enough
+        times, so one tough matchup won't sink it. At the end you get your favorites, in the order they
+        were taken.
+      </p>
+
+      <p class="fav-banner" data-shared hidden>
+        Someone sent you this seed — you'll start with exactly the same matchups they did. Compare
+        favorites at the end.
+      </p>
+
+      <form class="fav-form" id="fav-form">
+        <label class="fav-field">
+          <span>Photos from</span>
+          <select name="trip">
+            <option value="">All trips ({total} photos)</option>
+            {trips.map((t) => <option value={t.slug}>{t.title} ({t.photos.length})</option>)}
+          </select>
+        </label>
+
+        <fieldset class="fav-field">
+          <legend>How many favorites</legend>
+          <div class="fav-chips">
+            {[5, 10, 20].map((n) => (
+              <label><input type="radio" name="count" value={n} checked={n === 10} /><span>{n}</span></label>
+            ))}
+          </div>
+        </fieldset>
+
+        <fieldset class="fav-field">
+          <legend>Pace</legend>
+          <div class="fav-chips">
+            <label><input type="radio" name="lives" value="1" checked /><span>Quick — out after 1 loss</span></label>
+            <label><input type="radio" name="lives" value="2" /><span>Careful — out after 2</span></label>
+          </div>
+        </fieldset>
+
+        <label class="fav-field">
+          <span>Seed <small>— share it and a friend gets the same matchups</small></span>
+          <span class="fav-seed">
+            <input name="seed" autocomplete="off" spellcheck="false" maxlength="40" required />
+            <button type="button" class="fav-ghost" data-reroll title="New random seed">↻</button>
+          </span>
+        </label>
+
+        <p class="fav-estimate" data-estimate></p>
+        <div class="fav-actions">
+          <button type="submit" class="fav-btn">Start</button>
+          <button type="button" class="fav-ghost" data-resume hidden></button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Duel -->
+    <section class="fav-duel" data-view="duel" hidden>
+      <div class="fav-progress">
+        <div class="fav-bar"><div data-bar></div></div>
+        <span data-status></span>
+      </div>
+      <div class="fav-pair">
+        {['a', 'b'].map((k, i) => (
+          <figure class="fav-side" data-side={k}>
+            <button type="button" class="fav-pick" data-result={k} aria-label={i ? 'Pick right photo' : 'Pick left photo'}>
+              <img alt="" decoding="async" sizes="(orientation: portrait) 100vw, 50vw" />
+            </button>
+            <figcaption>
+              <span data-meta />
+              <button type="button" class="fav-ghost fav-zoom" data-zoom={k} title={`Full screen (${i + 1})`}>⤢</button>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+      <div class="fav-controls">
+        <button type="button" class="fav-ghost" data-result="a"><kbd>←</kbd>Left</button>
+        <button type="button" class="fav-ghost" data-result="both" data-both><kbd>↑</kbd>Both great</button>
+        <button type="button" class="fav-ghost" data-result="neither" data-neither><kbd>↓</kbd>Neither</button>
+        <button type="button" class="fav-ghost" data-result="b"><kbd>→</kbd>Right</button>
+        <button type="button" class="fav-ghost" data-undo><kbd>Z</kbd>Undo</button>
+      </div>
+      <p class="fav-foot">
+        Progress saves as you go. Seed <code data-seed></code> ·
+        <a href="#" data-restart>start over</a>
+      </p>
+    </section>
+
+    <!-- Results (yours, or a friend's from a shared link) -->
+    <section class="fav-results" data-view="results" hidden>
+      <p class="eyebrow" data-res-eyebrow></p>
+      <h1 data-res-title></h1>
+      <p class="fav-lede" data-res-lede></p>
+      <div class="fav-actions" data-res-actions></div>
+      <div class="fav-grid" data-grid></div>
+    </section>
+
+    <div class="fav-full" data-full hidden><img alt="" /></div>
+    <div class="fav-toast" data-toast hidden></div>
+  </div>
+</Base>
+
+<script>
+  import * as E from '../../lib/favoritesEngine.js';
+
+  const root = document.getElementById('fav');
+  const $ = (sel) => root.querySelector(sel);
+  const $$ = (sel) => [...root.querySelectorAll(sel)];
+  const form = document.getElementById('fav-form');
+
+  // localStorage can throw (private mode, blocked storage) — the game still
+  // works, it just won't remember progress.
+  const store = {
+    get(k) {
+      try {
+        return JSON.parse(localStorage.getItem(k));
+      } catch {
+        return null;
+      }
+    },
+    set(k, v) {
+      try {
+        localStorage.setItem(k, JSON.stringify(v));
+      } catch {
+        /* not persisted */
+      }
+    },
+    del(k) {
+      try {
+        localStorage.removeItem(k);
+      } catch {
+        /* ignore */
+      }
+    },
+  };
+  const keyOf = (c) => `favorites:v1:${c.trip || 'all'}:${c.count}:${c.lives}:${c.seed}`;
+  const LAST = 'favorites:v1:last';
+
+  let catalog = null; // { trips, photos, byId: Map, byCode: Map }
+  let cfg = null;
+  let session = null;
+  let busy = false;
+
+  const loadCatalog = async () => {
+    if (catalog) return catalog;
+    const data = await (await fetch('/favorites/photos.json')).json();
+    data.byId = new Map(data.photos.map((p) => [p.id, p]));
+    data.byCode = new Map(data.photos.map((p) => [E.photoCode(p.id), p.id]));
+    return (catalog = data);
+  };
+  const tripCounts = new Map(
+    [...form.trip.options].map((o) => [o.value, Number((o.textContent.match(/\((\d+)/) || [])[1] || 0)]),
+  );
+  const fmtDate = (d) =>
+    d ? new Date(d).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' }) : '';
+
+  function toast(msg) {
+    const t = $('[data-toast]');
+    t.textContent = msg;
+    t.hidden = false;
+    clearTimeout(toast.timer);
+    toast.timer = setTimeout(() => (t.hidden = true), 2600);
+  }
+
+  function show(view) {
+    $$('[data-view]').forEach((el) => (el.hidden = el.dataset.view !== view));
+    window.scrollTo({ top: 0 });
+  }
+
+  // ---- URL <-> config ------------------------------------------------------
+  const params = new URLSearchParams(location.search);
+
+  function configUrl(c, extra = {}) {
+    const q = new URLSearchParams({ seed: c.seed, n: c.count, lives: c.lives });
+    if (c.trip) q.set('trip', c.trip);
+    for (const [k, v] of Object.entries(extra)) q.set(k, v);
+    return `${location.origin}/favorites/?${q}`;
+  }
+
+  function readForm() {
+    const f = new FormData(form);
+    return {
+      trip: f.get('trip') || '',
+      count: Number(f.get('count')),
+      lives: Number(f.get('lives')),
+      seed: String(f.get('seed') || '').trim(),
+    };
+  }
+
+  function fillForm(c) {
+    if (c.trip !== undefined && tripCounts.has(c.trip)) form.trip.value = c.trip;
+    if (c.count) {
+      const r = form.querySelector(`[name=count][value="${c.count}"]`);
+      if (r) r.checked = true;
+    }
+    if (c.lives) {
+      const r = form.querySelector(`[name=lives][value="${c.lives}"]`);
+      if (r) r.checked = true;
+    }
+    if (c.seed) form.seed.value = c.seed;
+  }
+
+  function updateSetup() {
+    const c = readForm();
+    const total = tripCounts.get(c.trip) || 0;
+    const picks = E.estimatePicks(total, c.count, c.lives);
+    const mins = Math.max(1, Math.round((picks * 2.5) / 60));
+    $('[data-estimate]').textContent =
+      total <= c.count
+        ? `That's all ${total} photos already — pick a bigger set.`
+        : `About ${picks} picks (~${mins} min). You can stop and come back any time.`;
+    const saved = c.seed && store.get(keyOf(c));
+    const resume = $('[data-resume]');
+    const last = store.get(LAST);
+    if (saved?.history?.length) {
+      resume.hidden = false;
+      resume.textContent = `Continue (${saved.history.length} picks in)`;
+      resume.onclick = () => start(c);
+    } else if (last && keyOf(last) !== keyOf(c) && store.get(keyOf(last))?.history?.length) {
+      resume.hidden = false;
+      resume.textContent = `Resume your last game (seed ${last.seed})`;
+      resume.onclick = () => (fillForm(last), start(last));
+    } else resume.hidden = true;
+  }
+
+  // ---- Session -------------------------------------------------------------
+  async function start(c) {
+    const data = await loadCatalog();
+    const ids = data.photos.filter((p) => !c.trip || p.id.startsWith(`${c.trip}/`)).map((p) => p.id);
+    if (ids.length <= c.count) return toast('Pick a bigger set of photos.');
+    cfg = c;
+    session = E.newSession(ids, cfg);
+    const saved = store.get(keyOf(cfg));
+    if (saved?.history) session.history = saved.history.filter((h) => data.byId.has(h.a) && data.byId.has(h.b));
+    store.set(LAST, cfg);
+    history.replaceState(null, '', configUrl(cfg).replace(location.origin, ''));
+    $('[data-seed]').textContent = cfg.seed;
+    render();
+  }
+
+  const save = () => store.set(keyOf(cfg), { history: session.history });
+
+  function render() {
+    const d = E.derive(session);
+    const pair = E.nextPair(session, d);
+    if (!pair) return renderResults(E.winners(session, d), { mine: true });
+    show('duel');
+
+    const p = E.progress(session, d);
+    const final = p.phase === 'final';
+    const cullPct = (100 * (p.total - p.alive)) / Math.max(1, p.total - p.finalists);
+    render.finalMax = final ? Math.max(render.finalMax || 0, p.remaining) : 0;
+    const pct = final ? 80 + 20 * (1 - p.remaining / Math.max(1, render.finalMax)) : 0.8 * Math.min(100, cullPct);
+    $('[data-bar]').style.width = `${pct}%`;
+    $('[data-status]').textContent = final
+      ? `Final round · ${p.alive} finalists for ${session.count} spots · ~${p.remaining} picks left`
+      : `${p.alive} of ${p.total} still in · ~${p.remaining} picks left`;
+    $('[data-both]').innerHTML = final ? '<kbd>↑</kbd>Tie' : '<kbd>↑</kbd>Both great';
+    $('[data-neither]').hidden = final;
+    $('[data-undo]').disabled = !session.history.length;
+
+    pair.forEach((id, i) => {
+      const ph = catalog.byId.get(id);
+      const side = $$('.fav-side')[i];
+      side.classList.remove('is-chosen', 'is-lost');
+      const img = side.querySelector('img');
+      if (img.dataset.id !== id) {
+        img.dataset.id = id;
+        img.removeAttribute('src');
+        img.srcset = ph.srcset;
+        img.src = ph.src;
+        img.style.aspectRatio = String(ph.ratio);
+      }
+      const trip = catalog.trips[ph.trip].title;
+      side.querySelector('[data-meta]').textContent = [trip, fmtDate(ph.date)].filter(Boolean).join(' · ');
+    });
+
+    // Warm the cache for whichever pair comes next.
+    for (const id of E.upcomingPairs(session).flat()) {
+      const ph = catalog.byId.get(id);
+      const im = new Image();
+      im.sizes = matchMedia('(orientation: portrait)').matches ? '100vw' : '50vw';
+      im.srcset = ph.srcset;
+      im.src = ph.src;
+    }
+  }
+
+  function decide(result) {
+    if (!session || busy) return;
+    const d = E.derive(session);
+    const pair = E.nextPair(session, d);
+    if (!pair) return;
+    const decision = { a: pair[0], b: pair[1], result };
+    const err = E.checkDecision(session, decision, d);
+    if (err) return toast(err);
+    busy = true;
+    if (result === 'a' || result === 'b') {
+      const [win, lose] = result === 'a' ? [0, 1] : [1, 0];
+      $$('.fav-side')[win].classList.add('is-chosen');
+      $$('.fav-side')[lose].classList.add('is-lost');
+    }
+    session = E.decide(session, decision);
+    save();
+    setTimeout(() => ((busy = false), render()), result === 'a' || result === 'b' ? 160 : 0);
+  }
+
+  function undo() {
+    if (!session?.history.length || busy) return;
+    session = E.undo(session);
+    save();
+    render();
+  }
+
+  // ---- Results -------------------------------------------------------------
+  const chrono = (ids) =>
+    ids
+      .map((id) => catalog.byId.get(id))
+      .filter(Boolean)
+      .sort((x, y) => (x.date || '9999').localeCompare(y.date || '9999'));
+
+  function button(label, onclick, primary = false) {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = primary ? 'fav-btn' : 'fav-ghost';
+    b.textContent = label;
+    b.onclick = onclick;
+    return b;
+  }
+
+  async function copy(text, done) {
+    try {
+      await navigator.clipboard.writeText(text);
+      toast(done);
+    } catch {
+      prompt('Copy this link:', text);
+    }
+  }
+
+  // ids: the winners. mine: your own finished game; else a friend's shared
+  // picks, compared against yours when you've finished the same seed.
+  function renderResults(ids, { mine }) {
+    show('results');
+    const photos = chrono(ids);
+    let overlap = new Set();
+    let ownDone = false;
+    if (!mine) {
+      const own = store.get(keyOf(cfg));
+      if (own?.history) {
+        const scope = catalog.photos.map((p) => p.id).filter((id) => !cfg.trip || id.startsWith(`${cfg.trip}/`));
+        const s = { ...E.newSession(scope, cfg), history: own.history };
+        ownDone = E.isDone(s);
+        if (ownDone) overlap = new Set(E.winners(s).filter((id) => ids.includes(id)));
+      }
+    }
+
+    $('[data-res-eyebrow]').textContent = `Seed ${cfg.seed}`;
+    $('[data-res-title]').textContent = mine ? `Your ${photos.length} favorites` : `A friend's ${photos.length} favorites`;
+    $('[data-res-lede]').textContent = mine
+      ? 'In the order they were taken. Send a friend the same seed and compare — or share these picks.'
+      : overlap.size
+        ? `You both picked ${overlap.size} of ${photos.length} — marked below.`
+        : 'Play the same seed to see how your taste compares.';
+
+    const actions = $('[data-res-actions]');
+    actions.replaceChildren();
+    if (mine) {
+      const picks = ids.map(E.photoCode).join('.');
+      actions.append(
+        button('Share my picks', () => copy(configUrl(cfg, { picks }), 'Link to your picks copied'), true),
+        button('Challenge a friend', () => copy(configUrl(cfg), 'Link with the same seed copied')),
+        button('Undo last pick', undo),
+        button('New game', () => newGame()),
+      );
+    } else {
+      actions.append(
+        button(
+          ownDone ? 'See your picks' : store.get(keyOf(cfg))?.history?.length ? 'Continue this seed' : 'Play this seed',
+          () => start(cfg),
+          true,
+        ),
+      );
+    }
+
+    const grid = $('[data-grid]');
+    grid.replaceChildren(
+      ...photos.map((ph) => {
+        const trip = catalog.trips[ph.trip];
+        const a = document.createElement('a');
+        a.className = 'fav-card' + (overlap.has(ph.id) ? ' is-match' : '');
+        a.href = `/trips/${trip.slug}/#${ph.anchor}`;
+        const img = document.createElement('img');
+        img.loading = 'lazy';
+        img.decoding = 'async';
+        img.sizes = '(min-width: 900px) 25vw, (min-width: 540px) 50vw, 100vw';
+        img.srcset = ph.srcset;
+        img.src = ph.src;
+        img.alt = ph.title || trip.title;
+        const cap = document.createElement('span');
+        const b = document.createElement('b');
+        b.textContent = trip.title;
+        cap.append(b, ` · ${fmtDate(ph.date)}`);
+        if (ph.title) {
+          const t = document.createElement('em');
+          t.textContent = ph.title;
+          cap.append(t);
+        }
+        a.append(img, cap);
+        return a;
+      }),
+    );
+  }
+
+  function newGame() {
+    session = null;
+    history.replaceState(null, '', '/favorites/');
+    params.delete('picks');
+    form.seed.value = E.randomSeed();
+    $('[data-shared]').hidden = true;
+    show('setup');
+    updateSetup();
+  }
+
+  // ---- Full-screen view ------------------------------------------------------
+  const full = $('[data-full]');
+  function zoom(i) {
+    const img = $$('.fav-side img')[i];
+    const f = full.querySelector('img');
+    f.sizes = '100vw';
+    f.srcset = img.srcset;
+    f.src = img.src;
+    full.hidden = false;
+  }
+  full.onclick = () => (full.hidden = true);
+
+  // ---- Wiring ----------------------------------------------------------------
+  $$('[data-result]').forEach((el) => el.addEventListener('click', () => decide(el.dataset.result)));
+  $$('[data-zoom]').forEach((el) => el.addEventListener('click', () => zoom(el.dataset.zoom === 'a' ? 0 : 1)));
+  $('[data-undo]').onclick = undo;
+  $('[data-reroll]').onclick = () => ((form.seed.value = E.randomSeed()), updateSetup());
+  $('[data-restart]').onclick = (e) => {
+    e.preventDefault();
+    if (!confirm('Throw away this game and start over?')) return;
+    store.del(keyOf(cfg));
+    newGame();
+  };
+  form.addEventListener('input', updateSetup);
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const c = readForm();
+    if (c.seed) start(c);
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.metaKey || e.ctrlKey || e.altKey || $('[data-view=duel]').hidden) return;
+    if (!full.hidden) {
+      if (['Escape', ' ', '1', '2', 'f'].includes(e.key)) (full.hidden = true), e.preventDefault();
+      return;
+    }
+    const map = { ArrowLeft: 'a', ArrowRight: 'b', ArrowUp: 'both', ArrowDown: 'neither' };
+    if (map[e.key]) (decide(map[e.key]), e.preventDefault());
+    else if (e.key === 'z' || e.key === 'Backspace') (undo(), e.preventDefault());
+    else if (e.key === '1') zoom(0);
+    else if (e.key === '2') zoom(1);
+  });
+
+  // Entry: ?picks= shows a friend's results; ?seed= prefills a shared game;
+  // ?trip= (from a trip page) preselects that trip.
+  (async () => {
+    const fromUrl = {
+      trip: params.get('trip') || '',
+      count: Number(params.get('n')) || undefined,
+      lives: Number(params.get('lives')) || undefined,
+      seed: params.get('seed') || '',
+    };
+    fillForm({ ...fromUrl, seed: fromUrl.seed || E.randomSeed() });
+    updateSetup();
+    if (fromUrl.seed && params.get('picks')) {
+      const data = await loadCatalog();
+      cfg = readForm();
+      const ids = params.get('picks').split('.').map((c) => data.byCode.get(c)).filter(Boolean);
+      if (ids.length) return renderResults(ids, { mine: false });
+    }
+    if (fromUrl.seed) {
+      $('[data-shared]').hidden = false;
+      // Already playing this exact game → straight back in.
+      if (store.get(keyOf(readForm()))?.history?.length) start(readForm());
+    }
+  })();
+</script>

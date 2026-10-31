@@ -15,28 +15,49 @@
 //    `count` by score are the favorites.
 //
 // All state is derived by replaying `history`, so undo is a pop and changing
-// `count`/`lives` on resume just re-derives. Pairing uses a PRNG seeded from
-// (seed, history length), so the next pair is deterministic — the server can
-// predict upcoming pairs and the browser can prefetch their images.
+// `count`/`lives` on resume just re-derives. Pairing is a pure function of
+// (seed, history): the same seed gives everyone the same first round, and the
+// next pair can be predicted so images can be prefetched.
+//
+// Shared by the CLI (`photosite favorites`) and the site's /favorites/ page,
+// so it must stay dependency-free and browser-safe.
 
 // Decision results: 'a' / 'b' (that side wins), 'both' (both good — no lives
 // lost; a tie in the final), 'neither' (both lose a life; a tie in the final).
 export const RESULTS = new Set(['a', 'b', 'both', 'neither']);
 
-function mulberry32(seed) {
-  let t = seed >>> 0;
-  return () => {
-    t = (t + 0x6d2b79f5) >>> 0;
-    let r = Math.imul(t ^ (t >>> 15), 1 | t);
-    r = (r + Math.imul(r ^ (r >>> 7), 61 | r)) ^ r;
-    return ((r ^ (r >>> 14)) >>> 0) / 4294967296;
-  };
+// 32-bit FNV-1a string hash, finished with a murmur-style mix.
+function hash(str) {
+  let h = 0x811c9dc5;
+  for (let i = 0; i < str.length; i++) h = Math.imul(h ^ str.charCodeAt(i), 0x01000193);
+  h = Math.imul(h ^ (h >>> 16), 0x85ebca6b);
+  h = Math.imul(h ^ (h >>> 13), 0xc2b2ae35);
+  return (h ^ (h >>> 16)) >>> 0;
 }
 
-const rngFor = (session) => mulberry32((session.seed * 2654435761 + session.history.length) >>> 0);
+// Seeded per-photo tiebreak in [0, 1). Ties are broken by this instead of a
+// per-pick random number, so the whole first round depends only on the seed —
+// two people with the same seed see the same opening matchups whatever they
+// pick, and diverge only as their records differ.
+const tiebreak = (session, id) => hash(`${session.seed}|${id}`) / 4294967296;
 
-export function newSession(ids, { count, lives }) {
-  return { version: 1, ids, count, lives, seed: Math.floor(Math.random() * 2 ** 31), history: [] };
+// Short, stable code for a photo (for share links that survive new photos).
+export const photoCode = (id) => hash(id).toString(36).padStart(7, '0').slice(-5);
+
+const SEED_WORDS = [
+  'manta', 'reef', 'nudi', 'coral', 'turtle', 'kelp', 'squid', 'wrasse', 'goby', 'eel', 'ray', 'shrimp',
+  'blenny', 'lagoon', 'drift', 'current', 'wreck', 'pinnacle', 'anemone', 'clown', 'cuttle', 'octo', 'puffer', 'grouper',
+];
+
+// A friendly random seed like "manta-wreck-42".
+export function randomSeed() {
+  const w = () => SEED_WORDS[Math.floor(Math.random() * SEED_WORDS.length)];
+  return `${w()}-${w()}-${Math.floor(Math.random() * 90 + 10)}`;
+}
+
+// `ids` are sorted so the same photo set gives the same session everywhere.
+export function newSession(ids, { count, lives, seed = randomSeed() }) {
+  return { version: 2, ids: [...ids].sort(), count, lives, seed: String(seed), history: [] };
 }
 
 // How many photos make the final (phase 2).
@@ -129,17 +150,18 @@ export function isDone(session, d = derive(session)) {
 // The next [left, right] pair, or null when the session is finished.
 export function nextPair(session, d = derive(session)) {
   if (isDone(session, d)) return null;
-  const rng = rngFor(session);
-  const pick = (arr) => arr[Math.floor(rng() * arr.length)];
-  const order = (a, b) => (rng() < 0.5 ? [a, b] : [b, a]);
+  const tb = (id) => tiebreak(session, id);
+  // Which side each photo shows on is seeded per pair too.
+  const order = (a, b) => (hash(`${session.seed}|${a}|${b}`) & 1 ? [a, b] : [b, a]);
   const { stats } = d;
 
-  // Lowest score wins: `score(id)` with a random tiebreak.
+  // Lowest score wins: `score(id)` plus the seeded tiebreak (scores are
+  // integers or scaled ≥10 apart where it matters, so ties only break ties).
   const best = (pool, score) => {
     let out = null;
     let low = Infinity;
     for (const id of pool) {
-      const s = score(id) + rng();
+      const s = score(id) + tb(id);
       if (s < low) (out = id), (low = s);
     }
     return out;
@@ -148,7 +170,7 @@ export function nextPair(session, d = derive(session)) {
   if (!d.finalists) {
     const { alive } = d;
     const minMatches = Math.min(...alive.map((id) => stats.get(id).matches));
-    const a = pick(alive.filter((id) => stats.get(id).matches === minMatches));
+    const a = best(alive.filter((id) => stats.get(id).matches === minMatches), () => 0);
     const sa = stats.get(a);
     let pool = alive.filter((id) => id !== a && !sa.opp.has(id));
     if (!pool.length) pool = alive.filter((id) => id !== a); // everyone met; allow a rematch
@@ -221,6 +243,13 @@ export function progress(session, d = derive(session)) {
     decisions: session.history.length,
     remaining,
   };
+}
+
+// Rough total picks for a fresh session (for "how long will this take?").
+export function estimatePicks(total, count, lives) {
+  const F = Math.min(total, Math.max(count * 2, count + 10));
+  if (total <= count) return 0;
+  return Math.ceil((total - F) * lives + (F * (FINAL_BASE + FINAL_EXTRA / 2)) / 2);
 }
 
 // The favorites: the top `count` finalists by score (all of them if the final

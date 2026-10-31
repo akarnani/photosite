@@ -237,8 +237,26 @@ browser page — photos need to be seen large, which a terminal can't do. Keys:
 The session is `{ids, count, lives, seed, history}` in gitignored
 `site/.image-cache/.favorites.json`; all state is derived by replaying history,
 so progress saves after every pick, undo pops, and `--count`/`--lives` can be
-changed on resume. Pairing is seeded by (seed, history length) so it's
-deterministic and the page prefetches the next pair's images. Results are
+changed on resume. Pairing is a pure function of (seed, history): ties break
+on a seeded per-photo hash (no per-pick randomness), so everyone with the same
+seed and photo set gets the same entire first round and diverges only as their
+records differ; it also lets the page prefetch the next pair's images. `--seed`
+sets it (default: random words like `manta-wreck-42`).
+
+The engine is `site/src/lib/favoritesEngine.js` — dependency-free, imported by
+the CLI via relative path and bundled into the public page.
+
+**Public page `/favorites/`.** The same game for visitors, entirely
+client-side: setup (all trips or one, 5/10/20 favorites, Quick = 1 life /
+Careful = 2, seed + estimated picks), then the duel, then results sorted
+chronologically, each linking to the photo on its trip page. The catalog is a
+prerendered `/favorites/photos.json` (ids `<slug>/<file>`, same as the CLI).
+Progress is in localStorage per (trip, n, lives, seed). The URL
+`?seed=&n=&lives=&trip=` is the shareable "challenge" link; adding
+`&picks=<code.code…>` (5-char hash per photo, robust to new photos) shows a
+friend's favorites and marks the ones you both picked if you finished the same
+seed. Entry points are deliberately quiet: a footer link and a "pick your
+favorites" link next to each trip's photo count. Results are
 sorted chronologically with their trip, shown on the page (CSV download),
 printed on exit, and available via `--results` / `--out <file>`.
 

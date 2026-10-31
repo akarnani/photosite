@@ -97,6 +97,7 @@ program
   .option('--count <n>', 'how many favorites to keep (prompts on a new session; default 20)')
   .option('--lives <n>', 'losses before a photo is out (default 2)')
   .option('--trips <slugs>', 'comma-separated trip slugs to include (new session only)')
+  .option('--seed <seed>', 'pairing seed — the same seed gives the same first round (new session only)')
   .option('--reset', 'discard the saved session and start over')
   .option('--results', 'print the current favorites and exit')
   .option('--out <file>', 'also write the finished list as CSV when you exit')
