@@ -832,6 +832,29 @@ a.sa-credit svg {
 .trip-header {
   max-width: 60ch;
 }
+/* Subtle way back to the index the visitor came from (home or a genre page). */
+.trip-back {
+  display: inline-flex;
+  gap: 0.45em;
+  margin-bottom: 1.1rem;
+  font-family: var(--mono);
+  font-size: var(--step-eyebrow);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--text-dim);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+.trip-back:hover {
+  text-decoration: none;
+  color: var(--accent);
+}
+.trip-back span[aria-hidden] {
+  transition: transform 0.15s ease;
+}
+.trip-back:hover span[aria-hidden] {
+  transform: translateX(-3px);
+}
 .trip-header h1 {
   font-size: var(--step-h1);
   margin-bottom: 0.4rem;
