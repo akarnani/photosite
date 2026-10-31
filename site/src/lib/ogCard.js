@@ -200,7 +200,7 @@ export function homeCard(trips, cover, site) {
     photoUrl: cover?.remoteFallback,
     eyebrow: only ? only.eyebrow : 'Photography',
     title: site.title,
-    footerLeft: site.author || '',
+    footerLeft: site.author && site.author !== site.title ? site.author : '',
     footerRight: `${plural(trips.length, 'trip')} · ${plural(photos, 'photograph')}`,
     accent: only ? only.accent : C.accent,
   };

@@ -14,7 +14,7 @@ const single = genres.length === 1 ? genres[0] : null;
 const eyebrow = single ? single.eyebrow : 'Photography';
 const tagline = single
   ? single.tagline
-  : `${listOf(genres.map((g, i) => (i ? g.label.toLowerCase() : g.label)))}, by trip — where each frame was taken, and what was in it.`;
+  : `${listOf(genres.map((g, i) => (i ? g.label.toLowerCase() : g.label)))} — photographed trip by trip, and mapped to where each frame was taken.`;
 
 const card = homeCard(trips, trips[0] ? coverPhoto(trips[0]) : null, site);
 ---

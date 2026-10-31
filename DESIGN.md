@@ -5,9 +5,10 @@ a quiet, images-first gallery; the CLI is the only way photos get in. This
 document is the source of truth for intent and contracts and is written to be
 implemented from scratch.
 
-The subject is **underwater / dive photography** ("Below the Surface"). The theme
-is leaned into in default copy and palette, but all visual tokens live at the top
-of `global.css` and are meant to be edited.
+The subject started as **underwater / dive photography** and now spans genres
+(underwater, wildlife, air shows — see §10). The site name (`[site].title`,
+"Depth of Field") is genre-neutral; copy and accent follow each trip's genre, and all
+visual tokens live at the top of `global.css` and are meant to be edited.
 
 ---
 
@@ -361,7 +362,7 @@ arrays.
 ### `photosite.config.toml`
 ```toml
 [site]
-title = "Below the Surface"
+title = "Depth of Field"
 author = "Andrew Karnani"                    # footer copyright / byline
 publicBaseUrl = "https://img.example.com"   # R2 custom domain
 
