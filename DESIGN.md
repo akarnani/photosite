@@ -218,6 +218,30 @@ any unpushed commits.
 ### `photosite list`
 List trips with title, photo count, location, dates, and slug.
 
+### `photosite favorites`
+Personal tool for choosing photos to print: narrows every photo (or `--trips`)
+down to your `--count` favorites by repeatedly picking the better of two.
+Runs a local-only `node:http` server (127.0.0.1, default port 4519) and opens a
+browser page — photos need to be seen large, which a terminal can't do. Keys:
+←/→ pick, ↑ both great, ↓ neither, Z undo, 1/2 full screen.
+1. **Cull.** Each photo has `--lives` (default 2) lives and loses one per lost
+   matchup ("neither" costs both a life, "both great" costs neither), so one
+   unlucky pairing never eliminates a photo. Swiss pairing: least-played photo
+   vs. the closest loss record it hasn't met. Runs until max(2N, N+10) remain.
+2. **Final.** Finalists get Bradley-Terry strengths (with a weak prior) from all
+   matchups among them; each plays ≥4 more, photos near the Nth-place cut line
+   ≥8, always against the closest-scored opponent it has met least. Top N win.
+   (Simulated with a noisy chooser this keeps ~85% of the true top N, vs ~50%
+   for elimination alone at the same number of picks.)
+
+The session is `{ids, count, lives, seed, history}` in gitignored
+`site/.image-cache/.favorites.json`; all state is derived by replaying history,
+so progress saves after every pick, undo pops, and `--count`/`--lives` can be
+changed on resume. Pairing is seeded by (seed, history length) so it's
+deterministic and the page prefetches the next pair's images. Results are
+sorted chronologically with their trip, shown on the page (CSV download),
+printed on exit, and available via `--results` / `--out <file>`.
+
 ### Publishing helper (shared)
 After a successful `add-trip` / `update-trip` / `annotate`, offer:
 `commit & push now?` → runs `git add -A && git commit -m "<message>" && git push`,

@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pick favorites</title>
+<style>
+  :root {
+    --bg: #0b0f14; --panel: #131a22; --line: #243040; --text: #e6edf3; --dim: #8b98a8;
+    --accent: #4fb3d9; --good: #5cc98a; --bad: #e06c75;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; background: var(--bg); color: var(--text);
+    font: 14px/1.4 system-ui, -apple-system, Segoe UI, sans-serif; }
+  body { display: flex; flex-direction: column; }
+  header { display: flex; align-items: center; gap: 16px; padding: 10px 16px; border-bottom: 1px solid var(--line); }
+  header .stats { color: var(--dim); white-space: nowrap; }
+  .bar { flex: 1; height: 6px; background: var(--panel); border-radius: 3px; overflow: hidden; }
+  .bar > div { height: 100%; background: var(--accent); width: 0; transition: width .3s; }
+  main { flex: 1; min-height: 0; display: flex; gap: 12px; padding: 12px; }
+  .side { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 6px; cursor: pointer;
+    border: 2px solid transparent; border-radius: 6px; padding: 6px; transition: border-color .12s, background .12s; }
+  .side:hover { border-color: var(--line); background: var(--panel); }
+  .side.chosen { border-color: var(--good); }
+  .side.lost { opacity: .35; }
+  .frame { flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center; position: relative; }
+  .frame img { max-width: 100%; max-height: 100%; object-fit: contain; display: block; }
+  .zoom { background: none; color: var(--dim); border: 1px solid var(--line); border-radius: 4px;
+    padding: 0 6px; margin-left: 8px; cursor: zoom-in; font: inherit; }
+  .zoom:hover { color: var(--text); border-color: var(--accent); }
+  .meta { display: flex; justify-content: space-between; gap: 8px; color: var(--dim); font-size: 13px; }
+  .meta b { color: var(--text); font-weight: 600; }
+  .meta .t { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  footer { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; padding: 10px 16px 14px; border-top: 1px solid var(--line); }
+  .act { background: var(--panel); color: var(--text); border: 1px solid var(--line); border-radius: 6px;
+    padding: 8px 14px; font: inherit; cursor: pointer; }
+  .act:hover { border-color: var(--accent); }
+  .act:disabled { opacity: .4; cursor: default; }
+  kbd { font: 12px ui-monospace, monospace; background: #0006; border: 1px solid var(--line); border-radius: 3px; padding: 0 5px; margin-right: 6px; }
+  #toast { position: fixed; left: 50%; bottom: 80px; transform: translateX(-50%); background: var(--bad); color: #fff;
+    padding: 8px 14px; border-radius: 6px; opacity: 0; transition: opacity .2s; pointer-events: none; }
+  #toast.show { opacity: 1; }
+  #full { position: fixed; inset: 0; background: #000; display: none; align-items: center; justify-content: center; cursor: zoom-out; z-index: 10; }
+  #full.show { display: flex; }
+  #full img { max-width: 100vw; max-height: 100vh; object-fit: contain; }
+  #results { flex: 1; overflow: auto; padding: 20px 16px 40px; display: none; }
+  #results h1 { font-size: 22px; margin: 0 0 4px; }
+  #results p { color: var(--dim); margin: 0 0 16px; }
+  #results .tools { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
+  #results a.act { text-decoration: none; display: inline-block; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+  .card { background: var(--panel); border-radius: 6px; overflow: hidden; }
+  .card img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; display: block; cursor: zoom-in; }
+  .card .info { padding: 8px 10px; font-size: 13px; }
+  .card .info .n { color: var(--dim); }
+  @media (orientation: portrait) { main { flex-direction: column; } }
+  @media (max-width: 640px) { header { flex-wrap: wrap; } header .stats { white-space: normal; width: 100%; } }
+</style>
+</head>
+<body>
+<header>
+  <strong>Favorites</strong>
+  <div class="bar"><div id="bar"></div></div>
+  <span class="stats" id="stats">Loading…</span>
+</header>
+
+<main id="duel">
+  <div class="side" id="side-a" data-result="a">
+    <div class="frame"><img id="img-a" alt=""></div>
+    <div class="meta"><span class="t" id="meta-a"></span><span><span id="date-a"></span><button class="zoom" data-zoom="a" title="Full screen (1)">⤢ 1</button></span></div>
+  </div>
+  <div class="side" id="side-b" data-result="b">
+    <div class="frame"><img id="img-b" alt=""></div>
+    <div class="meta"><span class="t" id="meta-b"></span><span><span id="date-b"></span><button class="zoom" data-zoom="b" title="Full screen (2)">⤢ 2</button></span></div>
+  </div>
+</main>
+
+<section id="results">
+  <h1 id="res-title"></h1>
+  <p>Sorted oldest first. The file name is the original, for finding the full-resolution print file.</p>
+  <div class="tools">
+    <a class="act" href="/favorites.csv" download>Download CSV</a>
+    <button class="act" id="res-undo">Undo last pick</button>
+  </div>
+  <div class="grid" id="grid"></div>
+</section>
+
+<footer id="controls">
+  <button class="act" data-result="a"><kbd>←</kbd>Left</button>
+  <button class="act" data-result="both" id="btn-both" title="Both are keepers — neither loses a life"><kbd>↑</kbd>Both great</button>
+  <button class="act" data-result="neither" id="btn-neither" title="Neither is print-worthy — both lose a life"><kbd>↓</kbd>Neither</button>
+  <button class="act" data-result="b"><kbd>→</kbd>Right</button>
+  <button class="act" id="undo"><kbd>Z</kbd>Undo</button>
+</footer>
+
+<div id="full"><img alt=""></div>
+<div id="toast"></div>
+
+<script>
+  const $ = (id) => document.getElementById(id);
+  let state = null;
+  let busy = false;
+
+  // Largest "picks left" seen in the final round, so its bar segment fills smoothly.
+  const finalBudget = (p) => (finalBudget.max = Math.max(finalBudget.max || 0, p.remaining));
+  const fmtDate = (d) => (d ? new Date(d).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' }) : '');
+
+  function toast(msg) {
+    const t = $('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    clearTimeout(toast.timer);
+    toast.timer = setTimeout(() => t.classList.remove('show'), 2500);
+  }
+
+  function render(s) {
+    state = s;
+    if (s.error) toast(s.error);
+    const p = s.progress;
+    const final = p.phase === 'final';
+    // Cull fills the bar up to the finalists; the final round fills the rest.
+    const cullPct = (100 * (p.total - p.alive)) / Math.max(1, p.total - p.finalists);
+    const pct = !s.pair ? 100 : final ? 80 + 20 * (1 - p.remaining / Math.max(1, finalBudget(p))) : 80 * Math.min(1, cullPct / 100);
+    $('bar').style.width = pct + '%';
+    $('stats').textContent = !s.pair
+      ? `Done · ${p.decisions} picks`
+      : final
+        ? `Final round · ${p.alive} finalists for ${s.count} spots · ~${p.remaining} picks left`
+        : `Cull · ${p.alive} of ${p.total} still in · final at ${p.finalists} · ~${p.remaining} picks left`;
+    $('btn-both').innerHTML = final ? '<kbd>↑</kbd>Tie' : '<kbd>↑</kbd>Both great';
+    $('btn-neither').style.display = final ? 'none' : '';
+    $('undo').disabled = !s.canUndo;
+
+    const finished = !s.pair;
+    $('duel').style.display = finished ? 'none' : '';
+    $('controls').style.display = finished ? 'none' : '';
+    $('results').style.display = finished ? 'block' : 'none';
+    if (finished) return renderResults(s);
+
+    ['a', 'b'].forEach((k, i) => {
+      const ph = s.pair[i];
+      $('side-' + k).classList.remove('chosen', 'lost');
+      const img = $('img-' + k);
+      if (img.dataset.id !== ph.id) {
+        img.dataset.id = ph.id;
+        img.src = ph.src;
+      }
+      $('meta-' + k).innerHTML = '';
+      const b = document.createElement('b');
+      b.textContent = ph.trip;
+      $('meta-' + k).append(b, ph.title ? ` · ${ph.title}` : '');
+      $('date-' + k).textContent = fmtDate(ph.date);
+    });
+    for (const src of s.prefetch) new Image().src = src;
+  }
+
+  function renderResults(s) {
+    $('res-title').textContent = `Your ${s.results.length} favorites`;
+    const grid = $('grid');
+    grid.innerHTML = '';
+    for (const ph of s.results) {
+      const card = document.createElement('div');
+      card.className = 'card';
+      const img = document.createElement('img');
+      img.src = ph.src;
+      img.loading = 'lazy';
+      img.onclick = () => openFull(ph.src);
+      const info = document.createElement('div');
+      info.className = 'info';
+      const head = document.createElement('div');
+      const b = document.createElement('b');
+      b.textContent = ph.trip;
+      head.append(b, ` · ${fmtDate(ph.date)}`);
+      const n = document.createElement('div');
+      n.className = 'n';
+      n.textContent = ph.file + (ph.title ? ` — ${ph.title}` : ph.caption ? ` — ${ph.caption}` : '');
+      info.append(head, n);
+      card.append(img, info);
+      grid.append(card);
+    }
+  }
+
+  async function call(url, body) {
+    if (busy) return;
+    busy = true;
+    try {
+      const r = await fetch(url, { method: body ? 'POST' : 'GET', headers: { 'Content-Type': 'application/json' }, body: body && JSON.stringify(body) });
+      render(await r.json());
+    } catch (e) {
+      toast('Lost connection to photosite — is it still running?');
+    } finally {
+      busy = false;
+    }
+  }
+
+  function decide(result) {
+    if (!state?.pair || busy) return;
+    const [a, b] = state.pair;
+    // Brief visual confirmation of the pick before the next pair loads.
+    if (result === 'a' || result === 'b') {
+      $('side-' + result).classList.add('chosen');
+      $('side-' + (result === 'a' ? 'b' : 'a')).classList.add('lost');
+    }
+    call('/api/decide', { a: a.id, b: b.id, result });
+  }
+
+  const undo = () => state?.canUndo && call('/api/undo', {});
+
+  function openFull(src) {
+    $('full').querySelector('img').src = src;
+    $('full').classList.add('show');
+  }
+  const closeFull = () => $('full').classList.remove('show');
+  const fullOpen = () => $('full').classList.contains('show');
+  const zoom = (k) => state?.pair && openFull(state.pair[k === 'a' ? 0 : 1].src);
+
+  document.querySelectorAll('[data-result]').forEach((el) =>
+    el.addEventListener('click', (e) => {
+      if (e.target.closest('.zoom')) return;
+      decide(el.dataset.result);
+    }),
+  );
+  document.querySelectorAll('[data-zoom]').forEach((el) => el.addEventListener('click', () => zoom(el.dataset.zoom)));
+  $('undo').onclick = undo;
+  $('res-undo').onclick = undo;
+  $('full').onclick = closeFull;
+
+  document.addEventListener('keydown', (e) => {
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    if (fullOpen()) {
+      if (['Escape', ' ', '1', '2', 'f'].includes(e.key)) (closeFull(), e.preventDefault());
+      return;
+    }
+    const map = { ArrowLeft: 'a', a: 'a', ArrowRight: 'b', d: 'b', ArrowUp: 'both', w: 'both', ArrowDown: 'neither', s: 'neither' };
+    if (map[e.key]) (decide(map[e.key]), e.preventDefault());
+    else if (e.key === 'z' || e.key === 'Backspace') (undo(), e.preventDefault());
+    else if (e.key === '1') zoom('a');
+    else if (e.key === '2') zoom('b');
+  });
+
+  call('/api/state');
+</script>
+</body>
+</html>

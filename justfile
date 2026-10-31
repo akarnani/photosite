@@ -17,6 +17,10 @@ preview:
 build:
     cd site && npm run build
 
+# pick your favorite photos (e.g. for printing), two at a time
+favorites:
+    photosite favorites
+
 # list trips
 list:
     photosite list
