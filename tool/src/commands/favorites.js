@@ -9,7 +9,7 @@ import * as ui from '../ui.js';
 import { requireRepoRoot, paths } from '../paths.js';
 import { listTripSlugs, readTrip } from '../trips.js';
 import { openUrl } from '../viewer.js';
-import * as engine from '../favorites/engine.js';
+import * as engine from '../../../site/src/lib/favoritesEngine.js';
 import { createServer, results, toCsv } from '../favorites/server.js';
 
 const stateFile = (P) => path.join(P.cacheDir, '.favorites.json');
@@ -76,6 +76,9 @@ export async function favorites(opts) {
   if (session) {
     // Drop photos whose trip/file has since disappeared.
     session.ids = session.ids.filter((id) => catalog.has(id));
+    if (opts.seed && String(opts.seed) !== String(session.seed)) {
+      ui.fail(`A session with seed "${session.seed}" is in progress. Add --reset to start over with "${opts.seed}".`);
+    }
     if (count) session.count = count;
     if (lives) session.lives = lives;
   }
@@ -90,7 +93,7 @@ export async function favorites(opts) {
   if (session) {
     const pr = engine.progress(session);
     ui.step(
-      `Resuming: ${pr.decisions} picks so far, ${pr.alive} of ${pr.total} photos still in, top ${session.count}, ${session.lives} lives each ` +
+      `Resuming: ${pr.decisions} picks so far, ${pr.alive} of ${pr.total} photos still in, top ${session.count}, ${session.lives} lives each, seed ${ui.value(session.seed)} ` +
         pc.dim('(--reset to start over)'),
     );
   } else {
@@ -119,8 +122,8 @@ export async function favorites(opts) {
     }
     const ids = [...catalog.keys()].filter((id) => slugs.includes(id.split('/')[0]));
     if (!ids.length) ui.fail('Those trips have no photos.');
-    session = engine.newSession(ids, { count: n || 20, lives: lives || 2 });
-    ui.step(`Starting: ${ids.length} photos → top ${session.count}, ${session.lives} lives each`);
+    session = engine.newSession(ids, { count: n || 20, lives: lives || 2, seed: opts.seed });
+    ui.step(`Starting: ${ids.length} photos → top ${session.count}, ${session.lives} lives each, seed ${ui.value(session.seed)}`);
   }
 
   const save = (s) => {

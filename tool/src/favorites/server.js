@@ -5,7 +5,7 @@ import fs from 'node:fs';
 import http from 'node:http';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import * as engine from './engine.js';
+import * as engine from '../../../site/src/lib/favoritesEngine.js';
 
 const PAGE = path.join(path.dirname(fileURLToPath(import.meta.url)), 'page.html');
 const TYPES = { '.webp': 'image/webp', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg' };

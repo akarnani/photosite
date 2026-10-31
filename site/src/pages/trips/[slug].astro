@@ -23,7 +23,12 @@ const card = tripCard(trip, coverPhoto(trip), siteConfig());
         {eyebrow && <p class="eyebrow">{eyebrow}</p>}
         <h1>{trip.title}</h1>
         {trip.summary && <p>{trip.summary}</p>}
-        <p class="trip-count">{trip.photos.length} photographs</p>
+        <p class="trip-count">
+          {trip.photos.length} photographs
+          {trip.photos.length > 10 && (
+            <> · <a class="trip-fav" href={`/favorites/?trip=${trip.slug}`}>pick your favorites</a></>
+          )}
+        </p>
       </header>
 
       <PhotoMap points={points} id={`map-${trip.slug}`} height="230px" />

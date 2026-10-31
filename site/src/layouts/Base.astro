@@ -71,7 +71,10 @@ const ogImage = image && new URL(image.path, Astro.site).href;
       <slot />
     </main>
     <footer class="site-footer">
-      <p>Photographs ©&nbsp;{year}{site.author ? ` ${site.author}` : ''}. All rights reserved.</p>
+      <p>
+        Photographs ©&nbsp;{year}{site.author ? ` ${site.author}` : ''}. All rights reserved.
+        <span class="footer-links">· <a href="/favorites/">Pick your favorites</a></span>
+      </p>
       <div class="sa-footer">
         <a class="sa-credit" href="https://www.simpleanalytics.com?utm_source=photos.karnani.io&utm_content=badge" referrerpolicy="origin" target="_blank" aria-label="Analytics by Simple Analytics">
           <span class="sa-credit__caption">Analytics</span>

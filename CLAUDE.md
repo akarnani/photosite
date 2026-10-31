@@ -21,10 +21,14 @@ tool/                   the CLI — LOCAL ONLY, never deployed. Own package.json
   src/                  modules + commands
   src/tui/              Ink TUI for annotate/cover (App, EditPanel, PhotoList,
                         Thumbnail, half-block thumb.js renderer)
-  src/favorites/        `favorites` picker: engine.js (pure pairwise logic),
-                        server.js (local http + JSON API), page.html (UI)
+  src/favorites/        `favorites` picker: server.js (local http + JSON API),
+                        page.html (UI). Engine lives in the site (below).
 site/                   the Astro site — Cloudflare Pages builds this. Own package.json.
   src/content/trips/<slug>/{trip.yaml, photos.json, annotations.yaml}
+  src/lib/favoritesEngine.js  pure pick-your-favorites engine, shared by the
+                        /favorites/ page AND the CLI (tool imports it by relative
+                        path — it must stay dependency-free and browser-safe)
+  src/pages/favorites/  public game: index.astro + photos.json.js catalog
   .image-cache/         gitignored local derivative cache for offline preview
 ```
 
@@ -98,6 +102,13 @@ deps.
   gitignored `.image-cache/.favorites.json` (resumable, undo = pop). Results are
   sorted chronologically with their trip (`--results`, `--out <csv>`). Plain
   `node:http`, no new deps; images from the local cache, else 302 to R2.
+  `--seed <s>`: pairing is a pure function of (seed, history) — ties break on a
+  seeded per-photo hash, so the whole first round depends only on the seed.
+  The same game is public at `/favorites/` (footer link + "pick your favorites"
+  on trip pages): client-side, localStorage progress, `?seed&n&lives&trip` URL
+  is shareable, `&picks=` (5-char `photoCode`s) shows a friend's results and
+  marks overlap with yours. Ids are `<slug>/<file>` in both, so a seed pairs
+  identically in the CLI and on the site.
 
 Build the site: `cd site && npm run build`. Convenience wrappers in `justfile`.
 

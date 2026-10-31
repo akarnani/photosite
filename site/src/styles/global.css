@@ -821,6 +821,357 @@ a.sa-credit svg {
 }
 
 /* ============================================================================
+   Favorites picker (/favorites/)
+   ============================================================================ */
+.fav [hidden] {
+  display: none !important;
+}
+.fav-setup,
+.fav-results {
+  max-width: 62rem;
+  margin: 0 auto;
+}
+.fav-setup h1,
+.fav-results h1 {
+  font-size: var(--step-h1);
+}
+.fav-lede {
+  color: var(--mist-dim);
+  max-width: 40rem;
+  margin: 1rem 0 0;
+}
+.fav-banner {
+  margin: 1.4rem 0 0;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--aqua-deep);
+  border-radius: 10px;
+  color: var(--mist);
+  max-width: 40rem;
+}
+.fav-form {
+  display: grid;
+  gap: 1.4rem;
+  margin-top: 2rem;
+  max-width: 34rem;
+}
+.fav-field {
+  display: grid;
+  gap: 0.5rem;
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+.fav-field > span,
+.fav-field legend {
+  font-family: var(--mono);
+  font-size: var(--step-eyebrow);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--mist-dim);
+  padding: 0;
+  margin-bottom: 0.5rem;
+}
+.fav-field small {
+  text-transform: none;
+  letter-spacing: 0;
+}
+.fav select,
+.fav input[name='seed'] {
+  font: inherit;
+  color: var(--mist);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0.6rem 0.8rem;
+  width: 100%;
+}
+.fav input[name='seed'] {
+  font-family: var(--mono);
+}
+.fav-seed {
+  display: flex;
+  gap: 0.5rem;
+}
+.fav-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.fav-chips input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.fav-chips span {
+  display: inline-block;
+  padding: 0.45rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  cursor: pointer;
+  color: var(--mist-dim);
+}
+.fav-chips input:checked + span {
+  border-color: var(--aqua);
+  color: var(--mist);
+  background: var(--surface);
+}
+.fav-chips input:focus-visible + span {
+  outline: 2px solid var(--aqua);
+  outline-offset: 2px;
+}
+.fav-estimate {
+  margin: 0;
+  color: var(--mist-dim);
+  font-size: 0.95rem;
+}
+.fav-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 1.4rem 0 0;
+}
+.fav-form .fav-actions {
+  margin: 0;
+}
+.fav-btn,
+.fav-ghost {
+  font: inherit;
+  font-size: 0.95rem;
+  color: var(--mist);
+  border-radius: 999px;
+  padding: 0.55rem 1.2rem;
+  cursor: pointer;
+}
+.fav-btn {
+  background: var(--aqua-deep);
+  border: 1px solid var(--aqua-deep);
+}
+.fav-btn:hover {
+  background: var(--aqua);
+  color: var(--depth-900);
+}
+.fav-ghost {
+  background: transparent;
+  border: 1px solid var(--line);
+}
+.fav-ghost:hover {
+  border-color: var(--aqua-deep);
+}
+.fav-ghost:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.fav-duel {
+  padding-top: 1rem;
+  padding-bottom: 1.5rem;
+}
+.fav-progress {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: var(--mono);
+  font-size: var(--step-eyebrow);
+  color: var(--mist-dim);
+}
+.fav-bar {
+  flex: 1;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--depth-700);
+  overflow: hidden;
+}
+.fav-bar > div {
+  height: 100%;
+  width: 0;
+  background: var(--aqua);
+  transition: width 0.3s ease;
+}
+.fav-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap);
+  margin-top: 1rem;
+}
+@media (orientation: portrait) {
+  .fav-pair {
+    grid-template-columns: 1fr;
+  }
+}
+.fav-side {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  min-width: 0;
+  transition: opacity 0.15s ease;
+}
+.fav-pick {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: min(68svh, 46vw);
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  background: var(--depth-800);
+  cursor: pointer;
+  overflow: hidden;
+  transition: border-color 0.15s ease;
+}
+@media (orientation: portrait) {
+  .fav-pick {
+    height: 32svh;
+  }
+}
+.fav-pick img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+.fav-pick:hover {
+  border-color: var(--line);
+}
+.fav-side.is-chosen .fav-pick {
+  border-color: var(--aqua);
+}
+.fav-side.is-lost {
+  opacity: 0.35;
+}
+.fav-side figcaption {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--mono);
+  font-size: var(--step-eyebrow);
+  color: var(--mist-dim);
+}
+.fav-zoom {
+  padding: 0.1rem 0.6rem;
+  font-size: 0.85rem;
+  cursor: zoom-in;
+}
+.fav-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+.fav kbd {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 0 0.35rem;
+  margin-right: 0.45rem;
+  color: var(--mist-dim);
+}
+@media (hover: none) {
+  .fav kbd {
+    display: none;
+  }
+}
+.fav-foot {
+  text-align: center;
+  font-family: var(--mono);
+  font-size: var(--step-eyebrow);
+  color: var(--mist-dim);
+  margin: 1.2rem 0 0;
+}
+
+.fav-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--gap);
+  margin-top: 2rem;
+}
+.fav-card {
+  display: block;
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--depth-800);
+  color: var(--mist-dim);
+  border: 1px solid transparent;
+}
+.fav-card:hover {
+  text-decoration: none;
+  border-color: var(--line);
+}
+.fav-card.is-match {
+  border-color: var(--aqua);
+}
+.fav-card img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+.fav-card span {
+  display: block;
+  padding: 0.6rem 0.8rem;
+  font-family: var(--mono);
+  font-size: var(--step-eyebrow);
+}
+.fav-card b {
+  color: var(--mist);
+  font-weight: 500;
+}
+.fav-card em {
+  display: block;
+  font-family: var(--serif);
+  font-size: 0.95rem;
+  color: var(--mist);
+  margin-top: 0.2rem;
+}
+.fav-card.is-match span::after {
+  content: 'you both picked this';
+  display: block;
+  color: var(--aqua);
+  margin-top: 0.2rem;
+}
+
+.fav-full {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(3, 9, 13, 0.97);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+}
+.fav-full img {
+  max-width: 100vw;
+  max-height: 100svh;
+  object-fit: contain;
+}
+.fav-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 2rem;
+  transform: translateX(-50%);
+  z-index: 1001;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  color: var(--mist);
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+}
+
+/* Quiet way in: a footer link and a line on each trip page. */
+.footer-links a,
+.trip-fav {
+  color: var(--mist-dim);
+}
+.footer-links a:hover,
+.trip-fav:hover {
+  color: var(--aqua);
+}
+
+/* ============================================================================
    Reduced motion
    ============================================================================ */
 @media (prefers-reduced-motion: reduce) {
