@@ -12,6 +12,7 @@ import { preview } from '../src/commands/preview.js';
 import { upload } from '../src/commands/upload.js';
 import { push } from '../src/commands/push.js';
 import { list } from '../src/commands/list.js';
+import { favorites } from '../src/commands/favorites.js';
 
 // Wrap an action so thrown errors print a friendly line and exit non-zero.
 const run =
@@ -89,5 +90,18 @@ program
   .action(run(push));
 
 program.command('list').description('List trips').action(run(list));
+
+program
+  .command('favorites')
+  .description('Narrow all photos down to your N favorites, two at a time (e.g. for printing)')
+  .option('--count <n>', 'how many favorites to keep (prompts on a new session; default 20)')
+  .option('--lives <n>', 'losses before a photo is out (default 2)')
+  .option('--trips <slugs>', 'comma-separated trip slugs to include (new session only)')
+  .option('--reset', 'discard the saved session and start over')
+  .option('--results', 'print the current favorites and exit')
+  .option('--out <file>', 'also write the finished list as CSV when you exit')
+  .option('--port <port>', 'local server port', '4519')
+  .option('--no-open', "don't open the browser")
+  .action(run(favorites));
 
 program.parseAsync(process.argv);

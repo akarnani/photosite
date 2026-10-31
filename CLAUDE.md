@@ -21,6 +21,8 @@ tool/                   the CLI — LOCAL ONLY, never deployed. Own package.json
   src/                  modules + commands
   src/tui/              Ink TUI for annotate/cover (App, EditPanel, PhotoList,
                         Thumbnail, half-block thumb.js renderer)
+  src/favorites/        `favorites` picker: engine.js (pure pairwise logic),
+                        server.js (local http + JSON API), page.html (UI)
 site/                   the Astro site — Cloudflare Pages builds this. Own package.json.
   src/content/trips/<slug>/{trip.yaml, photos.json, annotations.yaml}
   .image-cache/         gitignored local derivative cache for offline preview
@@ -88,6 +90,14 @@ deps.
   (`state.js`); `list` flags pending trips
 - `photosite push [message]` — commit pending changes and push (triggers deploy)
 - `photosite list`
+- `photosite favorites [--count <n>] [--lives <n>] [--trips a,b] [--reset]` — pick
+  your N favorites (for prints) by choosing the better of two photos in a local
+  browser page (`src/favorites/`). Cull phase: a photo is out after `--lives`
+  losses (default 2) until ~2×N finalists remain; final phase: Bradley-Terry
+  scores, matchups focused on the cut line. State = replayed pick history in
+  gitignored `.image-cache/.favorites.json` (resumable, undo = pop). Results are
+  sorted chronologically with their trip (`--results`, `--out <csv>`). Plain
+  `node:http`, no new deps; images from the local cache, else 302 to R2.
 
 Build the site: `cd site && npm run build`. Convenience wrappers in `justfile`.
 
