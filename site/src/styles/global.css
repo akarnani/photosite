@@ -966,6 +966,10 @@ a.sa-credit svg {
   padding-top: 1rem;
   padding-bottom: 1.5rem;
 }
+.fav-ask {
+  margin: 0 auto 1rem;
+  text-align: center;
+}
 .fav-progress {
   display: flex;
   align-items: center;

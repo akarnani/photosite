@@ -255,7 +255,15 @@ Progress is in localStorage per (trip, n, lives, seed). The URL
 `?seed=&n=&lives=&trip=` is the shareable "challenge" link; adding
 `&picks=<code.code…>` (5-char hash per photo, robust to new photos) shows a
 friend's favorites and marks the ones you both picked if you finished the same
-seed. Entry points are deliberately quiet: a footer link and a "pick your
+seed. Because pairs follow from (seed, history), the whole game also fits in
+the URL: `&h=<count>.<chars>` packs each pick's result (left/right/both/
+neither, 2 bits) three to a base64url char (~200 chars for a 600-pick game),
+plus `&v=` fingerprinting the photo set (warns if the matchups may differ).
+The page keeps the address bar current, so it doubles as a resume link on any
+device; "ask a friend about this matchup" adds `&ask=1`, which opens at that
+exact pair with a "which would you pick?" banner. Opening a link that would
+replace a different saved game on the same seed asks first; a link that is
+simply ahead of your own game is taken silently. Entry points are deliberately quiet: a footer link and a "pick your
 favorites" link next to each trip's photo count. Results are
 sorted chronologically with their trip, shown on the page (CSV download),
 printed on exit, and available via `--results` / `--out <file>`.

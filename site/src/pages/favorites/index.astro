@@ -79,6 +79,7 @@ const total = trips.reduce((n, t) => n + t.photos.length, 0);
 
     <!-- Duel -->
     <section class="fav-duel" data-view="duel" hidden>
+      <p class="fav-banner fav-ask" data-ask hidden>A friend wants to know: which of these two would you pick?</p>
       <div class="fav-progress">
         <div class="fav-bar"><div data-bar></div></div>
         <span data-status></span>
@@ -104,7 +105,8 @@ const total = trips.reduce((n, t) => n + t.photos.length, 0);
         <button type="button" class="fav-ghost" data-undo><kbd>Z</kbd>Undo</button>
       </div>
       <p class="fav-foot">
-        Progress saves as you go. Seed <code data-seed></code> ·
+        Progress saves as you go, and this page's link is a resume link for any device. Seed
+        <code data-seed></code> · <a href="#" data-ask-friend>ask a friend about this matchup</a> ·
         <a href="#" data-restart>start over</a>
       </p>
     </section>
@@ -247,21 +249,50 @@ const total = trips.reduce((n, t) => n + t.photos.length, 0);
   }
 
   // ---- Session -------------------------------------------------------------
-  async function start(c) {
+  const sameDecision = (x, y) => x.a === y.a && x.b === y.b && x.result === y.result;
+  const isPrefix = (short, long) => short.length <= long.length && short.every((x, i) => sameDecision(x, long[i]));
+  let askAt = -1; // history length at which a shared "which would you pick?" matchup sits
+
+  // `code` (from ?h=) puts you at the exact position of a shared game link.
+  async function start(c, code) {
     const data = await loadCatalog();
     const ids = data.photos.filter((p) => !c.trip || p.id.startsWith(`${c.trip}/`)).map((p) => p.id);
     if (ids.length <= c.count) return toast('Pick a bigger set of photos.');
     cfg = c;
     session = E.newSession(ids, cfg);
-    const saved = store.get(keyOf(cfg));
-    if (saved?.history) session.history = saved.history.filter((h) => data.byId.has(h.a) && data.byId.has(h.b));
+    const local = (store.get(keyOf(cfg))?.history || []).filter((h) => data.byId.has(h.a) && data.byId.has(h.b));
+    session.history = local;
+    if (code) {
+      if (params.get('v') && params.get('v') !== E.scopeCode(ids)) {
+        toast('Some photos have changed since this link was made, so the matchups may differ.');
+      }
+      const linked = E.decodeHistory(session, code);
+      // Your own game is just behind (or at) the link → take it silently.
+      // Anything else would replace a different saved game, so ask first.
+      const take =
+        isPrefix(local, linked) ||
+        confirm(
+          `This link is at pick ${linked.length}. You have your own game on this seed at pick ${local.length}.\n\n` +
+            'OK: jump to the link (replaces your saved game)\nCancel: keep your game',
+        );
+      if (take) session.history = linked;
+      if (params.get('ask') && take) askAt = linked.length;
+    }
     store.set(LAST, cfg);
-    history.replaceState(null, '', configUrl(cfg).replace(location.origin, ''));
     $('[data-seed]').textContent = cfg.seed;
+    save();
     render();
   }
 
-  const save = () => store.set(keyOf(cfg), { history: session.history });
+  // Position link: the URL always encodes the whole game, so the address bar
+  // doubles as a resume link that works on any device.
+  const positionUrl = (extra = {}) =>
+    configUrl(cfg, { h: E.encodeHistory(session.history), v: E.scopeCode(session.ids), ...extra });
+
+  function save() {
+    store.set(keyOf(cfg), { history: session.history });
+    history.replaceState(null, '', positionUrl().replace(location.origin, ''));
+  }
 
   function render() {
     const d = E.derive(session);
@@ -281,6 +312,7 @@ const total = trips.reduce((n, t) => n + t.photos.length, 0);
     $('[data-both]').innerHTML = final ? '<kbd>↑</kbd>Tie' : '<kbd>↑</kbd>Both great';
     $('[data-neither]').hidden = final;
     $('[data-undo]').disabled = !session.history.length;
+    $('[data-ask]').hidden = session.history.length !== askAt;
 
     pair.forEach((id, i) => {
       const ph = catalog.byId.get(id);
@@ -435,8 +467,9 @@ const total = trips.reduce((n, t) => n + t.photos.length, 0);
 
   function newGame() {
     session = null;
+    askAt = -1;
     history.replaceState(null, '', '/favorites/');
-    params.delete('picks');
+    for (const k of ['picks', 'h', 'v', 'ask']) params.delete(k);
     form.seed.value = E.randomSeed();
     $('[data-shared]').hidden = true;
     show('setup');
@@ -460,6 +493,10 @@ const total = trips.reduce((n, t) => n + t.photos.length, 0);
   $$('[data-zoom]').forEach((el) => el.addEventListener('click', () => zoom(el.dataset.zoom === 'a' ? 0 : 1)));
   $('[data-undo]').onclick = undo;
   $('[data-reroll]').onclick = () => ((form.seed.value = E.randomSeed()), updateSetup());
+  $('[data-ask-friend]').onclick = (e) => {
+    e.preventDefault();
+    copy(positionUrl({ ask: 1 }), 'Link to this exact matchup copied');
+  };
   $('[data-restart]').onclick = (e) => {
     e.preventDefault();
     if (!confirm('Throw away this game and start over?')) return;
@@ -503,6 +540,7 @@ const total = trips.reduce((n, t) => n + t.photos.length, 0);
       const ids = params.get('picks').split('.').map((c) => data.byCode.get(c)).filter(Boolean);
       if (ids.length) return renderResults(ids, { mine: false });
     }
+    if (fromUrl.seed && params.get('h')) return start(readForm(), params.get('h'));
     if (fromUrl.seed) {
       $('[data-shared]').hidden = false;
       // Already playing this exact game → straight back in.
