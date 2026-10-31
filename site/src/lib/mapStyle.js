@@ -1,4 +1,4 @@
-// The site-themed MapLibre vector style (near-black land, lighter teal sea,
+// The site-themed MapLibre vector style (near-black land, slightly lifted sea,
 // faint borders, quiet dim labels). Shared by the interactive maps (PhotoMap)
 // and the lightbox inset map so the palette lives in one place. Returns null
 // without a key (callers then show a notice / hide the map).
@@ -10,13 +10,13 @@ export function buildStyle(key) {
     glyphs: `https://api.maptiler.com/fonts/{fontstack}/{range}.pbf?key=${key}`,
     sources: { omt: { type: 'vector', url: `https://api.maptiler.com/tiles/v3/tiles.json?key=${key}` } },
     layers: [
-      { id: 'land', type: 'background', paint: { 'background-color': '#06121a' } },
+      { id: 'land', type: 'background', paint: { 'background-color': '#0e0e0d' } },
       {
         id: 'water',
         type: 'fill',
         source: 'omt',
         'source-layer': 'water',
-        paint: { 'fill-color': '#0e2a37', 'fill-outline-color': '#173d44' },
+        paint: { 'fill-color': '#1b1b1a', 'fill-outline-color': '#262624' },
       },
       {
         id: 'boundary',
@@ -24,7 +24,7 @@ export function buildStyle(key) {
         source: 'omt',
         'source-layer': 'boundary',
         filter: ['<=', ['to-number', ['get', 'admin_level']], 4],
-        paint: { 'line-color': '#1c3a49', 'line-width': 0.6, 'line-dasharray': [2, 2], 'line-opacity': 0.8 },
+        paint: { 'line-color': '#2f2e2c', 'line-width': 0.6, 'line-dasharray': [2, 2], 'line-opacity': 0.8 },
       },
       {
         id: 'place-country',
@@ -40,7 +40,7 @@ export function buildStyle(key) {
           'text-letter-spacing': 0.18,
           'text-max-width': 6,
         },
-        paint: { 'text-color': '#6f8a96', 'text-halo-color': '#06121a', 'text-halo-width': 1.2 },
+        paint: { 'text-color': '#77756f', 'text-halo-color': '#0e0e0d', 'text-halo-width': 1.2 },
       },
       {
         id: 'place-locality',
@@ -50,7 +50,7 @@ export function buildStyle(key) {
         minzoom: 4,
         filter: ['match', ['get', 'class'], ['city', 'town', 'village'], true, false],
         layout: { 'text-field': name, 'text-font': ['Noto Sans Regular'], 'text-size': 11, 'text-max-width': 7 },
-        paint: { 'text-color': '#93abb6', 'text-halo-color': '#06121a', 'text-halo-width': 1.2 },
+        paint: { 'text-color': '#9d9b95', 'text-halo-color': '#0e0e0d', 'text-halo-width': 1.2 },
       },
     ],
   };

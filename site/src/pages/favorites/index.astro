@@ -17,7 +17,7 @@ const total = trips.reduce((n, t) => n + t.photos.length, 0);
 <Base
   title="Pick your favorites"
   description="Two photos at a time — pick the one you like more, and see which photographs end up as your favorites."
-  image={{ path: card.path, alt: `${site.title} — underwater photography` }}
+  image={{ path: card.path, alt: `${site.title} — ${card.eyebrow.toLowerCase()}` }}
 >
   <div class="fav" id="fav">
     <!-- Setup -->

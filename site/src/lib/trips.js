@@ -7,6 +7,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import yaml from 'js-yaml';
+import { GENRES, genreId, genreOf } from './genres.js';
 
 const DEV = import.meta.env.DEV;
 const CONTENT_DIR = path.join(process.cwd(), 'src', 'content', 'trips');
@@ -63,6 +64,7 @@ function loadTrip(slug) {
   return {
     slug,
     ...trip,
+    genre: genreId(trip),
     photos: photos.map((p, i) => mergePhoto(p, annotations[p.file], slug, i)),
   };
 }
@@ -83,6 +85,13 @@ export function getTrip(slug) {
   return loadTrip(slug);
 }
 
+// Genres that have at least one trip, in GENRES order, each with its trips.
+export function genresInUse(trips = getTrips()) {
+  return Object.keys(GENRES)
+    .map((id) => ({ id, ...GENRES[id], trips: trips.filter((t) => t.genre === id) }))
+    .filter((g) => g.trips.length);
+}
+
 // Group photos that share the exact same coordinates into one map point (GPS is
 // often assigned per dive site, so many photos stack on one spot). Each point
 // carries the list of photos at that location.
@@ -94,6 +103,7 @@ function groupByCoord(items) {
     const g = groups.get(key);
     g.photos.push({ title: it.title, thumb: it.thumb, href: it.href });
     if (it.slug && !g.slugs.includes(it.slug)) g.slugs.push(it.slug);
+    if (it.genre && !g.genre) g.genre = it.genre;
   }
   return [...groups.values()];
 }
@@ -113,10 +123,11 @@ export function pointsForTrip(trip) {
   );
 }
 
-// Global map points link to the trip page.
-export function allPoints() {
+// Global map points link to the trip page. Pass `trips` to map a subset (a
+// genre page); defaults to every trip.
+export function allPoints(trips = getTrips()) {
   return groupByCoord(
-    getTrips().flatMap((trip) =>
+    trips.flatMap((trip) =>
       trip.photos
         .filter((p) => p.gps)
         .map((p) => ({
@@ -126,6 +137,7 @@ export function allPoints() {
           thumb: p.fallback,
           href: `/trips/${trip.slug}/`,
           slug: trip.slug,
+          genre: trip.genre,
         })),
     ),
   );
@@ -140,7 +152,8 @@ export function coverPhoto(trip) {
 export function tripDescription(trip) {
   if (trip.summary) return trip.summary;
   const where = [trip.location?.name, trip.dates].filter(Boolean).join(', ');
-  return `${trip.photos.length} underwater photographs${where ? ` — ${where}` : ''}.`;
+  const kind = genreOf(trip).eyebrow.replace(/ photography$/, '').toLowerCase();
+  return `${trip.photos.length} ${kind} photographs${where ? ` — ${where}` : ''}.`;
 }
 
 // Site-wide config (title) read from the repo's photosite.config.toml. Falls

@@ -4,8 +4,8 @@ Guidance for AI agents working in this repo. Keep this file current as the code 
 
 ## What this is
 
-A static underwater-photography portfolio (the **site/**) plus a local **CLI tool/**
-that manages it. Photos are grouped by **trip**, stored as web-optimized
+A static photography portfolio (the **site/**) — underwater, wildlife, air
+shows — plus a local **CLI tool/** that manages it. Photos are grouped by **trip**, stored as web-optimized
 derivatives in Cloudflare R2, and rendered by an Astro static site hosted on
 Cloudflare Pages. There is no server, database, or upload UI.
 
@@ -25,6 +25,9 @@ tool/                   the CLI — LOCAL ONLY, never deployed. Own package.json
                         page.html (UI). Engine lives in the site (below).
 site/                   the Astro site — Cloudflare Pages builds this. Own package.json.
   src/content/trips/<slug>/{trip.yaml, photos.json, annotations.yaml}
+  src/lib/genres.js     photo genres (copy + accent per genre). Shared with the
+                        CLI by relative path — dependency-free. trip.yaml
+                        `genre:` (absent → underwater); /[genre]/ pages
   src/lib/favoritesEngine.js  pure pick-your-favorites engine, shared by the
                         /favorites/ page AND the CLI (tool imports it by relative
                         path — it must stay dependency-free and browser-safe)
@@ -79,7 +82,7 @@ deps.
 ## Commands (once `npm link`ed in tool/)
 
 - `photosite setup` — re-runnable config wizard (writes rclone remote + config TOML)
-- `photosite add-trip [--from <folder>] [--slug <slug>] [--no-upload]` — ingest a
+- `photosite add-trip [--from <folder>] [--genre <g>] [--slug <slug>] [--no-upload]` — ingest a
   folder. Slug defaults to title + year (titles may repeat; slugs can't)
 - `photosite add-trips [parent] [--min <n>] [--no-upload]` — bulk: scan a parent
   tree (`discover.js`), multiselect image folders, describe each, process all

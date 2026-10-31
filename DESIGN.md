@@ -5,9 +5,10 @@ a quiet, images-first gallery; the CLI is the only way photos get in. This
 document is the source of truth for intent and contracts and is written to be
 implemented from scratch.
 
-The subject is **underwater / dive photography** ("Below the Surface"). The theme
-is leaned into in default copy and palette, but all visual tokens live at the top
-of `global.css` and are meant to be edited.
+The subject started as **underwater / dive photography** and now spans genres
+(underwater, wildlife, air shows — see §10). The name ("Below the Surface",
+`[site].title`) stays; site-wide copy is genre-neutral without listing genres,
+per-trip copy and accent follow the trip's genre, and all visual tokens live at the top of `global.css` and are meant to be edited.
 
 ---
 
@@ -383,6 +384,7 @@ speciesRoot = "Species"
 ```yaml
 title: Raja Ampat
 slug: example-raja-ampat
+genre: underwater                  # underwater | wildlife | air-shows (lib/genres.js); absent → underwater
 location: { name: "Raja Ampat, Indonesia", lat: -0.234, lon: 130.519 }
 dates: "2025-03-05 to 2025-03-07"
 summary: "Short intro paragraph."
@@ -472,7 +474,11 @@ falls back to EXIF.
   summary, photo count) beside a small inset per-trip map (fit to the trip's
   points, no clustering, no caption) — stacks to header-then-map below ~860px;
   the gallery follows immediately, above the fold.
-- `/og/trips/[slug].jpg` and `/og/home.jpg`: prerendered **link-preview cards**
+- `/[genre]/` (`[genre]/index.astro`): one page per genre that has trips
+  (`/underwater/`, `/wildlife/`, `/air-shows/`) — the same `TripIndex` as home
+  (hero, cards, clustered map), limited to that genre, in its accent. The
+  header shows a genre nav (All · Underwater · …) once 2+ genres have trips.
+- `/og/trips/[slug].jpg`, `/og/genres/[genre].jpg` and `/og/home.jpg`: prerendered **link-preview cards**
   (1200×630 JPEG) — see "Link previews" below.
 
 ### Link previews
@@ -537,19 +543,32 @@ automatically on each build — there is nothing to backfill or upload.
 
 ## 10. Design system
 
-A quiet, images-first gallery — the UI recedes so photographs dominate. Spend the
-one bold move on the dark "below the surface" atmosphere and the map-as-
-navigation; keep everything else disciplined.
+A quiet, images-first gallery — the UI recedes so photographs dominate. The
+chrome is a neutral, slightly warm "darkroom" grey so underwater blues, savanna
+golds and sky shots all sit on it equally; the one bold move is the per-genre
+accent and the map-as-navigation.
 
 **Palette (CSS custom properties)**
 ```
---depth-900 #06121a   --depth-800 #0a1c27   --depth-700 #102a38
---surface   #0d232f   --line      #1c3a49
---mist      #e9f1f3 (text)        --mist-dim #93abb6 (secondary)
---aqua      #58d2c6 (accent — pins, links, focus; used sparingly)
---aqua-deep #2b8e87   --sand #d9c7a3 (warm secondary, very sparing)
+--ink-900 #0e0e0d   --ink-800 #151514   --ink-700 #1e1d1b
+--surface #181817   --line    #2d2c2a
+--text    #ecebe7   --text-dim #9d9b95   --sand #d9c7a3 (dates, very sparing)
+--accent / --accent-deep — pins, links, focus, eyebrows; used sparingly
 ```
-Background: a subtle radial "depth" gradient over `--depth-900`.
+
+**Genres** (`src/lib/genres.js`, shared with the CLI): each genre has copy
+(eyebrow, tagline, what the `species` field holds — "Species" or "Aircraft",
+and whether it's set in italics) and an accent:
+```
+(neutral, mixed pages)  #e3d2ad / #8c7b58
+underwater              #58d2c6 / #2b8e87
+wildlife                #d9a85b / #93702f
+air-shows               #7fb2ff / #3f6db3
+```
+`[data-genre=…]` rules in `global.css` swap `--accent`; `Base.astro` sets it on
+`<html>` for trip and genre pages, and each trip card carries its own so mixed
+pages tag cards in their genre colour. The home map colours each spot by genre.
+Adding a genre = an entry in `genres.js` + a `[data-genre]` rule.
 
 **Type**
 - Display/headings + species names: serif stack — `"Iowan Old Style",
@@ -557,9 +576,9 @@ Background: a subtle radial "depth" gradient over `--depth-900`.
   feel).
 - Body: system sans stack.
 - Captions / EXIF / eyebrows: mono stack. Eyebrows uppercased, wide letter-
-  spacing, in `--aqua`.
+  spacing, in `--accent`.
 
-**Map:** CARTO `dark_all` basemap; aqua circle markers; rounded, bordered frame.
+**Map:** custom neutral vector style (`lib/mapStyle.js`); accent circle markers; rounded, bordered frame.
 
 These are tokens at the top of `global.css`; the look must be changeable by
 editing them.
