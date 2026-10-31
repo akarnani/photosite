@@ -2,7 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import PhotoMap from '../../components/PhotoMap.astro';
 import Gallery from '../../components/Gallery.astro';
-import { getTrips, getTrip, pointsForTrip, coverPhoto, tripDescription, siteConfig } from '../../lib/trips.js';
+import { getTrips, getTrip, pointsForTrip, coverPhoto, tripDescription, siteConfig, genresInUse } from '../../lib/trips.js';
 import { tripCard } from '../../lib/ogCard.js';
 import { genreOf } from '../../lib/genres.js';
 
@@ -16,12 +16,23 @@ const points = pointsForTrip(trip);
 const eyebrow = [trip.location?.name, trip.dates].filter(Boolean).join(' · ');
 const card = tripCard(trip, coverPhoto(trip), siteConfig());
 const genre = genreOf(trip);
+
+// Back link. Statically it points at the trip's genre page when the site has
+// more than one genre (that's where the nav would have taken you), else home.
+// A tiny script then retargets it to wherever the visitor actually came from —
+// home or any genre page — when the referrer is on this site.
+const inUse = genresInUse();
+const backTargets = { '/': 'All trips', ...Object.fromEntries(inUse.map((g) => [`/${g.id}/`, g.label])) };
+const backHref = inUse.length > 1 ? `/${genre.id}/` : '/';
 ---
 
 <Base title={trip.title} description={tripDescription(trip)} genre={genre.id} image={{ path: card.path, alt: `${trip.title} — ${genre.eyebrow.toLowerCase()}` }}>
   <section class="stack">
     <div class="trip-head-row">
       <header class="trip-header">
+        <a class="trip-back" href={backHref} data-targets={JSON.stringify(backTargets)}>
+          <span aria-hidden="true">←</span> <span class="trip-back-label">{backTargets[backHref]}</span>
+        </a>
         {eyebrow && <p class="eyebrow">{eyebrow}</p>}
         <h1>{trip.title}</h1>
         {trip.summary && <p>{trip.summary}</p>}
@@ -39,3 +50,32 @@ const genre = genreOf(trip);
     <Gallery photos={trip.photos} subjectItalic={genre.subjectItalic} />
   </section>
 </Base>
+
+<script is:inline>
+  (() => {
+    const a = document.querySelector('.trip-back');
+    if (!a) return;
+    let from;
+    try {
+      from = document.referrer && new URL(document.referrer);
+    } catch {}
+    if (!from || from.origin !== location.origin) return;
+    const targets = JSON.parse(a.dataset.targets);
+    const path = from.pathname.endsWith('/') ? from.pathname : `${from.pathname}/`;
+    const label = targets[path];
+    if (!label) return;
+    a.href = path + from.search;
+    a.querySelector('.trip-back-label').textContent = label;
+    // Going back through history restores the index's scroll position — but
+    // only while the previous entry is still that page (a hash change, e.g.
+    // from the lightbox, may have pushed one in between).
+    let moved = false;
+    window.addEventListener('hashchange', () => (moved = true));
+    a.addEventListener('click', (e) => {
+      if (!moved && history.length > 1 && !(e.metaKey || e.ctrlKey || e.shiftKey || e.altKey)) {
+        e.preventDefault();
+        history.back();
+      }
+    });
+  })();
+</script>
