@@ -6,9 +6,9 @@ document is the source of truth for intent and contracts and is written to be
 implemented from scratch.
 
 The subject started as **underwater / dive photography** and now spans genres
-(underwater, wildlife, air shows — see §10). The site name (`[site].title`,
-"Depth of Field") is genre-neutral; copy and accent follow each trip's genre, and all
-visual tokens live at the top of `global.css` and are meant to be edited.
+(underwater, wildlife, air shows — see §10). The name ("Below the Surface",
+`[site].title`) stays; site-wide copy is genre-neutral without listing genres,
+per-trip copy and accent follow the trip's genre, and all visual tokens live at the top of `global.css` and are meant to be edited.
 
 ---
 
@@ -362,7 +362,7 @@ arrays.
 ### `photosite.config.toml`
 ```toml
 [site]
-title = "Depth of Field"
+title = "Below the Surface"
 author = "Andrew Karnani"                    # footer copyright / byline
 publicBaseUrl = "https://img.example.com"   # R2 custom domain
 

@@ -159,7 +159,7 @@ export function tripDescription(trip) {
 // Site-wide config (title) read from the repo's photosite.config.toml. Falls
 // back gracefully so the site still builds without it.
 export function siteConfig() {
-  const fallback = { title: 'Photography', author: '' };
+  const fallback = { title: 'Below the Surface', author: '' };
   try {
     const toml = fs.readFileSync(path.join(process.cwd(), '..', 'photosite.config.toml'), 'utf8');
     return {

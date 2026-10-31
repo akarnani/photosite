@@ -1,4 +1,4 @@
-# photosite — a photography portfolio (underwater, wildlife, air shows)
+# Below the Surface — a photography portfolio
 
 A cheap-to-run ($0/month + a domain), low-maintenance static photo portfolio.
 Photos are grouped by **trip**, plotted on a **map** from their GPS EXIF, and

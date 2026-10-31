@@ -3,7 +3,7 @@
 # credentials live only in your rclone remote. Re-run `photosite setup` to edit.
 
 [site]
-title = "Depth of Field"
+title = "Below the Surface"
 author = "Andrew Karnani"
 publicBaseUrl = "https://img.karnani.io"
 
