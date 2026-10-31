@@ -66,11 +66,23 @@ function loadTrip(slug) {
     slug,
     ...trip,
     genre: genreId(trip),
-    photos: photos.map((p, i) => mergePhoto(p, annotations[p.file], slug, i)),
+    photos: byCaptureTime(photos).map((p, i) => mergePhoto(p, annotations[p.file], slug, i)),
   };
 }
 
-const firstDate = (trip) => trip.photos[0]?.date || '';
+// Trip pages (gallery + lightbox) show photos in the order they were taken:
+// oldest first, undated photos last. photos.json itself is stored newest-first
+// by the tool, so sort here rather than relying on file order. Ties keep their
+// photos.json order (Array#sort is stable) so the result is deterministic.
+function byCaptureTime(photos) {
+  return [...photos].sort((a, b) => {
+    if (!a.date || !b.date) return (a.date ? 0 : 1) - (b.date ? 0 : 1);
+    return String(a.date).localeCompare(String(b.date));
+  });
+}
+
+// Most recent capture date in a trip (photos are oldest-first, so the last dated one).
+const lastDate = (trip) => trip.photos.findLast((p) => p.date)?.date || '';
 
 export function getTrips() {
   if (!fs.existsSync(CONTENT_DIR)) return [];
@@ -79,7 +91,7 @@ export function getTrips() {
     .filter((d) => d.isDirectory())
     .map((d) => d.name)
     .filter((s) => fs.existsSync(path.join(CONTENT_DIR, s, 'trip.yaml')));
-  return slugs.map(loadTrip).sort((a, b) => firstDate(b).localeCompare(firstDate(a)));
+  return slugs.map(loadTrip).sort((a, b) => lastDate(b).localeCompare(lastDate(a)));
 }
 
 export function getTrip(slug) {
@@ -147,7 +159,10 @@ export function allPoints(trips = getTrips()) {
 // Cover photo record for a trip (named cover, else newest), with `position`:
 // the trip's coverPosition focal point as { x, y } percentages, or null.
 export function coverPhoto(trip) {
-  const photo = trip.photos.find((p) => p.file === trip.cover) || trip.photos[0] || null;
+  const photo = trip.photos.find((p) => p.file === trip.cover) ||
+    trip.photos.findLast((p) => p.date) ||
+    trip.photos[0] ||
+    null;
   if (!photo) return null;
   // The focal point belongs to the named cover; don't apply it to a fallback.
   const position = photo.file === trip.cover ? parseCoverPosition(trip.coverPosition) : null;
