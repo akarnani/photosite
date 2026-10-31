@@ -1,192 +1,24 @@
 ---
 import Base from '../layouts/Base.astro';
-import PhotoMap from '../components/PhotoMap.astro';
-import { getTrips, allPoints, coverPhoto, siteConfig } from '../lib/trips.js';
+import TripIndex from '../components/TripIndex.astro';
+import { getTrips, coverPhoto, siteConfig, genresInUse } from '../lib/trips.js';
 import { homeCard } from '../lib/ogCard.js';
 
 const trips = getTrips();
-const points = allPoints();
 const site = siteConfig();
+const genres = genresInUse(trips);
 
-const heroTrip = trips[0] || null;
-const heroCover = heroTrip ? coverPhoto(heroTrip) : null;
-const card = homeCard(trips, heroCover, site);
-const srcsetStr = (p) => p.srcset.map((s) => `${s.url} ${s.w}w`).join(', ');
+// One genre: keep its own voice. Several: a neutral line that names them.
+const listOf = (xs) => (xs.length < 2 ? xs.join('') : `${xs.slice(0, -1).join(', ')} and ${xs.at(-1)}`);
+const single = genres.length === 1 ? genres[0] : null;
+const eyebrow = single ? single.eyebrow : 'Photography';
+const tagline = single
+  ? single.tagline
+  : `${listOf(genres.map((g, i) => (i ? g.label.toLowerCase() : g.label)))}, by trip — where each frame was taken, and what was in it.`;
+
+const card = homeCard(trips, trips[0] ? coverPhoto(trips[0]) : null, site);
 ---
 
-<Base image={{ path: card.path, alt: `${site.title} — underwater photography` }}>
-  {
-    heroCover ? (
-      <section class="hero-photo">
-        <picture class="hero-media">
-          <source type="image/webp" srcset={srcsetStr(heroCover)} sizes="100vw" />
-          <img
-            src={heroCover.fallback}
-            alt={heroTrip.title}
-            loading="eager"
-            fetchpriority="high"
-            style={`background-image:url(${heroCover.lqip})`}
-          />
-        </picture>
-        <div class="hero-scrim" />
-        <div class="hero-content">
-          <div class="hero-text">
-            <p class="eyebrow">Underwater photography</p>
-            <h1>{site.title}</h1>
-            <p>Dives, by trip — where each frame was taken, and what swam past the lens.</p>
-          </div>
-          <a class="hero-latest" href={`/trips/${heroTrip.slug}/`}>
-            <span>Latest — {heroTrip.title}{heroTrip.location?.name ? ` · ${heroTrip.location.name}` : ''}</span>
-          </a>
-        </div>
-      </section>
-    ) : (
-      <section class="hero">
-        <p class="eyebrow">Underwater photography</p>
-        <h1>{site.title}</h1>
-        <p>Dives, by trip — where each frame was taken, and what swam past the lens.</p>
-      </section>
-    )
-  }
-
-  <section>
-    <div class="section-head trips-head">
-      <div>
-        <p class="eyebrow">Trips</p>
-        <h2>Recent expeditions</h2>
-      </div>
-      <div class="trip-filter">
-        <span id="trip-filter-status" class="trip-filter-status" aria-live="polite"></span>
-        <button id="trip-reset" class="trip-reset" type="button" hidden>Show all</button>
-      </div>
-    </div>
-
-    {
-      trips.length === 0 ? (
-        <p style="color:var(--mist-dim)">No trips yet. Add one with <code>photosite add-trip</code>.</p>
-      ) : (
-        <div class="trip-grid" id="trip-grid">
-          {trips.map((trip) => {
-            const cover = coverPhoto(trip);
-            const metaRest = [trip.location?.name, `${trip.photos.length} photos`].filter(Boolean).join(' · ');
-            const hasGeo = trip.photos.some((p) => p.gps);
-            return (
-              <a class="trip-card" href={`/trips/${trip.slug}/`} data-slug={trip.slug} data-geo={hasGeo ? 'true' : 'false'}>
-                {cover && (
-                  <img class="cover" src={cover.fallback} width={cover.width} height={cover.height} alt={trip.title} loading="lazy" />
-                )}
-                <div class="body">
-                  <h3>{trip.title}</h3>
-                  <p class="meta">
-                    {trip.dates && <span class="meta-date">{trip.dates}</span>}
-                    {trip.dates && metaRest ? ' · ' : ''}
-                    {metaRest}
-                  </p>
-                </div>
-              </a>
-            );
-          })}
-        </div>
-      )
-    }
-  </section>
-
-  {
-    points.length > 0 && (
-      <section>
-        <div class="section-head">
-          <p class="eyebrow">The map</p>
-          <h2>Everywhere the camera has been</h2>
-        </div>
-        <PhotoMap points={points} id="global-map" cluster={true} link={true} height="460px" />
-      </section>
-    )
-  }
-
-  <script is:inline>
-    (function () {
-      const grid = document.getElementById('trip-grid');
-      if (!grid) return;
-      const cards = Array.from(grid.querySelectorAll('.trip-card'));
-      const status = document.getElementById('trip-filter-status');
-      const resetBtn = document.getElementById('trip-reset');
-      const total = cards.length;
-
-      // No-JS default is CSS-columns (global.css); enhance to the grid-based
-      // masonry once script runs.
-      grid.classList.add('is-grid');
-
-      // Masonry: each tile spans grid rows ≈ its pixel height and is placed
-      // explicitly into the leftmost column that is (nearly) the shortest.
-      // The tolerance stops sub-pixel height differences between same-ratio
-      // tiles from pulling the next tile into a right-hand column, which
-      // breaks left-to-right reading order.
-      function layout() {
-        const cs = getComputedStyle(grid);
-        const gap = parseFloat(cs.columnGap) || 16;
-        const cols = cs.gridTemplateColumns.split(' ').length;
-        const colWidth = (grid.clientWidth - gap * (cols - 1)) / cols;
-        const tol = colWidth * 0.1;
-        const heights = new Array(cols).fill(0);
-        for (const c of cards) {
-          if (c.classList.contains('is-hidden')) continue;
-          const span = Math.max(1, Math.ceil(c.getBoundingClientRect().height + gap));
-          const min = Math.min(...heights);
-          const col = heights.findIndex((h) => h <= min + tol);
-          c.style.gridColumn = String(col + 1);
-          c.style.gridRow = heights[col] + 1 + ' / span ' + span;
-          heights[col] += span;
-        }
-      }
-      let raf;
-      const relayout = () => {
-        cancelAnimationFrame(raf);
-        raf = requestAnimationFrame(layout);
-      };
-      window.addEventListener('load', relayout);
-      window.addEventListener('resize', relayout);
-      cards.forEach((c) => {
-        const img = c.querySelector('img');
-        if (img && !img.complete) img.addEventListener('load', relayout, { once: true });
-      });
-      layout();
-
-      function showAll() {
-        cards.forEach((c) => c.classList.remove('is-hidden'));
-        status.textContent = '';
-        resetBtn.hidden = true;
-        relayout();
-      }
-      function filter(slugs) {
-        const set = new Set(slugs);
-        let shown = 0;
-        cards.forEach((c) => {
-          const vis = c.dataset.geo === 'false' || set.has(c.dataset.slug);
-          c.classList.toggle('is-hidden', !vis);
-          if (vis) shown += 1;
-        });
-        if (shown >= total) {
-          showAll();
-        } else {
-          status.textContent = `${shown} of ${total} trips in view`;
-          resetBtn.hidden = false;
-          relayout();
-        }
-      }
-
-      document.addEventListener('photomap:view', (e) => filter(e.detail.slugs));
-      document.addEventListener('photomap:select', (e) => {
-        const slug = (e.detail.slugs || [])[0];
-        const card = slug && grid.querySelector(`.trip-card[data-slug="${slug}"]`);
-        if (!card) return;
-        card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        card.classList.add('pulse');
-        setTimeout(() => card.classList.remove('pulse'), 1400);
-      });
-      resetBtn.addEventListener('click', () => {
-        showAll();
-        document.dispatchEvent(new CustomEvent('photomap:reset'));
-      });
-    })();
-  </script>
+<Base genre={single?.id} image={{ path: card.path, alt: `${site.title} — ${eyebrow.toLowerCase()}` }}>
+  <TripIndex trips={trips} eyebrow={eyebrow} heading={site.title} tagline={tagline} genreTags={genres.length > 1} />
 </Base>

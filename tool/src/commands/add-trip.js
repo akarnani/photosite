@@ -9,6 +9,7 @@ import * as exif from '../exif.js';
 import { slugify, listTripSlugs, suggestSlug, slugError } from '../trips.js';
 import { validateFolder, listImages, tripDateLabel } from '../ingest.js';
 import { createTrip } from '../create-trip.js';
+import { genreQuestion, genreError } from '../genres.js';
 import { maybePublish } from '../publish.js';
 import { annotate } from './annotate.js';
 
@@ -43,13 +44,17 @@ export async function addTrip(opts = {}) {
   const meta = await exif.readMetadata(files);
   const dateGuess = tripDateLabel(meta);
 
+  if (opts.genre && genreError(opts.genre)) ui.fail(genreError(opts.genre));
+
   const q = [];
+  if (!opts.genre) q.push(genreQuestion());
   if (!opts.name) q.push({ type: 'text', name: 'name', message: 'Trip name', validate: (v) => (v.trim() ? true : 'Required') });
   if (!opts.location) q.push({ type: 'text', name: 'location', message: 'Location (e.g. "Raja Ampat, Indonesia")' });
   if (!opts.dates) q.push({ type: 'text', name: 'dates', message: 'Dates', initial: dateGuess });
   q.push({ type: 'text', name: 'summary', message: 'Short intro paragraph' });
   const ans = await ui.ask(q);
 
+  const genre = opts.genre || ans.genre;
   const name = (opts.name || ans.name || '').trim();
   const location = opts.location || ans.location || '';
   const dates = opts.dates || ans.dates || dateGuess;
@@ -80,6 +85,7 @@ export async function addTrip(opts = {}) {
     paths: P,
     slug,
     title: name,
+    genre,
     folder: from,
     locationName: location,
     dates,
@@ -92,7 +98,7 @@ export async function addTrip(opts = {}) {
 
   // Ask BEFORE launching the TUI (a readline prompt can't run after it). If we
   // annotate, the TUI itself offers to publish; otherwise prompt here.
-  if (await ui.confirm('Annotate species & captions now?', true)) {
+  if (await ui.confirm('Annotate subjects & captions now?', true)) {
     await annotate(slug, { offerPublish: upload, publishMessage: `Add trip: ${name}` });
     if (!upload) ui.info('Images not uploaded (--no-upload); run `photosite upload` then `photosite push`.');
   } else {

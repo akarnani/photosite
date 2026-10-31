@@ -2,17 +2,20 @@
    Design tokens — edit these to re-theme the whole site. (DESIGN.md §10)
    ============================================================================ */
 :root {
-  /* palette */
-  --depth-900: #06121a;
-  --depth-800: #0a1c27;
-  --depth-700: #102a38;
-  --surface: #0d232f;
-  --line: #1c3a49;
-  --mist: #e9f1f3; /* primary text */
-  --mist-dim: #93abb6; /* secondary text */
-  --aqua: #58d2c6; /* accent — pins, links, focus; sparingly */
-  --aqua-deep: #2b8e87;
-  --sand: #d9c7a3; /* warm secondary, very sparing */
+  /* palette — neutral "darkroom" greys so no genre's photos fight the chrome */
+  --ink-900: #0e0e0d; /* page */
+  --ink-800: #151514;
+  --ink-700: #1e1d1b;
+  --surface: #181817;
+  --line: #2d2c2a;
+  --text: #ecebe7; /* primary text */
+  --text-dim: #9d9b95; /* secondary text */
+  --sand: #d9c7a3; /* warm secondary (dates), very sparing */
+
+  /* accent — pins, links, focus; sparingly. Neutral by default (home, mixed
+     pages); a genre swaps it via [data-genre] below. */
+  --accent: #e3d2ad;
+  --accent-deep: #8c7b58;
 
   /* type */
   --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
@@ -29,6 +32,21 @@
   --pad: clamp(1rem, 0.5rem + 3vw, 3.5rem);
   --gap: clamp(0.6rem, 0.4rem + 1vw, 1.1rem);
   --radius: 14px;
+}
+
+/* Per-genre accent (lib/genres.js holds the same values for the OG cards and
+   map). Set on <html> for a trip / genre page, or on a single trip card. */
+[data-genre='underwater'] {
+  --accent: #58d2c6;
+  --accent-deep: #2b8e87;
+}
+[data-genre='wildlife'] {
+  --accent: #d9a85b;
+  --accent-deep: #93702f;
+}
+[data-genre='air-shows'] {
+  --accent: #7fb2ff;
+  --accent-deep: #3f6db3;
 }
 
 /* ============================================================================
@@ -50,16 +68,16 @@ body {
   font-family: var(--sans);
   font-size: var(--step-body);
   line-height: 1.6;
-  color: var(--mist);
+  color: var(--text);
   background:
-    radial-gradient(120% 90% at 50% -10%, var(--depth-700) 0%, transparent 55%),
-    radial-gradient(90% 70% at 80% 110%, var(--depth-800) 0%, transparent 50%),
-    var(--depth-900);
+    radial-gradient(120% 90% at 50% -10%, var(--ink-700) 0%, transparent 55%),
+    radial-gradient(90% 70% at 80% 110%, var(--ink-800) 0%, transparent 50%),
+    var(--ink-900);
   min-height: 100vh;
 }
 
 a {
-  color: var(--aqua);
+  color: var(--accent);
   text-decoration: none;
 }
 a:hover {
@@ -85,12 +103,12 @@ h3 {
   font-size: var(--step-eyebrow);
   text-transform: uppercase;
   letter-spacing: 0.18em;
-  color: var(--aqua);
+  color: var(--accent);
   margin: 0 0 0.6rem;
 }
 
 :focus-visible {
-  outline: 2px solid var(--aqua);
+  outline: 2px solid var(--accent);
   outline-offset: 3px;
   border-radius: 4px;
 }
@@ -109,7 +127,7 @@ h3 {
 .brand {
   font-family: var(--serif);
   font-size: 1.25rem;
-  color: var(--mist);
+  color: var(--text);
 }
 .site-header nav {
   font-family: var(--mono);
@@ -118,7 +136,34 @@ h3 {
   letter-spacing: 0.15em;
 }
 .site-header nav a {
-  color: var(--mist-dim);
+  color: var(--text-dim);
+}
+.genre-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.4rem;
+}
+.genre-nav a {
+  position: relative;
+  padding-bottom: 0.2rem;
+}
+.genre-nav a:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+.genre-nav a[aria-current='page'] {
+  color: var(--text);
+}
+/* The current genre is underlined in its own accent. */
+.genre-nav a[aria-current='page']::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.15rem;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--accent);
 }
 
 main {
@@ -132,7 +177,7 @@ section {
 .site-footer {
   padding: 2.5rem var(--pad);
   border-top: 1px solid var(--line);
-  color: var(--mist-dim);
+  color: var(--text-dim);
   font-family: var(--mono);
   font-size: var(--step-eyebrow);
   display: flex;
@@ -154,7 +199,7 @@ section {
 
 .sa-footer:hover,
 .sa-footer:focus-within {
-  color: var(--mist);
+  color: var(--text);
 }
 
 /* Simple Analytics text link (free plan) — rules verbatim from
@@ -188,7 +233,7 @@ a.sa-credit svg {
   margin-bottom: 0.5rem;
 }
 .hero p {
-  color: var(--mist-dim);
+  color: var(--text-dim);
   font-size: clamp(1rem, 0.9rem + 0.6vw, 1.3rem);
   max-width: 48ch;
 }
@@ -199,7 +244,7 @@ a.sa-credit svg {
   padding: 0;
   min-height: clamp(340px, 56vw, 620px);
   overflow: hidden;
-  background: var(--depth-800);
+  background: var(--ink-800);
 }
 .hero-media {
   position: absolute;
@@ -217,9 +262,9 @@ a.sa-credit svg {
   inset: 0;
   background: linear-gradient(
     to top,
-    rgba(6, 18, 26, 0.96) 0%,
-    rgba(6, 18, 26, 0.45) 38%,
-    rgba(6, 18, 26, 0.12) 62%,
+    rgba(14, 14, 13, 0.96) 0%,
+    rgba(14, 14, 13, 0.45) 38%,
+    rgba(14, 14, 13, 0.12) 62%,
     transparent 100%
   );
 }
@@ -240,7 +285,7 @@ a.sa-credit svg {
 .hero-text .eyebrow {
   font-size: 12px;
   letter-spacing: 0.18em;
-  color: #58d2c6;
+  color: var(--accent);
   margin: 0 0 10px;
 }
 .hero-text h1 {
@@ -250,7 +295,7 @@ a.sa-credit svg {
   margin: 0;
 }
 .hero-text p {
-  color: #c6d6dc;
+  color: #d6d4ce;
   font-size: 17px;
   line-height: 1.6;
   max-width: 48ch;
@@ -261,13 +306,13 @@ a.sa-credit svg {
   display: flex;
   align-items: center;
   gap: 10px;
-  color: #93abb6;
+  color: var(--text-dim);
   font-family: var(--mono);
   font-size: 11px;
   letter-spacing: 0.08em;
 }
 .hero-latest:hover {
-  color: var(--mist);
+  color: var(--text);
   text-decoration: none;
 }
 
@@ -336,13 +381,13 @@ a.sa-credit svg {
 .trip-card:hover {
   text-decoration: none;
   transform: translateY(-3px);
-  border-color: var(--aqua-deep);
+  border-color: var(--accent-deep);
 }
 .trip-card .cover {
   display: block;
   width: 100%;
   height: auto; /* whole cover at natural ratio — drives the collage heights */
-  background: var(--depth-700);
+  background: var(--ink-700);
 }
 .trip-card .body {
   position: absolute;
@@ -350,17 +395,17 @@ a.sa-credit svg {
   right: 0;
   bottom: 0;
   padding: 2.4rem 1rem 0.85rem;
-  background: linear-gradient(to top, rgba(6, 18, 26, 0.92) 16%, rgba(6, 18, 26, 0.5) 58%, transparent);
+  background: linear-gradient(to top, rgba(14, 14, 13, 0.92) 16%, rgba(14, 14, 13, 0.5) 58%, transparent);
 }
 .trip-card h3 {
   font-size: 1.4rem;
   margin-bottom: 0.2rem;
-  color: var(--mist);
+  color: var(--text);
 }
 .trip-card .meta {
   font-family: var(--mono);
   font-size: var(--step-eyebrow);
-  color: var(--mist-dim);
+  color: var(--text-dim);
   letter-spacing: 0.04em;
 }
 .trip-card .meta .meta-date {
@@ -370,8 +415,8 @@ a.sa-credit svg {
   display: none;
 }
 .trip-card.pulse {
-  border-color: var(--aqua);
-  box-shadow: 0 0 0 2px var(--aqua);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent);
 }
 
 /* Trip section header + map-driven filter chrome. */
@@ -390,22 +435,22 @@ a.sa-credit svg {
 .trip-filter-status {
   font-family: var(--mono);
   font-size: var(--step-eyebrow);
-  color: var(--mist-dim);
+  color: var(--text-dim);
 }
 .trip-reset {
   font-family: var(--mono);
   font-size: var(--step-eyebrow);
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--depth-900);
-  background: var(--aqua);
+  color: var(--ink-900);
+  background: var(--accent);
   border: 0;
   border-radius: 999px;
   padding: 0.35rem 0.85rem;
   cursor: pointer;
 }
 .trip-reset:hover {
-  background: #7fe0d6;
+  background: color-mix(in srgb, var(--accent) 80%, white);
 }
 
 /* ============================================================================
@@ -416,16 +461,16 @@ a.sa-credit svg {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   overflow: hidden;
-  background: var(--depth-800);
+  background: var(--ink-800);
 }
 .map {
   width: 100%;
-  background: var(--depth-900);
+  background: var(--ink-900);
 }
 .map-frame figcaption {
   font-family: var(--mono);
   font-size: var(--step-eyebrow);
-  color: var(--mist-dim);
+  color: var(--text-dim);
   padding: 0.6rem 0.9rem;
   border-top: 1px solid var(--line);
 }
@@ -434,7 +479,7 @@ a.sa-credit svg {
   align-items: center;
   justify-content: center;
   height: 100%;
-  color: var(--mist-dim);
+  color: var(--text-dim);
   font-family: var(--mono);
   font-size: var(--step-eyebrow);
 }
@@ -444,9 +489,9 @@ a.sa-credit svg {
   justify-content: center;
   box-sizing: border-box;
   border-radius: 50%;
-  border: 2px solid var(--aqua);
-  background: rgba(88, 210, 198, 0.5);
-  color: var(--depth-900);
+  border: 2px solid var(--accent);
+  background: color-mix(in srgb, var(--accent) 50%, transparent);
+  color: var(--ink-900);
   font-family: var(--mono);
   font-weight: 600;
   font-size: 11px;
@@ -454,14 +499,14 @@ a.sa-credit svg {
   cursor: pointer;
 }
 .map-pin.multi {
-  background: var(--aqua);
+  background: var(--accent);
 }
 .map-pin:hover {
-  border-color: var(--mist);
+  border-color: var(--text);
 }
 .maplibregl-popup-content {
   background: var(--surface);
-  color: var(--mist);
+  color: var(--text);
   border: 1px solid var(--line);
   border-radius: 8px;
 }
@@ -470,7 +515,7 @@ a.sa-credit svg {
   border-bottom-color: var(--surface);
 }
 .maplibregl-popup-close-button {
-  color: var(--mist-dim);
+  color: var(--text-dim);
   font-size: 1.1rem;
   padding: 0 6px;
 }
@@ -485,17 +530,17 @@ a.sa-credit svg {
   filter: invert(0.82);
 }
 .maplibregl-ctrl-attrib {
-  background: rgba(13, 35, 47, 0.85) !important;
+  background: rgba(24, 24, 23, 0.85) !important;
   border-radius: 6px 0 0 0;
 }
 .maplibregl-ctrl-attrib a {
-  color: var(--mist-dim);
+  color: var(--text-dim);
 }
 .maplibregl-ctrl-attrib-button {
   filter: invert(0.82);
 }
 .maplibregl-cooperative-gesture-screen {
-  background: rgba(6, 18, 26, 0.55);
+  background: rgba(14, 14, 13, 0.55);
   font-family: var(--sans);
 }
 .map-pop {
@@ -520,7 +565,7 @@ a.sa-credit svg {
   font-family: var(--mono);
   font-size: var(--step-eyebrow);
   letter-spacing: 0.06em;
-  color: var(--mist-dim);
+  color: var(--text-dim);
   margin-bottom: 0.45rem;
 }
 .map-pop-grid {
@@ -539,7 +584,7 @@ a.sa-credit svg {
   display: block;
 }
 .map-pop-item:hover img {
-  outline: 2px solid var(--aqua);
+  outline: 2px solid var(--accent);
   outline-offset: -2px;
 }
 
@@ -629,7 +674,7 @@ a.sa-credit svg {
   flex-direction: column;
   gap: 0.15rem;
   padding: 1.6rem 0.8rem 0.7rem;
-  background: linear-gradient(to top, rgba(6, 18, 26, 0.92), transparent);
+  background: linear-gradient(to top, rgba(14, 14, 13, 0.92), transparent);
   opacity: 0;
   transform: translateY(8px);
   transition: opacity 0.25s ease, transform 0.25s ease;
@@ -643,11 +688,11 @@ a.sa-credit svg {
 .shot-meta .species {
   font-family: var(--serif);
   font-style: italic;
-  color: var(--mist);
+  color: var(--text);
 }
 .shot-meta .note {
   font-size: 0.85rem;
-  color: var(--mist-dim);
+  color: var(--text-dim);
 }
 
 /* ============================================================================
@@ -660,7 +705,7 @@ a.sa-credit svg {
   display: none;
   align-items: center;
   justify-content: center;
-  background: rgba(4, 12, 18, 0.95);
+  background: rgba(8, 8, 10, 0.95);
   padding: clamp(0.5rem, 2vw, 2rem);
 }
 .lightbox.open {
@@ -685,7 +730,7 @@ a.sa-credit svg {
 .lightbox figcaption {
   font-family: var(--mono);
   font-size: 0.85rem;
-  color: var(--mist-dim);
+  color: var(--text-dim);
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -704,10 +749,10 @@ a.sa-credit svg {
   font-family: var(--serif);
   font-style: italic;
   font-size: 1.2rem;
-  color: var(--aqua);
+  color: var(--accent);
 }
 .lightbox .lb-note {
-  color: var(--mist-dim);
+  color: var(--text-dim);
   font-family: var(--sans);
   font-size: 0.9rem;
 }
@@ -722,7 +767,7 @@ a.sa-credit svg {
 .lightbox .lb-meta {
   font-family: var(--mono);
   font-size: 0.8rem;
-  color: var(--mist-dim);
+  color: var(--text-dim);
 }
 .lightbox .lb-icon-actions {
   display: flex;
@@ -730,8 +775,8 @@ a.sa-credit svg {
 }
 .lightbox button {
   position: absolute;
-  background: rgba(13, 35, 47, 0.7);
-  color: var(--mist);
+  background: rgba(24, 24, 23, 0.7);
+  color: var(--text);
   border: 1px solid var(--line);
   border-radius: 50%;
   width: 46px;
@@ -759,15 +804,15 @@ a.sa-credit svg {
   width: 32px;
   height: 32px;
   background: transparent;
-  color: var(--mist-dim);
+  color: var(--text-dim);
   border: 1px solid var(--line);
   font-size: 0.85rem;
   transition: color 0.2s ease, border-color 0.2s ease;
 }
 .lightbox .lb-icon-actions button:hover,
 .lightbox .lb-icon-actions button:focus-visible {
-  color: var(--mist);
-  border-color: var(--aqua-deep);
+  color: var(--text);
+  border-color: var(--accent-deep);
 }
 .lightbox .lb-map {
   position: absolute;
@@ -792,12 +837,12 @@ a.sa-credit svg {
   margin-bottom: 0.4rem;
 }
 .trip-header p {
-  color: var(--mist-dim);
+  color: var(--text-dim);
 }
 .trip-header .trip-count {
   font-family: var(--mono);
   font-size: var(--step-eyebrow);
-  color: var(--mist-dim);
+  color: var(--text-dim);
   margin-top: 0.6rem;
 }
 .stack > * + * {
@@ -836,16 +881,16 @@ a.sa-credit svg {
   font-size: var(--step-h1);
 }
 .fav-lede {
-  color: var(--mist-dim);
+  color: var(--text-dim);
   max-width: 40rem;
   margin: 1rem 0 0;
 }
 .fav-banner {
   margin: 1.4rem 0 0;
   padding: 0.8rem 1rem;
-  border: 1px solid var(--aqua-deep);
+  border: 1px solid var(--accent-deep);
   border-radius: 10px;
-  color: var(--mist);
+  color: var(--text);
   max-width: 40rem;
 }
 .fav-form {
@@ -867,7 +912,7 @@ a.sa-credit svg {
   font-size: var(--step-eyebrow);
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  color: var(--mist-dim);
+  color: var(--text-dim);
   padding: 0;
   margin-bottom: 0.5rem;
 }
@@ -878,7 +923,7 @@ a.sa-credit svg {
 .fav select,
 .fav input[name='seed'] {
   font: inherit;
-  color: var(--mist);
+  color: var(--text);
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 10px;
@@ -908,20 +953,20 @@ a.sa-credit svg {
   border: 1px solid var(--line);
   border-radius: 999px;
   cursor: pointer;
-  color: var(--mist-dim);
+  color: var(--text-dim);
 }
 .fav-chips input:checked + span {
-  border-color: var(--aqua);
-  color: var(--mist);
+  border-color: var(--accent);
+  color: var(--text);
   background: var(--surface);
 }
 .fav-chips input:focus-visible + span {
-  outline: 2px solid var(--aqua);
+  outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
 .fav-estimate {
   margin: 0;
-  color: var(--mist-dim);
+  color: var(--text-dim);
   font-size: 0.95rem;
 }
 .fav-actions {
@@ -937,25 +982,25 @@ a.sa-credit svg {
 .fav-ghost {
   font: inherit;
   font-size: 0.95rem;
-  color: var(--mist);
+  color: var(--text);
   border-radius: 999px;
   padding: 0.55rem 1.2rem;
   cursor: pointer;
 }
 .fav-btn {
-  background: var(--aqua-deep);
-  border: 1px solid var(--aqua-deep);
+  background: var(--accent-deep);
+  border: 1px solid var(--accent-deep);
 }
 .fav-btn:hover {
-  background: var(--aqua);
-  color: var(--depth-900);
+  background: var(--accent);
+  color: var(--ink-900);
 }
 .fav-ghost {
   background: transparent;
   border: 1px solid var(--line);
 }
 .fav-ghost:hover {
-  border-color: var(--aqua-deep);
+  border-color: var(--accent-deep);
 }
 .fav-ghost:disabled {
   opacity: 0.4;
@@ -976,19 +1021,19 @@ a.sa-credit svg {
   gap: 1rem;
   font-family: var(--mono);
   font-size: var(--step-eyebrow);
-  color: var(--mist-dim);
+  color: var(--text-dim);
 }
 .fav-bar {
   flex: 1;
   height: 4px;
   border-radius: 2px;
-  background: var(--depth-700);
+  background: var(--ink-700);
   overflow: hidden;
 }
 .fav-bar > div {
   height: 100%;
   width: 0;
-  background: var(--aqua);
+  background: var(--accent);
   transition: width 0.3s ease;
 }
 .fav-pair {
@@ -1018,7 +1063,7 @@ a.sa-credit svg {
   padding: 0;
   border: 2px solid transparent;
   border-radius: 12px;
-  background: var(--depth-800);
+  background: var(--ink-800);
   cursor: pointer;
   overflow: hidden;
   transition: border-color 0.15s ease;
@@ -1039,7 +1084,7 @@ a.sa-credit svg {
   border-color: var(--line);
 }
 .fav-side.is-chosen .fav-pick {
-  border-color: var(--aqua);
+  border-color: var(--accent);
 }
 .fav-side.is-lost {
   opacity: 0.35;
@@ -1051,7 +1096,7 @@ a.sa-credit svg {
   gap: 0.5rem;
   font-family: var(--mono);
   font-size: var(--step-eyebrow);
-  color: var(--mist-dim);
+  color: var(--text-dim);
 }
 .fav-zoom {
   padding: 0.1rem 0.6rem;
@@ -1072,7 +1117,7 @@ a.sa-credit svg {
   border-radius: 4px;
   padding: 0 0.35rem;
   margin-right: 0.45rem;
-  color: var(--mist-dim);
+  color: var(--text-dim);
 }
 @media (hover: none) {
   .fav kbd {
@@ -1083,7 +1128,7 @@ a.sa-credit svg {
   text-align: center;
   font-family: var(--mono);
   font-size: var(--step-eyebrow);
-  color: var(--mist-dim);
+  color: var(--text-dim);
   margin: 1.2rem 0 0;
 }
 
@@ -1097,8 +1142,8 @@ a.sa-credit svg {
   display: block;
   border-radius: 10px;
   overflow: hidden;
-  background: var(--depth-800);
-  color: var(--mist-dim);
+  background: var(--ink-800);
+  color: var(--text-dim);
   border: 1px solid transparent;
 }
 .fav-card:hover {
@@ -1106,7 +1151,7 @@ a.sa-credit svg {
   border-color: var(--line);
 }
 .fav-card.is-match {
-  border-color: var(--aqua);
+  border-color: var(--accent);
 }
 .fav-card img {
   width: 100%;
@@ -1120,20 +1165,20 @@ a.sa-credit svg {
   font-size: var(--step-eyebrow);
 }
 .fav-card b {
-  color: var(--mist);
+  color: var(--text);
   font-weight: 500;
 }
 .fav-card em {
   display: block;
   font-family: var(--serif);
   font-size: 0.95rem;
-  color: var(--mist);
+  color: var(--text);
   margin-top: 0.2rem;
 }
 .fav-card.is-match span::after {
   content: 'you both picked this';
   display: block;
-  color: var(--aqua);
+  color: var(--accent);
   margin-top: 0.2rem;
 }
 
@@ -1141,7 +1186,7 @@ a.sa-credit svg {
   position: fixed;
   inset: 0;
   z-index: 1000;
-  background: rgba(3, 9, 13, 0.97);
+  background: rgba(5, 5, 6, 0.97);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1160,7 +1205,7 @@ a.sa-credit svg {
   z-index: 1001;
   background: var(--surface);
   border: 1px solid var(--line);
-  color: var(--mist);
+  color: var(--text);
   padding: 0.6rem 1rem;
   border-radius: 10px;
 }
@@ -1168,11 +1213,11 @@ a.sa-credit svg {
 /* Quiet way in: a footer link and a line on each trip page. */
 .footer-links a,
 .trip-fav {
-  color: var(--mist-dim);
+  color: var(--text-dim);
 }
 .footer-links a:hover,
 .trip-fav:hover {
-  color: var(--aqua);
+  color: var(--accent);
 }
 
 /* ============================================================================
@@ -1191,4 +1236,31 @@ a.sa-credit svg {
   .trip-card:hover {
     transform: none;
   }
+}
+
+/* Genres whose subject isn't a species name (aircraft) set it upright. */
+.plain-subject .shot-meta .species,
+html:has(.plain-subject) .lightbox .lb-title {
+  font-style: normal;
+}
+
+/* Genre label on trip cards (mixed pages only), in the trip's accent. */
+.trip-card .genre-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 0.45rem;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.85);
+}
+.trip-card .genre-tag::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
 }

@@ -13,18 +13,23 @@ import fs from 'node:fs';
 import path from 'node:path';
 import satori from 'satori';
 import sharp from 'sharp';
+import { GENRES } from './genres.js';
 
 export const OG_WIDTH = 1200;
 export const OG_HEIGHT = 630;
 
-// Site palette (src/styles/global.css).
+// Site palette (src/styles/global.css). The accent is per card: the genre's,
+// or the neutral one on mixed (home) cards.
 const C = {
-  depth900: '#06121a',
-  depth700: '#102a38',
-  mist: '#e9f1f3',
-  mistDim: '#93abb6',
-  aqua: '#58d2c6',
+  ink900: '#0e0e0d',
+  ink700: '#1e1d1b',
+  text: '#ecebe7',
+  textDim: '#9d9b95',
+  accent: '#e3d2ad',
 };
+const accentOf = (genre) => GENRES[genre]?.accent || C.accent;
+// '#rrggbb' → 'r,g,b' for rgba() strings.
+const rgb = (hex) => [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16)).join(',');
 
 // Resolve from process.cwd() (site/), not import.meta.url — see DESIGN.md §13.1.
 const FONT_DIR = path.join(process.cwd(), 'node_modules', '@fontsource');
@@ -71,7 +76,7 @@ function titleSize(title) {
   return 60;
 }
 
-function overlay({ eyebrow, title, footerLeft, footerRight }) {
+function overlay({ eyebrow, title, footerLeft, footerRight, accent = C.accent }) {
   return h(
     'div',
     {
@@ -83,17 +88,17 @@ function overlay({ eyebrow, title, footerLeft, footerRight }) {
       justifyContent: 'flex-end',
       padding: '56px 64px',
       // Scrim: clear at the top so the photo reads, deep at the bottom for text.
-      backgroundImage: `linear-gradient(180deg, rgba(6,18,26,0) 25%, rgba(6,18,26,0.62) 58%, rgba(6,18,26,0.94) 100%)`,
+      backgroundImage: `linear-gradient(180deg, rgba(14,14,13,0) 25%, rgba(14,14,13,0.62) 58%, rgba(14,14,13,0.94) 100%)`,
     },
     eyebrow &&
       h(
         'div',
-        { display: 'flex', fontFamily: 'Mono', fontSize: 24, letterSpacing: 3, color: C.aqua, textTransform: 'uppercase', marginBottom: 14, textShadow: '0 1px 6px rgba(6,18,26,0.9)' },
+        { display: 'flex', fontFamily: 'Mono', fontSize: 24, letterSpacing: 3, color: accent, textTransform: 'uppercase', marginBottom: 14, textShadow: '0 1px 6px rgba(14,14,13,0.9)' },
         eyebrow,
       ),
     h(
       'div',
-      { display: 'flex', fontFamily: 'Serif', fontSize: titleSize(title), lineHeight: 1.05, color: C.mist, letterSpacing: -1, textShadow: '0 2px 12px rgba(6,18,26,0.6)' },
+      { display: 'flex', fontFamily: 'Serif', fontSize: titleSize(title), lineHeight: 1.05, color: C.text, letterSpacing: -1, textShadow: '0 2px 12px rgba(14,14,13,0.6)' },
       title,
     ),
     h(
@@ -104,13 +109,13 @@ function overlay({ eyebrow, title, footerLeft, footerRight }) {
         alignItems: 'center',
         marginTop: 30,
         paddingTop: 22,
-        borderTop: `2px solid rgba(88,210,198,0.45)`,
+        borderTop: `2px solid rgba(${rgb(accent)},0.45)`,
         fontFamily: 'Mono',
         fontSize: 22,
         letterSpacing: 1,
-        color: C.mistDim,
+        color: C.textDim,
       },
-      h('div', { display: 'flex', color: C.mist }, footerLeft),
+      h('div', { display: 'flex', color: C.text }, footerLeft),
       h('div', { display: 'flex' }, footerRight),
     ),
   );
@@ -129,7 +134,7 @@ async function background(photo) {
   }
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${OG_WIDTH}" height="${OG_HEIGHT}">
     <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="${C.depth700}"/><stop offset="1" stop-color="${C.depth900}"/>
+      <stop offset="0" stop-color="${C.ink700}"/><stop offset="1" stop-color="${C.ink900}"/>
     </linearGradient></defs>
     <rect width="100%" height="100%" fill="url(#g)"/></svg>`;
   return sharp(Buffer.from(svg)).toBuffer();
@@ -144,6 +149,7 @@ async function background(photo) {
  * @param {string} o.title
  * @param {string} o.footerLeft
  * @param {string} o.footerRight
+ * @param {string} [o.accent]   '#rrggbb' for the eyebrow + rule (genre accent)
  */
 export async function renderCard({ slug, photoUrl, ...text }) {
   const [photo, svg] = await Promise.all([
@@ -157,7 +163,7 @@ export async function renderCard({ slug, photoUrl, ...text }) {
 }
 
 // Bump when the card design changes so every cached preview image refreshes.
-const DESIGN_VERSION = 1;
+const DESIGN_VERSION = 2;
 
 // Short hash of everything drawn on a card, appended to its URL as ?v=… —
 // apps cache preview images by URL, so a new cover or title needs a new URL.
@@ -178,20 +184,40 @@ export function tripCard(trip, cover, site) {
     title: trip.title || trip.slug,
     footerLeft: site.title,
     footerRight: plural(trip.photos.length, 'photograph'),
+    accent: accentOf(trip.genre),
   };
   return { ...card, path: `/og/trips/${trip.slug}.jpg?v=${version(card)}` };
 }
 
 // Card spec for the home page: the latest trip's cover under the site title.
+// One genre on the site → its eyebrow and accent; several → neutral.
 export function homeCard(trips, cover, site) {
   const photos = trips.reduce((n, t) => n + t.photos.length, 0);
+  const genres = [...new Set(trips.map((t) => t.genre))];
+  const only = genres.length === 1 ? GENRES[genres[0]] : null;
   const card = {
     slug: trips[0]?.slug,
     photoUrl: cover?.remoteFallback,
-    eyebrow: 'Underwater photography',
+    eyebrow: only ? only.eyebrow : 'Photography',
     title: site.title,
     footerLeft: site.author || '',
     footerRight: `${plural(trips.length, 'trip')} · ${plural(photos, 'photograph')}`,
+    accent: only ? only.accent : C.accent,
   };
   return { ...card, path: `/og/home.jpg?v=${version(card)}` };
+}
+
+// Card spec for a genre page. `g` is a genresInUse() entry (with its trips).
+export function genreCard(g, cover, site) {
+  const photos = g.trips.reduce((n, t) => n + t.photos.length, 0);
+  const card = {
+    slug: g.trips[0]?.slug,
+    photoUrl: cover?.remoteFallback,
+    eyebrow: g.eyebrow,
+    title: g.label,
+    footerLeft: site.title,
+    footerRight: `${plural(g.trips.length, 'trip')} · ${plural(photos, 'photograph')}`,
+    accent: g.accent,
+  };
+  return { ...card, path: `/og/genres/${g.id}.jpg?v=${version(card)}` };
 }

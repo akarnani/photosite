@@ -4,6 +4,7 @@ import PhotoMap from '../../components/PhotoMap.astro';
 import Gallery from '../../components/Gallery.astro';
 import { getTrips, getTrip, pointsForTrip, coverPhoto, tripDescription, siteConfig } from '../../lib/trips.js';
 import { tripCard } from '../../lib/ogCard.js';
+import { genreOf } from '../../lib/genres.js';
 
 export function getStaticPaths() {
   return getTrips().map((t) => ({ params: { slug: t.slug } }));
@@ -14,9 +15,10 @@ const trip = getTrip(slug);
 const points = pointsForTrip(trip);
 const eyebrow = [trip.location?.name, trip.dates].filter(Boolean).join(' · ');
 const card = tripCard(trip, coverPhoto(trip), siteConfig());
+const genre = genreOf(trip);
 ---
 
-<Base title={trip.title} description={tripDescription(trip)} image={{ path: card.path, alt: `${trip.title} — underwater photography` }}>
+<Base title={trip.title} description={tripDescription(trip)} genre={genre.id} image={{ path: card.path, alt: `${trip.title} — ${genre.eyebrow.toLowerCase()}` }}>
   <section class="stack">
     <div class="trip-head-row">
       <header class="trip-header">
@@ -34,6 +36,6 @@ const card = tripCard(trip, coverPhoto(trip), siteConfig());
       <PhotoMap points={points} id={`map-${trip.slug}`} height="230px" />
     </div>
 
-    <Gallery photos={trip.photos} />
+    <Gallery photos={trip.photos} subjectItalic={genre.subjectItalic} />
   </section>
 </Base>

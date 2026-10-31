@@ -11,6 +11,7 @@ import { slugify, listTripSlugs, suggestSlug, slugError } from '../trips.js';
 import { discoverImageFolders, defaultTitleFromRel } from '../discover.js';
 import { listImages, tripDateLabel, validateFolder } from '../ingest.js';
 import { createTrip } from '../create-trip.js';
+import { genreQuestion } from '../genres.js';
 import { maybePublish } from '../publish.js';
 
 const isDir = (p) => {
@@ -70,6 +71,7 @@ export async function addTrips(parentArg, opts = {}) {
   // 4. Describe each (front-loaded; cancelling here writes nothing).
   const taken = new Set(listTripSlugs(P));
   const specs = [];
+  let lastGenre; // a batch is usually one genre: default to the previous answer
   for (const folder of picks) {
     ui.heading(`Describe: ${folder.relPath}  (${folder.count} photos)`);
     ui.step('reading photo dates…');
@@ -78,11 +80,13 @@ export async function addTrips(parentArg, opts = {}) {
     const defTitle = defaultTitleFromRel(folder.relPath);
 
     const a = await ui.ask([
+      genreQuestion(lastGenre),
       { type: 'text', name: 'title', message: 'Title', initial: defTitle, validate: (v) => (v.trim() ? true : 'Required') },
       { type: 'text', name: 'location', message: 'Location (e.g. "Komodo, Indonesia")' },
       { type: 'text', name: 'dates', message: 'Dates', initial: dateGuess },
       { type: 'text', name: 'summary', message: 'Short intro' },
     ]);
+    lastGenre = a.genre;
     const title = a.title.trim();
     const dates = a.dates || dateGuess;
     // Titles may repeat (same operator, different year); the slug must not.
@@ -95,7 +99,7 @@ export async function addTrips(parentArg, opts = {}) {
     });
     const slug = slugify(s);
     taken.add(slug);
-    specs.push({ folder: folder.absPath, relPath: folder.relPath, title, slug, location: a.location || '', dates, summary: a.summary || '', meta });
+    specs.push({ folder: folder.absPath, relPath: folder.relPath, title, slug, genre: a.genre, location: a.location || '', dates, summary: a.summary || '', meta });
   }
 
   if (!specs.length) {
@@ -117,6 +121,7 @@ export async function addTrips(parentArg, opts = {}) {
         paths: P,
         slug: s.slug,
         title: s.title,
+        genre: s.genre,
         folder: s.folder,
         locationName: s.location,
         dates: s.dates,
