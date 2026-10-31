@@ -2,14 +2,16 @@
 // trip.yaml / photos.json / annotations.yaml. Used by both add-trip and add-trips.
 import { ingestFolder, centroid } from './ingest.js';
 import { writeTrip, stubAnnotations } from './trips.js';
+import { DEFAULT_GENRE } from './genres.js';
 
-export async function createTrip({ cfg, paths, slug, title, folder, locationName, dates, summary, upload, meta }) {
+export async function createTrip({ cfg, paths, slug, title, genre, folder, locationName, dates, summary, upload, meta }) {
   const records = await ingestFolder({ folder, cfg, slug, paths, upload, meta });
   const center = centroid(records);
   const name = locationName || '';
   const trip = {
     title,
     slug,
+    genre: genre || DEFAULT_GENRE,
     location: center ? { name, lat: center.lat, lon: center.lon } : { name },
     dates: dates || '',
     summary: summary || '',

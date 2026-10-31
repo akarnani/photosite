@@ -6,9 +6,13 @@
 // markers fit to a trip. The MapTiler key is a client-side, domain-restricted
 // value read from PUBLIC_MAPTILER_KEY.
 import { buildStyle } from '../lib/mapStyle.js';
+import { GENRES } from '../lib/genres.js';
 const { points = [], id, cluster = false, link = false, height = '380px', caption } = Astro.props;
 const mapStyle = buildStyle(import.meta.env.PUBLIC_MAPTILER_KEY || '');
 const hasPoints = points.length > 0;
+// Clustered map: each spot is drawn in its genre's accent (points carry
+// `genre`); clusters, which can mix genres, use the page accent.
+const genreColors = Object.fromEntries(Object.entries(GENRES).map(([k, g]) => [k, g.accent]));
 ---
 
 {
@@ -19,7 +23,7 @@ const hasPoints = points.length > 0;
         {caption && <figcaption>{caption}</figcaption>}
       </figure>
 
-      <script is:inline define:vars={{ points, id, cluster, link, mapStyle }}>
+      <script is:inline define:vars={{ points, id, cluster, link, mapStyle, genreColors }}>
         (function () {
           if (typeof maplibregl === 'undefined') return;
           const el = document.getElementById(id);
@@ -110,6 +114,11 @@ const hasPoints = points.length > 0;
 
           // Global map: native GeoJSON clustering, styled to match the badges.
           function buildCluster() {
+            const css = getComputedStyle(el);
+            const accent = css.getPropertyValue('--accent').trim() || '#e3d2ad';
+            const ink = css.getPropertyValue('--ink-900').trim() || '#0e0e0d';
+            const genres = Object.entries(genreColors).flat();
+            const pointColor = genres.length ? ['match', ['get', 'genre'], ...genres, accent] : accent;
             map.addSource('photos', {
               type: 'geojson',
               cluster: true,
@@ -123,26 +132,26 @@ const hasPoints = points.length > 0;
                 features: points.map((p) => ({
                   type: 'Feature',
                   geometry: { type: 'Point', coordinates: [p.lon, p.lat] },
-                  properties: { count: p.photos.length, photos: JSON.stringify(p.photos), slugs: JSON.stringify(p.slugs || []) },
+                  properties: { count: p.photos.length, genre: p.genre || '', photos: JSON.stringify(p.photos), slugs: JSON.stringify(p.slugs || []) },
                 })),
               },
             });
             map.addLayer({
               id: 'clusters', type: 'circle', source: 'photos', filter: ['has', 'point_count'],
               paint: {
-                'circle-color': '#58d2c6', 'circle-opacity': 0.9, 'circle-stroke-color': '#06121a', 'circle-stroke-width': 2,
+                'circle-color': accent, 'circle-opacity': 0.9, 'circle-stroke-color': ink, 'circle-stroke-width': 2,
                 'circle-radius': ['step', ['get', 'total'], 15, 20, 20, 75, 26],
               },
             });
             map.addLayer({
               id: 'cluster-count', type: 'symbol', source: 'photos', filter: ['has', 'point_count'],
               layout: { 'text-field': ['to-string', ['get', 'total']], 'text-font': ['Noto Sans Bold'], 'text-size': 12 },
-              paint: { 'text-color': '#06121a' },
+              paint: { 'text-color': ink },
             });
             map.addLayer({
               id: 'point', type: 'circle', source: 'photos', filter: ['!', ['has', 'point_count']],
               paint: {
-                'circle-color': '#58d2c6', 'circle-stroke-color': '#06121a', 'circle-stroke-width': 2,
+                'circle-color': pointColor, 'circle-stroke-color': ink, 'circle-stroke-width': 2,
                 'circle-opacity': ['case', ['>', ['get', 'count'], 1], 0.95, 0.6],
                 'circle-radius': ['interpolate', ['linear'], ['get', 'count'], 1, 6, 3, 9, 10, 13],
               },
@@ -151,7 +160,7 @@ const hasPoints = points.length > 0;
               id: 'point-count', type: 'symbol', source: 'photos',
               filter: ['all', ['!', ['has', 'point_count']], ['>', ['get', 'count'], 1]],
               layout: { 'text-field': ['to-string', ['get', 'count']], 'text-font': ['Noto Sans Bold'], 'text-size': 11 },
-              paint: { 'text-color': '#06121a' },
+              paint: { 'text-color': ink },
             });
 
             const pointer = (on) => () => (map.getCanvas().style.cursor = on ? 'pointer' : '');

@@ -1,9 +1,11 @@
 ---
 // Masonry gallery of <picture> elements + a click-to-open lightbox.
 // Props: photos (already merged: file, width, height, ratio, lqip, fallback,
-// srcset, species, caption, title, exposure, camera, lens).
+// srcset, species, caption, title, exposure, camera, lens). `subjectItalic`
+// (from the trip's genre) sets the `species` list in italics — right for
+// animal names, not for aircraft.
 import { buildStyle } from '../lib/mapStyle.js';
-const { photos = [] } = Astro.props;
+const { photos = [], subjectItalic = true } = Astro.props;
 
 const SIZES = '(min-width:1300px) 25vw, (min-width:900px) 33vw, (min-width:540px) 50vw, 100vw';
 const srcsetStr = (p) => p.srcset.map((s) => `${s.url} ${s.w}w`).join(', ');
@@ -27,7 +29,7 @@ const lbData = photos.map((p) => ({
 }));
 ---
 
-<div class="gallery" data-gallery>
+<div class={`gallery${subjectItalic ? '' : ' plain-subject'}`} data-gallery>
   {
     photos.map((p, i) => (
       <button class="shot" id={p.id} data-index={i} style={`aspect-ratio:${p.ratio}`} aria-label={p.title || p.species?.[0] || p.file}>

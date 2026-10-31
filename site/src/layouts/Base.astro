@@ -3,21 +3,27 @@
 // synchronously, so the global `L` is available to component is:inline scripts
 // (DESIGN.md §13.7).
 import '../styles/global.css';
-import { siteConfig } from '../lib/trips.js';
+import { siteConfig, genresInUse } from '../lib/trips.js';
 import { OG_WIDTH, OG_HEIGHT } from '../lib/ogCard.js';
 
 // `image` is the link-preview card: { path, alt } from lib/ogCard.js.
-const { title, description, image } = Astro.props;
+// `genre` (a lib/genres.js id) sets the page's accent via [data-genre]; omit it
+// on mixed pages for the neutral accent.
+const { title, description, image, genre } = Astro.props;
+// Genre nav only once there's more than one kind of photo to choose between.
+const genres = genresInUse();
+const nav = genres.length > 1 ? genres : [];
+const here = Astro.url.pathname;
 const site = siteConfig();
 const fullTitle = title ? `${title} · ${site.title}` : site.title;
-const desc = description || 'An underwater photography portfolio — trips, a map, and the species along the way.';
+const desc = description || 'A photography portfolio — trips, a map, and what turned up along the way.';
 const year = new Date().getFullYear();
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const ogImage = image && new URL(image.path, Astro.site).href;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" data-genre={genre}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -49,7 +55,7 @@ const ogImage = image && new URL(image.path, Astro.site).href;
     <link rel="icon" href="/favicon.ico" sizes="32x32" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <meta name="theme-color" content="#06121a" />
+    <meta name="theme-color" content="#0e0e0d" />
 
     <link
       rel="stylesheet"
@@ -66,6 +72,16 @@ const ogImage = image && new URL(image.path, Astro.site).href;
   <body>
     <header class="site-header">
       <a class="brand" href="/">{site.title}</a>
+      {nav.length > 0 && (
+        <nav class="genre-nav" aria-label="Photo genres">
+          <a href="/" aria-current={here === '/' ? 'page' : undefined}>All</a>
+          {nav.map((g) => (
+            <a href={`/${g.id}/`} data-genre={g.id} aria-current={here.startsWith(`/${g.id}/`) || genre === g.id ? 'page' : undefined}>
+              {g.label}
+            </a>
+          ))}
+        </nav>
+      )}
     </header>
     <main>
       <slot />

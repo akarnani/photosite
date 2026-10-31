@@ -1,0 +1,21 @@
+---
+// A genre landing page (/underwater/, /wildlife/, /air-shows/ …): the same
+// index as home, limited to that genre's trips and in its accent. Only genres
+// that have trips get a page.
+import Base from '../../layouts/Base.astro';
+import TripIndex from '../../components/TripIndex.astro';
+import { coverPhoto, siteConfig, genresInUse } from '../../lib/trips.js';
+import { genreCard } from '../../lib/ogCard.js';
+
+export function getStaticPaths() {
+  return genresInUse().map((g) => ({ params: { genre: g.id }, props: { g } }));
+}
+
+const { g } = Astro.props;
+const site = siteConfig();
+const card = genreCard(g, coverPhoto(g.trips[0]), site);
+---
+
+<Base title={g.label} description={g.tagline} genre={g.id} image={{ path: card.path, alt: `${site.title} — ${g.eyebrow.toLowerCase()}` }}>
+  <TripIndex trips={g.trips} eyebrow={g.eyebrow} heading={g.label} tagline={g.tagline} />
+</Base>
