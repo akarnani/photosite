@@ -1,0 +1,1766 @@
+[
+  {
+    "file": "A1209050.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAADwAgCdASoYABAALplotFoiqCgoCACYS0gAB3g1eJge4AD+9+5i5owRdt0lhnsfy1wJPBZIWka0c/QmIX5FvDg4AAA=",
+    "fallback": "https://img.karnani.io/airventure-2026/a1209050.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1209050-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1209050-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1209050-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1209050-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-07-25T22:18:00",
+    "gps": {
+      "lat": 43.975575555,
+      "lon": -88.558595555
+    },
+    "camera": "SONY ILCE-1M2",
+    "lens": "Sony FE 70-200mm F2.8 GM OSS II (SEL70200GM2)",
+    "exposure": {
+      "fNumber": 2.8,
+      "exposureTime": 0.005,
+      "iso": 10000,
+      "focalLength": 70
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "A1208852.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAADQAwCdASoYABAAPtFWo0uoJKMhsAgBABoJaQABHut06J75kMxDBCAA/v7hwbkULZuIrMhJkB664mvPYr5eQIAA",
+    "fallback": "https://img.karnani.io/airventure-2026/a1208852.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1208852-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1208852-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1208852-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1208852-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-07-25T22:14:26",
+    "gps": {
+      "lat": 43.975529445,
+      "lon": -88.558598055
+    },
+    "camera": "SONY ILCE-1M2",
+    "lens": "Sony FE 70-200mm F2.8 GM OSS II (SEL70200GM2)",
+    "exposure": {
+      "fNumber": 2.8,
+      "exposureTime": 0.005,
+      "iso": 6400,
+      "focalLength": 70
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "A1206697.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAADQAwCdASoYABAAPtFUo0uoJKMhsAgBABoJYgCdACHh3G59jxMFoKAA/u6OX3i3cAnf8/IRPO1bQ1tW7PLIxFiEck+c7QlewAA=",
+    "fallback": "https://img.karnani.io/airventure-2026/a1206697.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1206697-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1206697-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1206697-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1206697-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-07-25T20:53:20",
+    "gps": {
+      "lat": 43.9754688883333,
+      "lon": -88.5588308333333
+    },
+    "camera": "SONY ILCE-1M2",
+    "lens": "FE 300mm F2.8 GM OSS",
+    "exposure": {
+      "fNumber": 2.8,
+      "exposureTime": 0.008,
+      "iso": 5000,
+      "focalLength": 300
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "A1206193.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAAAQBACdASoYABAAPtFUo0uoJKMhsAgBABoJQBOmUABWGfvGpPEegk7/DAD3JsdSI5/yBeWaHXkqmQqXuqNBRfo2M9Ej4f8FvYqh6pXN4wPqIF2o/mB2VusgTwB+SA15aF6WHS0tkyP076eMLsDvp18QxA+Lm5dyg59TeNybEEhrhDVuNxF8AA==",
+    "fallback": "https://img.karnani.io/airventure-2026/a1206193.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1206193-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1206193-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1206193-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1206193-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-07-25T20:34:32",
+    "gps": {
+      "lat": 43.9755577783333,
+      "lon": -88.5586316666667
+    },
+    "camera": "SONY ILCE-1M2",
+    "lens": "FE 300mm F2.8 GM OSS",
+    "exposure": {
+      "fNumber": 2.8,
+      "exposureTime": 0.00625,
+      "iso": 1250,
+      "focalLength": 300
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "A1205585 1.jpg",
+    "width": 1600,
+    "height": 1066,
+    "ratio": 1.5003,
+    "lqip": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAAAQBACdASoYABAAPtFUo0uoJKMhsAgBABoJZwCdACHgGjZDhUiTdqSLgAD+rqezmmq4xobTvk0gXull1hyILg13QlfgvKJoxqWC5Kyd0p3ByjvcdusAAA==",
+    "fallback": "https://img.karnani.io/airventure-2026/a1205585-1.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1205585-1-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1205585-1-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1205585-1-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1205585-1-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-07-25T20:10:16",
+    "gps": {
+      "lat": 43.975506945,
+      "lon": -88.558574445
+    },
+    "camera": "SONY ILCE-1M2",
+    "lens": "FE 300mm F2.8 GM OSS",
+    "exposure": {
+      "fNumber": 4.5,
+      "exposureTime": 0.01,
+      "iso": 320,
+      "focalLength": 300
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "A1204089.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5001,
+    "lqip": "data:image/webp;base64,UklGRoYAAABXRUJQVlA4IHoAAABwBACdASoYABAAPtFUpEuoJKOhsAgBABoJagCdMoRwJoADTztFhZhoFPqHeAD8WkKMTy+1wpriCB16v0EW6SkYkNpwweD5qgLO1lYTvl+LLW8IT/9CSVCKe95qU6ignOp4r7wLu8z8905RHuA5wbhbyiaknkGSBwAAAA==",
+    "fallback": "https://img.karnani.io/airventure-2026/a1204089.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1204089-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1204089-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1204089-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1204089-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-07-24T18:18:05",
+    "gps": {
+      "lat": 43.9826747216667,
+      "lon": -88.55902
+    },
+    "camera": "SONY ILCE-1M2",
+    "lens": "Sony FE 70-200mm F2.8 GM OSS II (SEL70200GM2)",
+    "exposure": {
+      "fNumber": 4.5,
+      "exposureTime": 0.000625,
+      "iso": 100,
+      "focalLength": 194
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "A1203588.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAABwBACdASoYABAAPtFWpUwoJKOiMAgBABoJagCdMoR4T5XbgAeZ/6unsuCWAAD+nsNv61lkLNxkjS9/dW1f7a4MET3/fo3v8MifSIRD2aWv4KoE+eI4+DhqH7oXYCB0GfuK03P38XsPr9dLsSYBzUaZJv5OwjPpd2x9c/wJ/eD+zoltMqSv3WG/yAAAAA==",
+    "fallback": "https://img.karnani.io/airventure-2026/a1203588.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1203588-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1203588-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1203588-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1203588-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-07-24T17:58:57",
+    "gps": {
+      "lat": 43.982671945,
+      "lon": -88.559079445
+    },
+    "camera": "SONY ILCE-1M2",
+    "lens": "Sony FE 70-200mm F2.8 GM OSS II (SEL70200GM2)",
+    "exposure": {
+      "fNumber": 4.5,
+      "exposureTime": 0.000625,
+      "iso": 100,
+      "focalLength": 70
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "A1203360.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAADQBACdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoRwFf/qWIX+z7gUYSvnnnStAADXs53m1p/4NqN1HUH9xERt6gKq/6bujIC3TpVEyqSKxCxgK3eA12dUByu8SMJ1xKzafxcO6h10bwZuL2I98K0Eoz1Omx3yG8/EG8HMKar3LERtRvfkZJCXmV30NAAA",
+    "fallback": "https://img.karnani.io/airventure-2026/a1203360.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1203360-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1203360-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1203360-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1203360-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-07-24T17:51:22",
+    "gps": {
+      "lat": 43.982671945,
+      "lon": -88.559079445
+    },
+    "camera": "SONY ILCE-1M2",
+    "lens": "Sony FE 70-200mm F2.8 GM OSS II (SEL70200GM2)",
+    "exposure": {
+      "fNumber": 4.5,
+      "exposureTime": 0.000625,
+      "iso": 100,
+      "focalLength": 200
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "A1203277.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAADwAwCdASoYABAAPtFcpkyoJSOiMAgBABoJZgCdACHf3kpox45pCRqAAP65B1knX6eAYt/V352/nWZX+LftH+78nRJDzDkHxVObmCPUuJtO6BKryKKmnkZTkS80fiqJAogAAA==",
+    "fallback": "https://img.karnani.io/airventure-2026/a1203277.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1203277-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1203277-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1203277-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1203277-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-07-24T17:49:57",
+    "gps": {
+      "lat": 43.982671945,
+      "lon": -88.559079445
+    },
+    "camera": "SONY ILCE-1M2",
+    "lens": "Sony FE 70-200mm F2.8 GM OSS II (SEL70200GM2)",
+    "exposure": {
+      "fNumber": 4.5,
+      "exposureTime": 0.000625,
+      "iso": 100,
+      "focalLength": 200
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "A1203252.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.4997,
+    "lqip": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAADwAwCdASoYABAAPtFWo0uoJKMhsAgBABoJaACdACHftvP7EE753AGAAP64k4cCyu5T/o/7v/UkH/8W/aP72tDlTJGv+2EmYmLJYFA2QhAPWc3eo7YzwTQRAAA=",
+    "fallback": "https://img.karnani.io/airventure-2026/a1203252.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1203252-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1203252-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1203252-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1203252-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-07-24T17:49:53",
+    "gps": {
+      "lat": 43.982671945,
+      "lon": -88.559079445
+    },
+    "camera": "SONY ILCE-1M2",
+    "lens": "Sony FE 70-200mm F2.8 GM OSS II (SEL70200GM2)",
+    "exposure": {
+      "fNumber": 4.5,
+      "exposureTime": 0.000625,
+      "iso": 100,
+      "focalLength": 200
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "A1203081.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAABQAwCdASoYABAAPtFUo0uoJKMhsAgBABoJaACdMoR3ADlYAAD+4xN5MNawNLa7Of/1deyxT8v7m4ljnJGZlAxRusgfN4SI2DVAAA==",
+    "fallback": "https://img.karnani.io/airventure-2026/a1203081.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1203081-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1203081-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1203081-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1203081-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-07-24T17:47:30",
+    "gps": {
+      "lat": 43.982671945,
+      "lon": -88.559079445
+    },
+    "camera": "SONY ILCE-1M2",
+    "lens": "Sony FE 70-200mm F2.8 GM OSS II (SEL70200GM2)",
+    "exposure": {
+      "fNumber": 4.5,
+      "exposureTime": 0.000625,
+      "iso": 100,
+      "focalLength": 200
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "A1202893.jpg",
+    "width": 1600,
+    "height": 2400,
+    "ratio": 0.6667,
+    "lqip": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAADQBACdASoYACQAPtFgpk+oJSMiJWsxABoJYwDBvoAAGyRrR2TII3ft5f8ypYHGAAD+wUYwGYOS0N4Aig8orf9qYJIzC3/G83mtkWa4BV7pmv8udN24eECVpFm+aDAmAM3ZgAAA",
+    "fallback": "https://img.karnani.io/airventure-2026/a1202893.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1202893-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1202893-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1202893-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1202893-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-07-24T17:45:35",
+    "gps": {
+      "lat": 43.982671945,
+      "lon": -88.559079445
+    },
+    "camera": "SONY ILCE-1M2",
+    "lens": "Sony FE 70-200mm F2.8 GM OSS II (SEL70200GM2)",
+    "exposure": {
+      "fNumber": 4.5,
+      "exposureTime": 0.000625,
+      "iso": 100,
+      "focalLength": 200
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "A1202826.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAABwBACdASoYABAAPtFWpEuoJKOhsAgBABoJYgCdMoMYAEJFtWoyduSBEVrAIAD3HulNcGtJrQCeNi119BrP+5MWhjBqZ9VZiIXmuCM5gWsabPFS2j0ij7DsskvhnhPIHF1jXaQBSInAMIpfUAM2Gu7f0hYpVwAA",
+    "fallback": "https://img.karnani.io/airventure-2026/a1202826.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1202826-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1202826-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1202826-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1202826-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-07-24T17:44:58",
+    "gps": {
+      "lat": 43.982671945,
+      "lon": -88.559079445
+    },
+    "camera": "SONY ILCE-1M2",
+    "lens": "Sony FE 70-200mm F2.8 GM OSS II (SEL70200GM2)",
+    "exposure": {
+      "fNumber": 4.5,
+      "exposureTime": 0.000625,
+      "iso": 100,
+      "focalLength": 70
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "A1202695.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5001,
+    "lqip": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAABQBACdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoR3Ff/gGswWiTs3ukMgAPmPuaMVBEqXP7y3U7R7xljTaLObks7Vwv2pY+B9bZlj/19C0bTz/JjB5H7zKQLY5Tuvl3cx2oLXvlVwabLa7dc1O1zCN4NAUZVDaTxWdjbgAAA=",
+    "fallback": "https://img.karnani.io/airventure-2026/a1202695.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1202695-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1202695-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1202695-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1202695-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-07-24T17:30:11",
+    "gps": {
+      "lat": 43.982675,
+      "lon": -88.5590388883333
+    },
+    "camera": "SONY ILCE-1M2",
+    "lens": "FE 300mm F2.8 GM OSS",
+    "exposure": {
+      "fNumber": 16,
+      "exposureTime": 0.00625,
+      "iso": 125,
+      "focalLength": 300
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "A1202309.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5001,
+    "lqip": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAACwAwCdASoYABAAPtFWpkuoJKOhsAgBABoJbACdMoRwAAPw/IFQAAD+cWA2L2pZoV+CClPEXeot6z5Un4oWWOvEzTOaaSGSAj0xoRQ7/JGpwsSS6kBCcKFyEUiX5jq1v8ffU8vHpgLYAAAA",
+    "fallback": "https://img.karnani.io/airventure-2026/a1202309.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1202309-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1202309-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1202309-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1202309-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-07-24T17:21:07",
+    "gps": {
+      "lat": 43.9827586116667,
+      "lon": -88.5595477783333
+    },
+    "camera": "SONY ILCE-1M2",
+    "lens": "FE 300mm F2.8 GM OSS",
+    "exposure": {
+      "fNumber": 2.8,
+      "exposureTime": 0.0002,
+      "iso": 125,
+      "focalLength": 300
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "A1201235.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5001,
+    "lqip": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAACQBACdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoRwN6BvAAFSP+Y/Hbd5VAAA/rkGZr8gL6ssfWMLUhvqOjP/TkJ69oju3z/qYhzIGPW9p5UK6jzTsBL2s47kgrJdiebIg5i1N4Rq+KfeXO9dwAAA",
+    "fallback": "https://img.karnani.io/airventure-2026/a1201235.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1201235-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1201235-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1201235-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1201235-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-07-24T16:46:49",
+    "gps": {
+      "lat": 43.98269,
+      "lon": -88.5590311116667
+    },
+    "camera": "SONY ILCE-1M2",
+    "lens": "FE 300mm F2.8 GM OSS",
+    "exposure": {
+      "fNumber": 2.8,
+      "exposureTime": 0.0002,
+      "iso": 200,
+      "focalLength": 300
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "A1209332.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAACQBACdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoMYA30oXK1xmimBlT+uHAAAws1TjE5ZV4UgUzwG0Ds6kCHtVqSGkMGJZUjWTmOllgr87NGdF+ic6CS17DyxQaUOf4S1akbKh9g5wvDTCJzZuuXZ8JJLPvuBiB1fTjtBypFKWWCn77vmo69jvJQAAA==",
+    "fallback": "https://img.karnani.io/airventure-2026/a1209332.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1209332-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1209332-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1209332-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1209332-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-07-23T18:11:16",
+    "gps": {
+      "lat": 43.986533055,
+      "lon": -88.5585191666667
+    },
+    "camera": "SONY ILCE-1M2",
+    "lens": "FE 300mm F2.8 GM OSS",
+    "exposure": {
+      "fNumber": 4,
+      "exposureTime": 0.0004,
+      "iso": 160,
+      "focalLength": 300
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "A1209015.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAACQAwCdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoR3ABFevqQAAPnWh/tS6ySqw0l2Be+krgj+2h6HPCcmIr/ggsYp/Hl5koBZnaST5CZ/1sTBlKLVs0ONhQ8T7pyYIVJBwgAA",
+    "fallback": "https://img.karnani.io/airventure-2026/a1209015.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1209015-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1209015-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1209015-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1209015-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-07-23T17:59:30",
+    "gps": {
+      "lat": 43.986518055,
+      "lon": -88.5584841666667
+    },
+    "camera": "SONY ILCE-1M2",
+    "lens": "FE 300mm F2.8 GM OSS",
+    "exposure": {
+      "fNumber": 16,
+      "exposureTime": 0.00625,
+      "iso": 160,
+      "focalLength": 300
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "A1208726.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.4999,
+    "lqip": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAABwAwCdASoYABAAPtFUo0uoJKMhsAgBABoJbACdLwABnqar0AAA/hPoSFHimNpZu/UusCNnj/M2f9KYUIo+Xf/CtdsKlnrQx+5qzvmP18UZv3PWcLXt61s2jYG6sPkewQcZM5TDqQAAAA==",
+    "fallback": "https://img.karnani.io/airventure-2026/a1208726.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1208726-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1208726-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1208726-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1208726-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-07-23T17:53:12",
+    "gps": {
+      "lat": 43.9865652783333,
+      "lon": -88.5584927783333
+    },
+    "camera": "SONY ILCE-1M2",
+    "lens": "FE 300mm F2.8 GM OSS",
+    "exposure": {
+      "fNumber": 16,
+      "exposureTime": 0.00625,
+      "iso": 160,
+      "focalLength": 300
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "A1208697.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAACwAwCdASoYABAAPtFWo0uoJKMhsAgBABoJZACdMoR3ABtH+GRh+AD8Uxh+SB6w7v4nX+APv1qVoqetUJNqlnzeRs6KFcioy8kBgcN0YtenDqAA",
+    "fallback": "https://img.karnani.io/airventure-2026/a1208697.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1208697-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1208697-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1208697-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1208697-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-07-23T17:53:09",
+    "gps": {
+      "lat": 43.9865652783333,
+      "lon": -88.5584927783333
+    },
+    "camera": "SONY ILCE-1M2",
+    "lens": "FE 300mm F2.8 GM OSS",
+    "exposure": {
+      "fNumber": 16,
+      "exposureTime": 0.00625,
+      "iso": 125,
+      "focalLength": 300
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "A1208593.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.4998,
+    "lqip": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAACwAwCdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoRwACnHMXb7oAD+bdbQqtZWj1pN/V0ZFBGiUx/wGjgFxK3g8PvNwh+DBfCwXqOUSpx8oAAA",
+    "fallback": "https://img.karnani.io/airventure-2026/a1208593.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1208593-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1208593-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1208593-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1208593-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-07-23T17:48:38",
+    "gps": {
+      "lat": 43.9864863883333,
+      "lon": -88.5584988883333
+    },
+    "camera": "SONY ILCE-1M2",
+    "lens": "FE 300mm F2.8 GM OSS",
+    "exposure": {
+      "fNumber": 6.3,
+      "exposureTime": 0.0004,
+      "iso": 320,
+      "focalLength": 300
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "A1208504.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAAAQBQCdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoRwN4BJ6wFuK1WWEiiREalblkMAAP6DM8A4wROKXgqlZVaDKPcT22aLwnXCSZDad/g+m8d7wP6jmgJ/dNJ7qn6Nuz3z0JgiSX4rBFAQKBByzPwUbxYP4xUGfMzf79thNLeqX2IVtPAqYkgA",
+    "fallback": "https://img.karnani.io/airventure-2026/a1208504.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1208504-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1208504-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1208504-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1208504-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-07-23T17:45:41",
+    "gps": {
+      "lat": 43.9865738883333,
+      "lon": -88.5586061116667
+    },
+    "camera": "SONY ILCE-1M2",
+    "lens": "FE 300mm F2.8 GM OSS",
+    "exposure": {
+      "fNumber": 6.3,
+      "exposureTime": 0.0004,
+      "iso": 400,
+      "focalLength": 300
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "A1208334.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.4999,
+    "lqip": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAACwAwCdASoYABAAPtFUo0uoJKMhsAgBABoJYgCdACHXGkoYSpqWUAD+00hoMKel48EDtBvVv1PDa4xLtKBVrGfIRSFIQimP7rTHjnt2utws9/vy7z6mG8t3O7lmDkqe0x0uQ3zxdPkvEbYHPxHGUyoFgsud14mm1R3GPDBcAAA=",
+    "fallback": "https://img.karnani.io/airventure-2026/a1208334.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1208334-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1208334-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1208334-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1208334-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-07-23T12:50:02",
+    "gps": {
+      "lat": 43.970530555,
+      "lon": -88.5595027783333
+    },
+    "camera": "SONY ILCE-1M2",
+    "lens": "Sony FE 70-200mm F2.8 GM OSS II (SEL70200GM2)",
+    "exposure": {
+      "fNumber": 5,
+      "exposureTime": 0.0015625,
+      "iso": 100,
+      "focalLength": 70
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "A1207936.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5001,
+    "lqip": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAACQAwCdASoYABAAPtFUo0uoJKMhsAgBABoJZQCsAC0H4RdaKvgAAP7woaLn/e/sEEFeHqV7HuDnvbkeBap+tQAA",
+    "fallback": "https://img.karnani.io/airventure-2026/a1207936.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1207936-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1207936-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1207936-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1207936-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-07-22T21:00:10",
+    "gps": {
+      "lat": 43.980489445,
+      "lon": -88.5586591666667
+    },
+    "camera": "SONY ILCE-1M2",
+    "lens": "FE 300mm F2.8 GM OSS",
+    "exposure": {
+      "fNumber": 2.8,
+      "exposureTime": 0.003125,
+      "iso": 8000,
+      "focalLength": 300
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "A1207909.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.4998,
+    "lqip": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAAAwAwCdASoYABAAPtFUo0uoJKMhsAgBABoJaQAAW+qroPQAAP73cwsQDahJ/u+JjvLn7Kocp3xwAA==",
+    "fallback": "https://img.karnani.io/airventure-2026/a1207909.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1207909-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1207909-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1207909-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1207909-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-07-22T20:56:32",
+    "gps": {
+      "lat": 43.980485555,
+      "lon": -88.558656945
+    },
+    "camera": "SONY ILCE-1M2",
+    "lens": "FE 300mm F2.8 GM OSS",
+    "exposure": {
+      "fNumber": 2.8,
+      "exposureTime": 0.003125,
+      "iso": 100,
+      "focalLength": 300
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "A1207879-DxO_DeepPRIME 3.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAAAwAwCdASoYABAAPtFUo0uoJKMnsAgBABoJZACdABkyoBLwAPGUTsGBfOsJ8krEj/4bqivWPfgUcjXhKdNNxL+QAAA=",
+    "fallback": "https://img.karnani.io/airventure-2026/a1207879-dxo_deepprime-3.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1207879-dxo_deepprime-3-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1207879-dxo_deepprime-3-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1207879-dxo_deepprime-3-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1207879-dxo_deepprime-3-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-07-22T20:51:13",
+    "gps": {
+      "lat": 43.9804847216667,
+      "lon": -88.5586663883333
+    },
+    "camera": "SONY ILCE-1M2",
+    "lens": "FE 300mm F2.8 GM OSS",
+    "exposure": {
+      "fNumber": 2.8,
+      "exposureTime": 0.003125,
+      "iso": 6400,
+      "focalLength": 300
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "A1207757.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAACQAwCdASoYABAAPtFWpEuoJKOhsAgBABoJaACdMoRwADeTWEWgAP7dDwr5xSLx/q3SiCICn2z/KRev42nhF3Q6xWkhrh1S+uAJzBXIYAA=",
+    "fallback": "https://img.karnani.io/airventure-2026/a1207757.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1207757-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1207757-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1207757-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1207757-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-07-22T20:43:25",
+    "gps": {
+      "lat": 43.980474445,
+      "lon": -88.558665555
+    },
+    "camera": "SONY ILCE-1M2",
+    "lens": "FE 300mm F2.8 GM OSS",
+    "exposure": {
+      "fNumber": 2.8,
+      "exposureTime": 0.005,
+      "iso": 1000,
+      "focalLength": 300
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "A1207686.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAAAQBACdASoYABAAPtFUo0uoJKMhsAgBABoJZgCw7CPq1WPgVMoIaEtcAAD9QC880c5NARnbZlu9WWoyJfF69aW885iQLR+20BlPr+rVoyz14Rp+iBjKqAAA",
+    "fallback": "https://img.karnani.io/airventure-2026/a1207686.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1207686-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1207686-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1207686-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1207686-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-07-22T20:41:47",
+    "gps": {
+      "lat": 43.980481945,
+      "lon": -88.5586691666667
+    },
+    "camera": "SONY ILCE-1M2",
+    "lens": "FE 300mm F2.8 GM OSS",
+    "exposure": {
+      "fNumber": 2.8,
+      "exposureTime": 0.005,
+      "iso": 1000,
+      "focalLength": 300
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "A1207657.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAACQAwCdASoYABAAPtFUo0uoJKMhsAgBABoJYgCdMoAB4xvhgsZwANaSPANb4rwgx/+zLZwGzVYF+TVwBD8utsImj+InkE7FTGIvmrq8C6d7tcMEhaz+iAqpdqFCx2CAAAA=",
+    "fallback": "https://img.karnani.io/airventure-2026/a1207657.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1207657-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1207657-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1207657-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1207657-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-07-22T20:41:44",
+    "gps": {
+      "lat": 43.980481945,
+      "lon": -88.5586691666667
+    },
+    "camera": "SONY ILCE-1M2",
+    "lens": "FE 300mm F2.8 GM OSS",
+    "exposure": {
+      "fNumber": 2.8,
+      "exposureTime": 0.005,
+      "iso": 1000,
+      "focalLength": 300
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "A1207545.jpg",
+    "width": 1600,
+    "height": 2400,
+    "ratio": 0.6666,
+    "lqip": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAAAQBQCdASoYACQAPtFYqU6oJKQiKrgKAQAaCWUAxNgIJoEI/BMNRkenGbOe35FtxmQAAP0d63y9nLSdE5HkUK0HPv/WuVqwvfXqlrkA/lqdVn7g0/tYLFFnRuY1Fv1cHUK+bdAlTnNyfAAA",
+    "fallback": "https://img.karnani.io/airventure-2026/a1207545.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1207545-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1207545-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1207545-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1207545-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-07-22T20:33:52",
+    "gps": {
+      "lat": 43.9804786116667,
+      "lon": -88.5586672216667
+    },
+    "camera": "SONY ILCE-1M2",
+    "lens": "FE 300mm F2.8 GM OSS",
+    "exposure": {
+      "fNumber": 2.8,
+      "exposureTime": 0.005,
+      "iso": 400,
+      "focalLength": 300
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "A1207473.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAABQAwCdASoYABAAPtFUo0uoJKMhsAgBABoJQBOmUAAwT1HCAAA8dBDzyDNtWiFBQWbX5KOdOy9anzAcmrvOXfCNO1bVbanxYtvUl3TpfASmoAAA",
+    "fallback": "https://img.karnani.io/airventure-2026/a1207473.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1207473-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1207473-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1207473-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1207473-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-07-22T20:26:33",
+    "gps": {
+      "lat": 43.9805213883333,
+      "lon": -88.5586452783333
+    },
+    "camera": "SONY ILCE-1M2",
+    "lens": "FE 300mm F2.8 GM OSS",
+    "exposure": {
+      "fNumber": 3.5,
+      "exposureTime": 0.005,
+      "iso": 200,
+      "focalLength": 300
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "A1207397.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAABQBACdASoYABAAPtFUo0uoJKMhsAgBABoJbACdMoR3ACxKqUFhgvhyqSUAAP7m2J4DUOFz32+UL/pVk/LEer/FK37+VLZTcowg98SbD7XEJ9ZdghFIbK/eZ0ffyJVC6/C0A+edUs/Nr8Gb8CCO4H7q+QqSgaj8OOE6GQ2IrogSAA==",
+    "fallback": "https://img.karnani.io/airventure-2026/a1207397.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1207397-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1207397-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1207397-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1207397-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-07-21T18:08:36",
+    "gps": {
+      "lat": 43.979636945,
+      "lon": -88.55872
+    },
+    "camera": "SONY ILCE-1M2",
+    "lens": "Sony FE 70-200mm F2.8 GM OSS II (SEL70200GM2) + 1.4X Teleconverter (SEL14TC)",
+    "exposure": {
+      "fNumber": 14,
+      "exposureTime": 0.004,
+      "iso": 320,
+      "focalLength": 280
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "A1207278.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAACQAwCdASoYABAAPtFUo0uoJKMhsAgBABoJagCdL1ABr2aOqc0AAP5I8PNjTGwVlsv0adGyurAGmJ3aFQC58nDVTh+j+LOxT8v3SCuMG9baZc/4COVmHJtqFuzRh2EWZ4mAAA==",
+    "fallback": "https://img.karnani.io/airventure-2026/a1207278.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1207278-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1207278-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1207278-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1207278-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-07-21T18:03:14",
+    "gps": {
+      "lat": 43.979636945,
+      "lon": -88.55872
+    },
+    "camera": "SONY ILCE-1M2",
+    "lens": "FE 300mm F2.8 GM OSS + 1.4X Teleconverter",
+    "exposure": {
+      "fNumber": 14,
+      "exposureTime": 0.004,
+      "iso": 320,
+      "focalLength": 420
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "A1207199.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAACwAwCdASoYABAAPtFUo0uoJKMhsAgBABoJZAC1FoAATpQsPQKhAAD6nBiYKyLNGPR2H2jiGFwSP34yOW0Ry4LZ/j/h0aR0KmiCZf5j0AA=",
+    "fallback": "https://img.karnani.io/airventure-2026/a1207199.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1207199-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1207199-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1207199-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1207199-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-07-21T17:59:25",
+    "gps": {
+      "lat": 43.9796522216667,
+      "lon": -88.5587191666667
+    },
+    "camera": "SONY ILCE-1M2",
+    "lens": "FE 300mm F2.8 GM OSS + 1.4X Teleconverter",
+    "exposure": {
+      "fNumber": 14,
+      "exposureTime": 0.004,
+      "iso": 200,
+      "focalLength": 420
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "A1207123.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAACwAwCdASoYABAAPtFUo0uoJKMhsAgBABoJagCdMoRgAAvtwSCqAAD+nVjoKgN19IBuGTksdn+89eLP6t3cRy4p+X9z42LBoEdrOXUFQiP6scCZZ/26tHUms/Jko/UAAAA=",
+    "fallback": "https://img.karnani.io/airventure-2026/a1207123.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1207123-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1207123-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1207123-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1207123-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-07-21T17:47:01",
+    "gps": {
+      "lat": 43.979641945,
+      "lon": -88.558749445
+    },
+    "camera": "SONY ILCE-1M2",
+    "lens": "FE 300mm F2.8 GM OSS + 1.4X Teleconverter",
+    "exposure": {
+      "fNumber": 14,
+      "exposureTime": 0.004,
+      "iso": 250,
+      "focalLength": 420
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "A1206478.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.4999,
+    "lqip": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAABQBACdASoYABAAPtFWpUwoJKOiMAgBABoJbACdMoR4T5WfhmCD9+NolBwAAP7np6ynD/kuW+GeLziS+yHd28eRv4fhIgHv5ZQYSvHet6OBOwG4bpE70Bhn7rFLhyNoUYEUWOM5qdj+imcMmLWfoDUau/Z/a0VOO/4RZnguwAA=",
+    "fallback": "https://img.karnani.io/airventure-2026/a1206478.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1206478-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1206478-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1206478-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1206478-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-07-20T17:44:48",
+    "gps": {
+      "lat": 43.979695,
+      "lon": -88.5587863883333
+    },
+    "camera": "SONY ILCE-1M2",
+    "lens": "FE 300mm F2.8 GM OSS + 1.4X Teleconverter",
+    "exposure": {
+      "fNumber": 10,
+      "exposureTime": 0.002,
+      "iso": 160,
+      "focalLength": 420
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "A1205681.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAAAwBACdASoYABAALplotFoiqCgoCACYS2AE6ZQjgbwABhJeiqIN0v1WeAAA/uMLc1xx3y/ptNMjYVlyCas6pMBY//wPoNHB0pRI2pjDu6f/kF3QnPOFSlYLGk6p9tHLKFewQLX3veyazFIknBxI34WJIV4wU1g9AAA=",
+    "fallback": "https://img.karnani.io/airventure-2026/a1205681.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1205681-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1205681-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1205681-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1205681-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-07-20T17:00:40",
+    "gps": {
+      "lat": 43.9797163883333,
+      "lon": -88.5587013883333
+    },
+    "camera": "SONY ILCE-1M2",
+    "lens": "FE 300mm F2.8 GM OSS + 1.4X Teleconverter",
+    "exposure": {
+      "fNumber": 4,
+      "exposureTime": 0.0005,
+      "iso": 125,
+      "focalLength": 420
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "A1204330.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5001,
+    "lqip": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAABQBACdASoYABAAPtFUo0uoJKMhsAgBABoJaACdMoRwACnHNiAGsnarQLMAAP4Qq5Xq3jN+5cS51txKmtRPoQ/R7B++jD+LVPaKdacZ9czTJSgTfHjAAA==",
+    "fallback": "https://img.karnani.io/airventure-2026/a1204330.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1204330-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1204330-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1204330-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1204330-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-07-20T16:23:01",
+    "gps": {
+      "lat": 43.9797208333333,
+      "lon": -88.558746945
+    },
+    "camera": "SONY ILCE-1M2",
+    "lens": "FE 300mm F2.8 GM OSS + 1.4X Teleconverter",
+    "exposure": {
+      "fNumber": 7.1,
+      "exposureTime": 0.00125,
+      "iso": 160,
+      "focalLength": 420
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "A1204268.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAACwAwCdASoYABAAPtFUo0uoJKMhsAgBABoJaACdMoRwACm/77KcsAD+DrNige7Xs8ffNiD4iog+j0Y/2o/sBSat/Fskh/lwJIZ+jsCPbecQW6XJxl8oFVhLtHAAAA==",
+    "fallback": "https://img.karnani.io/airventure-2026/a1204268.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1204268-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1204268-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1204268-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1204268-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-07-20T16:22:53",
+    "gps": {
+      "lat": 43.9797208333333,
+      "lon": -88.558746945
+    },
+    "camera": "SONY ILCE-1M2",
+    "lens": "FE 300mm F2.8 GM OSS + 1.4X Teleconverter",
+    "exposure": {
+      "fNumber": 7.1,
+      "exposureTime": 0.00125,
+      "iso": 125,
+      "focalLength": 420
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "A1202720.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAABwAwCdASoYABAAPtFWo0uoJKMhsAgBABoJbACdABtbpT3wmgAA7OXiIDFnvFgR0JtspxqSICKkTdU0atW00p5YI/7U7WB4wdi361bChj8+VLrdKJh3gUBffsc/RJtWLO+N0rShh+8AtkbEVSNEulEV2WdP9Lc4E5FiSAAA",
+    "fallback": "https://img.karnani.io/airventure-2026/a1202720.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1202720-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1202720-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1202720-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1202720-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-07-20T15:40:32",
+    "gps": {
+      "lat": 43.9797138883333,
+      "lon": -88.5587283333333
+    },
+    "camera": "SONY ILCE-1M2",
+    "lens": "FE 300mm F2.8 GM OSS + 1.4X Teleconverter",
+    "exposure": {
+      "fNumber": 8,
+      "exposureTime": 0.002,
+      "iso": 160,
+      "focalLength": 420
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "A1201471.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAADQAwCdASoYABAAPtFUo0uoJKMhsAgBABoJZACdMoR2WBU1EPP7+wAA/YAld6xDH2QV4uBpX8BtoDy4+2ykRM0H6FCKnQes9cXXSs452Nj3VEVAAAA=",
+    "fallback": "https://img.karnani.io/airventure-2026/a1201471.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1201471-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1201471-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1201471-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1201471-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-07-20T14:20:07",
+    "gps": {
+      "lat": 43.9797141666667,
+      "lon": -88.5587188883333
+    },
+    "camera": "SONY ILCE-1M2",
+    "lens": "FE 300mm F2.8 GM OSS + 1.4X Teleconverter",
+    "exposure": {
+      "fNumber": 4,
+      "exposureTime": 0.0004,
+      "iso": 200,
+      "focalLength": 420
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  },
+  {
+    "file": "A1200387.jpg",
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "lqip": "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAADwAwCdASoYABAAPtFUo0uoJKMhsAgBABoJYgCdACHZ10r7NeTHnSiAAP7qgPeT9yPgdwXK4XuAFBFZrnntEhWTpZS2NtOJWSA97SFAP+iWZM0jMZ4YQJEKMgTnaPfKtDXT7VJwTHz1X/4FW4GINpomsTHnI/a6FpFjkn+UcGfRlrdRcDtvhD/VvLKQ6KjyC4AAAA==",
+    "fallback": "https://img.karnani.io/airventure-2026/a1200387.jpg",
+    "srcset": [
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1200387-480.webp",
+        "w": 480
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1200387-960.webp",
+        "w": 960
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1200387-1600.webp",
+        "w": 1600
+      },
+      {
+        "url": "https://img.karnani.io/airventure-2026/a1200387-2400.webp",
+        "w": 2400
+      }
+    ],
+    "date": "2026-07-19T16:00:31",
+    "gps": {
+      "lat": 43.9798041666667,
+      "lon": -88.5584741666667
+    },
+    "camera": "SONY ILCE-1M2",
+    "lens": "FE 300mm F2.8 GM OSS + 1.4X Teleconverter",
+    "exposure": {
+      "fNumber": 4.5,
+      "exposureTime": 0.003125,
+      "iso": 100,
+      "focalLength": 420
+    },
+    "caption": null,
+    "species": [],
+    "keywords": []
+  }
+]
