@@ -1228,6 +1228,29 @@ a.sa-credit svg {
   max-height: 100svh;
   object-fit: contain;
 }
+/* Results lightbox: reuses .lightbox, plus a counter and a link to the trip. */
+.fav-lb .lb-count {
+  position: absolute;
+  top: 1.6rem;
+  left: 1.25rem;
+  font-family: var(--mono);
+  font-size: var(--step-eyebrow);
+  color: var(--text-dim);
+}
+.fav-lb .lb-note {
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 0.8rem;
+}
+.fav-lb .lb-trip {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+.fav-lb .lb-trip:hover,
+.fav-lb .lb-trip:focus-visible {
+  color: var(--text);
+}
 .fav-toast {
   position: fixed;
   left: 50%;
