@@ -252,6 +252,22 @@ browser page — photos need to be seen large, which a terminal can't do. Keys:
    longest ago). Top N win. Guardrails are tested in `tool/test/` (`npm test`).
    (Simulated with a noisy chooser this keeps ~85% of the true top N, vs ~50%
    for elimination alone at the same number of picks.)
+   A final of ≤8 photos is a single round robin instead (more games could
+   only be rematches).
+
+**By subject** (`--by-subject`; site: "Within each subject"). `photosite
+subjects` runs a local CLIP model (transformers.js + onnxruntime-node, tool
+only; ViT-L/14 q8 — the base models confused nudibranchs, frogfish and
+scorpionfish far more) over each photo's smallest rendition, caches the image
+embeddings, and gives each photo its best zero-shot label from
+`tool/src/subjectLabels.js` (prompts averaged per label). A species set in
+annotations.yaml wins. Labels with < `--min` photos fold into the group with
+the most similar centroid. Output `site/src/content/subjects.json` is
+committed so the site can offer the mode. In the engine, a session with
+`groups` plays each group as its own session (photos + the history between
+them, seed `<seed>|<name>`, `count` per group, finalists max(2N, N+4)), biggest
+group first; winners are each group's top N. Nothing else about history,
+undo or share links changes; `&v=` fingerprints the grouping too.
 
 The session is `{ids, count, lives, seed, history}` in gitignored
 `site/.image-cache/.favorites.json`; all state is derived by replaying history,

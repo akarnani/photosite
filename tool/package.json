@@ -25,5 +25,8 @@
   },
   "scripts": {
     "test": "node --test"
+  },
+  "optionalDependencies": {
+    "@huggingface/transformers": "4.3.1"
   }
 }

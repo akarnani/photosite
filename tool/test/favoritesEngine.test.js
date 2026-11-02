@@ -85,3 +85,57 @@ test('a forced rematch is the least-recent pair, never the one just played', () 
     s = E.decide(s, { a, b, result: 'both' });
   }
 });
+
+test('subject mode: pairs stay inside a group, groups play in turn, one winner set each', () => {
+  const all = ids(60);
+  const sizes = [25, 15, 9, 5, 3, 2, 1];
+  let at = 0;
+  const groups = sizes.map((n, i) => ({ name: `g${i}`, ids: all.slice(at, (at += n)) }));
+  const groupOf = new Map(groups.flatMap((g) => g.ids.map((id) => [id, g.name])));
+  for (const count of [1, 2, 3]) {
+    const rand = rng(count);
+    let s = E.newSession(all, { count, lives: 2, seed: `subj-${count}`, groups });
+    const order = [];
+    const seen = new Set();
+    for (let pick = 0; pick < 5000; pick++) {
+      const d = E.derive(s);
+      const pair = E.nextPair(s, d);
+      if (!pair) break;
+      const [a, b] = pair;
+      assert.equal(groupOf.get(a), groupOf.get(b), 'cross-group matchup');
+      const p = E.progress(s, d);
+      assert.equal(p.group, groupOf.get(a));
+      if (order.at(-1) !== p.group) order.push(p.group);
+      // Small groups (round robin) must not rematch at all.
+      if (groups.find((g) => g.name === p.group).ids.length <= 11) assert.ok(!seen.has(key(a, b)), `rematch ${key(a, b)}`);
+      seen.add(key(a, b));
+      let result = rand() < 0.5 ? 'a' : 'b';
+      if (E.checkDecision(s, { a, b, result }, d)) result = 'a';
+      s = E.decide(s, { a, b, result });
+    }
+    assert.ok(E.isDone(s));
+    assert.deepEqual(order, [...new Set(order)], 'each group is played in one stretch');
+    const byGroup = E.winnersByGroup(s);
+    assert.deepEqual(byGroup.map((g) => g.name), groups.map((g) => g.name));
+    for (const g of byGroup) {
+      const size = groups.find((x) => x.name === g.name).ids.length;
+      assert.equal(g.ids.length, Math.min(count, size));
+      for (const id of g.ids) assert.equal(groupOf.get(id), g.name);
+    }
+    assert.equal(E.winners(s).length, byGroup.reduce((n, g) => n + g.ids.length, 0));
+  }
+});
+
+test('subject mode: history round-trips through a share code', () => {
+  const all = ids(30);
+  const groups = [{ name: 'Turtles', ids: all.slice(0, 18) }, { name: 'Sharks', ids: all.slice(18, 26) }];
+  let s = E.newSession(all, { count: 1, lives: 2, seed: 'share', groups });
+  assert.equal(s.groups.at(-1).name, 'Other'); // the 4 ungrouped photos
+  for (let i = 0; i < 40; i++) {
+    const pair = E.nextPair(s);
+    if (!pair) break;
+    s = E.decide(s, { a: pair[0], b: pair[1], result: i % 3 ? 'a' : 'b' });
+  }
+  const fresh = { ...s, history: [] };
+  assert.deepEqual(E.decodeHistory(fresh, E.encodeHistory(s.history)), s.history);
+});
