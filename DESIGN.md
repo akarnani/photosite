@@ -242,10 +242,14 @@ browser page — photos need to be seen large, which a terminal can't do. Keys:
 1. **Cull.** Each photo has `--lives` (default 2) lives and loses one per lost
    matchup ("neither" costs both a life, "both great" costs neither), so one
    unlucky pairing never eliminates a photo. Swiss pairing: least-played photo
-   vs. the closest loss record it hasn't met. Runs until max(2N, N+10) remain.
+   vs. the closest loss record it hasn't met. No pair meets twice until every
+   surviving photo has met every other (only photos with someone new left to
+   face may lead a matchup); a forced rematch is the pair met fewest times,
+   longest ago. Runs until max(2N, N+10) remain.
 2. **Final.** Finalists get Bradley-Terry strengths (with a weak prior) from all
    matchups among them; each plays ≥4 more, photos near the Nth-place cut line
-   ≥8, always against the closest-scored opponent it has met least. Top N win.
+   ≥8, always against the closest-scored opponent it has met least (ties →
+   longest ago). Top N win. Guardrails are tested in `tool/test/` (`npm test`).
    (Simulated with a noisy chooser this keeps ~85% of the true top N, vs ~50%
    for elimination alone at the same number of picks.)
 

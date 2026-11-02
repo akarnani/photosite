@@ -117,6 +117,8 @@ deps.
   gitignored `.image-cache/.favorites.json` (resumable, undo = pop). Results are
   sorted chronologically with their trip (`--results`, `--out <csv>`). Plain
   `node:http`, no new deps; images from the local cache, else 302 to R2.
+  No pair repeats in the cull until every survivor has met every other
+  (`tool/test/favoritesEngine.test.js`, `cd tool && npm test`).
   `--seed <s>`: pairing is a pure function of (seed, history) — ties break on a
   seeded per-photo hash, so the whole first round depends only on the seed.
   The same game is public at `/favorites/` (footer link + "pick your favorites"

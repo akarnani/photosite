@@ -5,7 +5,9 @@
 // 1. Cull. Every photo starts with `lives` lives and loses one each time it
 //    loses a matchup; it's out when they run out, so one unlucky pairing never
 //    eliminates a photo. Pairing is Swiss-style: the least-played photo meets
-//    the closest loss record it hasn't faced yet. This runs until only
+//    the closest loss record it hasn't faced yet. A pair never meets twice
+//    while any two surviving photos still haven't met — otherwise one photo
+//    could lose both lives to the same rival. This runs until only
 //    `finalists` photos (≈2× count) remain — cheap, and good at dropping the
 //    clearly-not-favorites, but too blunt to pick the exact top N because the
 //    survivors end up knocking each other out.
@@ -95,28 +97,30 @@ const share = { a: 1, b: 0, both: 0.5, neither: 0.5 };
 // — once the cull is over — the finalists with their scores, ranks and
 // final-phase matchup counts.
 export function derive(session) {
-  const stats = new Map(session.ids.map((id) => [id, { wins: 0, losses: 0, matches: 0, opp: new Set() }]));
+  // `opp`: opponent id → { n: times met, at: history index of the last meeting }.
+  const stats = new Map(session.ids.map((id) => [id, { wins: 0, losses: 0, matches: 0, opp: new Map() }]));
   const F = finalistTarget(session);
   const isAlive = (id) => stats.get(id).losses < session.lives;
   let aliveCount = session.ids.length; // everyone starts with ≥1 life
   let finalists = aliveCount <= F ? [...session.ids] : null;
 
-  for (const { a, b, result } of session.history) {
+  session.history.forEach(({ a, b, result }, at) => {
     const sa = stats.get(a);
     const sb = stats.get(b);
-    if (!sa || !sb) continue; // photo no longer in the session
+    if (!sa || !sb) return; // photo no longer in the session
     sa.matches++;
     sb.matches++;
-    sa.opp.add(b);
-    sb.opp.add(a);
-    if (finalists) continue; // final-phase matchup: scored below, no lives lost
+    const met = (s, o) => s.opp.set(o, { n: (s.opp.get(o)?.n || 0) + 1, at });
+    met(sa, b);
+    met(sb, a);
+    if (finalists) return; // final-phase matchup: scored below, no lives lost
     const before = isAlive(a) + isAlive(b);
     if (result === 'a') (sa.wins++, sb.losses++);
     else if (result === 'b') (sb.wins++, sa.losses++);
     else if (result === 'neither') (sa.losses++, sb.losses++);
     aliveCount -= before - isAlive(a) - isAlive(b);
     if (aliveCount <= F) finalists = session.ids.filter(isAlive);
-  }
+  });
   const alive = finalists || session.ids.filter(isAlive);
   const d = { stats, alive, finalists };
   if (!finalists) return d;
@@ -169,28 +173,48 @@ export function nextPair(session, d = derive(session)) {
     return out;
   };
 
+  // Rematch ordering: fewest meetings first, then the longest ago — so a
+  // forced rematch is never the pair you just saw.
+  const staleness = (sa, id) => {
+    const met = sa.opp.get(id);
+    return met ? met.n * 1e9 + (met.at + 1) * 1e3 : 0;
+  };
+
   if (!d.finalists) {
     const { alive } = d;
-    const minMatches = Math.min(...alive.map((id) => stats.get(id).matches));
-    const a = best(alive.filter((id) => stats.get(id).matches === minMatches), () => 0);
+    const hasUnmet = (id) => alive.some((o) => o !== id && !stats.get(id).opp.has(o));
+    // Only photos that still have someone new to face can lead a matchup; a
+    // rematch happens only once every surviving photo has met every other.
+    let leaders = alive.filter(hasUnmet);
+    const rematch = !leaders.length;
+    if (rematch) leaders = alive;
+    const minMatches = Math.min(...leaders.map((id) => stats.get(id).matches));
+    const a = best(leaders.filter((id) => stats.get(id).matches === minMatches), () => 0);
     const sa = stats.get(a);
-    let pool = alive.filter((id) => id !== a && !sa.opp.has(id));
-    if (!pool.length) pool = alive.filter((id) => id !== a); // everyone met; allow a rematch
-    const b = best(pool, (id) => Math.abs(stats.get(id).losses - sa.losses) * 1000 + stats.get(id).matches * 10);
+    const others = alive.filter((id) => id !== a);
+    const pool = rematch ? others : others.filter((id) => !sa.opp.has(id));
+    const b = best(
+      pool,
+      (id) => staleness(sa, id) + Math.abs(stats.get(id).losses - sa.losses) * 1000 + stats.get(id).matches * 10,
+    );
     return order(a, b);
   }
 
   // Final: the finalist most short of its matchup target (ties → nearest the
-  // cut line) meets the closest-scored finalist it has played least.
+  // cut line) meets the closest-scored finalist it has played least (and, among
+  // ones it has already played, longest ago).
   const { finalists, need, rank, score, played } = d;
   const a = best(
     finalists.filter((id) => need.get(id) > 0),
     (id) => -need.get(id) * 1000 + Math.abs(rank.get(id) - session.count),
   );
   const la = Math.log(score.get(a));
+  const sa = stats.get(a);
+  const recency = (id) => (played.get(a).get(id) ? (100 * (sa.opp.get(id).at + 1)) / session.history.length : 0);
   const b = best(
     finalists.filter((id) => id !== a),
-    (id) => (played.get(a).get(id) || 0) * 1000 + Math.abs(Math.log(score.get(id)) - la) * 10 - need.get(id),
+    (id) =>
+      (played.get(a).get(id) || 0) * 1000 + recency(id) + Math.abs(Math.log(score.get(id)) - la) * 10 - need.get(id),
   );
   return order(a, b);
 }
