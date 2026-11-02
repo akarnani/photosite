@@ -11,6 +11,7 @@ import { listTripSlugs, readTrip } from '../trips.js';
 import { openUrl } from '../viewer.js';
 import * as engine from '../../../site/src/lib/favoritesEngine.js';
 import { createServer, results, toCsv } from '../favorites/server.js';
+import { readSubjects } from '../subjects.js';
 
 const stateFile = (P) => path.join(P.cacheDir, '.favorites.json');
 const keyOf = (url) => (url ? url.replace(/^.*\//, '') : null);
@@ -51,8 +52,10 @@ const positiveInt = (v, name) => {
 
 function printResults(session, catalog) {
   const rows = results(session, catalog);
-  ui.heading(`Your ${rows.length} favorites (oldest first)`);
+  ui.heading(`Your ${rows.length} favorites (${session.groups ? 'by subject' : 'oldest first'})`);
+  let subject = null;
   for (const p of rows) {
+    if (session.groups && p.subject !== subject) console.log(`\n  ${pc.bold((subject = p.subject))}`);
     const date = p.date ? p.date.slice(0, 10) : '—'.padEnd(10);
     const label = p.title || p.caption;
     console.log(`  ${pc.dim(date)}  ${pc.bold(p.tripTitle)}  ${pc.cyan(p.file)}${label ? pc.dim(`  ${label}`) : ''}`);
@@ -76,6 +79,10 @@ export async function favorites(opts) {
   if (session) {
     // Drop photos whose trip/file has since disappeared.
     session.ids = session.ids.filter((id) => catalog.has(id));
+    if (session.groups) session.groups = engine.normalizeGroups(session.ids, session.groups);
+    if (opts.bySubject && !session.groups) {
+      ui.fail('The session in progress isn\'t by subject. Add --reset to start a new one with --by-subject.');
+    }
     if (opts.seed && String(opts.seed) !== String(session.seed)) {
       ui.fail(`A session with seed "${session.seed}" is in progress. Add --reset to start over with "${opts.seed}".`);
     }
@@ -93,7 +100,11 @@ export async function favorites(opts) {
   if (session) {
     const pr = engine.progress(session);
     ui.step(
-      `Resuming: ${pr.decisions} picks so far, ${pr.alive} of ${pr.total} photos still in, top ${session.count}, ${session.lives} lives each, seed ${ui.value(session.seed)} ` +
+      `Resuming: ${pr.decisions} picks so far, ` +
+        (pr.group
+          ? `on ${pr.group} (subject ${pr.groupIndex + 1} of ${pr.groups}), top ${session.count} of each, `
+          : `${pr.alive} of ${pr.total} photos still in, top ${session.count}, `) +
+        `${session.lives} lives each, seed ${ui.value(session.seed)} ` +
         pc.dim('(--reset to start over)'),
     );
   } else {
@@ -116,14 +127,29 @@ export async function favorites(opts) {
         }),
       }));
     }
+    let groups = null;
+    if (opts.bySubject) {
+      groups = readSubjects(P)?.groups;
+      if (!groups) ui.fail('No subjects yet. Run `photosite subjects` first.');
+    }
     let n = count;
     if (!n && process.stdin.isTTY) {
-      ({ n } = await ui.ask({ type: 'number', name: 'n', message: 'How many favorites?', initial: 20, min: 1 }));
+      ({ n } = await ui.ask({
+        type: 'number',
+        name: 'n',
+        message: groups ? 'How many favorites per subject?' : 'How many favorites?',
+        initial: groups ? 1 : 20,
+        min: 1,
+      }));
     }
     const ids = [...catalog.keys()].filter((id) => slugs.includes(id.split('/')[0]));
     if (!ids.length) ui.fail('Those trips have no photos.');
-    session = engine.newSession(ids, { count: n || 20, lives: lives || 2, seed: opts.seed });
-    ui.step(`Starting: ${ids.length} photos → top ${session.count}, ${session.lives} lives each, seed ${ui.value(session.seed)}`);
+    session = engine.newSession(ids, { count: n || (groups ? 1 : 20), lives: lives || 2, seed: opts.seed, groups });
+    ui.step(
+      groups
+        ? `Starting: ${ids.length} photos in ${session.groups.length} subjects → top ${session.count} of each, ${session.lives} lives each, seed ${ui.value(session.seed)}`
+        : `Starting: ${ids.length} photos → top ${session.count}, ${session.lives} lives each, seed ${ui.value(session.seed)}`,
+    );
   }
 
   const save = (s) => {
@@ -142,7 +168,7 @@ export async function favorites(opts) {
       }
     } else {
       const pr = engine.progress(session);
-      ui.ok(`Saved: ${pr.alive} photos still in, roughly ${pr.remaining} more pick${pr.remaining === 1 ? "" : "s"}. Run again to resume.`);
+      ui.ok(`Saved: ${pr.group ? `on ${pr.group} (subject ${pr.groupIndex + 1} of ${pr.groups})` : `${pr.alive} photos still in`}, roughly ${pr.remaining} more pick${pr.remaining === 1 ? "" : "s"}. Run again to resume.`);
     }
   };
 

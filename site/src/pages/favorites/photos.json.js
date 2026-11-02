@@ -3,10 +3,12 @@
 // Ids are "<slug>/<file>", the same as the CLI's, so a seed pairs identically
 // in both.
 import { getTrips } from '../../lib/trips.js';
+import { getSubjects } from '../../lib/subjects.js';
 
 export function GET() {
   const trips = getTrips();
   const body = {
+    subjects: getSubjects(),
     trips: trips.map((t) => ({ slug: t.slug, title: t.title || t.slug })),
     photos: trips.flatMap((t, ti) =>
       t.photos.map((p) => ({

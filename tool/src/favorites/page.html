@@ -122,11 +122,12 @@
     const cullPct = (100 * (p.total - p.alive)) / Math.max(1, p.total - p.finalists);
     const pct = !s.pair ? 100 : final ? 80 + 20 * (1 - p.remaining / Math.max(1, finalBudget(p))) : 80 * Math.min(1, cullPct / 100);
     $('bar').style.width = pct + '%';
+    const subject = p.group && s.pair ? `${p.group} (subject ${p.groupIndex + 1} of ${p.groups}) · ` : '';
     $('stats').textContent = !s.pair
       ? `Done · ${p.decisions} picks`
-      : final
+      : subject + (final
         ? `Final round · ${p.alive} finalists for ${s.count} spots · ~${p.remaining} picks left`
-        : `Cull · ${p.alive} of ${p.total} still in · final at ${p.finalists} · ~${p.remaining} picks left`;
+        : `Cull · ${p.alive} of ${p.total} still in · final at ${p.finalists} · ~${p.remaining} picks left`);
     $('btn-both').innerHTML = final ? '<kbd>↑</kbd>Tie' : '<kbd>↑</kbd>Both great';
     $('btn-neither').style.display = final ? 'none' : '';
     $('undo').disabled = !s.canUndo;
@@ -169,7 +170,7 @@
       info.className = 'info';
       const head = document.createElement('div');
       const b = document.createElement('b');
-      b.textContent = ph.trip;
+      b.textContent = ph.subject ? `${ph.subject} · ${ph.trip}` : ph.trip;
       head.append(b, ` · ${fmtDate(ph.date)}`);
       const n = document.createElement('div');
       n.className = 'n';

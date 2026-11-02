@@ -23,6 +23,9 @@ tool/                   the CLI — LOCAL ONLY, never deployed. Own package.json
                         Thumbnail, half-block thumb.js renderer)
   src/favorites/        `favorites` picker: server.js (local http + JSON API),
                         page.html (UI). Engine lives in the site (below).
+  src/subjects.js       `subjects`: local CLIP (transformers.js, ONNX) embeds +
+                        zero-shot labels photos → subject groups. Labels in
+                        src/subjectLabels.js. Model loaded lazily.
 site/                   the Astro site — Cloudflare Pages builds this. Own package.json.
   src/content/trips/<slug>/{trip.yaml, photos.json, annotations.yaml}
   src/lib/genres.js     photo genres (copy + accent per genre). Shared with the
@@ -32,6 +35,9 @@ site/                   the Astro site — Cloudflare Pages builds this. Own pac
                         /favorites/ page AND the CLI (tool imports it by relative
                         path — it must stay dependency-free and browser-safe)
   src/pages/favorites/  public game: index.astro + photos.json.js catalog
+  src/content/subjects.json  tool-generated subject groups ({ groups: [{name,
+                        ids}] }), read by src/lib/subjects.js; absent → no
+                        "by subject" option
   .image-cache/         gitignored local derivative cache for offline preview
 ```
 
@@ -117,6 +123,11 @@ deps.
   gitignored `.image-cache/.favorites.json` (resumable, undo = pop). Results are
   sorted chronologically with their trip (`--results`, `--out <csv>`). Plain
   `node:http`, no new deps; images from the local cache, else 302 to R2.
+  `--by-subject`: each subject group (from `photosite subjects`) is its own
+  small game — `count` is per subject, groups play biggest first, session
+  stores `groups` (engine "subject mode"; site: "Within each subject", `&by=subject`).
+  No pair repeats in the cull until every survivor has met every other
+  (`tool/test/favoritesEngine.test.js`, `cd tool && npm test`).
   `--seed <s>`: pairing is a pure function of (seed, history) — ties break on a
   seeded per-photo hash, so the whole first round depends only on the seed.
   The same game is public at `/favorites/` (footer link + "pick your favorites"
@@ -128,6 +139,14 @@ deps.
   `decodeHistory`, `&v=` photo-set fingerprint), kept current with
   `replaceState`: it's a cross-device resume link, and `&ask=1` shares one
   exact matchup ("which would you pick?").
+
+- `photosite subjects [--model <id>] [--min <n>]` — group every photo by
+  subject with a local CLIP model (default `Xenova/clip-vit-large-patch14`,
+  q8, ~400 MB one-time download to `.image-cache/.models`, then offline).
+  Embeddings cached in `.image-cache/.subjects-embeddings.json`; a species set
+  in annotations.yaml overrides the model's label. Writes
+  `site/src/content/subjects.json` (commit it). `@huggingface/transformers` is
+  a tool-only optionalDependency — never in `site/`.
 
 Build the site: `cd site && npm run build`. Convenience wrappers in `justfile`.
 

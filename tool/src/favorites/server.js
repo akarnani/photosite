@@ -10,13 +10,17 @@ import * as engine from '../../../site/src/lib/favoritesEngine.js';
 const PAGE = path.join(path.dirname(fileURLToPath(import.meta.url)), 'page.html');
 const TYPES = { '.webp': 'image/webp', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg' };
 
-// Winners sorted oldest-first, with their trip. Undated photos sort last.
+// Winners sorted oldest-first, with their trip (in subject mode: by subject,
+// then oldest-first within it). Undated photos sort last.
 export function results(session, catalog) {
-  return engine
-    .winners(session)
-    .map((id) => catalog.get(id))
-    .filter(Boolean)
-    .sort((x, y) => (x.date || '9999').localeCompare(y.date || '9999'));
+  const byDate = (x, y) => (x.date || '9999').localeCompare(y.date || '9999');
+  return engine.winnersByGroup(session).flatMap(({ name, ids }) =>
+    ids
+      .map((id) => catalog.get(id))
+      .filter(Boolean)
+      .map((p) => ({ ...p, subject: name }))
+      .sort(byDate),
+  ).sort(session.groups ? () => 0 : byDate);
 }
 
 const csvCell = (v) => {
@@ -25,18 +29,20 @@ const csvCell = (v) => {
 };
 
 export function toCsv(rows) {
-  const head = ['date', 'trip', 'trip_slug', 'file', 'title', 'caption'];
-  const lines = rows.map((p) => [p.date, p.tripTitle, p.slug, p.file, p.title, p.caption].map(csvCell).join(','));
+  const head = ['date', 'trip', 'trip_slug', 'file', 'title', 'caption', 'subject'];
+  const lines = rows.map((p) =>
+    [p.date, p.tripTitle, p.slug, p.file, p.title, p.caption, p.subject].map(csvCell).join(','),
+  );
   return [head.join(','), ...lines].join('\n') + '\n';
 }
 
 // catalog: Map id → photo info (see commands/favorites.js). load/save persist
 // the session; onDone fires once each time the session becomes finished.
 export function createServer({ catalog, load, save, onDone }) {
-  const view = (id) => {
-    const p = catalog.get(id);
-    return { id, slug: p.slug, file: p.file, trip: p.tripTitle, date: p.date, title: p.title, caption: p.caption, ratio: p.ratio, src: p.src };
-  };
+  const view = (p) => ({
+    id: p.id, slug: p.slug, file: p.file, trip: p.tripTitle, date: p.date, title: p.title,
+    caption: p.caption, ratio: p.ratio, src: p.src, subject: p.subject ?? null,
+  });
 
   const snapshot = (error) => {
     const session = load();
@@ -48,9 +54,9 @@ export function createServer({ catalog, load, save, onDone }) {
       lives: session.lives,
       progress: engine.progress(session, d),
       canUndo: session.history.length > 0,
-      pair: pair && pair.map(view),
+      pair: pair && pair.map((id) => view(catalog.get(id))),
       prefetch: engine.upcomingPairs(session).flat().map((id) => catalog.get(id).src),
-      results: pair ? null : results(session, catalog).map((p) => view(p.id)),
+      results: pair ? null : results(session, catalog).map(view),
     };
   };
 

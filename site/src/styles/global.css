@@ -943,6 +943,14 @@ a.sa-credit svg {
   text-transform: none;
   letter-spacing: 0;
 }
+.fav-hint {
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+.fav-field[hidden] {
+  display: none;
+}
 .fav select,
 .fav input[name='seed'] {
   font: inherit;
