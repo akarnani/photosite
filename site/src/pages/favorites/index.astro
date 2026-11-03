@@ -88,6 +88,20 @@ const subjectSizes = subjects && {
           </div>
         </fieldset>
 
+        <fieldset class="fav-field" data-count-total hidden>
+          <legend>Then narrow to</legend>
+          <div class="fav-chips">
+            <label><input type="radio" name="total" value="0" checked /><span>Keep all</span></label>
+            {[5, 10, 15].map((n) => (
+              <label><input type="radio" name="total" value={n} /><span>{n}</span></label>
+            ))}
+          </div>
+          <small class="fav-hint">
+            Once every subject has its favorites, they face each other until only that many are left in total —
+            so whole subjects can drop out, but only at the end.
+          </small>
+        </fieldset>
+
         <fieldset class="fav-field">
           <legend>Pace</legend>
           <div class="fav-chips">
@@ -216,7 +230,8 @@ const subjectSizes = subjects && {
       }
     },
   };
-  const keyOf = (c) => `favorites:v1:${c.trip || 'all'}:${c.count}:${c.lives}:${c.seed}${c.by ? `:${c.by}` : ''}`;
+  const keyOf = (c) =>
+    `favorites:v1:${c.trip || 'all'}:${c.count}:${c.lives}:${c.seed}${c.by ? `:${c.by}` : ''}${c.total ? `:t${c.total}` : ''}`;
   const subjectSizes = JSON.parse(document.getElementById('fav-subject-sizes').textContent);
   const LAST = 'favorites:v1:last';
 
@@ -258,6 +273,7 @@ const subjectSizes = subjects && {
     const q = new URLSearchParams({ seed: c.seed, n: c.count, lives: c.lives });
     if (c.trip) q.set('trip', c.trip);
     if (c.by) q.set('by', c.by);
+    if (c.total) q.set('total', c.total);
     for (const [k, v] of Object.entries(extra)) q.set(k, v);
     return `${location.origin}/favorites/?${q}`;
   }
@@ -269,6 +285,7 @@ const subjectSizes = subjects && {
       trip: f.get('trip') || '',
       by,
       count: Number(f.get(by ? 'countPer' : 'count')),
+      total: by ? Number(f.get('total')) || 0 : 0,
       lives: Number(f.get('lives')),
       seed: String(f.get('seed') || '').trim(),
     };
@@ -279,6 +296,10 @@ const subjectSizes = subjects && {
     if (subjectSizes && c.by !== undefined) form.querySelector(`[name=by][value="${c.by}"]`).checked = true;
     if (c.count) {
       const r = form.querySelector(`[name=${c.by ? 'countPer' : 'count'}][value="${c.count}"]`);
+      if (r) r.checked = true;
+    }
+    if (c.by && c.total !== undefined) {
+      const r = form.querySelector(`[name=total][value="${c.total || 0}"]`);
       if (r) r.checked = true;
     }
     if (c.lives) {
@@ -293,8 +314,9 @@ const subjectSizes = subjects && {
     const total = tripCounts.get(c.trip) || 0;
     $('[data-count-all]').hidden = Boolean(c.by);
     $('[data-count-per]').hidden = !c.by;
+    $('[data-count-total]').hidden = !c.by;
     if ($('[data-by-hint]')) $('[data-by-hint]').hidden = !c.by;
-    const picks = E.estimatePicks(c.by ? subjectSizes[c.trip] || [] : total, c.count, c.lives);
+    const picks = E.estimatePicks(c.by ? subjectSizes[c.trip] || [] : total, c.count, c.lives, false, c.total);
     const mins = Math.max(1, Math.round((picks * 2.5) / 60));
     $('[data-estimate]').textContent =
       !c.by && total <= c.count
@@ -323,7 +345,7 @@ const subjectSizes = subjects && {
   function makeSession(c, data) {
     const ids = data.photos.filter((p) => !c.trip || p.id.startsWith(`${c.trip}/`)).map((p) => p.id);
     const groups = c.by === 'subject' && data.subjects ? data.subjects : null;
-    return E.newSession(ids, { count: c.count, lives: c.lives, seed: c.seed, groups });
+    return E.newSession(ids, { count: c.count, lives: c.lives, seed: c.seed, groups, total: groups ? c.total : 0 });
   }
 
   // `code` (from ?h=) puts you at the exact position of a shared game link.
@@ -379,9 +401,9 @@ const subjectSizes = subjects && {
     render.finalMax = final ? Math.max(render.finalMax || 0, p.remaining) : 0;
     const pct = final ? 80 + 20 * (1 - p.remaining / Math.max(1, render.finalMax)) : 0.8 * Math.min(100, cullPct);
     $('[data-bar]').style.width = `${pct}%`;
-    const spots = Math.min(session.count, p.total);
+    const spots = Math.min(p.across ? session.total : session.count, p.total);
     $('[data-status]').textContent =
-      (p.group ? `${p.group} (${p.groupIndex + 1} of ${p.groups}) · ` : '') +
+      (p.across ? `${p.group} · ` : p.group ? `${p.group} (${p.groupIndex + 1} of ${p.groups}) · ` : '') +
       (final
         ? `Final round · ${p.alive} finalists for ${spots} spot${spots === 1 ? '' : 's'} · ~${p.remaining} picks left`
         : `${p.alive} of ${p.total} still in · ~${p.remaining} picks left`);
@@ -705,6 +727,7 @@ const subjectSizes = subjects && {
       by: subjectSizes && params.get('by') === 'subject' ? 'subject' : '',
       count: Number(params.get('n')) || undefined,
       lives: Number(params.get('lives')) || undefined,
+      total: Number(params.get('total')) || 0,
       seed: params.get('seed') || '',
     };
     fillForm({ ...fromUrl, seed: fromUrl.seed || E.randomSeed() });

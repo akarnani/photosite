@@ -139,3 +139,47 @@ test('subject mode: history round-trips through a share code', () => {
   const fresh = { ...s, history: [] };
   assert.deepEqual(E.decodeHistory(fresh, E.encodeHistory(s.history)), s.history);
 });
+
+test('subject mode + total: subjects first, then their favorites play down to the total', () => {
+  const all = ids(60);
+  const sizes = [25, 15, 9, 5, 3, 2, 1];
+  let at = 0;
+  const groups = sizes.map((n, i) => ({ name: `g${i}`, ids: all.slice(at, (at += n)) }));
+  for (const [count, total] of [[1, 3], [2, 5], [3, 10], [1, 20]]) {
+    const rand = rng(count * 100 + total);
+    let s = E.newSession(all, { count, lives: 2, seed: `tot-${count}-${total}`, groups, total });
+    let pool = null;
+    let subjectWinners = null;
+    let picks = 0;
+    for (; picks < 5000; picks++) {
+      const d = E.derive(s);
+      const pair = E.nextPair(s, d);
+      if (!pair) break;
+      const p = E.progress(s, d);
+      if (p.across && !pool) {
+        subjectWinners = E.winnersByGroup({ ...s, total: 0 });
+        pool = new Set(subjectWinners.flatMap((g) => g.ids));
+      }
+      if (pool) {
+        assert.ok(p.across, 'subject game after the across game started');
+        for (const id of pair) assert.ok(pool.has(id), `${id} is not a subject favorite`);
+      }
+      let result = rand() < 0.5 ? 'a' : 'b';
+      if (E.checkDecision(s, { a: pair[0], b: pair[1], result }, d)) result = 'a';
+      s = E.decide(s, { a: pair[0], b: pair[1], result }, d);
+    }
+    assert.ok(E.isDone(s));
+    const poolSize = sizes.reduce((n, x) => n + Math.min(count, x), 0);
+    const w = E.winners(s);
+    assert.equal(w.length, Math.min(total, poolSize));
+    if (poolSize > total) {
+      assert.ok(pool, 'an across game was played');
+      for (const id of w) assert.ok(pool.has(id));
+      // The across picks never change what each subject chose.
+      assert.deepEqual(E.winnersByGroup({ ...s, total: 0 }), subjectWinners);
+      assert.ok(s.history.some((h) => h.across));
+    } else assert.ok(!s.history.some((h) => h.across));
+    const fresh = { ...s, history: [] };
+    assert.deepEqual(E.decodeHistory(fresh, E.encodeHistory(s.history)), s.history);
+  }
+});

@@ -72,6 +72,7 @@ export async function favorites(opts) {
 
   const count = positiveInt(opts.count, 'count');
   const lives = positiveInt(opts.lives, 'lives');
+  const total = Number(opts.total) === 0 ? 0 : positiveInt(opts.total, 'total'); // undefined when not given
 
   let session = !opts.reset && fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, 'utf8')) : null;
   const catalog = buildCatalog(P, allSlugs);
@@ -88,6 +89,11 @@ export async function favorites(opts) {
     }
     if (count) session.count = count;
     if (lives) session.lives = lives;
+    if (total !== undefined) {
+      if (!session.groups) ui.fail('--total only applies to a --by-subject session.');
+      if (total) session.total = total;
+      else delete session.total;
+    }
   }
 
   if (opts.results) {
@@ -102,7 +108,7 @@ export async function favorites(opts) {
     ui.step(
       `Resuming: ${pr.decisions} picks so far, ` +
         (pr.group
-          ? `on ${pr.group} (subject ${pr.groupIndex + 1} of ${pr.groups}), top ${session.count} of each, `
+          ? `on ${pr.across ? pr.group : `${pr.group} (subject ${pr.groupIndex + 1} of ${pr.groups})`}, top ${session.count} of each${session.total ? ` → ${session.total} overall` : ''}, `
           : `${pr.alive} of ${pr.total} photos still in, top ${session.count}, `) +
         `${session.lives} lives each, seed ${ui.value(session.seed)} ` +
         pc.dim('(--reset to start over)'),
@@ -127,6 +133,7 @@ export async function favorites(opts) {
         }),
       }));
     }
+    if (total && !opts.bySubject) ui.fail('--total only applies with --by-subject.');
     let groups = null;
     if (opts.bySubject) {
       groups = readSubjects(P)?.groups;
@@ -142,12 +149,28 @@ export async function favorites(opts) {
         min: 1,
       }));
     }
+    let overall = total;
+    if (groups && total === undefined && process.stdin.isTTY) {
+      ({ overall } = await ui.ask({
+        type: 'number',
+        name: 'overall',
+        message: 'Then narrow the subject favorites to how many overall? (0 = keep them all)',
+        initial: 0,
+        min: 0,
+      }));
+    }
     const ids = [...catalog.keys()].filter((id) => slugs.includes(id.split('/')[0]));
     if (!ids.length) ui.fail('Those trips have no photos.');
-    session = engine.newSession(ids, { count: n || (groups ? 1 : 20), lives: lives || 2, seed: opts.seed, groups });
+    session = engine.newSession(ids, {
+      count: n || (groups ? 1 : 20),
+      lives: lives || 2,
+      seed: opts.seed,
+      groups,
+      total: overall || 0,
+    });
     ui.step(
       groups
-        ? `Starting: ${ids.length} photos in ${session.groups.length} subjects → top ${session.count} of each, ${session.lives} lives each, seed ${ui.value(session.seed)}`
+        ? `Starting: ${ids.length} photos in ${session.groups.length} subjects → top ${session.count} of each${session.total ? `, then ${session.total} overall` : ''}, ${session.lives} lives each, seed ${ui.value(session.seed)}`
         : `Starting: ${ids.length} photos → top ${session.count}, ${session.lives} lives each, seed ${ui.value(session.seed)}`,
     );
   }
@@ -168,7 +191,7 @@ export async function favorites(opts) {
       }
     } else {
       const pr = engine.progress(session);
-      ui.ok(`Saved: ${pr.group ? `on ${pr.group} (subject ${pr.groupIndex + 1} of ${pr.groups})` : `${pr.alive} photos still in`}, roughly ${pr.remaining} more pick${pr.remaining === 1 ? "" : "s"}. Run again to resume.`);
+      ui.ok(`Saved: ${pr.group ? (pr.across ? `on ${pr.group}` : `on ${pr.group} (subject ${pr.groupIndex + 1} of ${pr.groups})`) : `${pr.alive} photos still in`}, roughly ${pr.remaining} more pick${pr.remaining === 1 ? "" : "s"}. Run again to resume.`);
     }
   };
 

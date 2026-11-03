@@ -22,6 +22,13 @@
 // as an ordinary session over its photos and the history entries between
 // them, seeded with `<seed>|<group name>`.
 //
+// Subject mode + `total`: once every group is done, their favorites play one
+// more game across subjects (seeded `<seed>|across`) down to `total` overall,
+// so whole subjects can drop out — but only at the end, after each has been
+// judged on its own terms. Those picks carry `across: true` (added by
+// `decide`), which keeps them out of the subject games' replays even when
+// both photos share a subject.
+//
 // All state is derived by replaying `history`, so undo is a pop and changing
 // `count`/`lives` on resume just re-derives. Pairing is a pure function of
 // (seed, history): the same seed gives everyone the same first round, and the
@@ -66,10 +73,11 @@ export function randomSeed() {
 // `ids` are sorted so the same photo set gives the same session everywhere.
 // `groups` ([{ name, ids }], optional) turns on subject mode: it's narrowed to
 // `ids`, photos in no group go to "Other", and groups play biggest first.
-export function newSession(ids, { count, lives, seed = randomSeed(), groups = null }) {
+export function newSession(ids, { count, lives, seed = randomSeed(), groups = null, total = 0 }) {
   const sorted = [...ids].sort();
   const session = { version: 2, ids: sorted, count, lives, seed: String(seed), history: [] };
   if (groups) session.groups = normalizeGroups(sorted, groups);
+  if (groups && total > 0) session.total = total;
   return session;
 }
 
@@ -97,7 +105,20 @@ function groupSession(session, g) {
     lives: session.lives,
     seed: `${session.seed}|${g.name}`,
     subject: true,
-    history: session.history.filter((h) => inG.has(h.a) && inG.has(h.b)),
+    history: session.history.filter((h) => !h.across && inG.has(h.a) && inG.has(h.b)),
+  };
+}
+
+// The across-subjects game: every group's favorites, down to `total`.
+export const ACROSS = 'Across subjects';
+function acrossSession(session, parts) {
+  return {
+    version: session.version,
+    ids: parts.flatMap((p) => winners1(p.s, p.d)).sort(),
+    count: session.total,
+    lives: session.lives,
+    seed: `${session.seed}|across`,
+    history: session.history.filter((h) => h.across),
   };
 }
 
@@ -278,16 +299,21 @@ function checkDecision1(session, { a, b, result }, d = derive1(session)) {
   return null;
 }
 
-export const decide = (session, decision) => ({ ...session, history: [...session.history, decision] });
+// In the across-subjects game the pick is tagged, so the subject games ignore it.
+export function decide(session, { a, b, result }, d = derive(session)) {
+  const across = !!d.parts?.[d.current]?.across;
+  return { ...session, history: [...session.history, across ? { a, b, result, across } : { a, b, result }] };
+}
 export const undo = (session) => ({ ...session, history: session.history.slice(0, -1) });
 
 // The pair that would follow each possible pick (for image prefetching).
 export function upcomingPairs(session) {
-  const pair = nextPair(session);
+  const d = derive(session);
+  const pair = nextPair(session, d);
   if (!pair) return [];
   const [a, b] = pair;
   return ['a', 'b']
-    .map((result) => nextPair(decide(session, { a, b, result })))
+    .map((result) => nextPair(decide(session, { a, b, result }, d)))
     .filter(Boolean);
 }
 
@@ -348,7 +374,7 @@ export function decodeHistory(session, code) {
     if (!pair) break;
     const decision = { a: pair[0], b: pair[1], result };
     if (checkDecision(s, decision, d)) break;
-    s = decide(s, decision);
+    s = decide(s, decision, d);
   }
   return s.history;
 }
@@ -359,8 +385,13 @@ export const scopeCode = (ids) => photoCode([...ids].sort().join('|'));
 
 // Rough total picks for a fresh session (for "how long will this take?").
 // `total` may be a list of group sizes (subject mode; `count` is per group).
-export function estimatePicks(total, count, lives, subject = false) {
-  if (Array.isArray(total)) return total.reduce((n, t) => n + estimatePicks(t, count, lives, true), 0);
+// `overall` (subject mode): then narrow the groups' favorites to that many.
+export function estimatePicks(total, count, lives, subject = false, overall = 0) {
+  if (Array.isArray(total)) {
+    const groups = total.reduce((n, t) => n + estimatePicks(t, count, lives, true), 0);
+    const pool = total.reduce((n, t) => n + Math.min(count, t), 0);
+    return groups + (overall > 0 ? estimatePicks(pool, overall, lives) : 0);
+  }
   const F = finalCount(total, count, subject);
   if (total <= count) return 0;
   return Math.ceil((total - F) * lives + (F * Math.min(F - 1, FINAL_BASE + FINAL_EXTRA / 2)) / 2);
@@ -385,7 +416,13 @@ export function derive(session) {
     const s = groupSession(session, g);
     return { name: g.name, s, d: derive1(s) };
   });
-  return { parts, current: parts.findIndex((p) => !isDone1(p.s, p.d)) };
+  let current = parts.findIndex((p) => !isDone1(p.s, p.d));
+  if (current < 0 && session.total) {
+    const s = acrossSession(session, parts);
+    parts.push({ name: ACROSS, s, d: derive1(s), across: true });
+    if (!isDone1(s, parts.at(-1).d)) current = parts.length - 1;
+  }
+  return { parts, current };
 }
 
 export function isDone(session, d = derive(session)) {
@@ -412,28 +449,42 @@ export function progress(session, d = derive(session)) {
   if (!session.groups) return progress1(session, d);
   const i = d.current < 0 ? d.parts.length - 1 : d.current;
   const cur = progress1(d.parts[i].s, d.parts[i].d);
-  const remaining = d.parts.reduce((n, p) => n + progress1(p.s, p.d).remaining, 0);
+  let remaining = d.parts.reduce((n, p) => n + progress1(p.s, p.d).remaining, 0);
+  const subjects = d.parts.filter((p) => !p.across);
+  // The across game doesn't exist until the subjects are done: estimate it.
+  if (session.total && subjects.length === d.parts.length) {
+    const pool = subjects.reduce((n, p) => n + Math.min(p.s.count, p.s.ids.length), 0);
+    remaining += estimatePicks(pool, session.total, session.lives);
+  }
   return {
     ...cur,
     decisions: session.history.length,
     remaining,
     group: d.parts[i].name,
     groupIndex: i,
-    groups: d.parts.length,
+    groups: subjects.length,
+    across: !!d.parts[i].across,
   };
 }
 
 // The favorites. Plain: the top `count` (see winners1). Subject mode: each
-// group's top `count`, in group order.
+// group's top `count`, in group order — or, with `total`, the across game's
+// top `total` once it has started.
 export function winners(session, d = derive(session)) {
-  if (!session.groups) return winners1(session, d);
-  return d.parts.flatMap((p) => winners1(p.s, p.d));
+  return winnersByGroup(session, d).flatMap((g) => g.ids);
 }
 
-// Subject mode: [{ name, ids }] of each group's favorites. Plain: one group.
+// Subject mode: [{ name, ids }] of each group's favorites (with `total`,
+// only the ones still in the across game; subjects left empty are dropped).
+// Plain: one group.
 export function winnersByGroup(session, d = derive(session)) {
   if (!session.groups) return [{ name: null, ids: winners1(session, d) }];
-  return d.parts.map((p) => ({ name: p.name, ids: winners1(p.s, p.d) }));
+  const across = d.parts.find((p) => p.across);
+  const keep = across && new Set(winners1(across.s, across.d));
+  return d.parts
+    .filter((p) => !p.across)
+    .map((p) => ({ name: p.name, ids: winners1(p.s, p.d).filter((id) => !keep || keep.has(id)) }))
+    .filter((g) => g.ids.length);
 }
 
 // Fingerprint of everything that decides the matchups besides the seed: the
