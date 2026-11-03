@@ -269,6 +269,16 @@ them, seed `<seed>|<name>`, `count` per group, finalists max(2N, N+4)), biggest
 group first; winners are each group's top N. Nothing else about history,
 undo or share links changes; `&v=` fingerprints the grouping too.
 
+**Then narrow to N** (`--total <n>` with `--by-subject`; site: "Then narrow
+to" 5/10/15, `&total=`). Optional `total` on a subject session: once every
+group is done, the groups' winners play one more ordinary game against each
+other (seed `<seed>|across`, `count` = total), so whole subjects can drop out
+but only after each was judged on its own. `decide` tags those picks
+`across: true` and the group replays skip them, so the across game can never
+change a subject's result even when two finalists share a subject. Without
+`total` nothing changes (old sessions, keys and links are untouched); the tag
+needs no extra bits in `&h=` because `decodeHistory` replays through `decide`.
+
 The session is `{ids, count, lives, seed, history}` in gitignored
 `site/.image-cache/.favorites.json`; all state is derived by replaying history,
 so progress saves after every pick, undo pops, and `--count`/`--lives` can be

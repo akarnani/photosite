@@ -126,6 +126,9 @@ deps.
   `--by-subject`: each subject group (from `photosite subjects`) is its own
   small game — `count` is per subject, groups play biggest first, session
   stores `groups` (engine "subject mode"; site: "Within each subject", `&by=subject`).
+  `--total <n>` (site "Then narrow to", `&total=`): after the subjects, their
+  winners play an "Across subjects" game down to n overall; those picks carry
+  `across: true` (set by `engine.decide`) so subject results never change.
   No pair repeats in the cull until every survivor has met every other
   (`tool/test/favoritesEngine.test.js`, `cd tool && npm test`).
   `--seed <s>`: pairing is a pure function of (seed, history) — ties break on a

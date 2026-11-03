@@ -122,7 +122,7 @@
     const cullPct = (100 * (p.total - p.alive)) / Math.max(1, p.total - p.finalists);
     const pct = !s.pair ? 100 : final ? 80 + 20 * (1 - p.remaining / Math.max(1, finalBudget(p))) : 80 * Math.min(1, cullPct / 100);
     $('bar').style.width = pct + '%';
-    const subject = p.group && s.pair ? `${p.group} (subject ${p.groupIndex + 1} of ${p.groups}) · ` : '';
+    const subject = !p.group || !s.pair ? '' : p.across ? `${p.group} · ` : `${p.group} (subject ${p.groupIndex + 1} of ${p.groups}) · `;
     $('stats').textContent = !s.pair
       ? `Done · ${p.decisions} picks`
       : subject + (final
