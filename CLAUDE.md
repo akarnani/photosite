@@ -76,7 +76,7 @@ deps.
   `/og/trips/<slug>.jpg` and `/og/home.jpg`, from the cover via `.image-cache/`
   or R2 HTTPS. `?v=` hash busts app caches; bump `DESIGN_VERSION` on redesign.
   satori needs `boxSizing: 'border-box'` on padded roots. `sharp`/`satori` in
-  `site/` are the site's own deps (Node ≥20.9, `site/.nvmrc`).
+  `site/` are the site's own deps (site needs Node ≥22.23.4 for Astro 7, pinned in `site/.nvmrc`).
 - Strip trailing slash from `publicBaseUrl` before joining URLs.
 - TUI (`annotate`/`cover`): **Ink + React via `htm`** (tagged templates — NO JSX
   build step; keep it that way). Runs on the alternate screen (`runTui`).
@@ -156,7 +156,7 @@ Build the site: `cd site && npm run build`. Convenience wrappers in `justfile`.
 ## Conventions
 
 - CLI status lines: `→` step, `✓` ok, `!` warn, `✗` error (picocolors).
-- ESM everywhere, Node ≥20.9 (sharp 0.35 requirement).
+- ESM everywhere, Node ≥20.9 for the tool (sharp 0.35); the site needs ≥22.23.4 (Astro 7).
 - Cancelling a prompt exits cleanly with no partial writes.
 - `<slug>` args are optional; omitting one shows a select list of trips.
 
