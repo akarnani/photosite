@@ -7,5 +7,9 @@ export default defineConfig({
   // Canonical origin — needed for absolute og:url / og:image in link previews.
   site: 'https://photos.karnani.io',
   build: { format: 'directory' },
+  // Astro 7 defaults to JSX-style whitespace collapsing, which drops the
+  // space between text and an inline element on the next line (footer links,
+  // "Seed <code>"). Keep the pre-7 behavior.
+  compressHTML: true,
   integrations: [localImages()],
 });
